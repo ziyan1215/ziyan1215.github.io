@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta name="generator" content="Hugo 0.55.6" />
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<meta name="wap-font-scale" content="no">
+		
+		
+		
+		<meta name="author" content="XuziYan">
+		<meta name='description' itemprop="description" content=" ORACLE数据库有国家字符集（national character set）与数据库字符集(database character set)之分。两者都是在创建数据库时需要设置的  国家字符集主要是用于NCHAR、NVARCHAR、NCLOB类型的字段数据
+数据库字符集使用很广泛，它用于：CHAR、VARCHAR、CLOB、LONG类型的字段数据
+NLS( National Language S">
+		 
+		<meta name="keywords" content="Oracle字符集, national character set, database character set, nls_lang" >
+		
+		
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="Oracle字符集">
+		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:description" content=" ORACLE数据库有国家字符集（national character set）与数据库字符集(database character set)之分。两者都是在创建数据库时需要设置的  国家字符集主要是用于NCHAR、NVARCHAR、NCLOB类型的字段数据
+数据库字符集使用很广泛，它用于：CHAR、VARCHAR、CLOB、LONG类型的字段数据
+NLS( National Language S">
+		<meta property="og:site_name" content="XuziYan">
+
+		<title>Oracle字符集 | Xuzi</title>
+		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+
+		
+
+		
+		
+		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script>
+			document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);
+			</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https:\/\/ziyan1215.github.io\/archive\/1546590921\/",
+				"appid": "1621056720407734", 
+				"title": "Oracle字符集 | Xuzi JAVA!!!", 
+				"images": [],
+				"pubDate": "2019-01-04T16:35:21"
+			} 
+			</script>
+	</head>
+
+<body>
+    <div id="header-post">
+        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+        <span id="menu">
+          <span id="nav">
+            <ul>
+              <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+            </ul>
+          </span>
+          <br/>
+          <span id="actions">
+            <ul>
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546588698/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546591306/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                
+              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+            </ul>
+            <span id="i-prev" class="info" style="display:none;">Previous post</span>
+            <span id="i-next" class="info" style="display:none;">Next post</span>
+            <span id="i-top" class="info" style="display:none;">Back to top</span>
+            <span id="i-share" class="info" style="display:none;">Share post</span>
+          </span>
+          <br/>
+          <div id="share" style="display: none">
+              <ul>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546590921%2f&text=Oracle%e5%ad%97%e7%ac%a6%e9%9b%86"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546590921%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546590921%2f&text=Oracle%e5%ad%97%e7%ac%a6%e9%9b%86"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546590921%2f&title=Oracle%e5%ad%97%e7%ac%a6%e9%9b%86"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546590921%2f&is_video=false&description=Oracle%e5%ad%97%e7%ac%a6%e9%9b%86"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=Oracle%e5%ad%97%e7%ac%a6%e9%9b%86&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1546590921%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546590921%2f&title=Oracle%e5%ad%97%e7%ac%a6%e9%9b%86"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546590921%2f&title=Oracle%e5%ad%97%e7%ac%a6%e9%9b%86"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546590921%2f&title=Oracle%e5%ad%97%e7%ac%a6%e9%9b%86"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546590921%2f&title=Oracle%e5%ad%97%e7%ac%a6%e9%9b%86"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+ </ul>
+      
+          </div>
+          <div id="toc">
+                
+          </div>
+        </span>
+      </div>
+      
+    <div class="content index width mx-auto px3 my3">
+        <section id="wrapper" class="home">
+                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                    <header>
+                    <h1 class="posttitle" itemprop="name headline">
+                            Oracle字符集
+                        </h1>
+                      <div class="meta">
+                        <div class="postdate">
+                                <time datetime='2019-01-04' itemprop="datePublished">2019-01-04</time>
+                            </div>
+                        <div class="article-tag">
+                            <i class="fa fa-eye"></i>
+                            <span id="busuanzi_container_page_pv">
+                                <span id="busuanzi_value_page_pv">0</span>
+                              </span>
+                            </span>
+                        </div>
+                        
+                        <div class="article-tag">
+                            <i class="fa fa-tag"></i>
+                            
+                            <a href="/tags/oracle">
+                               Oracle</a> 
+                             
+                        </div>
+                        
+                        
+                        
+                        <div class="article-tag-box">
+                               
+                        </div>
+
+                        
+                      </div>
+                    </header>
+                    
+
+                    <div class="content" itemprop="articleBody">
+                            
+                            <blockquote>
+<p>ORACLE数据库有国家字符集（national character set）与数据库字符集(database character set)之分。两者都是在创建数据库时需要设置的
+<img src="https://xuziyan.ga/images/Clip_20190104_165814.png" alt="设置字符集" /></p>
+</blockquote>
+
+<p>国家字符集主要是用于NCHAR、NVARCHAR、NCLOB类型的字段数据</p>
+
+<p>数据库字符集使用很广泛，它用于：CHAR、VARCHAR、CLOB、LONG类型的字段数据</p>
+
+<p>NLS( National Language Support)国家语言支持。</p>
+
+<blockquote>
+<p>这个nls_lang应该就是指我们的客户端的字符集环境</p>
+</blockquote>
+
+<p><code>set nls_lang=SIMPLIFIED CHINESE_AMERICA.UTF8</code></p>
+
+<p>NLS是数据库的一个非常强大的特性，它控制着数据的许多方面：
+比如数据如何存储，一般来说它控制着以下两个方面：</p>
+
+<p>文本数据持久存储在磁盘上时如何编码</p>
+
+<p>透明的将数据从一个字符集转换到另外一个字符集</p>
+
+<hr />
+
+<p>通过<code>select * from nls_database_parameters;</code>查询结果会发现以下两个值：</p>
+
+<p><code>NLS_CHARACTERSET</code>是数据库字符集</p>
+
+<p><code>NLS_NCHAR_CHARACTERSET</code>是国家字符集</p>
+
+<p>ORACLE中有两大类字符型数据，VARCHAR2是按照数据库字符集来存储数据。而NVARCHAR2是按照国家字符集存储数据的。同样，CHAR和NCHAR也一样，一是数据库字符符，一是国家字符集。
+字符集不同，二进制码的组合就不同。</p>
+
+<blockquote>
+<p><a href="https://www.cnblogs.com/kerrycode/p/3749085.html">引用来源</a></p>
+</blockquote>
+
+                            <h2> 本文链接：</h2>
+                            <a href='https://ziyan1215.github.io/archive/1546590921/' target="_blank">https://ziyan1215.github.io/archive/1546590921/</a>
+                    </div>
+                  </article>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div class="blog-post-comments"></div>
+<script>
+    new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
+        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        placeholder: '说点什么呗?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });
+</script>
+
+                  
+                  
+        </section>
+
+    </div>
+      
+  <footer id="footer">
+    <div class="footer-left">
+        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+      
+   </div>
+    <div class="footer-right">
+      <nav>
+        <ul>
+          <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+    
+<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://ziyan1215.github.io/lib/typed.js"></script>
+<script src="https://ziyan1215.github.io/js/main.js"></script>
+
+
+
+
+
+<script async src=""></script>
+<script>
+(function(){
+  if(location.host!=='xuziyan.ga')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()
+</script>
+
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+
+
+  
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }
+  </script>
+</body>
+
+</html>
+

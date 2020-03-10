@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LoadRunner on XuziYan</title>
+    <link>https://ziyan1215.github.io/tags/loadrunner/</link>
+    <description>Recent content in LoadRunner on XuziYan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 28 Dec 2018 17:04:18 +0000</lastBuildDate>
+    
+	<atom:link href="https://ziyan1215.github.io/tags/loadrunner/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LoadRunner录制adf框架经验</title>
+      <link>https://ziyan1215.github.io/archive/1545987858/</link>
+      <pubDate>Fri, 28 Dec 2018 17:04:18 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1545987858/</guid>
+      <description>配置关联规则 用LoadRunner11录制ADF框架系统是，回放会报错，因为adf框架的原因，录制时要加入关联脚本
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt; &amp;lt;CorrelationSettings&amp;gt; &amp;lt;Group Name=&amp;quot;Oracle ADF&amp;quot; Enable=&amp;quot;1&amp;quot; Icon=&amp;quot;logo_default.bmp&amp;quot;&amp;gt; &amp;lt;Rule Name=&amp;quot;adf.ctrl-state&amp;quot; LeftBoundText=&amp;quot;_adf.ctrl-state=&amp;quot; LeftBoundType=&amp;quot;1&amp;quot; LeftBoundInstance=&amp;quot;0&amp;quot; RightBoundText=&amp;quot;&amp;amp;quot;&amp;quot; RightBoundType=&amp;quot;1&amp;quot; AltRightBoundText=&amp;quot;Newline Character&amp;quot; AltRightBoundType=&amp;quot;4&amp;quot; Flags=&amp;quot;137&amp;quot; ParamPrefix=&amp;quot;adf.ctrl-state&amp;quot; Type=&amp;quot;8&amp;quot; SaveOffset=&amp;quot;0&amp;quot; SaveLen=&amp;quot;-1&amp;quot; CallbackName=&amp;quot;&amp;quot; CallbackDLLName=&amp;quot;&amp;quot; FormField=&amp;quot;&amp;quot; ReplaceLB=&amp;quot;&amp;quot; ReplaceRB=&amp;quot;&amp;quot; /&amp;gt; &amp;lt;Rule Name=&amp;quot;adf.winId&amp;quot; LeftBoundText=&amp;quot;_adf.winId=&amp;quot; LeftBoundType=&amp;quot;1&amp;quot; LeftBoundInstance=&amp;quot;0&amp;quot; RightBoundText=&amp;quot;&amp;amp;amp;&amp;quot; RightBoundType=&amp;quot;1&amp;quot; AltRightBoundText=&amp;quot;&amp;quot; AltRightBoundType=&amp;quot;1&amp;quot; Flags=&amp;quot;137&amp;quot; ParamPrefix=&amp;quot;adf.winId&amp;quot; Type=&amp;quot;8&amp;quot; SaveOffset=&amp;quot;0&amp;quot; SaveLen=&amp;quot;-1&amp;quot; CallbackName=&amp;quot;&amp;quot; CallbackDLLName=&amp;quot;&amp;quot; FormField=&amp;quot;&amp;quot; ReplaceLB=&amp;quot;&amp;quot; ReplaceRB=&amp;quot;&amp;quot; /&amp;gt; &amp;lt;Rule Name=&amp;quot;jsessionid&amp;quot; LeftBoundText=&amp;quot;jsessionid=&amp;quot; LeftBoundType=&amp;quot;1&amp;quot; LeftBoundInstance=&amp;quot;0&amp;quot; RightBoundText=&amp;quot;&amp;amp;quot;&amp;quot; RightBoundType=&amp;quot;1&amp;quot; AltRightBoundText=&amp;quot;&amp;quot; AltRightBoundType=&amp;quot;1&amp;quot; Flags=&amp;quot;136&amp;quot; ParamPrefix=&amp;quot;jsessionid&amp;quot; Type=&amp;quot;8&amp;quot; SaveOffset=&amp;quot;0&amp;quot; SaveLen=&amp;quot;-1&amp;quot; CallbackName=&amp;quot;&amp;quot; CallbackDLLName=&amp;quot;&amp;quot; FormField=&amp;quot;&amp;quot; ReplaceLB=&amp;quot;&amp;quot; ReplaceRB=&amp;quot;&amp;quot; /&amp;gt; &amp;lt;Rule Name=&amp;quot;STATETOKEN&amp;quot; LeftBoundText=&amp;quot;javax.</description>
+    </item>
+    
+    <item>
+      <title>LoadRunner实战</title>
+      <link>https://ziyan1215.github.io/archive/1545987472/</link>
+      <pubDate>Fri, 28 Dec 2018 16:57:52 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1545987472/</guid>
+      <description> 工作流程 录制脚本 设计场景 进行压测 性能分析 性能调优 </description>
+    </item>
+    
+  </channel>
+</rss>

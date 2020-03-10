@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta name="generator" content="Hugo 0.55.6" />
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<meta name="wap-font-scale" content="no">
+		
+		
+		
+		<meta name="author" content="XuziYan">
+		<meta name='description' itemprop="description" content="查询 -----查询所有对象个数 select object_type,count(*) from user_objects group by object_type; --查看表空间 select * from dba_tablespaces --查看用户和默认表空间的关系 select username,default_tablespace from dba_users; --查看表空间文件路">
+		 
+		<meta name="keywords" content="Oracle常用语句" >
+		
+		
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="Oracle常用语句">
+		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:description" content="查询 -----查询所有对象个数 select object_type,count(*) from user_objects group by object_type; --查看表空间 select * from dba_tablespaces --查看用户和默认表空间的关系 select username,default_tablespace from dba_users; --查看表空间文件路">
+		<meta property="og:site_name" content="XuziYan">
+
+		<title>Oracle常用语句 | Xuzi</title>
+		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+
+		
+
+		
+		
+		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script>
+			document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);
+			</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https:\/\/ziyan1215.github.io\/archive\/1546928060\/",
+				"appid": "1621056720407734", 
+				"title": "Oracle常用语句 | Xuzi JAVA!!!", 
+				"images": [],
+				"pubDate": "2019-01-08T14:14:20"
+			} 
+			</script>
+	</head>
+
+<body>
+    <div id="header-post">
+        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+        <span id="menu">
+          <span id="nav">
+            <ul>
+              <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+            </ul>
+          </span>
+          <br/>
+          <span id="actions">
+            <ul>
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546591306/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546930122/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                
+              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+            </ul>
+            <span id="i-prev" class="info" style="display:none;">Previous post</span>
+            <span id="i-next" class="info" style="display:none;">Next post</span>
+            <span id="i-top" class="info" style="display:none;">Back to top</span>
+            <span id="i-share" class="info" style="display:none;">Share post</span>
+          </span>
+          <br/>
+          <div id="share" style="display: none">
+              <ul>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546928060%2f&text=Oracle%e5%b8%b8%e7%94%a8%e8%af%ad%e5%8f%a5"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546928060%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546928060%2f&text=Oracle%e5%b8%b8%e7%94%a8%e8%af%ad%e5%8f%a5"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546928060%2f&title=Oracle%e5%b8%b8%e7%94%a8%e8%af%ad%e5%8f%a5"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546928060%2f&is_video=false&description=Oracle%e5%b8%b8%e7%94%a8%e8%af%ad%e5%8f%a5"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=Oracle%e5%b8%b8%e7%94%a8%e8%af%ad%e5%8f%a5&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1546928060%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546928060%2f&title=Oracle%e5%b8%b8%e7%94%a8%e8%af%ad%e5%8f%a5"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546928060%2f&title=Oracle%e5%b8%b8%e7%94%a8%e8%af%ad%e5%8f%a5"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546928060%2f&title=Oracle%e5%b8%b8%e7%94%a8%e8%af%ad%e5%8f%a5"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546928060%2f&title=Oracle%e5%b8%b8%e7%94%a8%e8%af%ad%e5%8f%a5"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+ </ul>
+      
+          </div>
+          <div id="toc">
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#查询">查询</a></li>
+<li><a href="#创建">创建</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        </span>
+      </div>
+      
+    <div class="content index width mx-auto px3 my3">
+        <section id="wrapper" class="home">
+                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                    <header>
+                    <h1 class="posttitle" itemprop="name headline">
+                            Oracle常用语句
+                        </h1>
+                      <div class="meta">
+                        <div class="postdate">
+                                <time datetime='2019-01-08' itemprop="datePublished">2019-01-08</time>
+                            </div>
+                        <div class="article-tag">
+                            <i class="fa fa-eye"></i>
+                            <span id="busuanzi_container_page_pv">
+                                <span id="busuanzi_value_page_pv">0</span>
+                              </span>
+                            </span>
+                        </div>
+                        
+                        <div class="article-tag">
+                            <i class="fa fa-tag"></i>
+                            
+                            <a href="/tags/oracle">
+                               Oracle</a> 
+                             
+                        </div>
+                        
+                        
+                        
+                        <div class="article-tag-box">
+                               
+                        </div>
+
+                        
+                      </div>
+                    </header>
+                    
+
+                    <div class="content" itemprop="articleBody">
+                            
+                            
+
+<h2 id="查询">查询</h2>
+
+<pre><code class="language-sql">-----查询所有对象个数
+select object_type,count(*) from user_objects group by object_type;
+
+--查看表空间
+select   *   from   dba_tablespaces
+
+--查看用户和默认表空间的关系
+select   username,default_tablespace   from   dba_users;
+
+--查看表空间文件路径
+ select tablespace_name,file_id,bytes/1024/1024,file_name
+ from dba_data_files order by file_id;
+
+
+select count(*) from WP_UDB_ROLE_OPERATION;--计算表行数
+
+--查看服务器版本
+select * from v$version
+ 
+--查看字符集
+select * from nls_database_parameters
+ 
+--查看默认表空间
+select * from database_properties where property_name='DEFAULT_TEMP_TABLESPACE';
+ 
+--查看临时表空间状态
+select tablespace_name,file_name,bytes/1024/1024 file_size,autoextensible from dba_temp_files;
+
+ 
+select count(*) from user_tables;-----某个用户下所有表
+select count(*) from dba_tables;------数据库下所有表
+
+
+--会话字符集环境
+select * from nls_session_parameters;
+--客户端字符集环境
+select * from nls_instance_parameters;
+--数据库服务器字符集
+select * from nls_database_parameters;
+
+
+ 
+-- 有数据库连接时用以下语句解决
+select sid,serial# from v$session where username='programmer'
+alter system kill session '15,19095';
+
+</code></pre>
+
+<hr />
+
+<h2 id="创建">创建</h2>
+
+<pre><code class="language-sql">--新建表空间  
+CREATE SMALLFILE TABLESPACE orcl   
+DATAFILE '/opt/oradata/orcl'  --非oracle下的目录  
+SIZE 300M   
+AUTOEXTEND ON NEXT 100K   
+MAXSIZE UNLIMITED   
+LOGGING EXTENT   
+MANAGEMENT LOCAL SEGMENT SPACE   
+MANAGEMENT AUTO  
+   
+--新建临时表空间  
+CREATE temporary TABLESPACE tstemp   
+tempfile '/opt/oradata/tstemp'  --非oracle下的目录  
+SIZE 32M   
+AUTOEXTEND ON NEXT 100K   
+MAXSIZE UNLIMITED   
+EXTENT MANAGEMENT LOCAL 
+
+--删除表
+drop table xzy;  
+--删除用户
+drop user pts cascade;
+--删除表空间
+drop tablespace gwypts including contents and datafiles cascade constraints;
+DELETE FROM  WP_UDB_ROLE_OPERATION;--删除表内容
+
+
+--新建用户，并且给用户赋权限
+CREATE USER pts PROFILE &quot;DEFAULT&quot; IDENTIFIED BY pts DEFAULT TABLESPACE pts TEMPORARY TABLESPACE &quot;TEMP&quot; ACCOUNT UNLOCK;
+grant resource,connect,imp_full_database,exp_full_database,CREATE ANY JOB to pts;
+ 
+--授权语句
+grant connect,resource,dba to pts    
+grant all privileges  to pts
+ 
+ 
+-- Create table 创建版本语句
+create table VERSION 
+( 
+VERSIONID VARCHAR2(50), 
+UPDTDATE DATE 
+); 
+insert into version(versionid,updtdate) values('V2.10.20171214-42196',sysdate); 
+commit; 
+ 
+--数据库的dmp导入：
+imp dgg/dgg@192.168.2.95/orcl file=d:\dmxg.dmp log=d:\dmxg.log full=y
+ 
+--导入现场DMP的时候可以用这个导入语句
+imp dgg/dgg@192.168.2.96/orcl file=d:\dmxg.dmp log=d:\dmxg.log fromuser=xc touser=bd
+(full( 全库导出): 导出除ORDSYS,MDSYS,CTXSYS,ORDPLUGINS,LBACSYS 这些系统用户之外的所有用户的数据. )
+ 
+--导出
+exp pts/pts@192.168.2.110/orcl file=f:\pts0906.dmp log=d:\pts0906.log statistics=none
+</code></pre>
+
+                            <h2> 本文链接：</h2>
+                            <a href='https://ziyan1215.github.io/archive/1546928060/' target="_blank">https://ziyan1215.github.io/archive/1546928060/</a>
+                    </div>
+                  </article>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div class="blog-post-comments"></div>
+<script>
+    new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
+        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        placeholder: '说点什么呗?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });
+</script>
+
+                  
+                  
+        </section>
+
+    </div>
+      
+  <footer id="footer">
+    <div class="footer-left">
+        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+      
+   </div>
+    <div class="footer-right">
+      <nav>
+        <ul>
+          <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+    
+<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://ziyan1215.github.io/lib/typed.js"></script>
+<script src="https://ziyan1215.github.io/js/main.js"></script>
+
+
+
+
+
+<script async src=""></script>
+<script>
+(function(){
+  if(location.host!=='xuziyan.ga')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()
+</script>
+
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+
+
+  
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }
+  </script>
+</body>
+
+</html>
+

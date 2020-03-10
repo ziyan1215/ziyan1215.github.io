@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta name="generator" content="Hugo 0.55.6" />
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<meta name="wap-font-scale" content="no">
+		
+		
+		
+		<meta name="author" content="XuziYan">
+		<meta name='description' itemprop="description" content="在使用一个体系时，原则：参阅顶层内容。建立底层对象。
+集合是可变长度的，用于存储对象，只能存储引用数据类型，可以存储不同类型的对象
+ 使用集合的技巧 看到Array就是数组结构，有角标，查询速度很快。
+看到link就是链表结构：增删速度快，而且有特有方法 addFirst();addLast();removeFirst();removeLast(); getFirst();getLast();
+看">
+		 
+		<meta name="keywords" content="Java基础之集合, 集合框架，collection" >
+		
+		
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="Java基础之集合">
+		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:description" content="在使用一个体系时，原则：参阅顶层内容。建立底层对象。
+集合是可变长度的，用于存储对象，只能存储引用数据类型，可以存储不同类型的对象
+ 使用集合的技巧 看到Array就是数组结构，有角标，查询速度很快。
+看到link就是链表结构：增删速度快，而且有特有方法 addFirst();addLast();removeFirst();removeLast(); getFirst();getLast();
+看">
+		<meta property="og:site_name" content="XuziYan">
+
+		<title>Java基础之集合 | Xuzi</title>
+		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+
+		
+
+		
+		
+		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script>
+			document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);
+			</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https:\/\/ziyan1215.github.io\/archive\/1548058711\/",
+				"appid": "1621056720407734", 
+				"title": "Java基础之集合 | Xuzi JAVA!!!", 
+				"images": [],
+				"pubDate": "2019-01-21T16:18:31"
+			} 
+			</script>
+	</head>
+
+<body>
+    <div id="header-post">
+        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+        <span id="menu">
+          <span id="nav">
+            <ul>
+              <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+            </ul>
+          </span>
+          <br/>
+          <span id="actions">
+            <ul>
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1548056542/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1548124598/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                
+              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+            </ul>
+            <span id="i-prev" class="info" style="display:none;">Previous post</span>
+            <span id="i-next" class="info" style="display:none;">Next post</span>
+            <span id="i-top" class="info" style="display:none;">Back to top</span>
+            <span id="i-share" class="info" style="display:none;">Share post</span>
+          </span>
+          <br/>
+          <div id="share" style="display: none">
+              <ul>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&text=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&text=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&is_video=false&description=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+ </ul>
+      
+          </div>
+          <div id="toc">
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#使用集合的技巧">使用集合的技巧</a></li>
+<li><a href="#比较的两种方式">比较的两种方式</a></li>
+<li><a href="#集合什么时候用">集合什么时候用？</a></li>
+<li><a href="#collection接口">Collection接口</a></li>
+<li><a href="#iterator接口">Iterator接口</a></li>
+<li><a href="#list接口">List接口</a></li>
+<li><a href="#set接口">Set接口</a></li>
+<li><a href="#map集合">Map集合</a></li>
+<li><a href="#collection-和-collections的区别">Collection 和 Collections的区别</a></li>
+<li><a href="#哈希表的原理">哈希表的原理</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        </span>
+      </div>
+      
+    <div class="content index width mx-auto px3 my3">
+        <section id="wrapper" class="home">
+                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                    <header>
+                    <h1 class="posttitle" itemprop="name headline">
+                            Java基础之集合
+                        </h1>
+                      <div class="meta">
+                        <div class="postdate">
+                                <time datetime='2019-01-21' itemprop="datePublished">2019-01-21</time>
+                            </div>
+                        <div class="article-tag">
+                            <i class="fa fa-eye"></i>
+                            <span id="busuanzi_container_page_pv">
+                                <span id="busuanzi_value_page_pv">0</span>
+                              </span>
+                            </span>
+                        </div>
+                        
+                        <div class="article-tag">
+                            <i class="fa fa-tag"></i>
+                            
+                            <a href="/tags/java">
+                               Java</a> 
+                             
+                        </div>
+                        
+                        
+                        
+                        <div class="article-tag-box">
+                               
+                        </div>
+
+                        
+                      </div>
+                    </header>
+                    
+
+                    <div class="content" itemprop="articleBody">
+                            
+                            
+
+<blockquote>
+<p>在使用一个体系时，原则：参阅顶层内容。建立底层对象。</p>
+
+<p>集合是可变长度的，用于存储对象，只能存储引用数据类型，可以存储不同类型的对象</p>
+</blockquote>
+
+<p><img src="http://localhost:1313/images/Clip_20190121_162904.jpg" alt="图片" /></p>
+
+<p><img src="https://xuziyan.ga/images/Clip_20190121_162904.jpg" alt="图片" /></p>
+
+<h2 id="使用集合的技巧">使用集合的技巧</h2>
+
+<p>看到Array就是数组结构，有角标，查询速度很快。</p>
+
+<p>看到link就是链表结构：增删速度快，而且有特有方法 <code>addFirst();addLast();removeFirst();removeLast(); getFirst();getLast();</code></p>
+
+<p>看到hash就是哈希表，就要想要哈希值，就要想到唯一性，就要想到存入到该结构的中的元素必须覆盖hashCode，equals方法。</p>
+
+<p>看到tree就是二叉树，就要想到排序，就想要用到比较。</p>
+
+<h2 id="比较的两种方式">比较的两种方式</h2>
+
+<ul>
+<li>一个是Comparable：覆盖compareTo方法；</li>
+<li>一个是Comparator：覆盖compare方法。
+LinkedHashSet，LinkedHashMap:这两个集合可以保证哈希表有存入顺序和取出顺序一致，保证哈希表有序。</li>
+</ul>
+
+<h2 id="集合什么时候用">集合什么时候用？</h2>
+
+<ul>
+<li>当存储的是一个元素时，就用Collection。</li>
+<li>当存储对象之间存在着映射关系时，就使用Map集合。</li>
+<li>保证唯一，就用Set。不保证唯一，就用List。</li>
+</ul>
+
+<h2 id="collection接口">Collection接口</h2>
+
+<ul>
+<li>List：有序(元素存入集合的顺序和取出的顺序一致)，元素都有索引。元素可以重复。</li>
+<li>Set：无序(存入和取出顺序有可能不一致)，不可以存储重复元素。必须保证元素唯一性。</li>
+</ul>
+
+<h2 id="iterator接口">Iterator接口</h2>
+
+<p>boolean |<code>hashNext</code>| 如果仍有元素可以迭代，则返回 true</p>
+
+<p>E       |<code>next()</code>| 返回迭代的下一个元素</p>
+
+<p>void    |<code>remove()</code>| 从迭代器指向的 collection 中移除迭代器返回的最后一个元素（可选操作）</p>
+
+<pre><code class="language-java">public static void main(String[] args) {
+        Collection coll = new ArrayList();
+        coll.add(&quot;abc0&quot;);
+        coll.add(&quot;abc1&quot;);
+        coll.add(&quot;abc2&quot;);
+        //--------------方式1----------------------
+        Iterator it = coll.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next());
+        }
+        //---------------方式2用此种----------------------
+        for(Iterator it = coll.iterator();it.hasNext(); ){
+            System.out.println(it.next());
+        }
+    }
+</code></pre>
+
+<blockquote>
+<p>List本身是Collection接口的子接口，具备了Collection的所有方法。现在学习List体系特有的共性方法，查阅方法发现List的特有方法都有索引，这是该集合最大的特点</p>
+</blockquote>
+
+<h2 id="list接口">List接口</h2>
+
+<p>有序(元素存入集合的顺序和取出的顺序一致)，元素都有索引。元素可以重复。</p>
+
+<ul>
+<li><p>ArrayList：底层的数据结构是数组,线程不同步，ArrayList替代了Vector，查询元素的速度非常快。</p></li>
+
+<li><p>LinkedList：底层的数据结构是链表，线程不同步，增删元素的速度非常快。</p></li>
+
+<li><p>Vector：底层的数据结构就是数组，线程同步的，Vector无论查询和增删都巨慢。</p></li>
+</ul>
+
+<pre><code class="language-java">//List集合因为角标有了自己的获取元素的方式： 遍历。
+for(int x=0; x&lt;list.size(); x++){
+    sop(&quot;get:&quot;+list.get(x));
+}
+</code></pre>
+
+<p>在进行list列表元素迭代的时候，如果想要在迭代过程中，想要对元素进行操作的时候，比如满足条件添加新元素。会发生<code>.ConcurrentModificationException</code>并发修改异常</p>
+
+<p>既然是在迭代中对元素进行操作,找迭代器的方法最为合适.可是Iterator中只有hasNext,next,remove方法.通过查阅的它的子接口,<code>ListIterator</code>,发现该列表迭代器接口具备了对元素的增、删、改、查的动作</p>
+
+<h2 id="set接口">Set接口</h2>
+
+<p><code>HashSet</code>:底层数据结构是哈希表，线程是不同步的。无序，高效；
+HashSet集合保证元素唯一性：通过元素的hashCode方法，和equals方法完成的。
+当元素的hashCode值相同时，才继续判断元素的equals是否为true。
+如果为true，那么视为相同元素，不存。如果为false，那么存储。
+如果hashCode值不同，那么不判断equals，从而提高对象比较的速度。</p>
+
+<p><code>LinkedHashSet</code>：有序，hashset的子类。</p>
+
+<p><code>TreeSet</code>：对Set集合中的元素的进行指定顺序的排序。不同步。TreeSet底层的数据结构就是二叉树。</p>
+
+<h2 id="map集合">Map集合</h2>
+
+<p><code>Hashtable</code>：底层是哈希表数据结构，是线程同步的。不可以存储null键，null值。</p>
+
+<p><code>HashMap</code>：底层是哈希表数据结构，是线程不同步的。可以存储null键，null值。替代了Hashtable.</p>
+
+<p><code>TreeMap</code>：底层是二叉树结构，可以对map集合中的键进行指定顺序的排序。</p>
+
+<h2 id="collection-和-collections的区别">Collection 和 Collections的区别</h2>
+
+<p><code>Collections</code>是个java.util下的类，是针对集合类的一个工具类,提供一系列静态方法,实现对集合的查找、排序、替换、线程安全化（将非同步的集合转换成同步的）等操作。</p>
+
+<p><code>Collection</code>是个java.util下的接口，它是各种集合结构的父接口，继承于它的接口主要有Set和List,提供了关于集合的一些操作,如插入、删除、判断一个元素是否其成员、遍历等。</p>
+
+<h2 id="哈希表的原理">哈希表的原理</h2>
+
+<p>1，对对象元素中的关键字(对象中的特有数据)，进行哈希算法的运算，并得出一个具体的算法值，这个值 称为哈希值。</p>
+
+<p>2，哈希值就是这个元素的位置。</p>
+
+<p>3，如果哈希值出现冲突，再次判断这个关键字对应的对象是否相同。如果对象相同，就不存储，因为元素重复。如果对象不同，就存储，在原来对象的哈希值基础 +1顺延。</p>
+
+<p>4，存储哈希值的结构，我们称为哈希表。</p>
+
+<p>5，既然哈希表是根据哈希值存储的，为了提高效率，最好保证对象的关键字是唯一的。</p>
+
+<pre><code>这样可以尽量少的判断关键字对应的对象是否相同，提高了哈希表的操作效率。
+</code></pre>
+
+<p>对于ArrayList集合，判断元素是否存在，或者删元素底层依据都是equals方法。</p>
+
+<p>对于HashSet集合，判断元素是否存在，或者删除元素，底层依据的是hashCode方法和equals方法。</p>
+
+                            <h2> 本文链接：</h2>
+                            <a href='https://ziyan1215.github.io/archive/1548058711/' target="_blank">https://ziyan1215.github.io/archive/1548058711/</a>
+                    </div>
+                  </article>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div class="blog-post-comments"></div>
+<script>
+    new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
+        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        placeholder: '说点什么呗?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });
+</script>
+
+                  
+                  
+        </section>
+
+    </div>
+      
+  <footer id="footer">
+    <div class="footer-left">
+        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+      
+   </div>
+    <div class="footer-right">
+      <nav>
+        <ul>
+          <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+    
+<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://ziyan1215.github.io/lib/typed.js"></script>
+<script src="https://ziyan1215.github.io/js/main.js"></script>
+
+
+
+
+
+<script async src=""></script>
+<script>
+(function(){
+  if(location.host!=='xuziyan.ga')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()
+</script>
+
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+
+
+  
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }
+  </script>
+</body>
+
+</html>
+

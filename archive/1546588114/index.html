@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta name="generator" content="Hugo 0.55.6" />
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<meta name="wap-font-scale" content="no">
+		
+		
+		
+		<meta name="author" content="XuziYan">
+		<meta name='description' itemprop="description" content="  导DMP时请做以下操作！！！ 若需要在oracle11g数据库执行dmp的导入导出，为了确保11g数据库能够导出空表，请先做以下操作 （sys和要导出的数据库用户两个用户都要进行此操作）其中sys要用sysdba权限登录
+方法 --用plsql developer 的 command 窗口操作。 SQL&amp;gt;show parameter deferred_segment_creation; ">
+		 
+		<meta name="keywords" content="oracle, 11G导出空表" >
+		
+		
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="Oracle11G导出空表方法">
+		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:description" content="  导DMP时请做以下操作！！！ 若需要在oracle11g数据库执行dmp的导入导出，为了确保11g数据库能够导出空表，请先做以下操作 （sys和要导出的数据库用户两个用户都要进行此操作）其中sys要用sysdba权限登录
+方法 --用plsql developer 的 command 窗口操作。 SQL&amp;gt;show parameter deferred_segment_creation; ">
+		<meta property="og:site_name" content="XuziYan">
+
+		<title>Oracle11G导出空表方法 | Xuzi</title>
+		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+
+		
+
+		
+		
+		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script>
+			document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);
+			</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https:\/\/ziyan1215.github.io\/archive\/1546588114\/",
+				"appid": "1621056720407734", 
+				"title": "Oracle11G导出空表方法 | Xuzi JAVA!!!", 
+				"images": [],
+				"pubDate": "2019-01-04T15:48:34"
+			} 
+			</script>
+	</head>
+
+<body>
+    <div id="header-post">
+        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+        <span id="menu">
+          <span id="nav">
+            <ul>
+              <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+            </ul>
+          </span>
+          <br/>
+          <span id="actions">
+            <ul>
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546417063/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546588698/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                
+              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+            </ul>
+            <span id="i-prev" class="info" style="display:none;">Previous post</span>
+            <span id="i-next" class="info" style="display:none;">Next post</span>
+            <span id="i-top" class="info" style="display:none;">Back to top</span>
+            <span id="i-share" class="info" style="display:none;">Share post</span>
+          </span>
+          <br/>
+          <div id="share" style="display: none">
+              <ul>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&text=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&text=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&is_video=false&description=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+ </ul>
+      
+          </div>
+          <div id="toc">
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#方法">方法</a></li>
+<li><a href="#验证">验证</a></li>
+</ul>
+</nav>
+          </div>
+        </span>
+      </div>
+      
+    <div class="content index width mx-auto px3 my3">
+        <section id="wrapper" class="home">
+                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                    <header>
+                    <h1 class="posttitle" itemprop="name headline">
+                            Oracle11G导出空表方法
+                        </h1>
+                      <div class="meta">
+                        <div class="postdate">
+                                <time datetime='2019-01-04' itemprop="datePublished">2019-01-04</time>
+                            </div>
+                        <div class="article-tag">
+                            <i class="fa fa-eye"></i>
+                            <span id="busuanzi_container_page_pv">
+                                <span id="busuanzi_value_page_pv">0</span>
+                              </span>
+                            </span>
+                        </div>
+                        
+                        <div class="article-tag">
+                            <i class="fa fa-tag"></i>
+                            
+                            <a href="/tags/oracle">
+                               Oracle</a> 
+                             
+                        </div>
+                        
+                        
+                        
+                        <div class="article-tag-box">
+                               
+                        </div>
+
+                        
+                      </div>
+                    </header>
+                    
+
+                    <div class="content" itemprop="articleBody">
+                            
+                            
+
+<blockquote>
+<p>导DMP时请做以下操作！！！
+若需要在oracle11g数据库执行dmp的导入导出，为了确保11g数据库能够导出空表，请先做以下操作
+（sys和要导出的数据库用户两个用户都要进行此操作）其中sys要用sysdba权限登录</p>
+
+<h1 id="方法">方法</h1>
+
+<pre><code class="language-sql">
+--用plsql developer 的 command 窗口操作。
+SQL&gt;show parameter deferred_segment_creation;         
+--如果为TRUE,则将该参数改为FALSE；    
+     
+--在sqlplus中，执行如下命令：        
+SQL&gt;alter system set deferred_segment_creation=false;        
+--然后，可以针对数据表、索引、物化视图等手工分配Extent    
+     
+SQL&gt;Select 'alter table '||table_name||' allocate extent;' from user_tables where num_rows=0;        
+--将查询出来的结果，进行复制出来，用command窗口进行SQL执行。 
+
+--导出语句例子：
+exp user/user@localhost/orcl file=d:\user0406.dmp log=d:\user0406.log statistics=none
+
+</code></pre>
+
+<h1 id="验证">验证</h1>
+
+<p>在需要导出的用户下查询表数量（注意在my object下查询）,查询原导出库和现导入库的对象是否一致。</p>
+
+<pre><code class="language-sql">-----查询所有对象个数---------------  
+select object_type,count(*) from user_objects group by object_type;
+</code></pre>
+</blockquote>
+
+                            <h2> 本文链接：</h2>
+                            <a href='https://ziyan1215.github.io/archive/1546588114/' target="_blank">https://ziyan1215.github.io/archive/1546588114/</a>
+                    </div>
+                  </article>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div class="blog-post-comments"></div>
+<script>
+    new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
+        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        placeholder: '说点什么呗?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });
+</script>
+
+                  
+                  
+        </section>
+
+    </div>
+      
+  <footer id="footer">
+    <div class="footer-left">
+        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+      
+   </div>
+    <div class="footer-right">
+      <nav>
+        <ul>
+          <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+    
+<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://ziyan1215.github.io/lib/typed.js"></script>
+<script src="https://ziyan1215.github.io/js/main.js"></script>
+
+
+
+
+
+<script async src=""></script>
+<script>
+(function(){
+  if(location.host!=='xuziyan.ga')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()
+</script>
+
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+
+
+  
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }
+  </script>
+</body>
+
+</html>
+

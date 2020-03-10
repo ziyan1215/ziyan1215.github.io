@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on XuziYan</title>
+    <link>https://ziyan1215.github.io/tags/git/</link>
+    <description>Recent content in Git on XuziYan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 10 Jan 2019 10:26:32 +0000</lastBuildDate>
+    
+	<atom:link href="https://ziyan1215.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gui乱码解决方法</title>
+      <link>https://ziyan1215.github.io/archive/1547087192/</link>
+      <pubDate>Thu, 10 Jan 2019 10:26:32 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1547087192/</guid>
+      <description> 今天试着用了下git gui 发现查看文件时中文乱码了，我想应该就是字符集设置的问题了  </description>
+    </item>
+    
+    <item>
+      <title>git init与git init --bare demo.git的区别</title>
+      <link>https://ziyan1215.github.io/archive/1545973462/</link>
+      <pubDate>Fri, 28 Dec 2018 13:04:22 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1545973462/</guid>
+      <description>用法与区别 初始化一个git仓库，一般用于本地 git init 初始化一个裸仓库，一般用于远程仓库 git init --bare demo.git  注意事项 假如在vps上面安装git后，用git init --bare demo.git来初始化了一个远程仓库
+那么在本地上传commit到vps的远程仓库上的话，文件是不会显示出来的。
+通过命令git --work-tree=/opt/demo --git-dir=/opt/demo.git checkout -f
+设定一个work-tree才会把文件显示出来。</description>
+    </item>
+    
+    <item>
+      <title>Git基本用法</title>
+      <link>https://ziyan1215.github.io/archive/1545971875/</link>
+      <pubDate>Fri, 28 Dec 2018 12:37:55 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1545971875/</guid>
+      <description>安装完后的配置 安装完成后，还需要最后一步设置，在命令行输入：
+$ git config --global user.name &amp;quot;Your Name&amp;quot;
+$ git config --global user.email &amp;quot;email@example.com&amp;quot;
+因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。你也许会担心，如果有人故意冒充别人怎么办？这个不必担心，首先我们相信大家都是善良无知的群众，其次，真的有冒充的也是有办法可查的。
+注意git config命令的&amp;ndash;global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
+查看用户名以及邮箱：
+Administrator@LY-20170308GWTH MINGW64 /d/exercise (master) $ git config user.name xuziyan Administrator@LY-20170308GWTH MINGW64 /d/exercise (master) $ git config user.email xuziyanmiss@gmail.com  配置ssh 第一步：ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot; 你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可
+在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
+第2步：登陆GitHub，打开“Account settings”，“SSH Keys”页面：
+然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容
+配置Git仓库 通过git init命令把这个目录变成Git可以管理的仓库：
+第一步，用命令git add告诉Git，把文件添加到仓库：
+$ git add readme.txt
+第二步，用命令git commit告诉Git，把文件提交到仓库：
+$ git commit -m &amp;quot;wrote a readme file&amp;quot;</description>
+    </item>
+    
+    <item>
+      <title>Git常用命令</title>
+      <link>https://ziyan1215.github.io/archive/1545969891/</link>
+      <pubDate>Fri, 28 Dec 2018 12:04:51 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1545969891/</guid>
+      <description>常用命令 git init 项目初始化 git clone 拉取项目 git add . 添加到暂存区 git commit -m 添加commit信息 git push 将本地分支推送到服务器上去 git pull origin master 本地与服务器端同步 git log 查看日志 git status 查看当前状态 git tag 查看版本号 git diff 查看尚未提交的更新  实际运用 拉取远程仓库内容 git pull origin master  推送本地到远程仓库 git push -u origin master  创建dev分支 git checkout -b dev   git checkout命令加上-b参数表示创建并切换，相当于以下两条命令
+ git branch dev git checkout dev  用git branch命令查看当前分支</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta name="generator" content="Hugo 0.55.6" />
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<meta name="wap-font-scale" content="no">
+		
+		
+		
+		<meta name="author" content="XuziYan">
+		<meta name='description' itemprop="description" content="3 ElasticSearch原理 3.1 解析es的分布式架构 3.1.1 分布式架构的透明隐藏特性 ElasticSearch是一个分布式系统，隐藏了复杂的处理机制
+分片机制：我们不用关心数据是按照什么机制分片的、最后放入到哪个分片中
+分片的副本：
+集群发现机制(cluster discovery)：比如当前我们启动了一个es进程，当启动了第二个es进程时，这个进程作为一个node自动就发现了">
+		 
+		<meta name="keywords" content="ElasticSearch原理" >
+		
+		
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="ElasticSearch原理">
+		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:description" content="3 ElasticSearch原理 3.1 解析es的分布式架构 3.1.1 分布式架构的透明隐藏特性 ElasticSearch是一个分布式系统，隐藏了复杂的处理机制
+分片机制：我们不用关心数据是按照什么机制分片的、最后放入到哪个分片中
+分片的副本：
+集群发现机制(cluster discovery)：比如当前我们启动了一个es进程，当启动了第二个es进程时，这个进程作为一个node自动就发现了">
+		<meta property="og:site_name" content="XuziYan">
+
+		<title>ElasticSearch原理 | Xuzi</title>
+		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+
+		
+
+		
+		
+		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script>
+			document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);
+			</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https:\/\/ziyan1215.github.io\/archive\/1563940854\/",
+				"appid": "1621056720407734", 
+				"title": "ElasticSearch原理 | Xuzi JAVA!!!", 
+				"images": [],
+				"pubDate": "2019-07-24T12:00:54"
+			} 
+			</script>
+	</head>
+
+<body>
+    <div id="header-post">
+        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+        <span id="menu">
+          <span id="nav">
+            <ul>
+              <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+            </ul>
+          </span>
+          <br/>
+          <span id="actions">
+            <ul>
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1563796794/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1564215157/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                
+              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+            </ul>
+            <span id="i-prev" class="info" style="display:none;">Previous post</span>
+            <span id="i-next" class="info" style="display:none;">Next post</span>
+            <span id="i-top" class="info" style="display:none;">Back to top</span>
+            <span id="i-share" class="info" style="display:none;">Share post</span>
+          </span>
+          <br/>
+          <div id="share" style="display: none">
+              <ul>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563940854%2f&text=ElasticSearch%e5%8e%9f%e7%90%86"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563940854%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563940854%2f&text=ElasticSearch%e5%8e%9f%e7%90%86"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563940854%2f&title=ElasticSearch%e5%8e%9f%e7%90%86"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563940854%2f&is_video=false&description=ElasticSearch%e5%8e%9f%e7%90%86"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=ElasticSearch%e5%8e%9f%e7%90%86&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1563940854%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563940854%2f&title=ElasticSearch%e5%8e%9f%e7%90%86"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563940854%2f&title=ElasticSearch%e5%8e%9f%e7%90%86"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563940854%2f&title=ElasticSearch%e5%8e%9f%e7%90%86"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563940854%2f&title=ElasticSearch%e5%8e%9f%e7%90%86"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+ </ul>
+      
+          </div>
+          <div id="toc">
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#3-elasticsearch原理">3 ElasticSearch原理</a>
+<ul>
+<li><a href="#3-1-解析es的分布式架构">3.1 解析es的分布式架构</a>
+<ul>
+<li><a href="#3-1-1-分布式架构的透明隐藏特性">3.1.1 分布式架构的透明隐藏特性</a></li>
+<li><a href="#3-1-2-扩容机制">3.1.2 扩容机制</a></li>
+<li><a href="#3-1-3-rebalance">3.1.3 rebalance</a></li>
+<li><a href="#3-1-4-master节点">3.1.4 master节点</a></li>
+<li><a href="#3-1-5-节点对等">3.1.5 节点对等</a></li>
+</ul></li>
+<li><a href="#3-2-分片和副本机制">3.2 分片和副本机制</a></li>
+<li><a href="#3-3-单节点环境下创建索引分析">3.3 单节点环境下创建索引分析</a></li>
+<li><a href="#3-4-两个节点环境下创建索引分析">3.4 两个节点环境下创建索引分析</a></li>
+<li><a href="#3-5-水平扩容的过程">3.5 水平扩容的过程</a></li>
+<li><a href="#3-6-elasticsearch的容错机制">3.6 ElasticSearch的容错机制</a></li>
+<li><a href="#3-7-文档的核心元数据">3.7 文档的核心元数据</a></li>
+<li><a href="#3-8-文档id生成方式">3.8 文档id生成方式</a></li>
+<li><a href="#3-9-source元数据分析">3.9 _source元数据分析</a></li>
+<li><a href="#3-10-改变文档内容原理解析">3.10 改变文档内容原理解析</a></li>
+<li><a href="#3-11-基于groovy脚本执行partial-update">3.11 基于groovy脚本执行partial update</a></li>
+<li><a href="#3-12-partial-update-处理并发冲突">3.12 partial update 处理并发冲突</a></li>
+<li><a href="#3-13-文档数据路由原理解析">3.13 文档数据路由原理解析</a></li>
+<li><a href="#3-14-文档增删改内部原理">3.14 文档增删改内部原理</a></li>
+<li><a href="#3-15-写一致性原理和quorum机制">3.15 写一致性原理和quorum机制</a></li>
+<li><a href="#3-16-文档查询内部原理">3.16 文档查询内部原理</a></li>
+<li><a href="#3-17-bulk批量操作的json格式解析">3.17 bulk批量操作的json格式解析</a></li>
+<li><a href="#3-18-查询结果分析">3.18 查询结果分析</a></li>
+<li><a href="#3-19-多index-多type查询模式">3.19 多index，多type查询模式</a></li>
+<li><a href="#3-20-分页查询中的deep-paging问题">3.20 分页查询中的deep paging问题</a></li>
+<li><a href="#3-21-query-string查询及copy-to解析">3.21 query string查询及copy_to解析</a></li>
+<li><a href="#3-22-字符串排序问题">3.22 字符串排序问题</a></li>
+<li><a href="#3-23-如何计算相关度分数">3.23 如何计算相关度分数</a></li>
+<li><a href="#3-24-doc-values-解析">3.24 Doc Values 解析</a></li>
+<li><a href="#3-25-基于scroll技术滚动搜索大量数据">3.25 基于scroll技术滚动搜索大量数据</a></li>
+<li><a href="#3-26-dynamic-mapping策略">3.26 dynamic mapping策略</a></li>
+<li><a href="#3-27-重建索引">3.27 重建索引</a></li>
+<li><a href="#3-28-索引不可变的原因">3.28 索引不可变的原因</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        </span>
+      </div>
+      
+    <div class="content index width mx-auto px3 my3">
+        <section id="wrapper" class="home">
+                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                    <header>
+                    <h1 class="posttitle" itemprop="name headline">
+                            ElasticSearch原理
+                        </h1>
+                      <div class="meta">
+                        <div class="postdate">
+                                <time datetime='2019-07-24' itemprop="datePublished">2019-07-24</time>
+                            </div>
+                        <div class="article-tag">
+                            <i class="fa fa-eye"></i>
+                            <span id="busuanzi_container_page_pv">
+                                <span id="busuanzi_value_page_pv">0</span>
+                              </span>
+                            </span>
+                        </div>
+                        
+                        <div class="article-tag">
+                            <i class="fa fa-tag"></i>
+                            
+                            <a href="/tags/elasticsearch">
+                               Elasticsearch</a> 
+                             
+                        </div>
+                        
+                        
+                        
+                        <div class="article-tag-box">
+                               
+                        </div>
+
+                        
+                      </div>
+                    </header>
+                    
+
+                    <div class="content" itemprop="articleBody">
+                            
+                            
+
+<h2 id="3-elasticsearch原理">3 ElasticSearch原理</h2>
+
+<h3 id="3-1-解析es的分布式架构">3.1 解析es的分布式架构</h3>
+
+<h4 id="3-1-1-分布式架构的透明隐藏特性">3.1.1 分布式架构的透明隐藏特性</h4>
+
+<p>ElasticSearch是一个分布式系统，隐藏了复杂的处理机制</p>
+
+<p>分片机制：我们不用关心数据是按照什么机制分片的、最后放入到哪个分片中</p>
+
+<p>分片的副本：</p>
+
+<p>集群发现机制(cluster discovery)：比如当前我们启动了一个es进程，当启动了第二个es进程时，这个进程作为一个node自动就发现了集群，并且加入了进去</p>
+
+<p>shard负载均衡：比如现在有10shard，集群中有3个节点，es会进行均衡的进行分配，以保持每个节点均衡的负载请求</p>
+
+<p>请求路由</p>
+
+<h4 id="3-1-2-扩容机制">3.1.2 扩容机制</h4>
+
+<p>垂直扩容：购置新的机器，替换已有的机器</p>
+
+<p>水平扩容：直接增加机器</p>
+
+<h4 id="3-1-3-rebalance">3.1.3 rebalance</h4>
+
+<p>增加或减少节点时会自动均衡</p>
+
+<h4 id="3-1-4-master节点">3.1.4 master节点</h4>
+
+<p>主节点的主要职责是和集群操作相关的内容，如创建或删除索引，跟踪哪些节点是群集的一部分，并决定哪些分片分配给相关的节点。稳定的主节点对集群的健康是非常重要的。</p>
+
+<h4 id="3-1-5-节点对等">3.1.5 节点对等</h4>
+
+<p>每个节点都能接收请求
+每个节点接收到请求后都能把该请求路由到有相关数据的其它节点上
+接收原始请求的节点负责采集数据并返回给客户端</p>
+
+<h3 id="3-2-分片和副本机制">3.2 分片和副本机制</h3>
+
+<p>1.index包含多个shard</p>
+
+<p>2.每个shard都是一个最小工作单元，承载部分数据；每个shard都是一个lucene实例，有完整的建立索引和处理请求的能力</p>
+
+<p>3.增减节点时，shard会自动在nodes中负载均衡</p>
+
+<p>4.primary shard和replica shard，每个document肯定只存在于某一个primary shard以及其对应的replica shard中，不可能存在于多个primary shard</p>
+
+<p>5.replica shard是primary shard的副本，负责容错，以及承担读请求负载</p>
+
+<p>6.primary shard的数量在创建索引的时候就固定了，replica shard的数量可以随时修改</p>
+
+<p>7.primary shard的默认数量是5，replica默认是1，默认有10个shard，5个primary shard，5个replica shard</p>
+
+<p>8.primary shard不能和自己的replica shard放在同一个节点上（否则节点宕机，primary shard和副本都丢失，起不到容错的作用），但是可以和其他primary shard的replica shard放在同一个节点上</p>
+
+<h3 id="3-3-单节点环境下创建索引分析">3.3 单节点环境下创建索引分析</h3>
+
+<pre><code>PUT /myindex
+{
+   &quot;settings&quot; : {
+      &quot;number_of_shards&quot; : 3,
+      &quot;number_of_replicas&quot; : 1
+   }
+}
+</code></pre>
+
+<p>这个时候，只会将3个primary shard分配到仅有的一个node上去，另外3个replica shard是无法分配的（一个shard的副本replica，他们两个是不能在同一个节点的）。集群可以正常工作，但是一旦出现节点宕机，数据全部丢失，而且集群不可用，无法接收任何请求。</p>
+
+<h3 id="3-4-两个节点环境下创建索引分析">3.4 两个节点环境下创建索引分析</h3>
+
+<p>将3个primary shard分配到一个node上去，另外3个replica shard分配到另一个节点上</p>
+
+<p>primary shard 和replica shard 保持同步</p>
+
+<p>primary shard 和replica shard 都可以处理客户端的读请求</p>
+
+<h3 id="3-5-水平扩容的过程">3.5 水平扩容的过程</h3>
+
+<p>1.扩容后primary shard和replica shard会自动的负载均衡</p>
+
+<p>2.扩容后每个节点上的shard会减少，那么分配给每个shard的CPU，内存，IO资源会更多，性能提高</p>
+
+<p>3.扩容的极限，如果有6个shard，扩容的极限就是6个节点，每个节点上一个shard，如果想超出扩容的极限，比如说扩容到9个节点，那么可以增加replica shard的个数</p>
+
+<p>4.6个shard，3个节点，最多能承受几个节点所在的服务器宕机？(容错性)
+任何一台服务器宕机都会丢失部分数据</p>
+
+<p>为了提高容错性，增加shard的个数：
+9个shard，(3个primary shard，6个replicashard)，这样就能容忍最多两台服务器宕机了</p>
+
+<p>总结：扩容是为了提高系统的吞吐量，同时也要考虑容错性，也就是让尽可能多的服务器宕机还能保证数据不丢失</p>
+
+<h3 id="3-6-elasticsearch的容错机制">3.6 ElasticSearch的容错机制</h3>
+
+<p>以9个shard，3个节点为例：</p>
+
+<p>如果master node 宕机，此时不是所有的primary shard都是Active status，所以此时的集群状态是red。</p>
+
+<ul>
+<li>容错处理的第一步:是选举一台服务器作为master</li>
+
+<li><p>容错处理的第二步:新选举出的master会把挂掉的primary shard的某个replica shard 提升为primary shard,此时集群的状态为yellow，因为少了一个replica shard，并不是所有的replica shard都是active status</p></li>
+
+<li><p>容错处理的第三步：重启故障机，新master会把所有的副本都复制一份到该节点上，（同步一下宕机后发生的修改），此时集群的状态为green，因为所有的primary shard和replica shard都是Active status</p></li>
+</ul>
+
+<h3 id="3-7-文档的核心元数据">3.7 文档的核心元数据</h3>
+
+<p>1._index:</p>
+
+<p>说明了一个文档存储在哪个索引中</p>
+
+<p>同一个索引下存放的是相似的文档(文档的field多数是相同的)</p>
+
+<p>索引名必须是小写的，不能以下划线开头，不能包括逗号</p>
+
+<p>2._type:</p>
+
+<p>表示文档属于索引中的哪个类型</p>
+
+<p>一个索引下只能有一个type</p>
+
+<p>类型名可以是大写也可以是小写的，不能以下划线开头，不能包括逗号</p>
+
+<p>3._id:</p>
+
+<p>文档的唯一标识，和索引，类型组合在一起唯一标识了一个文档</p>
+
+<p>可以手动指定值，也可以由es来生成这个值</p>
+
+<h3 id="3-8-文档id生成方式">3.8 文档id生成方式</h3>
+
+<p>1.手动指定</p>
+
+<p>put /index/type/66</p>
+
+<p>通常是把其它系统的已有数据导入到es时</p>
+
+<p>2.由es生成id值</p>
+
+<p>post /index/type</p>
+
+<p>es生成的id长度为20个字符，使用的是base64编码，URL安全，使用的是GUID算法，分布式下并发生成id值时不会冲突</p>
+
+<h3 id="3-9-source元数据分析">3.9 _source元数据分析</h3>
+
+<p>其实就是我们在添加文档时request body中的内容</p>
+
+<p>指定返回的结果中含有哪些字段：</p>
+
+<p>get /index/type/1?_source=name</p>
+
+<h3 id="3-10-改变文档内容原理解析">3.10 改变文档内容原理解析</h3>
+
+<p>替换方式：</p>
+
+<pre><code>PUT /lib/user/4
+{ 
+    &quot;first_name&quot; : &quot;Jane&quot;,
+    &quot;last_name&quot; :   &quot;Lucy&quot;,
+    &quot;age&quot; :         24,
+    &quot;about&quot; :       &quot;I like to collect rock albums&quot;,
+    &quot;interests&quot;:  [ &quot;music&quot; ]
+}
+</code></pre>
+
+<p>修改方式(partial update)：</p>
+
+<pre><code>POST /lib/user/2/_update
+{
+    &quot;doc&quot;:{
+       &quot;age&quot;:26
+     }
+}
+</code></pre>
+
+<p>删除文档：标记为deleted，随着数据量的增加，es会选择合适的时间删除掉</p>
+
+<h3 id="3-11-基于groovy脚本执行partial-update">3.11 基于groovy脚本执行partial update</h3>
+
+<p>es有内置的脚本支持，可以基于groovy脚本实现复杂的操作</p>
+
+<pre><code>1.修改年龄
+
+POST /lib/user/4/_update
+{
+  &quot;script&quot;: &quot;ctx._source.age+=1&quot;
+}
+
+2.修改名字
+
+POST /lib/user/4/_update
+{
+  &quot;script&quot;: &quot;ctx._source.last_name+='hehe'&quot;
+}
+
+
+3.添加爱好
+
+POST /lib/user/4/_update
+{
+  &quot;script&quot;: {
+    &quot;source&quot;: &quot;ctx._source.interests.add(params.tag)&quot;,
+    &quot;params&quot;: {
+      &quot;tag&quot;:&quot;picture&quot;
+    }
+  }
+}
+4.删除爱好
+
+POST /lib/user/4/_update
+{
+  &quot;script&quot;: {
+    &quot;source&quot;: &quot;ctx._source.interests.remove(ctx._source.interests.indexOf(params.tag))&quot;,
+    &quot;params&quot;: {
+      &quot;tag&quot;:&quot;picture&quot;
+    }
+  }
+}
+
+5.删除文档
+
+POST /lib/user/4/_update
+{
+  &quot;script&quot;: {
+    &quot;source&quot;: &quot;ctx.op=ctx._source.age==params.count?'delete':'none'&quot;,
+    &quot;params&quot;: {
+        &quot;count&quot;:29
+    }
+  }
+}
+
+6.upsert
+
+POST /lib/user/4/_update
+{
+  &quot;script&quot;: &quot;ctx._source.age += 1&quot;,
+  
+  &quot;upsert&quot;: {
+     &quot;first_name&quot; : &quot;Jane&quot;,
+     &quot;last_name&quot; :   &quot;Lucy&quot;,
+     &quot;age&quot; :  20,
+     &quot;about&quot; :       &quot;I like to collect rock albums&quot;,
+     &quot;interests&quot;:  [ &quot;music&quot; ]
+  }
+}
+</code></pre>
+
+<h3 id="3-12-partial-update-处理并发冲突">3.12 partial update 处理并发冲突</h3>
+
+<p>使用的是乐观锁:_version</p>
+
+<p>retry_on_conflict:</p>
+
+<pre><code>POST /lib/user/4/_update?retry_on_conflict=3
+</code></pre>
+
+<p>重新获取文档数据和版本信息进行更新，不断的操作，最多操作的次数就是retry_on_conflict的值</p>
+
+<h3 id="3-13-文档数据路由原理解析">3.13 文档数据路由原理解析</h3>
+
+<p>1.文档路由到分片上：</p>
+
+<p>一个索引由多个分片构成，当添加(删除，修改)一个文档时，es就需要决定这个文档存储在哪个分片上，这个过程就称为数据路由(routing)</p>
+
+<p>2.路由算法：</p>
+
+<pre><code> shard=hash(routing) % number_of_pirmary_shards
+</code></pre>
+
+<p>示例：一个索引，3个primary shard</p>
+
+<p>(1)每次增删改查时，都有一个routing值，默认是文档的_id的值</p>
+
+<p>(2)对这个routing值使用哈希函数进行计算</p>
+
+<p>(3)计算出的值再和主分片个数取余数</p>
+
+<p>余数肯定在0&mdash;（number_of_pirmary_shards-1）之间，文档就在对应的shard上</p>
+
+<p>routing值默认是文档的_id的值，也可以手动指定一个值，手动指定对于负载均衡以及提高批量读取的性能都有帮助</p>
+
+<p>3.primary shard个数一旦确定就不能修改了</p>
+
+<h3 id="3-14-文档增删改内部原理">3.14 文档增删改内部原理</h3>
+
+<p>1:发送增删改请求时，可以选择任意一个节点，该节点就成了协调节点(coordinating node)</p>
+
+<p>2.协调节点使用路由算法进行路由，然后将请求转到primary shard所在节点，该节点处理请求，并把数据同步到它的replica shard</p>
+
+<p>3.协调节点对客户端做出响应</p>
+
+<h3 id="3-15-写一致性原理和quorum机制">3.15 写一致性原理和quorum机制</h3>
+
+<p>1.任何一个增删改操作都可以跟上一个参数
+consistency</p>
+
+<p>可以给该参数指定的值：</p>
+
+<p>one: (primary shard)只要有一个primary shard是活跃的就可以执行</p>
+
+<p>all: (all shard)所有的primary shard和replica shard都是活跃的才能执行</p>
+
+<p>quorum: (default) 默认值，大部分shard是活跃的才能执行 （例如共有6个shard，至少有3个shard是活跃的才能执行写操作）</p>
+
+<p>2.quorum机制：多数shard都是可用的，</p>
+
+<p>int((primary+number_of_replica)/2)+1</p>
+
+<p>例如：3个primary shard，1个replica</p>
+
+<p>int((3+1)/2)+1=3</p>
+
+<p>至少3个shard是活跃的</p>
+
+<p>注意：可能出现shard不能分配齐全的情况</p>
+
+<p>比如：1个primary shard,1个replica
+int((1+1)/2)+1=2
+但是如果只有一个节点，因为primary shard和replica shard不能在同一个节点上，所以仍然不能执行写操作</p>
+
+<p>再举例：1个primary shard,3个replica,2个节点</p>
+
+<p>int((1+3)/2)+1=3</p>
+
+<p>最后:当活跃的shard的个数没有达到要求时，
+es默认会等待一分钟，如果在等待的期间活跃的shard的个数没有增加，则显示timeout</p>
+
+<p>put /index/type/id?timeout=60s</p>
+
+<h3 id="3-16-文档查询内部原理">3.16 文档查询内部原理</h3>
+
+<p>第一步：查询请求发给任意一个节点，该节点就成了coordinating node，该节点使用路由算法算出文档所在的primary shard</p>
+
+<p>第二步：协调节点把请求转发给primary shard也可以转发给replica shard(使用轮询调度算法(Round-Robin Scheduling，把请求平均分配至primary shard 和replica shard)</p>
+
+<p>第三步：处理请求的节点把结果返回给协调节点，协调节点再返回给应用程序</p>
+
+<p>特殊情况：请求的文档还在建立索引的过程中，primary shard上存在，但replica shar上不存在，但是请求被转发到了replica shard上，这时就会提示找不到文档</p>
+
+<h3 id="3-17-bulk批量操作的json格式解析">3.17 bulk批量操作的json格式解析</h3>
+
+<pre><code>bulk的格式：
+
+{action:{metadata}}\n
+{requstbody}\n
+##为什么不使用如下格式：
+[{
+&quot;action&quot;: {
+},
+&quot;data&quot;: {
+}
+}]
+</code></pre>
+
+<p>这种方式可读性好，但是内部处理就麻烦了：</p>
+
+<p>1.将json数组解析为JSONArray对象，在内存中就需要有一份json文本的拷贝，另外还有一个JSONArray对象。</p>
+
+<p>2.解析json数组里的每个json，对每个请求中的document进行路由</p>
+
+<p>3.为路由到同一个shard上的多个请求，创建一个请求数组</p>
+
+<p>4.将这个请求数组序列化</p>
+
+<p>5.将序列化后的请求数组发送到对应的节点上去</p>
+
+<p>耗费更多内存，增加java虚拟机开销：</p>
+
+<p>1.不用将其转换为json对象，直接按照换行符切割json，内存中不需要json文本的拷贝</p>
+
+<p>2.对每两个一组的json，读取meta，进行document路由</p>
+
+<p>3.直接将对应的json发送到node上去</p>
+
+<h3 id="3-18-查询结果分析">3.18 查询结果分析</h3>
+
+<pre><code>{
+  &quot;took&quot;: 419,
+  &quot;timed_out&quot;: false,
+  &quot;_shards&quot;: {
+    &quot;total&quot;: 3,
+    &quot;successful&quot;: 3,
+    &quot;skipped&quot;: 0,
+    &quot;failed&quot;: 0
+  },
+  &quot;hits&quot;: {
+    &quot;total&quot;: 3,
+    &quot;max_score&quot;: 0.6931472,
+    &quot;hits&quot;: [
+      {
+        &quot;_index&quot;: &quot;lib3&quot;,
+        &quot;_type&quot;: &quot;user&quot;,
+        &quot;_id&quot;: &quot;3&quot;,
+        &quot;_score&quot;: 0.6931472,
+        &quot;_source&quot;: {
+          &quot;address&quot;: &quot;bei jing hai dian qu qing he zhen&quot;,
+          &quot;name&quot;: &quot;lisi&quot;
+        }
+      },
+      {
+        &quot;_index&quot;: &quot;lib3&quot;,
+        &quot;_type&quot;: &quot;user&quot;,
+        &quot;_id&quot;: &quot;2&quot;,
+        &quot;_score&quot;: 0.47000363,
+        &quot;_source&quot;: {
+          &quot;address&quot;: &quot;bei jing hai dian qu qing he zhen&quot;,
+          &quot;name&quot;: &quot;zhaoming&quot;
+        }
+      }
+      
+## took：查询耗费的时间，单位是毫秒
+
+## _shards：共请求了多少个shard
+
+## total：查询出的文档总个数
+
+## max_score： 本次查询中，相关度分数的最大值，文档和此次查询的匹配度越高，_score的值越大，排位越靠前
+
+## hits：默认查询前10个文档
+
+## timed_out：
+
+GET /lib3/user/_search?timeout=10ms
+{
+    &quot;_source&quot;: [&quot;address&quot;,&quot;name&quot;],
+    &quot;query&quot;: {
+        &quot;match&quot;: {
+            &quot;interests&quot;: &quot;changge&quot;
+        }
+    }
+}
+
+</code></pre>
+
+<h3 id="3-19-多index-多type查询模式">3.19 多index，多type查询模式</h3>
+
+<pre><code>GET _search
+
+GET /lib/_search
+
+GET /lib,lib3/_search
+
+GET /*3,*4/_search
+
+GET /lib/user/_search
+
+GET /lib,lib4/user,items/_search
+
+GET /_all/_search
+
+GET /_all/user,items/_search
+</code></pre>
+
+<h3 id="3-20-分页查询中的deep-paging问题">3.20 分页查询中的deep paging问题</h3>
+
+<pre><code>GET /lib3/user/_search
+{
+    &quot;from&quot;:0,
+    &quot;size&quot;:2,
+    &quot;query&quot;:{
+        &quot;terms&quot;:{
+            &quot;interests&quot;: [&quot;hejiu&quot;,&quot;changge&quot;]
+        }
+    }
+}
+
+GET /_search?from=0&amp;size=3
+</code></pre>
+
+<p>deep paging:查询的很深，比如一个索引有三个primary shard，分别存储了6000条数据，我们要得到第100页的数据(每页10条)，类似这种情况就叫deep paging</p>
+
+<p>如何得到第100页的10条数据？</p>
+
+<p>在每个shard中搜索990到999这10条数据，然后用这30条数据排序，排序之后取10条数据就是要搜索的数据，这种做法是错的，因为3个shard中的数据的_score分数不一样，可能这某一个shard中第一条数据的_score分数比另一个shard中第1000条都要高，所以在每个shard中搜索990到999这10条数据然后排序的做法是不正确的。</p>
+
+<p>正确的做法是每个shard把0到999条数据全部搜索出来（按排序顺序），然后全部返回给coordinate node，由coordinate node按_score分数排序后，取出第100页的10条数据，然后返回给客户端。</p>
+
+<p>deep paging性能问题</p>
+
+<p>1.耗费网络带宽，因为搜索过深的话，各shard要把数据传送给coordinate node，这个过程是有大量数据传递的，消耗网络，</p>
+
+<p>2.消耗内存，各shard要把数据传送给coordinate node，这个传递回来的数据，是被coordinate node保存在内存中的，这样会大量消耗内存。</p>
+
+<p>3.消耗cpu coordinate node要把传回来的数据进行排序，这个排序过程很消耗cpu.</p>
+
+<p>鉴于deep paging的性能问题，所以应尽量减少使用。</p>
+
+<h3 id="3-21-query-string查询及copy-to解析">3.21 query string查询及copy_to解析</h3>
+
+<pre><code>GET /lib3/user/_search?q=interests:changge
+
+GET /lib3/user/_search?q=+interests:changge
+
+GET /lib3/user/_search?q=-interests:changge
+</code></pre>
+
+<p>copy_to字段是把其它字段中的值，以空格为分隔符组成一个大字符串，然后被分析和索引，但是不存储，也就是说它能被查询，但不能被取回显示。</p>
+
+<p>注意:copy_to指向的字段字段类型要为：text</p>
+
+<p>当没有指定field时，就会从copy_to字段中查询
+GET /lib3/user/_search?q=changge</p>
+
+<h3 id="3-22-字符串排序问题">3.22 字符串排序问题</h3>
+
+<p>对一个字符串类型的字段进行排序通常不准确，因为已经被分词成多个词条了</p>
+
+<p>解决方式：对字段索引两次，一次索引分词（用于搜索），一次索引不分词(用于排序)</p>
+
+<pre><code>GET /lib3/_search
+
+GET /lib3/user/_search
+{
+  &quot;query&quot;: {
+    &quot;match_all&quot;: {}
+  },
+  &quot;sort&quot;: [
+    {
+      &quot;interests&quot;: {
+        &quot;order&quot;: &quot;desc&quot;
+      }
+    }
+  ]
+}
+
+GET /lib3/user/_search
+{
+  &quot;query&quot;: {
+    &quot;match_all&quot;: {}
+  },
+  &quot;sort&quot;: [
+    {
+      &quot;interests.raw&quot;: {
+        &quot;order&quot;: &quot;asc&quot;
+      }
+    }
+  ]
+}
+
+DELETE lib3
+
+PUT /lib3
+{
+    &quot;settings&quot;:{
+        &quot;number_of_shards&quot; : 3,
+        &quot;number_of_replicas&quot; : 0
+      },
+     &quot;mappings&quot;:{
+      &quot;user&quot;:{
+        &quot;properties&quot;:{
+            &quot;name&quot;: {&quot;type&quot;:&quot;text&quot;},
+            &quot;address&quot;: {&quot;type&quot;:&quot;text&quot;},
+            &quot;age&quot;: {&quot;type&quot;:&quot;integer&quot;},
+            &quot;birthday&quot;: {&quot;type&quot;:&quot;date&quot;},
+            &quot;interests&quot;: {
+                &quot;type&quot;:&quot;text&quot;,
+                &quot;fields&quot;: {
+                  &quot;raw&quot;:{
+                     &quot;type&quot;: &quot;keyword&quot;
+                   }
+                },
+                &quot;fielddata&quot;: true
+             }
+          }
+        }
+     }
+}
+</code></pre>
+
+<h3 id="3-23-如何计算相关度分数">3.23 如何计算相关度分数</h3>
+
+<p>使用的是TF/IDF算法(Term Frequency&amp;Inverse Document Frequency)</p>
+
+<p>1.Term Frequency:我们查询的文本中的词条在document本中出现了多少次，出现次数越多，相关度越高</p>
+
+<p>搜索内容： hello world</p>
+
+<p>Hello，I love china.</p>
+
+<p>Hello world,how are you!</p>
+
+<p>2.Inverse Document Frequency：我们查询的文本中的词条在索引的所有文档中出现了多少次，出现的次数越多，相关度越低</p>
+
+<p>搜索内容：hello world</p>
+
+<p>hello，what are you doing?</p>
+
+<p>I like the world.</p>
+
+<p>hello 在索引的所有文档中出现了500次，world出现了100次</p>
+
+<p>3.Field-length(字段长度归约) norm:field越长，相关度越低</p>
+
+<p>搜索内容：hello world</p>
+
+<p>{&ldquo;title&rdquo;:&ldquo;hello,what&rsquo;s your name?&rdquo;,&ldquo;content&rdquo;:{&ldquo;owieurowieuolsdjflk&rdquo;}}</p>
+
+<p>{&ldquo;title&rdquo;:&ldquo;hi,good morning&rdquo;,&ldquo;content&rdquo;:{&ldquo;lkjkljkj&hellip;&hellip;.world&rdquo;}}</p>
+
+<pre><code>##查看分数是如何计算的：
+
+GET /lib3/user/_search?explain=true
+{
+    &quot;query&quot;:{
+        &quot;match&quot;:{
+            &quot;interests&quot;: &quot;duanlian,changge&quot;
+        }
+    }
+}
+##
+查看一个文档能否匹配上某个查询：
+
+GET /lib3/user/2/_explain
+{
+    &quot;query&quot;:{
+        &quot;match&quot;:{
+            &quot;interests&quot;: &quot;duanlian,changge&quot;
+        }
+    }
+}
+
+</code></pre>
+
+<h3 id="3-24-doc-values-解析">3.24 Doc Values 解析</h3>
+
+<p>DocValues其实是Lucene在构建倒排索引时，会额外建立一个有序的正排索引(基于document =&gt; field value的映射列表)</p>
+
+<pre><code>{&quot;birthday&quot;:&quot;1985-11-11&quot;,age:23}
+
+{&quot;birthday&quot;:&quot;1989-11-11&quot;,age:29}
+###
+document     age       birthday
+
+doc1         23         1985-11-11
+
+doc2         29         1989-11-11
+</code></pre>
+
+<p>存储在磁盘上，节省内存</p>
+
+<p>对排序，分组和一些聚合操作能够大大提升性能</p>
+
+<p><em>==注意：默认对不分词的字段是开启的，对分词字段无效（需要把fielddata设置为true）==</em></p>
+
+<pre><code>PUT /lib3
+{
+    &quot;settings&quot;:{
+    &quot;number_of_shards&quot; : 3,
+    &quot;number_of_replicas&quot; : 0
+    },
+     &quot;mappings&quot;:{
+      &quot;user&quot;:{
+        &quot;properties&quot;:{
+            &quot;name&quot;: {&quot;type&quot;:&quot;text&quot;},
+            &quot;address&quot;: {&quot;type&quot;:&quot;text&quot;},
+            &quot;age&quot;: {
+              &quot;type&quot;:&quot;integer&quot;,
+              &quot;doc_values&quot;:false
+            },
+            &quot;interests&quot;: {&quot;type&quot;:&quot;text&quot;},
+            &quot;birthday&quot;: {&quot;type&quot;:&quot;date&quot;}
+        }
+      }
+     }
+}
+</code></pre>
+
+<h3 id="3-25-基于scroll技术滚动搜索大量数据">3.25 基于scroll技术滚动搜索大量数据</h3>
+
+<p>如果一次性要查出来比如10万条数据，那么性能会很差，此时一般会采取用scoll滚动查询，一批一批的查，直到所有数据都查询完为止。</p>
+
+<p>1.scoll搜索会在第一次搜索的时候，保存一个当时的视图快照，之后只会基于该旧的视图快照提供数据搜索，如果这个期间数据变更，是不会让用户看到的</p>
+
+<p>2.采用基于_doc(不使用_score)进行排序的方式，性能较高</p>
+
+<p>3.每次发送scroll请求，我们还需要指定一个scoll参数，指定一个时间窗口，每次搜索请求只要在这个时间窗口内能完成就可以了</p>
+
+<pre><code>GET /lib3/user/_search?scroll=1m
+{
+  &quot;query&quot;: {
+    &quot;match_all&quot;: {}
+  },
+  &quot;sort&quot;:[&quot;_doc&quot;],
+  &quot;size&quot;:3
+}
+
+GET /_search/scroll
+{
+   &quot;scroll&quot;: &quot;1m&quot;,
+   &quot;scroll_id&quot;: &quot;DnF1ZXJ5VGhlbkZldGNoAwAAAAAAAAAdFkEwRENOVTdnUUJPWVZUd1p2WE5hV2cAAAAAAAAAHhZBMERDTlU3Z1FCT1lWVHdadlhOYVdnAAAAAAAAAB8WQTBEQ05VN2dRQk9ZVlR3WnZYTmFXZw==&quot;
+}
+</code></pre>
+
+<h3 id="3-26-dynamic-mapping策略">3.26 dynamic mapping策略</h3>
+
+<p><strong>dynamic</strong>:</p>
+
+<p>1.true:遇到陌生字段就 dynamic mapping</p>
+
+<p>2.false:遇到陌生字段就忽略</p>
+
+<p>3.strict:约到陌生字段就报错</p>
+
+<pre><code>PUT /lib8
+{
+    &quot;settings&quot;:{
+    &quot;number_of_shards&quot; : 3,
+    &quot;number_of_replicas&quot; : 0
+    },
+     &quot;mappings&quot;:{
+      &quot;user&quot;:{
+        &quot;dynamic&quot;:strict,
+        &quot;properties&quot;:{
+            &quot;name&quot;: {&quot;type&quot;:&quot;text&quot;},
+            &quot;address&quot;:{
+                &quot;type&quot;:&quot;object&quot;,
+                &quot;dynamic&quot;:true
+            },
+        }
+      }
+     }
+}
+
+#会报错
+
+PUT  /lib8/user/1
+{
+  &quot;name&quot;:&quot;lisi&quot;,
+  &quot;age&quot;:20,
+  &quot;address&quot;:{
+    &quot;province&quot;:&quot;beijing&quot;,
+    &quot;city&quot;:&quot;beijing&quot;
+  }
+}
+</code></pre>
+
+<p><strong>date_detection</strong>:默认会按照一定格式识别date，比如yyyy-MM-dd</p>
+
+<p>可以手动关闭某个type的date_detection</p>
+
+<pre><code>PUT /lib8
+{
+    &quot;settings&quot;:{
+    &quot;number_of_shards&quot; : 3,
+    &quot;number_of_replicas&quot; : 0
+    },
+     &quot;mappings&quot;:{
+      &quot;user&quot;:{
+        &quot;date_detection&quot;: false,
+        }
+    }
+}
+</code></pre>
+
+<p><strong>定制 dynamic mapping template(type)</strong></p>
+
+<pre><code>PUT /my_index
+{ 
+  &quot;mappings&quot;: { 
+    &quot;my_type&quot;: { 
+      &quot;dynamic_templates&quot;: [ 
+        { 
+          &quot;en&quot;: { 
+            &quot;match&quot;: &quot;*_en&quot;, 
+            &quot;match_mapping_type&quot;: &quot;string&quot;, 
+            &quot;mapping&quot;: { 
+              &quot;type&quot;: &quot;text&quot;, 
+              &quot;analyzer&quot;: &quot;english&quot; 
+            } 
+          } 
+        } 
+      ] 
+     } 
+  } 
+}
+
+#使用了模板
+
+PUT /my_index/my_type/3
+{
+  &quot;title_en&quot;: &quot;this is my dog&quot;
+  
+}
+#没有使用模板
+
+PUT /my_index/my_type/5
+{
+  &quot;title&quot;: &quot;this is my cat&quot;
+}
+
+GET my_index/my_type/_search
+{
+  &quot;query&quot;: {
+    &quot;match&quot;: {
+      &quot;title&quot;: &quot;is&quot;
+    }
+  }
+}
+</code></pre>
+
+<h3 id="3-27-重建索引">3.27 重建索引</h3>
+
+<p>一个field的设置是不能修改的，如果要修改一个field，那么应该重新按照新的mapping，建立一个index，然后将数据批量查询出来，重新用bulk api写入到index中。</p>
+
+<p>批量查询的时候，建议采用scroll api，并且采用多线程并发的方式来reindex数据，每次scroll就查询指定日期的一段数据，交给一个线程即可。</p>
+
+<pre><code>PUT /index1/type1/4
+{
+   &quot;content&quot;:&quot;1990-12-12&quot;
+}
+
+GET /index1/type1/_search
+
+GET /index1/type1/_mapping
+
+
+
+#报错
+PUT /index1/type1/4
+{
+   &quot;content&quot;:&quot;I am very happy.&quot;
+}
+
+
+#修改content的类型为string类型,报错，不允许修改
+
+PUT /index1/_mapping/type1
+{
+  &quot;properties&quot;: {
+    &quot;content&quot;:{
+      &quot;type&quot;: &quot;text&quot;
+    }
+  }
+}
+
+#创建一个新的索引，把index1索引中的数据查询出来导入到新的索引中
+#但是应用程序使用的是之前的索引，为了不用重启应用程序，给index1这个索引起个#别名
+
+PUT /index1/_alias/index2
+
+#创建新的索引，把content的类型改为字符串
+
+PUT /newindex
+{
+  &quot;mappings&quot;: {
+    &quot;type1&quot;:{
+      &quot;properties&quot;: {
+        &quot;content&quot;:{
+          &quot;type&quot;: &quot;text&quot;
+        }
+      }
+    }
+  }
+}
+
+#使用scroll批量查询
+
+GET /index1/type1/_search?scroll=1m
+{
+  &quot;query&quot;: {
+    &quot;match_all&quot;: {}
+  },
+  &quot;sort&quot;: [&quot;_doc&quot;],
+  &quot;size&quot;: 2
+}
+
+#使用bulk批量写入新的索引
+POST /_bulk
+{&quot;index&quot;:{&quot;_index&quot;:&quot;newindex&quot;,&quot;_type&quot;:&quot;type1&quot;,&quot;_id&quot;:1}}
+{&quot;content&quot;:&quot;1982-12-12&quot;}
+
+#将别名index2和新的索引关联，应用程序不用重启
+
+POST /_aliases
+{
+  &quot;actions&quot;: [
+    {&quot;remove&quot;: {&quot;index&quot;:&quot;index1&quot;,&quot;alias&quot;:&quot;index2&quot;}},
+    {&quot;add&quot;: {&quot;index&quot;: &quot;newindex&quot;,&quot;alias&quot;: &quot;index2&quot;}}
+]
+}
+
+GET index2/type1/_search
+
+</code></pre>
+
+<h3 id="3-28-索引不可变的原因">3.28 索引不可变的原因</h3>
+
+<p>倒排索引包括：</p>
+
+<p>文档的列表，文档的数量，词条在每个文档中出现的次数，出现的位置，每个文档的长度，所有文档的平均长度</p>
+
+<p>索引不变的原因：</p>
+
+<ul>
+<li><p>不需要锁，提升了并发性能</p></li>
+
+<li><p>可以一直保存在缓存中（filter）</p></li>
+
+<li><p>节省cpu和io开销</p></li>
+</ul>
+
+                            <h2> 本文链接：</h2>
+                            <a href='https://ziyan1215.github.io/archive/1563940854/' target="_blank">https://ziyan1215.github.io/archive/1563940854/</a>
+                    </div>
+                  </article>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div class="blog-post-comments"></div>
+<script>
+    new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
+        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        placeholder: '说点什么呗?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });
+</script>
+
+                  
+                  
+        </section>
+
+    </div>
+      
+  <footer id="footer">
+    <div class="footer-left">
+        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+      
+   </div>
+    <div class="footer-right">
+      <nav>
+        <ul>
+          <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+    
+<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://ziyan1215.github.io/lib/typed.js"></script>
+<script src="https://ziyan1215.github.io/js/main.js"></script>
+
+
+
+
+
+<script async src=""></script>
+<script>
+(function(){
+  if(location.host!=='xuziyan.ga')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()
+</script>
+
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+
+
+  
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }
+  </script>
+</body>
+
+</html>
+

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta name="generator" content="Hugo 0.55.6" />
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<meta name="wap-font-scale" content="no">
+		
+		
+		
+		<meta name="author" content="XuziYan">
+		<meta name='description' itemprop="description" content="25、查询各科成绩前三名的记录（不考虑成绩并列情况）： select t1.s_id,t1.c_id,t1.s_score from score t1 where exists ( select count(1) from score where t1.c_id = c_id and t1.s_score &amp;lt; s_score having count(1) &amp;lt; 3 ) order by">
+		 
+		<meta name="keywords" content="Sql经典题目的mysql实现②" >
+		
+		
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="Sql经典题目的mysql实现②">
+		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:description" content="25、查询各科成绩前三名的记录（不考虑成绩并列情况）： select t1.s_id,t1.c_id,t1.s_score from score t1 where exists ( select count(1) from score where t1.c_id = c_id and t1.s_score &amp;lt; s_score having count(1) &amp;lt; 3 ) order by">
+		<meta property="og:site_name" content="XuziYan">
+
+		<title>Sql经典题目的mysql实现② | Xuzi</title>
+		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+
+		
+
+		
+		
+		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script>
+			document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);
+			</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https:\/\/ziyan1215.github.io\/archive\/1548494210\/",
+				"appid": "1621056720407734", 
+				"title": "Sql经典题目的mysql实现② | Xuzi JAVA!!!", 
+				"images": [],
+				"pubDate": "2019-01-26T17:16:50"
+			} 
+			</script>
+	</head>
+
+<body>
+    <div id="header-post">
+        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+        <span id="menu">
+          <span id="nav">
+            <ul>
+              <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+            </ul>
+          </span>
+          <br/>
+          <span id="actions">
+            <ul>
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1548473871/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1563203474/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                
+              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+            </ul>
+            <span id="i-prev" class="info" style="display:none;">Previous post</span>
+            <span id="i-next" class="info" style="display:none;">Next post</span>
+            <span id="i-top" class="info" style="display:none;">Back to top</span>
+            <span id="i-share" class="info" style="display:none;">Share post</span>
+          </span>
+          <br/>
+          <div id="share" style="display: none">
+              <ul>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548494210%2f&text=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a1"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548494210%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548494210%2f&text=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a1"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548494210%2f&title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a1"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548494210%2f&is_video=false&description=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a1"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a1&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1548494210%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548494210%2f&title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a1"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548494210%2f&title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a1"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548494210%2f&title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a1"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548494210%2f&title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a1"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+ </ul>
+      
+          </div>
+          <div id="toc">
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#25-查询各科成绩前三名的记录-不考虑成绩并列情况">25、查询各科成绩前三名的记录（不考虑成绩并列情况）：</a></li>
+<li><a href="#26-查询每门课程被选修的学生数">26、查询每门课程被选修的学生数：</a></li>
+<li><a href="#28-查询男生-女生人数">28、查询男生、女生人数：</a></li>
+<li><a href="#29-查询姓-李-的学生名单">29、查询姓“李”的学生名单：</a></li>
+<li><a href="#30-查询同名同姓的学生名单-并统计同名人数">30、查询同名同姓的学生名单，并统计同名人数：</a></li>
+<li><a href="#31-1981年出生的学生名单">31、1981年出生的学生名单</a></li>
+<li><a href="#32-查询平均成绩大于85的所有学生的学号-姓名和平均成绩">32、查询平均成绩大于85的所有学生的学号、姓名和平均成绩：</a></li>
+<li><a href="#33-查询每门课程的平均成绩">33、查询每门课程的平均成绩</a></li>
+<li><a href="#34-查询课程名称为-语文-且分数低于60的学生名字和分数">34、查询课程名称为“语文”，且分数低于60的学生名字和分数：</a></li>
+<li><a href="#35-查询所有学生的选课情况">35、查询所有学生的选课情况：</a></li>
+<li><a href="#36-查询任何一门课程成绩在70分以上的姓名-课程名称和分数">36、查询任何一门课程成绩在70分以上的姓名、课程名称和分数：</a></li>
+<li><a href="#37-查询课程和不及格人数-并按课程号从大到小的排列">37、查询课程和不及格人数，并按课程号从大到小的排列：</a></li>
+<li><a href="#38-查询课程编号为-003-且课程成绩在80分以上的学生的学号和姓名">38、查询课程编号为“003”且课程成绩在80分以上的学生的学号和姓名</a></li>
+<li><a href="#40-查询选修-叶平-老师所授课程的学生中-成绩最高的学生姓名及其成绩">40 查询选修“叶平”老师所授课程的学生中，成绩最高的学生姓名及其成绩</a></li>
+<li><a href="#41-查询各个课程及相应的选修人数">41、查询各个课程及相应的选修人数</a></li>
+<li><a href="#42-查询不同课程成绩相同的学生和学号-课程号-学生成绩">42、查询不同课程成绩相同的学生和学号、课程号、学生成绩</a></li>
+<li><a href="#43-查询每门课程成绩最好的前两名">43、查询每门课程成绩最好的前两名</a></li>
+<li><a href="#44-统计每门课程的学生选修人数">44、统计每门课程的学生选修人数</a></li>
+<li><a href="#45-检索至少选修两门课程的学生学号">45、检索至少选修两门课程的学生学号</a></li>
+<li><a href="#46-查询全部学生选修的课程和课程号和课程名">46、查询全部学生选修的课程和课程号和课程名：</a></li>
+<li><a href="#47-查询没学过-叶平-老师讲授的任一门课程的学生姓名">47、查询没学过”叶平”老师讲授的任一门课程的学生姓名</a></li>
+<li><a href="#48-查询两门以上不及格课程的同学的学号以及其平均成绩">48、查询两门以上不及格课程的同学的学号以及其平均成绩</a></li>
+<li><a href="#49-检索-01-课程分数小于60-按分数降序排列的同学学号">49、检索“01”课程分数小于60，按分数降序排列的同学学号</a></li>
+<li><a href="#50-删除-02-同学的-01-课程的成绩">50、删除“02”同学的“01”课程的成绩：</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        </span>
+      </div>
+      
+    <div class="content index width mx-auto px3 my3">
+        <section id="wrapper" class="home">
+                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                    <header>
+                    <h1 class="posttitle" itemprop="name headline">
+                            Sql经典题目的mysql实现②
+                        </h1>
+                      <div class="meta">
+                        <div class="postdate">
+                                <time datetime='2019-01-26' itemprop="datePublished">2019-01-26</time>
+                            </div>
+                        <div class="article-tag">
+                            <i class="fa fa-eye"></i>
+                            <span id="busuanzi_container_page_pv">
+                                <span id="busuanzi_value_page_pv">0</span>
+                              </span>
+                            </span>
+                        </div>
+                        
+                        <div class="article-tag">
+                            <i class="fa fa-tag"></i>
+                            
+                            <a href="/tags/sql">
+                               Sql</a> 
+                             
+                        </div>
+                        
+                        
+                        
+                        <div class="article-tag-box">
+                               
+                        </div>
+
+                        
+                      </div>
+                    </header>
+                    
+
+                    <div class="content" itemprop="articleBody">
+                            
+                            
+
+<h2 id="25-查询各科成绩前三名的记录-不考虑成绩并列情况">25、查询各科成绩前三名的记录（不考虑成绩并列情况）：</h2>
+
+<pre><code class="language-sql">select t1.s_id,t1.c_id,t1.s_score
+from score t1
+where exists
+(
+select count(1) from score
+where t1.c_id = c_id
+and t1.s_score &lt; s_score
+having count(1) &lt; 3
+)
+order by t1.c_id,s_score desc;
+</code></pre>
+
+<h2 id="26-查询每门课程被选修的学生数">26、查询每门课程被选修的学生数：</h2>
+
+<pre><code class="language-sql">-- 思路： 成绩表有修的应该就有选
+select c_id,count(s_id) from score group by c_id;
+-- 27、查询出只选修一门课程的全部学生的学号和姓名：
+select s.s_id,s_name ,count(s_score) from score s,student where s.s_id=student.s_id group by s_id having count(s_score) =1;
+</code></pre>
+
+<h2 id="28-查询男生-女生人数">28、查询男生、女生人数：</h2>
+
+<pre><code class="language-sql">select
+sum(case when s.s_sex='男' then 1 else 0 end) as 男生人数,
+sum(case when s.s_sex='女' then 1 else 0 end) as 女生人数
+from student s;
+
+
+select (case when s_sex='男' then '男' else '女' end) 性别,count(1) 人数 from student group by s_sex;
+</code></pre>
+
+<h2 id="29-查询姓-李-的学生名单">29、查询姓“李”的学生名单：</h2>
+
+<pre><code class="language-sql">SELECT * FROM student s
+WHERE s.s_name LIKE '李%';
+</code></pre>
+
+<h2 id="30-查询同名同姓的学生名单-并统计同名人数">30、查询同名同姓的学生名单，并统计同名人数：</h2>
+
+<pre><code class="language-sql">select s_name,count(1) 人数 from student group by s_name having 人数 &gt;1;
+</code></pre>
+
+<h2 id="31-1981年出生的学生名单">31、1981年出生的学生名单</h2>
+
+<p><code>（注：student表中sage列的类型是datetime）</code></p>
+
+<pre><code class="language-sql">select s_name,DATE_FORMAT(s_birth ,'%Y')as age from student_copy where DATE_FORMAT(s_birth ,'%Y')=1981;
+</code></pre>
+
+<h2 id="32-查询平均成绩大于85的所有学生的学号-姓名和平均成绩">32、查询平均成绩大于85的所有学生的学号、姓名和平均成绩：</h2>
+
+<pre><code class="language-sql">select st.s_id,st.s_name,avg(s_score)as pjcj from score sc ,student st
+where sc.s_id=st.s_id
+group by sc.s_id
+having pjcj&gt;85 ;
+</code></pre>
+
+<h2 id="33-查询每门课程的平均成绩">33、查询每门课程的平均成绩</h2>
+
+<p><code>结果按平均成绩升序排序，平均成绩相同时，按课程号降序排列</code></p>
+
+<pre><code class="language-sql">select c_id, avg(s_score)as pjcj from score s
+group by c_id
+order by pjcj ,c_id desc;
+</code></pre>
+
+<h2 id="34-查询课程名称为-语文-且分数低于60的学生名字和分数">34、查询课程名称为“语文”，且分数低于60的学生名字和分数：</h2>
+
+<pre><code class="language-sql">select st.s_name,sc.s_score
+from course c,score sc ,student st
+where c.c_name='语文'
+and sc.s_score&lt;60
+and c.c_id=sc.c_id
+and sc.s_id=st.s_id;
+</code></pre>
+
+<h2 id="35-查询所有学生的选课情况">35、查询所有学生的选课情况：</h2>
+
+<pre><code class="language-sql">select st.s_name,c.c_name from course c,score sc ,student st
+where st.s_id=sc.s_id
+and sc.c_id=c.c_id
+and sc.s_score is not NULL
+order by s_name;
+</code></pre>
+
+<h2 id="36-查询任何一门课程成绩在70分以上的姓名-课程名称和分数">36、查询任何一门课程成绩在70分以上的姓名、课程名称和分数：</h2>
+
+<pre><code class="language-sql">select st.s_id,s_name,c_name , sc.s_score
+from course c,score sc,student st
+where st.s_id=sc.s_id
+and sc.c_id=c.c_id
+and sc.s_score between 70 and 100
+order by s_id;
+</code></pre>
+
+<h2 id="37-查询课程和不及格人数-并按课程号从大到小的排列">37、查询课程和不及格人数，并按课程号从大到小的排列：</h2>
+
+<pre><code class="language-sql">select c_id ,sum(case when s_score&lt;60 then 1 else 0 end) as 不及格人数 from score group by c_id;
+</code></pre>
+
+<h2 id="38-查询课程编号为-003-且课程成绩在80分以上的学生的学号和姓名">38、查询课程编号为“003”且课程成绩在80分以上的学生的学号和姓名</h2>
+
+<pre><code class="language-sql">select sc.s_id,st.s_name,sc.s_score from score sc
+left join student st on sc.s_id=st.s_id
+where sc.c_id=03 and sc.s_score&gt;=80
+</code></pre>
+
+<p>39、求选了课程的学生人数：</p>
+
+<pre><code class="language-sql">select count(distinct s_id) from score where s_score is not null ;
+</code></pre>
+
+<h2 id="40-查询选修-叶平-老师所授课程的学生中-成绩最高的学生姓名及其成绩">40 查询选修“叶平”老师所授课程的学生中，成绩最高的学生姓名及其成绩</h2>
+
+<pre><code class="language-sql">select sc.s_id,st.s_name,sc.s_score
+ from score sc,course c, teacher t,student st
+where sc.c_id=c.c_id
+and c.t_id=t.t_id
+and t.t_name='叶平'
+and sc.s_id=st.s_id
+and sc.s_score=(select max(s_score) from score where c_id=c.c_id);
+-- 不建议的一种方法
+select s.s_id,st.s_name ,s_score from  score s,student st
+where s.s_id=st.s_id
+and s_score =(select max(s_score) from score  where c_id in(select ss.c_id from score ss,course c,teacher te where ss.c_id=c.c_id and c.t_id=te.t_id and te.t_name='叶平')  )
+and s.c_id in(select ss.c_id from score ss,course c,teacher te where ss.c_id=c.c_id and c.t_id=te.t_id and te.t_name='叶平')
+
+</code></pre>
+
+<h2 id="41-查询各个课程及相应的选修人数">41、查询各个课程及相应的选修人数</h2>
+
+<pre><code class="language-sql">select s.c_id, count(*) from score s where s.s_score is not null group by s.c_id
+</code></pre>
+
+<h2 id="42-查询不同课程成绩相同的学生和学号-课程号-学生成绩">42、查询不同课程成绩相同的学生和学号、课程号、学生成绩</h2>
+
+<pre><code class="language-sql">-- mysql 会认为要过滤掉s1.s_id,  s1.c_id,s1.s_score字段都重复的记录,所以一般distinct用来查询不重复记录的条数
+select DISTINCT s1.s_id,  s1.c_id,s1.s_score from score s1, score s2   
+where s1.s_id=s2.s_id
+and s1.c_id &lt;&gt; s2.c_id
+and s1.s_score=s2.s_score
+-- 如果要查询不重复的记录，有时候可以用group by 
+select s1.s_id,  s1.c_id,s1.s_score from score s1, score s2   
+where s1.s_id=s2.s_id
+and s1.c_id &lt;&gt; s2.c_id
+and s1.s_score=s2.s_score
+group by s1.c_id
+</code></pre>
+
+<h2 id="43-查询每门课程成绩最好的前两名">43、查询每门课程成绩最好的前两名</h2>
+
+<p>[未完成2019年1月26日 17:45:02]</p>
+
+<pre><code class="language-sql">-- limit
+select s.s_score from  score s order by s.s_score desc LIMIT 2 
+select s.* from  score s  group by s.c_id -- 因为是按成绩分组 所以统计前两名就无法实现了
+-- 思路：求成绩 in 前两名的数据
+
+select s.s_id,t.s_name,s.s_score from score s ,student t
+where s.s_score in (select s_score from  score   order by s_score desc LIMIT 2 )
+</code></pre>
+
+<h2 id="44-统计每门课程的学生选修人数">44、统计每门课程的学生选修人数</h2>
+
+<p><code>(超过2人的课程才统计)。要求输出课程号和选修人数，查询结果按人数降序排序，若人数相同，按课程号升序排序</code></p>
+
+<pre><code class="language-sql">select s.c_id ,count(*) as rs 
+from score s 
+group by  s.c_id 
+having rs &gt;2
+order by rs DESC,s.c_id  ASC
+</code></pre>
+
+<h2 id="45-检索至少选修两门课程的学生学号">45、检索至少选修两门课程的学生学号</h2>
+
+<pre><code class="language-sql">select s.s_id from  score s group by s.s_id having count(*)&gt;2
+</code></pre>
+
+<h2 id="46-查询全部学生选修的课程和课程号和课程名">46、查询全部学生选修的课程和课程号和课程名：</h2>
+
+<p><code>这个题目其实需求不明确的,下面的语句能求出录入过成绩的课程</code></p>
+
+<pre><code class="language-sql">select  c.c_id,c.c_name
+from course c
+where c.c_id in(select c_id from score group by c_id);
+</code></pre>
+
+<h2 id="47-查询没学过-叶平-老师讲授的任一门课程的学生姓名">47、查询没学过”叶平”老师讲授的任一门课程的学生姓名</h2>
+
+<pre><code class="language-sql">-- 下面这个语句没有实现需求，不过能求到三国叶平老师课程的学生 
+select  s.s_id AS id ,st.s_name,s.c_id from score s,student st where  s.s_id=st.s_id and s.c_id  in(select c.c_id from course c,teacher t where c.c_id=t.t_id and t.t_name='叶平') ; --  因为成绩表里面没有学叶平老师的学生还会有其他的课程成绩，所以仍会有他的数据出现在结果里面
+-- war 正确的
+select s.s_id, s_name 
+from student  s
+where s.s_id not in (select s_id from course c,teacher t,score sc where c.t_id=t.t_id and sc.c_id=c.c_id 
+and t.t_name='叶平');
+</code></pre>
+
+<h2 id="48-查询两门以上不及格课程的同学的学号以及其平均成绩">48、查询两门以上不及格课程的同学的学号以及其平均成绩</h2>
+
+<pre><code class="language-sql">-- 平均成绩，应该是所有课程的吧，那样思路就有了。先求出符合条件的学生，然后计算其平均成绩
+select s_id ,avg(s_score) 
+from score 
+where s_id in 
+(select s.s_id 
+from score s 
+where s.s_score &lt;60  
+group by s.s_id 
+having count(s.s_score)&gt;2) 
+group by s_id;
+
+-- 方法2
+select s.s_id,avg(s.s_score) from score s group by s.s_id
+having count(case when s.s_score&lt;60 then s.c_id end)&gt;2;
+</code></pre>
+
+<h2 id="49-检索-01-课程分数小于60-按分数降序排列的同学学号">49、检索“01”课程分数小于60，按分数降序排列的同学学号</h2>
+
+<pre><code class="language-sql">select s.s_id,s.s_score from score s where s.c_id='01' and s.s_score&lt;60 order by s.s_score DESC
+</code></pre>
+
+<h2 id="50-删除-02-同学的-01-课程的成绩">50、删除“02”同学的“01”课程的成绩：</h2>
+
+<pre><code class="language-sql">delete from score s where s.s_id='02' and s.c_id='01'
+</code></pre>
+
+                            <h2> 本文链接：</h2>
+                            <a href='https://ziyan1215.github.io/archive/1548494210/' target="_blank">https://ziyan1215.github.io/archive/1548494210/</a>
+                    </div>
+                  </article>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div class="blog-post-comments"></div>
+<script>
+    new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
+        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        placeholder: '说点什么呗?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });
+</script>
+
+                  
+                  
+        </section>
+
+    </div>
+      
+  <footer id="footer">
+    <div class="footer-left">
+        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+      
+   </div>
+    <div class="footer-right">
+      <nav>
+        <ul>
+          <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+    
+<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://ziyan1215.github.io/lib/typed.js"></script>
+<script src="https://ziyan1215.github.io/js/main.js"></script>
+
+
+
+
+
+<script async src=""></script>
+<script>
+(function(){
+  if(location.host!=='xuziyan.ga')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()
+</script>
+
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+
+
+  
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }
+  </script>
+</body>
+
+</html>
+

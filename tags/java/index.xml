@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on XuziYan</title>
+    <link>https://ziyan1215.github.io/tags/java/</link>
+    <description>Recent content in Java on XuziYan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 21 Jan 2019 16:18:31 +0000</lastBuildDate>
+    
+	<atom:link href="https://ziyan1215.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java基础之集合</title>
+      <link>https://ziyan1215.github.io/archive/1548058711/</link>
+      <pubDate>Mon, 21 Jan 2019 16:18:31 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1548058711/</guid>
+      <description>在使用一个体系时，原则：参阅顶层内容。建立底层对象。
+集合是可变长度的，用于存储对象，只能存储引用数据类型，可以存储不同类型的对象
+ 使用集合的技巧 看到Array就是数组结构，有角标，查询速度很快。
+看到link就是链表结构：增删速度快，而且有特有方法 addFirst();addLast();removeFirst();removeLast(); getFirst();getLast();
+看到hash就是哈希表，就要想要哈希值，就要想到唯一性，就要想到存入到该结构的中的元素必须覆盖hashCode，equals方法。
+看到tree就是二叉树，就要想到排序，就想要用到比较。
+比较的两种方式  一个是Comparable：覆盖compareTo方法； 一个是Comparator：覆盖compare方法。 LinkedHashSet，LinkedHashMap:这两个集合可以保证哈希表有存入顺序和取出顺序一致，保证哈希表有序。  集合什么时候用？  当存储的是一个元素时，就用Collection。 当存储对象之间存在着映射关系时，就使用Map集合。 保证唯一，就用Set。不保证唯一，就用List。  Collection接口  List：有序(元素存入集合的顺序和取出的顺序一致)，元素都有索引。元素可以重复。 Set：无序(存入和取出顺序有可能不一致)，不可以存储重复元素。必须保证元素唯一性。  Iterator接口 boolean |hashNext| 如果仍有元素可以迭代，则返回 true
+E |next()| 返回迭代的下一个元素
+void |remove()| 从迭代器指向的 collection 中移除迭代器返回的最后一个元素（可选操作）
+public static void main(String[] args) { Collection coll = new ArrayList(); coll.add(&amp;quot;abc0&amp;quot;); coll.add(&amp;quot;abc1&amp;quot;); coll.add(&amp;quot;abc2&amp;quot;); //--------------方式1---------------------- Iterator it = coll.iterator(); while(it.hasNext()){ System.out.println(it.next()); } //---------------方式2用此种---------------------- for(Iterator it = coll.iterator();it.hasNext(); ){ System.</description>
+    </item>
+    
+    <item>
+      <title>Junit4加载spring配置文件进行单元测试</title>
+      <link>https://ziyan1215.github.io/archive/1548056542/</link>
+      <pubDate>Mon, 21 Jan 2019 15:42:22 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1548056542/</guid>
+      <description>  配置BaseTest，然后后面的测试类继承此类即可进行单元测试
+ 基类 @RunWith(SpringJUnit4ClassRunner.class) // 告诉junit spring配置文件 @ContextConfiguration({ &amp;quot;classpath:spring/spring-dao.xml&amp;quot;, &amp;quot;classpath:spring/spring-service.xml&amp;quot; }) public class BaseTest { }  测试类 public class AreaDaoTest extends BaseTest{ @Autowired private AreaDao areaDao; @Test public void testQueryArea() { List&amp;lt;Area&amp;gt; listArea=new ArrayList&amp;lt;Area&amp;gt;(); listArea=areaDao.queryArea(); System.out.println(listArea.size()); } }  </description>
+    </item>
+    
+    <item>
+      <title>Jar包在CMD运行后乱码</title>
+      <link>https://ziyan1215.github.io/archive/1546400558/</link>
+      <pubDate>Wed, 02 Jan 2019 11:42:38 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1546400558/</guid>
+      <description>  问题来源：今天写了个小的应用，把网络请求的内容转成文件保存到本地。在eclipse测试通过后打包成jar包在cmd执行后发现文件内容乱码
+ 处理方法  设定cmd的编码为utf-8
+打开cmd执行 (GBK(默认) chcp 936）
+chcp 65001
+ 运行jar语句加入编码设置
+java -Dfile.encoding=utf-8 -jar sb.jar
+  </description>
+    </item>
+    
+  </channel>
+</rss>

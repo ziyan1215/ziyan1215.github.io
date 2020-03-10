@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta name="generator" content="Hugo 0.55.6" />
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<meta name="wap-font-scale" content="no">
+		
+		
+		
+		<meta name="author" content="XuziYan">
+		<meta name='description' itemprop="description" content="2.9 聚合查询 (1)sum
+GET /lib4/items/_search { &amp;quot;size&amp;quot;:0, &amp;quot;aggs&amp;quot;: { &amp;quot;price_of_sum&amp;quot;: { &amp;quot;sum&amp;quot;: { &amp;quot;field&amp;quot;: &amp;quot;price&amp;quot; } } } }  (2)min
+GET /lib4/items/_s">
+		 
+		<meta name="keywords" content="ES的聚合&复合查询" >
+		
+		
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="ES的聚合&amp;复合查询">
+		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:description" content="2.9 聚合查询 (1)sum
+GET /lib4/items/_search { &amp;quot;size&amp;quot;:0, &amp;quot;aggs&amp;quot;: { &amp;quot;price_of_sum&amp;quot;: { &amp;quot;sum&amp;quot;: { &amp;quot;field&amp;quot;: &amp;quot;price&amp;quot; } } } }  (2)min
+GET /lib4/items/_s">
+		<meta property="og:site_name" content="XuziYan">
+
+		<title>ES的聚合&amp;复合查询 | Xuzi</title>
+		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+
+		
+
+		
+		
+		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script>
+			document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);
+			</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https:\/\/ziyan1215.github.io\/archive\/1563681594\/",
+				"appid": "1621056720407734", 
+				"title": "ES的聚合\x26复合查询 | Xuzi JAVA!!!", 
+				"images": [],
+				"pubDate": "2019-07-21T11:59:54"
+			} 
+			</script>
+	</head>
+
+<body>
+    <div id="header-post">
+        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+        <span id="menu">
+          <span id="nav">
+            <ul>
+              <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+            </ul>
+          </span>
+          <br/>
+          <span id="actions">
+            <ul>
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1563598794/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1563796794/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                
+              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+            </ul>
+            <span id="i-prev" class="info" style="display:none;">Previous post</span>
+            <span id="i-next" class="info" style="display:none;">Next post</span>
+            <span id="i-top" class="info" style="display:none;">Back to top</span>
+            <span id="i-share" class="info" style="display:none;">Share post</span>
+          </span>
+          <br/>
+          <div id="share" style="display: none">
+              <ul>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563681594%2f&text=ES%e7%9a%84%e8%81%9a%e5%90%88%26%e5%a4%8d%e5%90%88%e6%9f%a5%e8%af%a2"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563681594%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563681594%2f&text=ES%e7%9a%84%e8%81%9a%e5%90%88%26%e5%a4%8d%e5%90%88%e6%9f%a5%e8%af%a2"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563681594%2f&title=ES%e7%9a%84%e8%81%9a%e5%90%88%26%e5%a4%8d%e5%90%88%e6%9f%a5%e8%af%a2"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563681594%2f&is_video=false&description=ES%e7%9a%84%e8%81%9a%e5%90%88%26%e5%a4%8d%e5%90%88%e6%9f%a5%e8%af%a2"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=ES%e7%9a%84%e8%81%9a%e5%90%88%26%e5%a4%8d%e5%90%88%e6%9f%a5%e8%af%a2&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1563681594%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563681594%2f&title=ES%e7%9a%84%e8%81%9a%e5%90%88%26%e5%a4%8d%e5%90%88%e6%9f%a5%e8%af%a2"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563681594%2f&title=ES%e7%9a%84%e8%81%9a%e5%90%88%26%e5%a4%8d%e5%90%88%e6%9f%a5%e8%af%a2"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563681594%2f&title=ES%e7%9a%84%e8%81%9a%e5%90%88%26%e5%a4%8d%e5%90%88%e6%9f%a5%e8%af%a2"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563681594%2f&title=ES%e7%9a%84%e8%81%9a%e5%90%88%26%e5%a4%8d%e5%90%88%e6%9f%a5%e8%af%a2"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+ </ul>
+      
+          </div>
+          <div id="toc">
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#2-9-聚合查询">2.9 聚合查询</a></li>
+<li><a href="#2-10-复合查询">2.10 复合查询</a>
+<ul>
+<li><a href="#2-10-1-使用bool查询">2.10.1 使用bool查询</a></li>
+<li><a href="#2-10-2-constant-score查询">2.10.2 constant_score查询</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        </span>
+      </div>
+      
+    <div class="content index width mx-auto px3 my3">
+        <section id="wrapper" class="home">
+                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                    <header>
+                    <h1 class="posttitle" itemprop="name headline">
+                            ES的聚合&amp;复合查询
+                        </h1>
+                      <div class="meta">
+                        <div class="postdate">
+                                <time datetime='2019-07-21' itemprop="datePublished">2019-07-21</time>
+                            </div>
+                        <div class="article-tag">
+                            <i class="fa fa-eye"></i>
+                            <span id="busuanzi_container_page_pv">
+                                <span id="busuanzi_value_page_pv">0</span>
+                              </span>
+                            </span>
+                        </div>
+                        
+                        <div class="article-tag">
+                            <i class="fa fa-tag"></i>
+                            
+                            <a href="/tags/elasticsearch">
+                               Elasticsearch</a> 
+                             
+                        </div>
+                        
+                        
+                        
+                        <div class="article-tag-box">
+                               
+                        </div>
+
+                        
+                      </div>
+                    </header>
+                    
+
+                    <div class="content" itemprop="articleBody">
+                            
+                            
+
+<h3 id="2-9-聚合查询">2.9 聚合查询</h3>
+
+<p>(1)sum</p>
+
+<pre><code>GET /lib4/items/_search
+{
+  &quot;size&quot;:0,
+  &quot;aggs&quot;: {
+     &quot;price_of_sum&quot;: {
+         &quot;sum&quot;: {
+           &quot;field&quot;: &quot;price&quot;
+         }
+     }
+  }
+}
+</code></pre>
+
+<p>(2)min</p>
+
+<pre><code>GET /lib4/items/_search
+{
+  &quot;size&quot;: 0, 
+  &quot;aggs&quot;: {
+     &quot;price_of_min&quot;: {
+         &quot;min&quot;: {
+           &quot;field&quot;: &quot;price&quot;
+         }
+     }
+  }
+}
+</code></pre>
+
+<p>(3)max</p>
+
+<pre><code>GET /lib4/items/_search
+{
+  &quot;size&quot;: 0, 
+  &quot;aggs&quot;: {
+     &quot;price_of_max&quot;: {
+         &quot;max&quot;: {
+           &quot;field&quot;: &quot;price&quot;
+         }
+     }
+  }
+}
+</code></pre>
+
+<p>(4)avg</p>
+
+<pre><code>GET /lib4/items/_search
+{
+  &quot;size&quot;:0,
+  &quot;aggs&quot;: {
+     &quot;price_of_avg&quot;: {
+         &quot;avg&quot;: {
+           &quot;field&quot;: &quot;price&quot;
+         }
+     }
+  }
+}
+</code></pre>
+
+<p>(5)cardinality:求基数</p>
+
+<pre><code>GET /lib4/items/_search
+{
+  &quot;size&quot;:0,
+  &quot;aggs&quot;: {
+     &quot;price_of_cardi&quot;: {
+         &quot;cardinality&quot;: {
+           &quot;field&quot;: &quot;price&quot;
+         }
+     }
+  }
+}
+</code></pre>
+
+<p>(6)terms:分组</p>
+
+<pre><code>GET /lib4/items/_search
+{
+  &quot;size&quot;:0,
+  &quot;aggs&quot;: {
+     &quot;price_group_by&quot;: {
+         &quot;terms&quot;: {
+           &quot;field&quot;: &quot;price&quot;
+         }
+     }
+  }
+}
+</code></pre>
+
+<p>对那些有唱歌兴趣的用户按年龄分组</p>
+
+<pre><code>GET /lib3/user/_search
+{
+  &quot;query&quot;: {
+      &quot;match&quot;: {
+        &quot;interests&quot;: &quot;changge&quot;
+      }
+   },
+   &quot;size&quot;: 0, 
+   &quot;aggs&quot;:{
+       &quot;age_group_by&quot;:{
+           &quot;terms&quot;: {
+             &quot;field&quot;: &quot;age&quot;,
+             &quot;order&quot;: {
+               &quot;avg_of_age&quot;: &quot;desc&quot;
+             }
+           },
+           &quot;aggs&quot;: {
+             &quot;avg_of_age&quot;: {
+               &quot;avg&quot;: {
+                 &quot;field&quot;: &quot;age&quot;
+               }
+             }
+           }
+       }
+   }
+}
+</code></pre>
+
+<h3 id="2-10-复合查询">2.10 复合查询</h3>
+
+<p>将多个基本查询组合成单一查询的查询</p>
+
+<h4 id="2-10-1-使用bool查询">2.10.1 使用bool查询</h4>
+
+<p>接收以下参数：</p>
+
+<p>must：
+    文档 必须匹配这些条件才能被包含进来。</p>
+
+<p>must_not：
+    文档 必须不匹配这些条件才能被包含进来。</p>
+
+<p>should：
+    如果满足这些语句中的任意语句，将增加 _score，否则，无任何影响。它们主要用于修正每个文档的相关性得分。</p>
+
+<p>filter：
+    必须 匹配，但它以不评分、过滤模式来进行。这些语句对评分没有贡献，只是根据过滤标准来排除或包含文档。</p>
+
+<p>相关性得分是如何组合的。每一个子查询都独自地计算文档的相关性得分。一旦他们的得分被计算出来， bool 查询就将这些得分进行合并并且返回一个代表整个布尔操作的得分。</p>
+
+<p>下面的查询用于查找 title 字段匹配 how to make millions 并且不被标识为 spam 的文档。那些被标识为 starred 或在2014之后的文档，将比另外那些文档拥有更高的排名。如果 <em>两者</em> 都满足，那么它排名将更高：</p>
+
+<pre><code>{
+    &quot;bool&quot;: {
+        &quot;must&quot;: { &quot;match&quot;: { &quot;title&quot;: &quot;how to make millions&quot; }},
+        &quot;must_not&quot;: { &quot;match&quot;: { &quot;tag&quot;:   &quot;spam&quot; }},
+        &quot;should&quot;: [
+            { &quot;match&quot;: { &quot;tag&quot;: &quot;starred&quot; }},
+            { &quot;range&quot;: { &quot;date&quot;: { &quot;gte&quot;: &quot;2014-01-01&quot; }}}
+        ]
+    }
+}
+</code></pre>
+
+<p>如果没有 must 语句，那么至少需要能够匹配其中的一条 should 语句。但，如果存在至少一条 must 语句，则对 should 语句的匹配没有要求。
+如果我们不想因为文档的时间而影响得分，可以用 filter 语句来重写前面的例子：</p>
+
+<pre><code>{
+    &quot;bool&quot;: {
+        &quot;must&quot;: { &quot;match&quot;: { &quot;title&quot;: &quot;how to make millions&quot; }},
+        &quot;must_not&quot;: { &quot;match&quot;: { &quot;tag&quot;:   &quot;spam&quot; }},
+        &quot;should&quot;: [
+            { &quot;match&quot;: { &quot;tag&quot;: &quot;starred&quot; }}
+        ],
+        &quot;filter&quot;: {
+          &quot;range&quot;: { &quot;date&quot;: { &quot;gte&quot;: &quot;2014-01-01&quot; }} 
+        }
+    }
+}
+</code></pre>
+
+<p>通过将 range 查询移到 filter 语句中，我们将它转成不评分的查询，将不再影响文档的相关性排名。由于它现在是一个不评分的查询，可以使用各种对 filter 查询有效的优化手段来提升性能。</p>
+
+<p>bool 查询本身也可以被用做不评分的查询。简单地将它放置到 filter 语句中并在内部构建布尔逻辑：</p>
+
+<pre><code>{
+    &quot;bool&quot;: {
+        &quot;must&quot;: { &quot;match&quot;: { &quot;title&quot;: &quot;how to make millions&quot; }},
+        &quot;must_not&quot;: { &quot;match&quot;: { &quot;tag&quot;:   &quot;spam&quot; }},
+        &quot;should&quot;: [
+            { &quot;match&quot;: { &quot;tag&quot;: &quot;starred&quot; }}
+        ],
+        &quot;filter&quot;: {
+          &quot;bool&quot;: { 
+              &quot;must&quot;: [
+                  { &quot;range&quot;: { &quot;date&quot;: { &quot;gte&quot;: &quot;2014-01-01&quot; }}},
+                  { &quot;range&quot;: { &quot;price&quot;: { &quot;lte&quot;: 29.99 }}}
+              ],
+              &quot;must_not&quot;: [
+                  { &quot;term&quot;: { &quot;category&quot;: &quot;ebooks&quot; }}
+              ]
+          }
+        }
+    }
+}
+</code></pre>
+
+<h4 id="2-10-2-constant-score查询">2.10.2 constant_score查询</h4>
+
+<p>它将一个不变的常量评分应用于所有匹配的文档。它被经常用于你只需要执行一个 filter 而没有其它查询（例如，评分查询）的情况下。</p>
+
+<pre><code>{
+    &quot;constant_score&quot;:   {
+        &quot;filter&quot;: {
+            &quot;term&quot;: { &quot;category&quot;: &quot;ebooks&quot; } 
+        }
+    }
+}
+</code></pre>
+
+<p>term 查询被放置在 constant_score 中，转成不评分的filter。这种方式可以用来取代只有 filter 语句的 bool 查询。</p>
+
+                            <h2> 本文链接：</h2>
+                            <a href='https://ziyan1215.github.io/archive/1563681594/' target="_blank">https://ziyan1215.github.io/archive/1563681594/</a>
+                    </div>
+                  </article>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div class="blog-post-comments"></div>
+<script>
+    new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
+        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        placeholder: '说点什么呗?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });
+</script>
+
+                  
+                  
+        </section>
+
+    </div>
+      
+  <footer id="footer">
+    <div class="footer-left">
+        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+      
+   </div>
+    <div class="footer-right">
+      <nav>
+        <ul>
+          <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+    
+<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://ziyan1215.github.io/lib/typed.js"></script>
+<script src="https://ziyan1215.github.io/js/main.js"></script>
+
+
+
+
+
+<script async src=""></script>
+<script>
+(function(){
+  if(location.host!=='xuziyan.ga')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()
+</script>
+
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+
+
+  
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }
+  </script>
+</body>
+
+</html>
+

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta name="generator" content="Hugo 0.55.6" />
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<meta name="wap-font-scale" content="no">
+		
+		
+		
+		<meta name="author" content="XuziYan">
+		<meta name='description' itemprop="description" content="select * from nls_database_parameters
+修改数据库的字符集NLS_CHARACTERSET值
+客户端的字符集要求与服务器一致，才能正确显示数据库的非Ascii字符。字符集要求一致，但是语言设置却可以不同，语言设置建议用英文。如字符集是utf8，则nls_lang可以是American_America.utf8
+ 修改方法（dba身份执行） 对于不同的实例，用以下">
+		 
+		<meta name="keywords" content="Oracle数据库修改字符集方法" >
+		
+		
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="Oracle数据库修改字符集方法">
+		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:description" content="select * from nls_database_parameters
+修改数据库的字符集NLS_CHARACTERSET值
+客户端的字符集要求与服务器一致，才能正确显示数据库的非Ascii字符。字符集要求一致，但是语言设置却可以不同，语言设置建议用英文。如字符集是utf8，则nls_lang可以是American_America.utf8
+ 修改方法（dba身份执行） 对于不同的实例，用以下">
+		<meta property="og:site_name" content="XuziYan">
+
+		<title>Oracle数据库修改字符集方法 | Xuzi</title>
+		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+
+		
+
+		
+		
+		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script>
+			document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);
+			</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https:\/\/ziyan1215.github.io\/archive\/1546591306\/",
+				"appid": "1621056720407734", 
+				"title": "Oracle数据库修改字符集方法 | Xuzi JAVA!!!", 
+				"images": [],
+				"pubDate": "2019-01-04T16:41:46"
+			} 
+			</script>
+	</head>
+
+<body>
+    <div id="header-post">
+        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+        <span id="menu">
+          <span id="nav">
+            <ul>
+              <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+            </ul>
+          </span>
+          <br/>
+          <span id="actions">
+            <ul>
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546590921/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546928060/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                
+              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+            </ul>
+            <span id="i-prev" class="info" style="display:none;">Previous post</span>
+            <span id="i-next" class="info" style="display:none;">Next post</span>
+            <span id="i-top" class="info" style="display:none;">Back to top</span>
+            <span id="i-share" class="info" style="display:none;">Share post</span>
+          </span>
+          <br/>
+          <div id="share" style="display: none">
+              <ul>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&text=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&text=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&is_video=false&description=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+ </ul>
+      
+          </div>
+          <div id="toc">
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#修改方法-dba身份执行">修改方法（dba身份执行）</a></li>
+<li><a href="#如何设置oracle客户端的字符集编码">如何设置Oracle客户端的字符集编码</a>
+<ul>
+<li><a href="#window下">Window下：</a></li>
+<li><a href="#linux下">Linux下：</a></li>
+</ul></li>
+<li><a href="#正确的数据库转换编码格式的步骤">正确的数据库转换编码格式的步骤</a>
+<ul>
+<li><a href="#特别注意-oracle逻辑备份还原-exp-imp-的正确步骤">【特别注意】oracle逻辑备份还原(exp/imp)的正确步骤</a></li>
+<li><a href="#补充">补充</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        </span>
+      </div>
+      
+    <div class="content index width mx-auto px3 my3">
+        <section id="wrapper" class="home">
+                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                    <header>
+                    <h1 class="posttitle" itemprop="name headline">
+                            Oracle数据库修改字符集方法
+                        </h1>
+                      <div class="meta">
+                        <div class="postdate">
+                                <time datetime='2019-01-04' itemprop="datePublished">2019-01-04</time>
+                            </div>
+                        <div class="article-tag">
+                            <i class="fa fa-eye"></i>
+                            <span id="busuanzi_container_page_pv">
+                                <span id="busuanzi_value_page_pv">0</span>
+                              </span>
+                            </span>
+                        </div>
+                        
+                        <div class="article-tag">
+                            <i class="fa fa-tag"></i>
+                            
+                            <a href="/tags/oracle">
+                               Oracle</a> 
+                             
+                        </div>
+                        
+                        
+                        
+                        <div class="article-tag-box">
+                               
+                        </div>
+
+                        
+                      </div>
+                    </header>
+                    
+
+                    <div class="content" itemprop="articleBody">
+                            
+                            
+
+<blockquote>
+<p><code>select * from nls_database_parameters</code></p>
+
+<p>修改数据库的字符集NLS_CHARACTERSET值</p>
+
+<p>客户端的字符集要求与服务器一致，才能正确显示数据库的非Ascii字符。字符集要求一致，但是语言设置却可以不同，语言设置建议用英文。如字符集是utf8，则nls_lang可以是American_America.utf8</p>
+</blockquote>
+
+<h1 id="修改方法-dba身份执行">修改方法（dba身份执行）</h1>
+
+<p>对于不同的实例，用以下方法改字符集：</p>
+
+<p><code>set oracle_sid=hzhr // cmd窗口设置数据库Oracle当前的默认sid为</code></p>
+
+<p><code>sqlplus / as sysdba //连接数据库，注意有空格</code></p>
+
+<p>之后按照下面的修改方法进行即可</p>
+
+<p>修改字符集，需要去数据库所在的服务器系统，使用sqlplus执行下面命令：</p>
+
+<pre><code class="language-sql">sql&gt; conn user/password as sysdba;
+sql&gt; shutdown immediate;  
+ --每个用户在执行完当前的SQL后，立即关闭。平时用的比较多的是这个
+　　database closed.
+　　database dismounted.
+　　oracle instance shut down.
+sql&gt; startup mount;
+　　oracle instance started.
+　　total system global area 135337420 bytes
+　　fixed size 452044 bytes
+　　variable size 109051904 bytes
+　　database buffers 25165824 bytes
+　　redo buffers 667648 bytes
+　　database mounted.
+sql&gt; alter system enable restricted session;
+　　system altered.
+sql&gt; alter system set job_queue_processes=0;--（注意有下斜杠_）
+　　system altered.
+sql&gt; alter system set aq_tm_processes=0;
+　　system altered.
+sql&gt; alter database open;
+　　database altered.
+sql&gt; alter database character set internal_use UTF8; --（注意有下斜杠_）
+   --(字符集可以设置为: UTF8\AL32UTF8\ZHS16GBK ),这里我们统一规定必须使用UTF8，因为现在的测试及生产环境都是UTF8，且兼容最好。
+sql&gt; shutdown immediate;
+sql&gt; startup;
+</code></pre>
+
+<h1 id="如何设置oracle客户端的字符集编码">如何设置Oracle客户端的字符集编码</h1>
+
+<h2 id="window下">Window下：</h2>
+
+<p>在cmd中输入regedit.exe打开注册表
+按照如下步骤修改注册表，就可以把客户端从中文修改成英文（注意如果64位windows路径会有不同）。
+HKEY_LOCAL_MACHINE -&gt; SOFTWARE -&gt; Oracle -&gt; KEY_OraClient10g_home1 -&gt; NLS_LANG
+Modify &lsquo;SIMPLIFIED CHINESE_CHINA.ZHS16GBK&rsquo; to &lsquo;SIMPLIFIED CHINESE_CHINA.UTF8&rsquo;</p>
+
+<h2 id="linux下">Linux下：</h2>
+
+<p>设置Oracle用户的环境变量</p>
+
+<pre><code class="language-bash">/home/oracle/.bash_profile
+export NLS_LANG=SIMPLIFIED CHINESE_CHINA.UTF8
+#一般数据库安装的时候都会选择(UTF8/AL32UTF8)编码,所以建议客户端最好对应设置成&quot;AMERICAN_AMERICA.UTF8&quot;，这样可以保证导入导出都正常。
+export NLS_LANG=AMERICAN_AMERICA.AL32UTF8
+export NLS_LANG=AMERICAN_AMERICA.ZHS16GBK
+export NLS_LANG=”SIMPLIFIED CHINESE_CHINA.ZHS16GBK”
+</code></pre>
+
+<h1 id="正确的数据库转换编码格式的步骤">正确的数据库转换编码格式的步骤</h1>
+
+<ol>
+<li>将现有的编码的数据库以dmp格式导出所有表</li>
+<li>将数据库转换成目的编码，如utf8</li>
+<li>将dmp导入回去。</li>
+</ol>
+
+<h2 id="特别注意-oracle逻辑备份还原-exp-imp-的正确步骤">【特别注意】oracle逻辑备份还原(exp/imp)的正确步骤</h2>
+
+<p>服务端导出&ndash;dmp文件编码所在的客户端务必要和服务端一致，不能变动编码&ndash;导入回相同编码的服务端</p>
+
+<h2 id="补充">补充</h2>
+
+<p><code>american_america.ZHS16GBK</code>
+<code>chinese_china.ZHS16GBK</code>
+这些，都是client端的NLS_LANG设置，而不是 数据库的字符集配置
+这样长的一个字符串，决定了客户端 的显示方式（其中包括 字符编码/货币/时间 等格式），而不是数据库端的配置
+比如两者 ，决定了字符编码都是中文，但是 货币/时间 格式可能就不一样了（大概这个意思）</p>
+
+                            <h2> 本文链接：</h2>
+                            <a href='https://ziyan1215.github.io/archive/1546591306/' target="_blank">https://ziyan1215.github.io/archive/1546591306/</a>
+                    </div>
+                  </article>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div class="blog-post-comments"></div>
+<script>
+    new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
+        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        placeholder: '说点什么呗?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });
+</script>
+
+                  
+                  
+        </section>
+
+    </div>
+      
+  <footer id="footer">
+    <div class="footer-left">
+        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+      
+   </div>
+    <div class="footer-right">
+      <nav>
+        <ul>
+          <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+    
+<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://ziyan1215.github.io/lib/typed.js"></script>
+<script src="https://ziyan1215.github.io/js/main.js"></script>
+
+
+
+
+
+<script async src=""></script>
+<script>
+(function(){
+  if(location.host!=='xuziyan.ga')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()
+</script>
+
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+
+
+  
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }
+  </script>
+</body>
+
+</html>
+

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta name="generator" content="Hugo 0.55.6" />
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<meta name="wap-font-scale" content="no">
+		
+		
+		
+		<meta name="author" content="XuziYan">
+		<meta name='description' itemprop="description" content="2.7 基本查询(Query查询) 2.7.1数据准备 PUT /lib3 { &amp;quot;settings&amp;quot;:{ &amp;quot;number_of_shards&amp;quot; : 3, &amp;quot;number_of_replicas&amp;quot; : 0 }, &amp;quot;mappings&amp;quot;:{ &amp;quot;user&amp;quot;:{ &amp;quot;properties&amp;quot;:">
+		 
+		<meta name="keywords" content="ES基本查询" >
+		
+		
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="ES基本查询">
+		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:description" content="2.7 基本查询(Query查询) 2.7.1数据准备 PUT /lib3 { &amp;quot;settings&amp;quot;:{ &amp;quot;number_of_shards&amp;quot; : 3, &amp;quot;number_of_replicas&amp;quot; : 0 }, &amp;quot;mappings&amp;quot;:{ &amp;quot;user&amp;quot;:{ &amp;quot;properties&amp;quot;:">
+		<meta property="og:site_name" content="XuziYan">
+
+		<title>ES基本查询 | Xuzi</title>
+		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+
+		
+
+		
+		
+		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script>
+			document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);
+			</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https:\/\/ziyan1215.github.io\/archive\/1563522787\/",
+				"appid": "1621056720407734", 
+				"title": "ES基本查询 | Xuzi JAVA!!!", 
+				"images": [],
+				"pubDate": "2019-07-19T15:53:07"
+			} 
+			</script>
+	</head>
+
+<body>
+    <div id="header-post">
+        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+        <span id="menu">
+          <span id="nav">
+            <ul>
+              <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+            </ul>
+          </span>
+          <br/>
+          <span id="actions">
+            <ul>
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1563415780/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1563598794/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                
+              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+            </ul>
+            <span id="i-prev" class="info" style="display:none;">Previous post</span>
+            <span id="i-next" class="info" style="display:none;">Next post</span>
+            <span id="i-top" class="info" style="display:none;">Back to top</span>
+            <span id="i-share" class="info" style="display:none;">Share post</span>
+          </span>
+          <br/>
+          <div id="share" style="display: none">
+              <ul>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563522787%2f&text=ES%e5%9f%ba%e6%9c%ac%e6%9f%a5%e8%af%a2"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563522787%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563522787%2f&text=ES%e5%9f%ba%e6%9c%ac%e6%9f%a5%e8%af%a2"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563522787%2f&title=ES%e5%9f%ba%e6%9c%ac%e6%9f%a5%e8%af%a2"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563522787%2f&is_video=false&description=ES%e5%9f%ba%e6%9c%ac%e6%9f%a5%e8%af%a2"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=ES%e5%9f%ba%e6%9c%ac%e6%9f%a5%e8%af%a2&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1563522787%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563522787%2f&title=ES%e5%9f%ba%e6%9c%ac%e6%9f%a5%e8%af%a2"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563522787%2f&title=ES%e5%9f%ba%e6%9c%ac%e6%9f%a5%e8%af%a2"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563522787%2f&title=ES%e5%9f%ba%e6%9c%ac%e6%9f%a5%e8%af%a2"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563522787%2f&title=ES%e5%9f%ba%e6%9c%ac%e6%9f%a5%e8%af%a2"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+ </ul>
+      
+          </div>
+          <div id="toc">
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#2-7-基本查询-query查询">2.7 基本查询(Query查询)</a>
+<ul>
+<li><a href="#2-7-1数据准备">2.7.1数据准备</a></li>
+<li><a href="#2-7-2-term查询和terms查询">2.7.2 term查询和terms查询</a></li>
+<li><a href="#2-7-3-控制查询返回的数量">2.7.3 控制查询返回的数量</a></li>
+<li><a href="#2-7-4-返回版本号">2.7.4 返回版本号</a></li>
+<li><a href="#2-7-5-match查询">2.7.5 match查询</a></li>
+<li><a href="#2-7-6-指定返回的字段">2.7.6 指定返回的字段</a></li>
+<li><a href="#2-7-7控制加载的字段">2.7.7控制加载的字段</a></li>
+<li><a href="#2-7-8-排序">2.7.8 排序</a></li>
+<li><a href="#2-7-9-前缀匹配查询">2.7.9 前缀匹配查询</a></li>
+<li><a href="#2-7-10-范围查询">2.7.10 范围查询</a></li>
+<li><a href="#2-7-11-wildcard查询">2.7.11 wildcard查询</a></li>
+<li><a href="#2-7-12-fuzzy实现模糊查询">2.7.12 fuzzy实现模糊查询</a></li>
+<li><a href="#2-7-13-高亮搜索结果">2.7.13 高亮搜索结果</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        </span>
+      </div>
+      
+    <div class="content index width mx-auto px3 my3">
+        <section id="wrapper" class="home">
+                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                    <header>
+                    <h1 class="posttitle" itemprop="name headline">
+                            ES基本查询
+                        </h1>
+                      <div class="meta">
+                        <div class="postdate">
+                                <time datetime='2019-07-19' itemprop="datePublished">2019-07-19</time>
+                            </div>
+                        <div class="article-tag">
+                            <i class="fa fa-eye"></i>
+                            <span id="busuanzi_container_page_pv">
+                                <span id="busuanzi_value_page_pv">0</span>
+                              </span>
+                            </span>
+                        </div>
+                        
+                        <div class="article-tag">
+                            <i class="fa fa-tag"></i>
+                            
+                            <a href="/tags/elasticsearch">
+                               Elasticsearch</a> 
+                             
+                        </div>
+                        
+                        
+                        
+                        <div class="article-tag-box">
+                               
+                        </div>
+
+                        
+                      </div>
+                    </header>
+                    
+
+                    <div class="content" itemprop="articleBody">
+                            
+                            
+
+<h3 id="2-7-基本查询-query查询">2.7 基本查询(Query查询)</h3>
+
+<h4 id="2-7-1数据准备">2.7.1数据准备</h4>
+
+<pre><code>PUT /lib3
+{
+    &quot;settings&quot;:{
+    &quot;number_of_shards&quot; : 3,
+    &quot;number_of_replicas&quot; : 0
+    },
+     &quot;mappings&quot;:{
+      &quot;user&quot;:{
+        &quot;properties&quot;:{
+            &quot;name&quot;: {&quot;type&quot;:&quot;text&quot;},
+            &quot;address&quot;: {&quot;type&quot;:&quot;text&quot;},
+            &quot;age&quot;: {&quot;type&quot;:&quot;integer&quot;},
+            &quot;interests&quot;: {&quot;type&quot;:&quot;text&quot;},
+            &quot;birthday&quot;: {&quot;type&quot;:&quot;date&quot;}
+        }
+      }
+     }
+}
+
+GET /lib3/user/_search?q=name:lisi
+
+GET /lib3/user/_search?q=name:zhaoliu&amp;sort=age:desc
+</code></pre>
+
+<h4 id="2-7-2-term查询和terms查询">2.7.2 term查询和terms查询</h4>
+
+<p>term query会去倒排索引中寻找确切的term，它并不知道分词器的存在。这种查询适合keyword 、numeric、date。</p>
+
+<p>term:查询某个字段里含有某个关键词的文档</p>
+
+<pre><code>GET /lib3/user/_search/
+{
+  &quot;query&quot;: {
+      &quot;term&quot;: {&quot;interests&quot;: &quot;changge&quot;}
+  }
+}
+</code></pre>
+
+<p>terms:查询某个字段里含有多个关键词的文档</p>
+
+<pre><code>GET /lib3/user/_search
+{
+    &quot;query&quot;:{
+        &quot;terms&quot;:{
+            &quot;interests&quot;: [&quot;hejiu&quot;,&quot;changge&quot;]
+        }
+    }
+}
+</code></pre>
+
+<h4 id="2-7-3-控制查询返回的数量">2.7.3 控制查询返回的数量</h4>
+
+<p>from：从哪一个文档开始
+size：需要的个数</p>
+
+<pre><code>GET /lib3/user/_search
+{
+    &quot;from&quot;:0,
+    &quot;size&quot;:2,
+    &quot;query&quot;:{
+        &quot;terms&quot;:{
+            &quot;interests&quot;: [&quot;hejiu&quot;,&quot;changge&quot;]
+        }
+    }
+}
+</code></pre>
+
+<h4 id="2-7-4-返回版本号">2.7.4 返回版本号</h4>
+
+<pre><code>GET /lib3/user/_search
+{
+    &quot;version&quot;:true,
+    &quot;query&quot;:{
+        &quot;terms&quot;:{
+            &quot;interests&quot;: [&quot;hejiu&quot;,&quot;changge&quot;]
+        }
+    }
+}
+</code></pre>
+
+<h4 id="2-7-5-match查询">2.7.5 match查询</h4>
+
+<p>match query知道分词器的存在，会对filed进行分词操作，然后再查询</p>
+
+<pre><code>GET /lib3/user/_search
+{
+    &quot;query&quot;:{
+        &quot;match&quot;:{
+            &quot;name&quot;: &quot;zhaoliu&quot;
+        }
+    }
+}
+
+GET /lib3/user/_search
+{
+    &quot;query&quot;:{
+        &quot;match&quot;:{
+            &quot;age&quot;: 20
+        }
+    }
+}
+</code></pre>
+
+<p>match_all:查询所有文档</p>
+
+<pre><code>GET /lib3/user/_search
+{
+  &quot;query&quot;: {
+    &quot;match_all&quot;: {}
+  }
+}
+</code></pre>
+
+<p>multi_match:可以指定多个字段</p>
+
+<pre><code>GET /lib3/user/_search
+{
+    &quot;query&quot;:{
+        &quot;multi_match&quot;: {
+            &quot;query&quot;: &quot;lvyou&quot;,
+            &quot;fields&quot;: [&quot;interests&quot;,&quot;name&quot;]
+         }
+    }
+}
+</code></pre>
+
+<p>match_phrase:短语匹配查询</p>
+
+<p>ElasticSearch引擎首先分析（analyze）查询字符串，从分析后的文本中构建短语查询，这意味着必须匹配短语中的所有分词，并且保证各个分词的相对位置不变：</p>
+
+<pre><code>GET lib3/user/_search
+{
+  &quot;query&quot;:{  
+      &quot;match_phrase&quot;:{  
+         &quot;interests&quot;: &quot;duanlian，shuoxiangsheng&quot;
+      }
+   }
+}
+</code></pre>
+
+<h4 id="2-7-6-指定返回的字段">2.7.6 指定返回的字段</h4>
+
+<pre><code>GET /lib3/user/_search
+{
+    &quot;_source&quot;: [&quot;address&quot;,&quot;name&quot;],
+    &quot;query&quot;: {
+        &quot;match&quot;: {
+            &quot;interests&quot;: &quot;changge&quot;
+        }
+    }
+}
+
+</code></pre>
+
+<h4 id="2-7-7控制加载的字段">2.7.7控制加载的字段</h4>
+
+<pre><code>GET /lib3/user/_search
+{
+    &quot;query&quot;: {
+        &quot;match_all&quot;: {}
+    },
+    
+    &quot;_source&quot;: {
+          &quot;includes&quot;: [&quot;name&quot;,&quot;address&quot;],
+          &quot;excludes&quot;: [&quot;age&quot;,&quot;birthday&quot;]
+      }
+}
+</code></pre>
+
+<p>使用通配符*</p>
+
+<pre><code>GET /lib3/user/_search
+{
+    &quot;_source&quot;: {
+          &quot;includes&quot;: &quot;addr*&quot;,
+          &quot;excludes&quot;: [&quot;name&quot;,&quot;bir*&quot;]
+        
+    },
+    &quot;query&quot;: {
+        &quot;match_all&quot;: {}
+    }
+}
+</code></pre>
+
+<h4 id="2-7-8-排序">2.7.8 排序</h4>
+
+<p>使用sort实现排序：
+desc:降序，asc升序</p>
+
+<pre><code>GET /lib3/user/_search
+{
+    &quot;query&quot;: {
+        &quot;match_all&quot;: {}
+    },
+    &quot;sort&quot;: [
+        {
+           &quot;age&quot;: {
+               &quot;order&quot;:&quot;asc&quot;
+           }
+        }
+    ]
+        
+}
+
+GET /lib3/user/_search
+{
+    &quot;query&quot;: {
+        &quot;match_all&quot;: {}
+    },
+    &quot;sort&quot;: [
+        {
+           &quot;age&quot;: {
+               &quot;order&quot;:&quot;desc&quot;
+           }
+        }
+    ]
+        
+}
+</code></pre>
+
+<h4 id="2-7-9-前缀匹配查询">2.7.9 前缀匹配查询</h4>
+
+<pre><code>GET /lib3/user/_search
+{
+  &quot;query&quot;: {
+    &quot;match_phrase_prefix&quot;: {
+        &quot;name&quot;: {
+            &quot;query&quot;: &quot;zhao&quot;
+        }
+    }
+  }
+}
+</code></pre>
+
+<h4 id="2-7-10-范围查询">2.7.10 范围查询</h4>
+
+<p>range:实现范围查询</p>
+
+<p>参数：from,to,include_lower,include_upper,boost</p>
+
+<p>include_lower:是否包含范围的左边界，默认是true</p>
+
+<p>include_upper:是否包含范围的右边界，默认是true</p>
+
+<pre><code>GET /lib3/user/_search
+{
+    &quot;query&quot;: {
+        &quot;range&quot;: {
+            &quot;birthday&quot;: {
+                &quot;from&quot;: &quot;1990-10-10&quot;,
+                &quot;to&quot;: &quot;2018-05-01&quot;
+            }
+        }
+    }
+}
+
+
+GET /lib3/user/_search
+{
+    &quot;query&quot;: {
+        &quot;range&quot;: {
+            &quot;age&quot;: {
+                &quot;from&quot;: 20,
+                &quot;to&quot;: 25,
+                &quot;include_lower&quot;: true,
+                &quot;include_upper&quot;: false
+            }
+        }
+    }
+}
+</code></pre>
+
+<h4 id="2-7-11-wildcard查询">2.7.11 wildcard查询</h4>
+
+<p>允许使用通配符* 和 ?来进行查询</p>
+
+<p>*代表0个或多个字符</p>
+
+<p>？代表任意一个字符</p>
+
+<pre><code>GET /lib3/user/_search
+{
+    &quot;query&quot;: {
+        &quot;wildcard&quot;: {
+             &quot;name&quot;: &quot;zhao*&quot;
+        }
+    }
+}
+
+
+GET /lib3/user/_search
+{
+    &quot;query&quot;: {
+        &quot;wildcard&quot;: {
+             &quot;name&quot;: &quot;li?i&quot;
+        }
+    }
+}
+</code></pre>
+
+<h4 id="2-7-12-fuzzy实现模糊查询">2.7.12 fuzzy实现模糊查询</h4>
+
+<p>value：查询的关键字</p>
+
+<p>boost：查询的权值，默认值是1.0</p>
+
+<p>min_similarity:设置匹配的最小相似度，默认值为0.5，对于字符串，取值为0-1(包括0和1);对于数值，取值可能大于1;对于日期型取值为1d,1m等，1d就代表1天</p>
+
+<p>prefix_length:指明区分词项的共同前缀长度，默认是0</p>
+
+<p>max_expansions:查询中的词项可以扩展的数目，默认可以无限大</p>
+
+<pre><code>GET /lib3/user/_search
+{
+    &quot;query&quot;: {
+        &quot;fuzzy&quot;: {
+             &quot;interests&quot;: &quot;chagge&quot;
+        }
+    }
+}
+
+GET /lib3/user/_search
+{
+    &quot;query&quot;: {
+        &quot;fuzzy&quot;: {
+             &quot;interests&quot;: {
+                 &quot;value&quot;: &quot;chagge&quot;
+             }
+        }
+    }
+}
+</code></pre>
+
+<h4 id="2-7-13-高亮搜索结果">2.7.13 高亮搜索结果</h4>
+
+<pre><code>GET /lib3/user/_search
+{
+    &quot;query&quot;:{
+        &quot;match&quot;:{
+            &quot;interests&quot;: &quot;changge&quot;
+        }
+    },
+    &quot;highlight&quot;: {
+        &quot;fields&quot;: {
+             &quot;interests&quot;: {}
+        }
+    }
+}
+</code></pre>
+
+                            <h2> 本文链接：</h2>
+                            <a href='https://ziyan1215.github.io/archive/1563522787/' target="_blank">https://ziyan1215.github.io/archive/1563522787/</a>
+                    </div>
+                  </article>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div class="blog-post-comments"></div>
+<script>
+    new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
+        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        placeholder: '说点什么呗?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });
+</script>
+
+                  
+                  
+        </section>
+
+    </div>
+      
+  <footer id="footer">
+    <div class="footer-left">
+        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+      
+   </div>
+    <div class="footer-right">
+      <nav>
+        <ul>
+          <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+    
+<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://ziyan1215.github.io/lib/typed.js"></script>
+<script src="https://ziyan1215.github.io/js/main.js"></script>
+
+
+
+
+
+<script async src=""></script>
+<script>
+(function(){
+  if(location.host!=='xuziyan.ga')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()
+</script>
+
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+
+
+  
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }
+  </script>
+</body>
+
+</html>
+

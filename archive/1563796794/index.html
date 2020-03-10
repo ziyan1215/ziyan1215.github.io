@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta name="generator" content="Hugo 0.55.6" />
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<meta name="wap-font-scale" content="no">
+		
+		
+		
+		<meta name="author" content="XuziYan">
+		<meta name='description' itemprop="description" content="2.11 嵌套字段  由于在 Elasticsearch 中单个文档的增删改都是原子性操作,那么将相关实体数据都存储在同一文档中也就理所当然。 比如说,我们可以将订单及其明细数据存储在一个文档中。又比如,我们可以将一篇博客文章的评论以一个 comments 数组的形式和博客文章放在一起：
+ PUT /my_index/blogpost/1 { &amp;quot;title&amp;quot;: &amp;quot;Ne">
+		 
+		<meta name="keywords" content="ES的嵌套字段" >
+		
+		
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="ES的嵌套字段">
+		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:description" content="2.11 嵌套字段  由于在 Elasticsearch 中单个文档的增删改都是原子性操作,那么将相关实体数据都存储在同一文档中也就理所当然。 比如说,我们可以将订单及其明细数据存储在一个文档中。又比如,我们可以将一篇博客文章的评论以一个 comments 数组的形式和博客文章放在一起：
+ PUT /my_index/blogpost/1 { &amp;quot;title&amp;quot;: &amp;quot;Ne">
+		<meta property="og:site_name" content="XuziYan">
+
+		<title>ES的嵌套字段 | Xuzi</title>
+		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+
+		
+
+		
+		
+		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script>
+			document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);
+			</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https:\/\/ziyan1215.github.io\/archive\/1563796794\/",
+				"appid": "1621056720407734", 
+				"title": "ES的嵌套字段 | Xuzi JAVA!!!", 
+				"images": [],
+				"pubDate": "2019-07-22T19:59:54"
+			} 
+			</script>
+	</head>
+
+<body>
+    <div id="header-post">
+        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+        <span id="menu">
+          <span id="nav">
+            <ul>
+              <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+            </ul>
+          </span>
+          <br/>
+          <span id="actions">
+            <ul>
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1563681594/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1563940854/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                
+              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+            </ul>
+            <span id="i-prev" class="info" style="display:none;">Previous post</span>
+            <span id="i-next" class="info" style="display:none;">Next post</span>
+            <span id="i-top" class="info" style="display:none;">Back to top</span>
+            <span id="i-share" class="info" style="display:none;">Share post</span>
+          </span>
+          <br/>
+          <div id="share" style="display: none">
+              <ul>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563796794%2f&text=ES%e7%9a%84%e5%b5%8c%e5%a5%97%e5%ad%97%e6%ae%b5"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563796794%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563796794%2f&text=ES%e7%9a%84%e5%b5%8c%e5%a5%97%e5%ad%97%e6%ae%b5"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563796794%2f&title=ES%e7%9a%84%e5%b5%8c%e5%a5%97%e5%ad%97%e6%ae%b5"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563796794%2f&is_video=false&description=ES%e7%9a%84%e5%b5%8c%e5%a5%97%e5%ad%97%e6%ae%b5"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=ES%e7%9a%84%e5%b5%8c%e5%a5%97%e5%ad%97%e6%ae%b5&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1563796794%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563796794%2f&title=ES%e7%9a%84%e5%b5%8c%e5%a5%97%e5%ad%97%e6%ae%b5"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563796794%2f&title=ES%e7%9a%84%e5%b5%8c%e5%a5%97%e5%ad%97%e6%ae%b5"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563796794%2f&title=ES%e7%9a%84%e5%b5%8c%e5%a5%97%e5%ad%97%e6%ae%b5"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1563796794%2f&title=ES%e7%9a%84%e5%b5%8c%e5%a5%97%e5%ad%97%e6%ae%b5"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+ </ul>
+      
+          </div>
+          <div id="toc">
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#2-11-嵌套字段">2.11 嵌套字段</a>
+<ul>
+<li><a href="#2-11-1嵌套对象映射">2.11.1嵌套对象映射</a></li>
+<li><a href="#2-11-2嵌套对象查询">2.11.2嵌套对象查询</a></li>
+<li><a href="#2-11-3-使用嵌套字段排序">2.11.3 使用嵌套字段排序</a></li>
+<li><a href="#2-11-4-嵌套字段聚合">2.11.4 嵌套字段聚合</a></li>
+<li><a href="#2-11-5逆向嵌套聚合">2.11.5逆向嵌套聚合</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        </span>
+      </div>
+      
+    <div class="content index width mx-auto px3 my3">
+        <section id="wrapper" class="home">
+                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                    <header>
+                    <h1 class="posttitle" itemprop="name headline">
+                            ES的嵌套字段
+                        </h1>
+                      <div class="meta">
+                        <div class="postdate">
+                                <time datetime='2019-07-22' itemprop="datePublished">2019-07-22</time>
+                            </div>
+                        <div class="article-tag">
+                            <i class="fa fa-eye"></i>
+                            <span id="busuanzi_container_page_pv">
+                                <span id="busuanzi_value_page_pv">0</span>
+                              </span>
+                            </span>
+                        </div>
+                        
+                        <div class="article-tag">
+                            <i class="fa fa-tag"></i>
+                            
+                            <a href="/tags/elasticsearch">
+                               Elasticsearch</a> 
+                             
+                        </div>
+                        
+                        
+                        
+                        <div class="article-tag-box">
+                               
+                        </div>
+
+                        
+                      </div>
+                    </header>
+                    
+
+                    <div class="content" itemprop="articleBody">
+                            
+                            
+
+<h3 id="2-11-嵌套字段">2.11 嵌套字段</h3>
+
+<blockquote>
+<p>由于在 Elasticsearch 中单个文档的增删改都是原子性操作,那么将相关实体数据都存储在同一文档中也就理所当然。 比如说,我们可以将订单及其明细数据存储在一个文档中。又比如,我们可以将一篇博客文章的评论以一个 comments 数组的形式和博客文章放在一起：</p>
+</blockquote>
+
+<pre><code>PUT /my_index/blogpost/1
+{
+  &quot;title&quot;: &quot;Nest eggs&quot;,
+  &quot;body&quot;:  &quot;Making your money work...&quot;,
+  &quot;tags&quot;:  [ &quot;cash&quot;, &quot;shares&quot; ],
+  &quot;comments&quot;: [ 
+    {
+      &quot;name&quot;:    &quot;John Smith&quot;,
+      &quot;comment&quot;: &quot;Great article&quot;,
+      &quot;age&quot;:     28,
+      &quot;stars&quot;:   4,
+      &quot;date&quot;:    &quot;2014-09-01&quot;
+    },
+    {
+      &quot;name&quot;:    &quot;Alice White&quot;,
+      &quot;comment&quot;: &quot;More like this please&quot;,
+      &quot;age&quot;:     31,
+      &quot;stars&quot;:   5,
+      &quot;date&quot;:    &quot;2014-10-22&quot;
+    }
+  ]
+}
+</code></pre>
+
+<p>如果我们依赖字段自动映射,那么 comments 字段会自动映射为 object 类型。</p>
+
+<p>由于所有的信息都在一个文档中,当我们查询时就没有必要去联合文章和评论文档,查询效率就很高。</p>
+
+<p>但是当我们使用如下查询时,上面的文档也会被当做是符合条件的结果：</p>
+
+<pre><code>GET /_search
+{
+  &quot;query&quot;: {
+    &quot;bool&quot;: {
+      &quot;must&quot;: [
+        { &quot;match&quot;: { &quot;name&quot;: &quot;Alice&quot; }},
+        { &quot;match&quot;: { &quot;age&quot;:  28      }} 
+      ]
+    }
+  }
+}
+</code></pre>
+
+<p>==Alice实际是31岁,不是28!==</p>
+
+<p>正如我们在 对象数组 中讨论的一样,出现上面这种问题的原因是 JSON 格式的文档被处理成如下的扁平式键值对的结构。</p>
+
+<pre><code>{
+  &quot;title&quot;:            [ eggs, nest ],
+  &quot;body&quot;:             [ making, money, work, your ],
+  &quot;tags&quot;:             [ cash, shares ],
+  &quot;comments.name&quot;:    [ alice, john, smith, white ],
+  &quot;comments.comment&quot;: [ article, great, like, more, please, this ],
+  &quot;comments.age&quot;:     [ 28, 31 ],
+  &quot;comments.stars&quot;:   [ 4, 5 ],
+  &quot;comments.date&quot;:    [ 2014-09-01, 2014-10-22 ]
+}
+</code></pre>
+
+<p>Alice 和 31 、 John 和 2014-09-01 之间的相关性信息不再存在。虽然 object 类型 在存储 单一对象 时非常有用,但对于对象数组的搜索而言,毫无用处。</p>
+
+<p>嵌套对象 就是来解决这个问题的。将 comments 字段类型设置为 nested 而不是 object 后,每一个嵌套对象都会被索引为一个 隐藏的独立文档 ,举例如下:</p>
+
+<pre><code>{ 
+  &quot;comments.name&quot;:    [ john, smith ],
+  &quot;comments.comment&quot;: [ article, great ],
+  &quot;comments.age&quot;:     [ 28 ],
+  &quot;comments.stars&quot;:   [ 4 ],
+  &quot;comments.date&quot;:    [ 2014-09-01 ]
+}
+{ 
+  &quot;comments.name&quot;:    [ alice, white ],
+  &quot;comments.comment&quot;: [ like, more, please, this ],
+  &quot;comments.age&quot;:     [ 31 ],
+  &quot;comments.stars&quot;:   [ 5 ],
+  &quot;comments.date&quot;:    [ 2014-10-22 ]
+}
+{ 
+  &quot;title&quot;:            [ eggs, nest ],
+  &quot;body&quot;:             [ making, money, work, your ],
+  &quot;tags&quot;:             [ cash, shares ]
+}
+</code></pre>
+
+<p>第一个 嵌套文档</p>
+
+<p>第二个 嵌套文档</p>
+
+<p>根文档 或者也可称为父文档</p>
+
+<p>在独立索引每一个嵌套对象后,对象中每个字段的相关性得以保留。我们查询时,也仅仅返回那些真正符合条件的文档。</p>
+
+<p>不仅如此,由于嵌套文档直接存储在文档内部,查询时嵌套文档和根文档联合成本很低,速度和单独存储几乎一样。</p>
+
+<p>嵌套文档是隐藏存储的,我们不能直接获取。如果要增删改一个嵌套对象,我们必须把整个文档重新索引才可以。值得注意的是,查询的时候返回的是整个文档,而不是嵌套文档本身。</p>
+
+<h4 id="2-11-1嵌套对象映射">2.11.1嵌套对象映射</h4>
+
+<p>设置一个字段为 nested 很简单 —  你只需要将字段类型 object 替换为 nested 即可：</p>
+
+<pre><code>PUT /my_index
+{
+  &quot;mappings&quot;: {
+    &quot;blogpost&quot;: {
+      &quot;properties&quot;: {
+        &quot;comments&quot;: {
+          &quot;type&quot;: &quot;nested&quot;, 
+          &quot;properties&quot;: {
+            &quot;name&quot;:    { &quot;type&quot;: &quot;text&quot;  },
+            &quot;comment&quot;: { &quot;type&quot;: &quot;text&quot;  },
+            &quot;age&quot;:     { &quot;type&quot;: &quot;integer&quot;   },
+            &quot;stars&quot;:   { &quot;type&quot;: &quot;integer&quot;   },
+            &quot;date&quot;:    { &quot;type&quot;: &quot;date&quot;    }
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+
+<p>nested 字段类型的设置参数与 object 相同。</p>
+
+<h4 id="2-11-2嵌套对象查询">2.11.2嵌套对象查询</h4>
+
+<p>由于嵌套对象 被索引在独立隐藏的文档中，我们无法直接查询它们。 相应地，我们必须使用 nested 查询 去获取它们：</p>
+
+<pre><code>GET /my_index/blogpost/_search
+{
+  &quot;query&quot;: {
+    &quot;bool&quot;: {
+      &quot;must&quot;: [
+        {
+          &quot;match&quot;: {
+            &quot;title&quot;: &quot;eggs&quot; 
+          }
+        },
+        {
+          &quot;nested&quot;: {
+            &quot;path&quot;: &quot;comments&quot;, 
+            &quot;query&quot;: {
+              &quot;bool&quot;: {
+                &quot;must&quot;: [ 
+                  {
+                    &quot;match&quot;: {
+                      &quot;comments.name&quot;: &quot;john&quot;
+                    }
+                  },
+                  {
+                    &quot;match&quot;: {
+                      &quot;comments.age&quot;: 28
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+}}}
+</code></pre>
+
+<p>title 子句是查询根文档的。</p>
+
+<p>nested 子句作用于嵌套字段 comments 。在此查询中，既不能查询根文档字段，也不能查询其他嵌套文档。</p>
+
+<p>comments.name 和 comments.age 子句操作在同一个嵌套文档中。</p>
+
+<blockquote>
+<p>nested 字段可以包含其他的 nested 字段。同样地，nested 查询也可以包含其他的 nested 查询。而嵌套的层次会按照你所期待的被应用。</p>
+</blockquote>
+
+<p>nested 查询肯定可以匹配到多个嵌套的文档。每一个匹配的嵌套文档都有自己的相关度得分，但是这众多的分数最终需要汇聚为可供根文档使用的一个分数。</p>
+
+<p>默认情况下，根文档的分数是这些嵌套文档分数的平均值。可以通过设置 score_mode 参数来控制这个得分策略，相关策略有 avg (平均值), max (最大值), sum (加和) 和 none (直接返回 1.0 常数值分数)。</p>
+
+<pre><code>GET /my_index/blogpost/_search
+{
+  &quot;query&quot;: {
+    &quot;bool&quot;: {
+      &quot;must&quot;: [
+        {
+          &quot;match&quot;: {
+            &quot;title&quot;: &quot;eggs&quot;
+          }
+        },
+        {
+          &quot;nested&quot;: {
+            &quot;path&quot;: &quot;comments&quot;,
+            &quot;score_mode&quot;: &quot;max&quot;, 
+            &quot;query&quot;: {
+              &quot;bool&quot;: {
+                &quot;must&quot;: [
+                  {
+                    &quot;match&quot;: {
+                      &quot;comments.name&quot;: &quot;john&quot;
+                    }
+                  },
+                  {
+                    &quot;match&quot;: {
+                      &quot;comments.age&quot;: 28
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+</code></pre>
+
+<p>返回最优匹配嵌套文档的 _score 给根文档使用。</p>
+
+<blockquote>
+<p>如果 nested 查询放在一个布尔查询的 filter 子句中，其表现就像一个 nested 查询，只是 score_mode 参数不再生效。因为它被用于不打分的查询中 — 只是符合或不符合条件，不必打分 — 那么 score_mode 就没有任何意义，因为根本就没有要打分的地方。</p>
+</blockquote>
+
+<h4 id="2-11-3-使用嵌套字段排序">2.11.3 使用嵌套字段排序</h4>
+
+<p>尽管嵌套字段的值存储于独立的嵌套文档中，但依然有方法按照嵌套字段的值排序。 让我们添加另一个记录，以使得结果更有意思：</p>
+
+<pre><code>PUT /my_index/blogpost/2
+{
+  &quot;title&quot;: &quot;Investment secrets&quot;,
+  &quot;body&quot;:  &quot;What they don't tell you ...&quot;,
+  &quot;tags&quot;:  [ &quot;shares&quot;, &quot;equities&quot; ],
+  &quot;comments&quot;: [
+    {
+      &quot;name&quot;:    &quot;Mary Brown&quot;,
+      &quot;comment&quot;: &quot;Lies, lies, lies&quot;,
+      &quot;age&quot;:     42,
+      &quot;stars&quot;:   1,
+      &quot;date&quot;:    &quot;2014-10-18&quot;
+    },
+    {
+      &quot;name&quot;:    &quot;John Smith&quot;,
+      &quot;comment&quot;: &quot;You're making it up!&quot;,
+      &quot;age&quot;:     28,
+      &quot;stars&quot;:   2,
+      &quot;date&quot;:    &quot;2014-10-16&quot;
+    }
+  ]
+}
+</code></pre>
+
+<p>假如我们想要查询在10月份收到评论的博客文章，并且按照 stars 数的最小值来由小到大排序，那么查询语句如下：</p>
+
+<pre><code>GET /_search
+{
+  &quot;query&quot;: {
+    &quot;nested&quot;: { 
+      &quot;path&quot;: &quot;comments&quot;,
+      &quot;filter&quot;: {
+        &quot;range&quot;: {
+          &quot;comments.date&quot;: {
+            &quot;gte&quot;: &quot;2014-10-01&quot;,
+            &quot;lt&quot;:  &quot;2014-11-01&quot;
+          }
+        }
+      }
+    }
+  },
+  &quot;sort&quot;: {
+    &quot;comments.stars&quot;: { 
+      &quot;order&quot;: &quot;asc&quot;,   
+      &quot;mode&quot;:  &quot;min&quot;,   
+      &quot;nested_path&quot;: &quot;comments&quot;, 
+      &quot;nested_filter&quot;: {
+        &quot;range&quot;: {
+          &quot;comments.date&quot;: {
+            &quot;gte&quot;: &quot;2014-10-01&quot;,
+            &quot;lt&quot;:  &quot;2014-11-01&quot;
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+
+<p>此处的 nested 查询将结果限定为在10月份收到过评论的博客文章。</p>
+
+<p>结果按照匹配的评论中 comment.stars 字段的最小值 (min) 来由小到大 (asc) 排序。</p>
+
+<p>排序子句中的 nested_path 和 nested_filter 和 query 子句中的 nested 查询相同，原因在下面有解释。</p>
+
+<p>我们为什么要用 nested_path 和 nested_filter 重复查询条件呢？原因在于，排序发生在查询执行之后。 查询条件限定了在10月份收到评论的博客文档，但返回的是博客文档。如果我们不在排序子句中加入 nested_filter ， 那么我们对博客文档的排序将基于博客文档的所有评论，而不是仅仅在10月份接收到的评论。</p>
+
+<h4 id="2-11-4-嵌套字段聚合">2.11.4 嵌套字段聚合</h4>
+
+<p>在查询的时候，我们使用 nested 查询 就可以获取嵌套对象的信息。同理， nested 聚合允许我们对嵌套对象里的字段进行聚合操作。</p>
+
+<pre><code>GET /my_index/blogpost/_search
+{
+  &quot;size&quot; : 0,
+  &quot;aggs&quot;: {
+    &quot;comments&quot;: { 
+      &quot;nested&quot;: {
+        &quot;path&quot;: &quot;comments&quot;
+      },
+      &quot;aggs&quot;: {
+        &quot;by_month&quot;: {
+          &quot;date_histogram&quot;: { 
+            &quot;field&quot;:    &quot;comments.date&quot;,
+            &quot;interval&quot;: &quot;month&quot;,
+            &quot;format&quot;:   &quot;yyyy-MM&quot;
+          },
+          &quot;aggs&quot;: {
+            &quot;avg_stars&quot;: {
+              &quot;avg&quot;: { 
+                &quot;field&quot;: &quot;comments.stars&quot;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+
+<p>nested 聚合 “进入” 嵌套的 comments 对象。</p>
+
+<p>comment对象根据 comments.date 字段的月份值被分到不同的桶。</p>
+
+<p>计算每个桶内star的平均数量。</p>
+
+<p>从下面的结果可以看出聚合是在嵌套文档层面进行的：</p>
+
+<pre><code>...
+&quot;aggregations&quot;: {
+  &quot;comments&quot;: {
+     &quot;doc_count&quot;: 4, 
+     &quot;by_month&quot;: {
+        &quot;buckets&quot;: [
+           {
+              &quot;key_as_string&quot;: &quot;2014-09&quot;,
+              &quot;key&quot;: 1409529600000,
+              &quot;doc_count&quot;: 1, 
+              &quot;avg_stars&quot;: {
+                 &quot;value&quot;: 4
+              }
+           },
+           {
+              &quot;key_as_string&quot;: &quot;2014-10&quot;,
+              &quot;key&quot;: 1412121600000,
+              &quot;doc_count&quot;: 3, 
+              &quot;avg_stars&quot;: {
+                 &quot;value&quot;: 2.6666666666666665
+              }
+           }
+        ]
+     }
+  }
+}
+...
+</code></pre>
+
+<p>总共有4个 comments 对象 ：1个对象在9月的桶里，3个对象在10月的桶里。</p>
+
+<h4 id="2-11-5逆向嵌套聚合">2.11.5逆向嵌套聚合</h4>
+
+<p>nested 聚合 只能对嵌套文档的字段进行操作。 根文档或者其他嵌套文档的字段对它是不可见的。 然而，通过 reverse_nested 聚合，我们可以 走出 嵌套层级，回到父级文档进行操作。</p>
+
+<p>例如，我们要基于评论者的年龄找出评论者感兴趣 tags 的分布。 comment.age 是一个嵌套字段，但 tags 在根文档中：</p>
+
+<pre><code>GET /my_index/blogpost/_search
+{
+  &quot;size&quot; : 0,
+  &quot;aggs&quot;: {
+    &quot;comments&quot;: {
+      &quot;nested&quot;: { 
+        &quot;path&quot;: &quot;comments&quot;
+      },
+      &quot;aggs&quot;: {
+        &quot;age_group&quot;: {
+          &quot;histogram&quot;: { 
+            &quot;field&quot;:    &quot;comments.age&quot;,
+            &quot;interval&quot;: 10
+          },
+          &quot;aggs&quot;: {
+            &quot;blogposts&quot;: {
+              &quot;reverse_nested&quot;: {}, 
+              &quot;aggs&quot;: {
+                &quot;tags&quot;: {
+                  &quot;terms&quot;: { 
+                    &quot;field&quot;: &quot;tags&quot;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+
+<p>nested 聚合进入 comments 对象。</p>
+
+<p>histogram 聚合基于 comments.age 做分组，每10年一个分组。</p>
+
+<p>reverse_nested 聚合退回根文档。</p>
+
+<p>terms 聚合计算每个分组年龄段的评论者最常用的标签词。</p>
+
+<p>简略结果如下所示：</p>
+
+<pre><code>..
+&quot;aggregations&quot;: {
+  &quot;comments&quot;: {
+     &quot;doc_count&quot;: 4, 
+     &quot;age_group&quot;: {
+        &quot;buckets&quot;: [
+           {
+              &quot;key&quot;: 20, 
+              &quot;doc_count&quot;: 2, 
+              &quot;blogposts&quot;: {
+                 &quot;doc_count&quot;: 2, 
+                 &quot;tags&quot;: {
+                    &quot;doc_count_error_upper_bound&quot;: 0,
+                    &quot;buckets&quot;: [ 
+                       { &quot;key&quot;: &quot;shares&quot;,   &quot;doc_count&quot;: 2 },
+                       { &quot;key&quot;: &quot;cash&quot;,     &quot;doc_count&quot;: 1 },
+                       { &quot;key&quot;: &quot;equities&quot;, &quot;doc_count&quot;: 1 }
+                    ]
+                 }
+              }
+           },
+...
+</code></pre>
+
+<p>一共有4条评论。</p>
+
+<p>在20岁到30岁之间总共有两条评论。</p>
+
+<p>这些评论包含在两篇博客文章中。</p>
+
+<p>在这些博客文章中最热门的标签是 <code>shares</code>、 <code>cash</code>、<code>equities</code>。</p>
+
+                            <h2> 本文链接：</h2>
+                            <a href='https://ziyan1215.github.io/archive/1563796794/' target="_blank">https://ziyan1215.github.io/archive/1563796794/</a>
+                    </div>
+                  </article>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div class="blog-post-comments"></div>
+<script>
+    new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
+        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        placeholder: '说点什么呗?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });
+</script>
+
+                  
+                  
+        </section>
+
+    </div>
+      
+  <footer id="footer">
+    <div class="footer-left">
+        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+      
+   </div>
+    <div class="footer-right">
+      <nav>
+        <ul>
+          <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+    
+<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://ziyan1215.github.io/lib/typed.js"></script>
+<script src="https://ziyan1215.github.io/js/main.js"></script>
+
+
+
+
+
+<script async src=""></script>
+<script>
+(function(){
+  if(location.host!=='xuziyan.ga')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()
+</script>
+
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+
+
+  
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }
+  </script>
+</body>
+
+</html>
+

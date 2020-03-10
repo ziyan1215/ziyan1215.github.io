@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on XuziYan</title>
+    <link>https://ziyan1215.github.io/tags/windows/</link>
+    <description>Recent content in Windows on XuziYan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 08 Jan 2019 17:18:22 +0000</lastBuildDate>
+    
+	<atom:link href="https://ziyan1215.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Netstat查看某端口号被谁占用</title>
+      <link>https://ziyan1215.github.io/archive/1546939102/</link>
+      <pubDate>Tue, 08 Jan 2019 17:18:22 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1546939102/</guid>
+      <description>列出所有端口的情况 在cmd窗口下执行 netstat -ano
+查看被占用端口对应的PID 输入命令：netstat -aon|findstr &amp;quot;1313&amp;quot;
+查看是哪个进程或者程序占用了1313端口 tasklist|findstr &amp;quot;10328&amp;quot;
+到任务管理器结束相应的进程 或者直接输入命令： taskkill /im hugo.exe /f
+C:\Users\Administrator&amp;gt;netstat -aon|findstr &amp;quot;1313&amp;quot; TCP 127.0.0.1:1313 0.0.0.0:0 LISTENING 10328 TCP 127.0.0.1:1313 127.0.0.1:61709 ESTABLISHED 10328 TCP 127.0.0.1:1313 127.0.0.1:61710 ESTABLISHED 10328 TCP 127.0.0.1:1313 127.0.0.1:61720 ESTABLISHED 10328 TCP 127.0.0.1:1313 127.0.0.1:61722 ESTABLISHED 10328 TCP 127.0.0.1:1313 127.0.0.1:61723 ESTABLISHED 10328 TCP 127.0.0.1:1313 127.0.0.1:61724 ESTABLISHED 10328 TCP 127.0.0.1:1313 127.0.0.1:61732 ESTABLISHED 10328 TCP 127.0.0.1:1313 127.0.0.1:61999 ESTABLISHED 10328 TCP 127.0.0.1:61709 127.0.0.1:1313 ESTABLISHED 8312 TCP 127.</description>
+    </item>
+    
+  </channel>
+</rss>

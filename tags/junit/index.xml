@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Junit on XuziYan</title>
+    <link>https://ziyan1215.github.io/tags/junit/</link>
+    <description>Recent content in Junit on XuziYan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 21 Jan 2019 15:42:22 +0000</lastBuildDate>
+    
+	<atom:link href="https://ziyan1215.github.io/tags/junit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Junit4加载spring配置文件进行单元测试</title>
+      <link>https://ziyan1215.github.io/archive/1548056542/</link>
+      <pubDate>Mon, 21 Jan 2019 15:42:22 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1548056542/</guid>
+      <description>  配置BaseTest，然后后面的测试类继承此类即可进行单元测试
+ 基类 @RunWith(SpringJUnit4ClassRunner.class) // 告诉junit spring配置文件 @ContextConfiguration({ &amp;quot;classpath:spring/spring-dao.xml&amp;quot;, &amp;quot;classpath:spring/spring-service.xml&amp;quot; }) public class BaseTest { }  测试类 public class AreaDaoTest extends BaseTest{ @Autowired private AreaDao areaDao; @Test public void testQueryArea() { List&amp;lt;Area&amp;gt; listArea=new ArrayList&amp;lt;Area&amp;gt;(); listArea=areaDao.queryArea(); System.out.println(listArea.size()); } }  </description>
+    </item>
+    
+  </channel>
+</rss>

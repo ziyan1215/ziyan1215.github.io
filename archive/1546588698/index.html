@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta name="generator" content="Hugo 0.55.6" />
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<meta name="wap-font-scale" content="no">
+		
+		
+		
+		<meta name="author" content="XuziYan">
+		<meta name='description' itemprop="description" content="在实际工作中，导入现场环境的数据库会发现数据乱码、变成问号、数据库对象缺失等问题，很多时候是因为导出时和导入时的环境不一致导致的。
+ 处理方法  保证现场库和本地库字符集环境一致，现场导出时的环境和导入本地库的环境一致。
+ 通过查询语句
+select * from nls_database_parameters;  查询数据库字符集，确认现场库和本地库字符集环境一致的情况下，检查现场环境导出的方式">
+		 
+		<meta name="keywords" content="dmp导入乱码, 导入后乱码" >
+		
+		
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="Dmp导入后乱码的解决方法">
+		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:description" content="在实际工作中，导入现场环境的数据库会发现数据乱码、变成问号、数据库对象缺失等问题，很多时候是因为导出时和导入时的环境不一致导致的。
+ 处理方法  保证现场库和本地库字符集环境一致，现场导出时的环境和导入本地库的环境一致。
+ 通过查询语句
+select * from nls_database_parameters;  查询数据库字符集，确认现场库和本地库字符集环境一致的情况下，检查现场环境导出的方式">
+		<meta property="og:site_name" content="XuziYan">
+
+		<title>Dmp导入后乱码的解决方法 | Xuzi</title>
+		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+
+		
+
+		
+		
+		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script>
+			document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);
+			</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https:\/\/ziyan1215.github.io\/archive\/1546588698\/",
+				"appid": "1621056720407734", 
+				"title": "Dmp导入后乱码的解决方法 | Xuzi JAVA!!!", 
+				"images": [],
+				"pubDate": "2019-01-04T15:58:18"
+			} 
+			</script>
+	</head>
+
+<body>
+    <div id="header-post">
+        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+        <span id="menu">
+          <span id="nav">
+            <ul>
+              <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+            </ul>
+          </span>
+          <br/>
+          <span id="actions">
+            <ul>
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546588114/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546590921/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                
+              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+            </ul>
+            <span id="i-prev" class="info" style="display:none;">Previous post</span>
+            <span id="i-next" class="info" style="display:none;">Next post</span>
+            <span id="i-top" class="info" style="display:none;">Back to top</span>
+            <span id="i-share" class="info" style="display:none;">Share post</span>
+          </span>
+          <br/>
+          <div id="share" style="display: none">
+              <ul>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&text=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&text=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&is_video=false&description=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+ </ul>
+      
+          </div>
+          <div id="toc">
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#处理方法">处理方法</a>
+<ul>
+<li><a href="#windows下修改字符集环境">windows下修改字符集环境</a></li>
+<li><a href="#linux下导入的时候可以设置字符集的环境变量">Linux下导入的时候可以设置字符集的环境变量</a></li>
+</ul></li>
+<li><a href="#相关知识点">相关知识点</a></li>
+</ul>
+</nav>
+          </div>
+        </span>
+      </div>
+      
+    <div class="content index width mx-auto px3 my3">
+        <section id="wrapper" class="home">
+                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                    <header>
+                    <h1 class="posttitle" itemprop="name headline">
+                            Dmp导入后乱码的解决方法
+                        </h1>
+                      <div class="meta">
+                        <div class="postdate">
+                                <time datetime='2019-01-04' itemprop="datePublished">2019-01-04</time>
+                            </div>
+                        <div class="article-tag">
+                            <i class="fa fa-eye"></i>
+                            <span id="busuanzi_container_page_pv">
+                                <span id="busuanzi_value_page_pv">0</span>
+                              </span>
+                            </span>
+                        </div>
+                        
+                        <div class="article-tag">
+                            <i class="fa fa-tag"></i>
+                            
+                            <a href="/tags/oracle">
+                               Oracle</a> 
+                             
+                        </div>
+                        
+                        
+                        
+                        <div class="article-tag-box">
+                               
+                        </div>
+
+                        
+                      </div>
+                    </header>
+                    
+
+                    <div class="content" itemprop="articleBody">
+                            
+                            
+
+<blockquote>
+<p>在实际工作中，导入现场环境的数据库会发现数据乱码、变成问号、数据库对象缺失等问题，很多时候是因为<strong>导出时</strong>和<strong>导入时</strong>的环境不一致导致的。</p>
+</blockquote>
+
+<h1 id="处理方法">处理方法</h1>
+
+<ol>
+<li><p>保证现场库和本地库字符集环境一致，现场导出时的环境和导入本地库的环境一致。</p></li>
+
+<li><p>通过查询语句</p>
+
+<pre><code class="language-sql">select * from nls_database_parameters; 
+</code></pre>
+
+<p>查询数据库字符集，确认现场库和本地库字符集环境一致的情况下，检查现场环境导出的方式，包括导出所使用的是windows环境还是linux环境、导出的字符集是UTF-8还是AL32UTF8或者ZHS16GBK等。然后我们导入本地库的时候使用和现场一致的环境应该就能够成功导入数据，至少不会如开始那样缺少很多对象</p>
+
+<h2 id="windows下修改字符集环境">windows下修改字符集环境</h2>
+
+<p>在cmd中输入regedit.exe打开注册表</p>
+
+<p>按照如下步骤修改注册表，就可以把客户端从中文修改成英文（注意如果64位windows路径会有不同）。</p>
+
+<p><code>HKEY_LOCAL_MACHINE -&gt; SOFTWARE -&gt; Oracle -&gt; KEY_OraClient10g_home1 -&gt; NLS_LANG</code></p>
+
+<p>修改&rsquo;SIMPLIFIED CHINESE_CHINA.ZHS16GBK&rsquo; to &lsquo;SIMPLIFIED CHINESE_CHINA.UTF8&rsquo;</p>
+
+<h2 id="linux下导入的时候可以设置字符集的环境变量">Linux下导入的时候可以设置字符集的环境变量</h2>
+
+<pre><code class="language-bash">[oracle@localhost ~]$ export NLS_LANG=&quot;SIMPLIFIED CHINESE_CHINA.ZHS16GBK&quot;
+</code></pre></li>
+</ol>
+
+<p>4.查看当前会话窗口的字符集环境：</p>
+
+<pre><code class="language-bash">[oracle@localhost ~]$ echo $NLS_LANG
+</code></pre>
+
+<p>注：LANG是针对Linux系统的语言、地区、字符集的设置,对linux下的应用程序有效，如date；NLS_LANG是针对Oracle语言、地区、字符集的设置，对oracle中的工具有效</p>
+
+<p>linux下查看系统的环境变量：</p>
+
+<pre><code class="language-bash">[oracle@localhost ~]$ local
+-bash: local: can only be used in a function
+[oracle@localhost ~]$ locale
+LANG=en_US.UTF-8
+LC_CTYPE=&quot;en_US.UTF-8&quot;
+LC_NUMERIC=&quot;en_US.UTF-8&quot;
+LC_TIME=&quot;en_US.UTF-8&quot;
+LC_COLLATE=&quot;en_US.UTF-8&quot;
+LC_MONETARY=&quot;en_US.UTF-8&quot;
+LC_MESSAGES=&quot;en_US.UTF-8&quot;
+LC_PAPER=&quot;en_US.UTF-8&quot;
+LC_NAME=&quot;en_US.UTF-8&quot;
+LC_ADDRESS=&quot;en_US.UTF-8&quot;
+LC_TELEPHONE=&quot;en_US.UTF-8&quot;
+LC_MEASUREMENT=&quot;en_US.UTF-8&quot;
+LC_IDENTIFICATION=&quot;en_US.UTF-8&quot;
+LC_ALL=
+</code></pre>
+
+<p>这里LC_ALL没有设置，如果它设置了，上面所有的设置都无效的，系统会读取LC_ALL。</p>
+
+<p>locale -a 查看本地字符集</p>
+
+<p>locale -m 查看所有支持的字符集</p>
+
+<h1 id="相关知识点">相关知识点</h1>
+
+<p>常用字符集设定值：</p>
+
+<p><code>AMERICAN_AMERICA.AL32UTF8</code></p>
+
+<p><code>AMERICAN_AMERICA.UTF8</code></p>
+
+<p><code>SIMPLIFIED CHINESE_CHINA.ZHS16GBK</code></p>
+
+<p>常用字符集查询语句：</p>
+
+<pre><code class="language-sql">--查看Oracle数据库可用字符集参数设置
+SELECT*FROM v$nls_valid_values;
+--查看Oracle数据库字符集(常用)
+select*from nls_database_parameters;
+--查看Oracle客户端字符集环境
+select*from nls_instance_parameters;
+</code></pre>
+
+<p>客户端的字符集要求与服务器一致，才能正确显示数据库的非Ascii字符。字符集要求一致，但是语言设置却可以不同，语言设置建议用英文。如字符集是utf8，则nls_lang可以是American_America.utf8。</p>
+
+                            <h2> 本文链接：</h2>
+                            <a href='https://ziyan1215.github.io/archive/1546588698/' target="_blank">https://ziyan1215.github.io/archive/1546588698/</a>
+                    </div>
+                  </article>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div class="blog-post-comments"></div>
+<script>
+    new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
+        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        placeholder: '说点什么呗?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });
+</script>
+
+                  
+                  
+        </section>
+
+    </div>
+      
+  <footer id="footer">
+    <div class="footer-left">
+        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+      
+   </div>
+    <div class="footer-right">
+      <nav>
+        <ul>
+          <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+    
+<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://ziyan1215.github.io/lib/typed.js"></script>
+<script src="https://ziyan1215.github.io/js/main.js"></script>
+
+
+
+
+
+<script async src=""></script>
+<script>
+(function(){
+  if(location.host!=='xuziyan.ga')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()
+</script>
+
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+
+
+  
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }
+  </script>
+</body>
+
+</html>
+

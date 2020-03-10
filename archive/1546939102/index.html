@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta name="generator" content="Hugo 0.55.6" />
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<meta name="wap-font-scale" content="no">
+		
+		
+		
+		<meta name="author" content="XuziYan">
+		<meta name='description' itemprop="description" content="列出所有端口的情况 在cmd窗口下执行 netstat -ano
+查看被占用端口对应的PID 输入命令：netstat -aon|findstr &amp;quot;1313&amp;quot;
+查看是哪个进程或者程序占用了1313端口 tasklist|findstr &amp;quot;10328&amp;quot;
+到任务管理器结束相应的进程 或者直接输入命令： taskkill /im hugo.exe /f
+C:\Us">
+		 
+		<meta name="keywords" content="Netstat查看某端口号被谁占用" >
+		
+		
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="Netstat查看某端口号被谁占用">
+		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:description" content="列出所有端口的情况 在cmd窗口下执行 netstat -ano
+查看被占用端口对应的PID 输入命令：netstat -aon|findstr &amp;quot;1313&amp;quot;
+查看是哪个进程或者程序占用了1313端口 tasklist|findstr &amp;quot;10328&amp;quot;
+到任务管理器结束相应的进程 或者直接输入命令： taskkill /im hugo.exe /f
+C:\Us">
+		<meta property="og:site_name" content="XuziYan">
+
+		<title>Netstat查看某端口号被谁占用 | Xuzi</title>
+		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+
+		
+
+		
+		
+		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script>
+			document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);
+			</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https:\/\/ziyan1215.github.io\/archive\/1546939102\/",
+				"appid": "1621056720407734", 
+				"title": "Netstat查看某端口号被谁占用 | Xuzi JAVA!!!", 
+				"images": [],
+				"pubDate": "2019-01-08T17:18:22"
+			} 
+			</script>
+	</head>
+
+<body>
+    <div id="header-post">
+        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+        <span id="menu">
+          <span id="nav">
+            <ul>
+              <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+            </ul>
+          </span>
+          <br/>
+          <span id="actions">
+            <ul>
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546930122/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                
+                
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1547009595/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                
+              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+            </ul>
+            <span id="i-prev" class="info" style="display:none;">Previous post</span>
+            <span id="i-next" class="info" style="display:none;">Next post</span>
+            <span id="i-top" class="info" style="display:none;">Back to top</span>
+            <span id="i-share" class="info" style="display:none;">Share post</span>
+          </span>
+          <br/>
+          <div id="share" style="display: none">
+              <ul>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546939102%2f&text=Netstat%e6%9f%a5%e7%9c%8b%e6%9f%90%e7%ab%af%e5%8f%a3%e5%8f%b7%e8%a2%ab%e8%b0%81%e5%8d%a0%e7%94%a8"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546939102%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546939102%2f&text=Netstat%e6%9f%a5%e7%9c%8b%e6%9f%90%e7%ab%af%e5%8f%a3%e5%8f%b7%e8%a2%ab%e8%b0%81%e5%8d%a0%e7%94%a8"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546939102%2f&title=Netstat%e6%9f%a5%e7%9c%8b%e6%9f%90%e7%ab%af%e5%8f%a3%e5%8f%b7%e8%a2%ab%e8%b0%81%e5%8d%a0%e7%94%a8"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546939102%2f&is_video=false&description=Netstat%e6%9f%a5%e7%9c%8b%e6%9f%90%e7%ab%af%e5%8f%a3%e5%8f%b7%e8%a2%ab%e8%b0%81%e5%8d%a0%e7%94%a8"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=Netstat%e6%9f%a5%e7%9c%8b%e6%9f%90%e7%ab%af%e5%8f%a3%e5%8f%b7%e8%a2%ab%e8%b0%81%e5%8d%a0%e7%94%a8&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1546939102%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546939102%2f&title=Netstat%e6%9f%a5%e7%9c%8b%e6%9f%90%e7%ab%af%e5%8f%a3%e5%8f%b7%e8%a2%ab%e8%b0%81%e5%8d%a0%e7%94%a8"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546939102%2f&title=Netstat%e6%9f%a5%e7%9c%8b%e6%9f%90%e7%ab%af%e5%8f%a3%e5%8f%b7%e8%a2%ab%e8%b0%81%e5%8d%a0%e7%94%a8"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546939102%2f&title=Netstat%e6%9f%a5%e7%9c%8b%e6%9f%90%e7%ab%af%e5%8f%a3%e5%8f%b7%e8%a2%ab%e8%b0%81%e5%8d%a0%e7%94%a8"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546939102%2f&title=Netstat%e6%9f%a5%e7%9c%8b%e6%9f%90%e7%ab%af%e5%8f%a3%e5%8f%b7%e8%a2%ab%e8%b0%81%e5%8d%a0%e7%94%a8"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+ </ul>
+      
+          </div>
+          <div id="toc">
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#列出所有端口的情况">列出所有端口的情况</a></li>
+<li><a href="#查看被占用端口对应的pid">查看被占用端口对应的PID</a></li>
+<li><a href="#查看是哪个进程或者程序占用了1313端口">查看是哪个进程或者程序占用了1313端口</a></li>
+<li><a href="#到任务管理器结束相应的进程">到任务管理器结束相应的进程</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        </span>
+      </div>
+      
+    <div class="content index width mx-auto px3 my3">
+        <section id="wrapper" class="home">
+                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                    <header>
+                    <h1 class="posttitle" itemprop="name headline">
+                            Netstat查看某端口号被谁占用
+                        </h1>
+                      <div class="meta">
+                        <div class="postdate">
+                                <time datetime='2019-01-08' itemprop="datePublished">2019-01-08</time>
+                            </div>
+                        <div class="article-tag">
+                            <i class="fa fa-eye"></i>
+                            <span id="busuanzi_container_page_pv">
+                                <span id="busuanzi_value_page_pv">0</span>
+                              </span>
+                            </span>
+                        </div>
+                        
+                        <div class="article-tag">
+                            <i class="fa fa-tag"></i>
+                            
+                            <a href="/tags/windows">
+                               Windows</a> 
+                             
+                        </div>
+                        
+                        
+                        
+                        <div class="article-tag-box">
+                               
+                        </div>
+
+                        
+                      </div>
+                    </header>
+                    
+
+                    <div class="content" itemprop="articleBody">
+                            
+                            
+
+<h2 id="列出所有端口的情况">列出所有端口的情况</h2>
+
+<p>在cmd窗口下执行 <code>netstat -ano</code></p>
+
+<h2 id="查看被占用端口对应的pid">查看被占用端口对应的PID</h2>
+
+<p>输入命令：<code>netstat -aon|findstr &quot;1313&quot;</code></p>
+
+<h2 id="查看是哪个进程或者程序占用了1313端口">查看是哪个进程或者程序占用了1313端口</h2>
+
+<p><code>tasklist|findstr &quot;10328&quot;</code></p>
+
+<h2 id="到任务管理器结束相应的进程">到任务管理器结束相应的进程</h2>
+
+<p>或者直接输入命令：
+<code>taskkill /im hugo.exe /f</code></p>
+
+<hr />
+
+<pre><code class="language-shell">C:\Users\Administrator&gt;netstat -aon|findstr &quot;1313&quot;
+  TCP    127.0.0.1:1313         0.0.0.0:0              LISTENING       10328
+  TCP    127.0.0.1:1313         127.0.0.1:61709        ESTABLISHED     10328
+  TCP    127.0.0.1:1313         127.0.0.1:61710        ESTABLISHED     10328
+  TCP    127.0.0.1:1313         127.0.0.1:61720        ESTABLISHED     10328
+  TCP    127.0.0.1:1313         127.0.0.1:61722        ESTABLISHED     10328
+  TCP    127.0.0.1:1313         127.0.0.1:61723        ESTABLISHED     10328
+  TCP    127.0.0.1:1313         127.0.0.1:61724        ESTABLISHED     10328
+  TCP    127.0.0.1:1313         127.0.0.1:61732        ESTABLISHED     10328
+  TCP    127.0.0.1:1313         127.0.0.1:61999        ESTABLISHED     10328
+  TCP    127.0.0.1:61709        127.0.0.1:1313         ESTABLISHED     8312
+  TCP    127.0.0.1:61710        127.0.0.1:1313         ESTABLISHED     8312
+  TCP    127.0.0.1:61720        127.0.0.1:1313         ESTABLISHED     8312
+  TCP    127.0.0.1:61722        127.0.0.1:1313         ESTABLISHED     8312
+  TCP    127.0.0.1:61723        127.0.0.1:1313         ESTABLISHED     8312
+  TCP    127.0.0.1:61724        127.0.0.1:1313         ESTABLISHED     8312
+  TCP    127.0.0.1:61732        127.0.0.1:1313         ESTABLISHED     8312
+  TCP    127.0.0.1:61999        127.0.0.1:1313         ESTABLISHED     10964
+
+C:\Users\Administrator&gt;tasklist|findstr &quot;10328&quot;
+hugo.exe                     10328 Console                    1     38,808 K
+
+C:\Users\Administrator&gt;tasklist|findstr &quot;8312&quot;
+chrome.exe                    8312 Console                    1    264,212 K
+
+C:\Users\Administrator&gt;tasklist|findstr &quot;10964&quot;
+360chrome.exe                10964 Console                    1    182,144 K
+
+C:\Users\Administrator&gt;taskkill /im hugo.exe /f
+成功: 已终止进程 &quot;hugo.exe&quot;，其 PID 为 10328。
+
+C:\Users\Administrator&gt;
+</code></pre>
+
+                            <h2> 本文链接：</h2>
+                            <a href='https://ziyan1215.github.io/archive/1546939102/' target="_blank">https://ziyan1215.github.io/archive/1546939102/</a>
+                    </div>
+                  </article>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div class="blog-post-comments"></div>
+<script>
+    new Valine({
+        el: '.blog-post-comments', 
+        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
+        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        placeholder: '说点什么呗?', 
+        avatar:'robohash',
+        notify:true,
+        verify:true
+    });
+</script>
+
+                  
+                  
+        </section>
+
+    </div>
+      
+  <footer id="footer">
+    <div class="footer-left">
+        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+      
+   </div>
+    <div class="footer-right">
+      <nav>
+        <ul>
+          <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+    
+<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://ziyan1215.github.io/lib/typed.js"></script>
+<script src="https://ziyan1215.github.io/js/main.js"></script>
+
+
+
+
+
+<script async src=""></script>
+<script>
+(function(){
+  if(location.host!=='xuziyan.ga')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()
+</script>
+
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+
+
+  
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }
+  </script>
+</body>
+
+</html>
+
