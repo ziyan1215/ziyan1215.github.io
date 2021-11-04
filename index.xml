@@ -6,10 +6,22 @@
     <description>Recent content on XuziYan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 27 Jul 2019 16:12:37 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Nov 2021 11:12:43 +0000</lastBuildDate>
     
 	<atom:link href="https://ziyan1215.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2021年，重启记录之旅</title>
+      <link>https://ziyan1215.github.io/archive/1635995563/</link>
+      <pubDate>Thu, 04 Nov 2021 11:12:43 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1635995563/</guid>
+      <description># 年纪 &amp;gt;子曰：吾十有五而志于学，三十而立，四十而不惑，五十而知天命， 六十而耳顺，七十而从心所欲，不逾矩。
+而立之年，事情越发的多，渐渐的也越发容易遗忘，就想起了记录这件事，特别事这个信息碎片化的时代，没了总结，没了思考，没了记忆，这个特别可怕。
+# 来年
+希望从此刻开始，多点记录，不枉此生</description>
+    </item>
     
     <item>
       <title>Java应用中访问ElasticSearch</title>

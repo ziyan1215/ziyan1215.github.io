@@ -1,5 +1,11 @@
 [
     {
+        "uri": "https://ziyan1215.github.io/archive/1635995563/",
+        "title": "2021年，重启记录之旅",
+        "tags": ["日记"],
+        "description": ""
+    },
+    {
         "uri": "https://ziyan1215.github.io/archive/1564215157/",
         "title": "Java应用中访问ElasticSearch",
         "tags": ["Elasticsearch"],
@@ -374,6 +380,12 @@
     {
         "uri": "https://ziyan1215.github.io/tags/%E6%97%A5%E5%B8%B8/",
         "title": "日常",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://ziyan1215.github.io/tags/%E6%97%A5%E8%AE%B0/",
+        "title": "日记",
         "tags": [],
         "description": ""
     }]

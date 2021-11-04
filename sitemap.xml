@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ziyan1215.github.io/archive/1635995563/</loc>
+    <lastmod>2021-11-04T11:12:43+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ziyan1215.github.io/archive/1564215157/</loc>
     <lastmod>2019-07-27T16:12:37+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -305,7 +312,7 @@
   
   <url>
     <loc>https://ziyan1215.github.io/archive/</loc>
-    <lastmod>2019-07-27T16:12:37+00:00</lastmod>
+    <lastmod>2021-11-04T11:12:43+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -430,7 +437,7 @@
   
   <url>
     <loc>https://ziyan1215.github.io/</loc>
-    <lastmod>2019-07-27T16:12:37+00:00</lastmod>
+    <lastmod>2021-11-04T11:12:43+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -438,6 +445,13 @@
   <url>
     <loc>https://ziyan1215.github.io/tags/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2019-07-15T23:11:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ziyan1215.github.io/tags/%E6%97%A5%E8%AE%B0/</loc>
+    <lastmod>2021-11-04T11:12:43+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
