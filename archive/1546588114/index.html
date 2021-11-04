@@ -20,28 +20,28 @@
 		
 		<meta property="og:locale" content="en_US">
 		<meta property="og:title" content="Oracle11G导出空表方法">
-		<meta property="og:image" content="https://xuziyan.ga/images/logo2.png">
+		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
 		<meta property="og:description" content="  导DMP时请做以下操作！！！ 若需要在oracle11g数据库执行dmp的导入导出，为了确保11g数据库能够导出空表，请先做以下操作 （sys和要导出的数据库用户两个用户都要进行此操作）其中sys要用sysdba权限登录
 方法 --用plsql developer 的 command 窗口操作。 SQL&amp;gt;show parameter deferred_segment_creation; ">
 		<meta property="og:site_name" content="XuziYan">
 
 		<title>Oracle11G导出空表方法 | Xuzi</title>
-		<link rel="shortcut icon" href="https://xuziyan.ga/images/i.ico">
+		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
 		
 		<link rel="manifest" href="/manifest.json">
-		<link rel="stylesheet" href="https://xuziyan.ga/lib/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
 		
-		<link rel="stylesheet" href="https://xuziyan.ga/lib/justified-gallery/justifiedGallery.min.css">
-		<link rel="stylesheet" href="https://xuziyan.ga/css/style.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
 
 		
 
 		
 		
-		<script src="https://xuziyan.ga/lib/highlight.min.js"></script>
+		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
 		
-		<script src="https://xuziyan.ga/lib/jquery/jquery.min.js"></script>
+		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
 		<script>
 			document.addEventListener("error", function (e) {
 			  var elem = e.target;
@@ -53,7 +53,7 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
-				"@id": "https://xuziyan.ga/archive/1546588114/",
+				"@id": "https://ziyan1215.github.io/archive/1546588114/",
 				"appid": "1621056720407734", 
 				"title": "Oracle11G导出空表方法 | Xuzi JAVA!!!", 
 				"images": [],
@@ -80,10 +80,10 @@
           <span id="actions">
             <ul>
                 
-                <li><a class="icon" href="https://xuziyan.ga/archive/1546417063/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546417063/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
                 
                 
-                <li><a class="icon" href="https://xuziyan.ga/archive/1546588698/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546588698/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
                 
               <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
               <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
@@ -96,16 +96,16 @@
           <br/>
           <div id="share" style="display: none">
               <ul>
-        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fxuziyan.ga%2farchive%2f1546588114%2f&text=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fxuziyan.ga%2farchive%2f1546588114%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1546588114%2f&text=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1546588114%2f&is_video=false&description=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="mailto:?subject=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95&body=Check out this article: https%3a%2f%2fxuziyan.ga%2farchive%2f1546588114%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&text=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&text=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&is_video=false&description=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588114%2f&title=Oracle11G%e5%af%bc%e5%87%ba%e7%a9%ba%e8%a1%a8%e6%96%b9%e6%b3%95"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
  </ul>
       
           </div>
@@ -196,7 +196,7 @@ select object_type,count(*) from user_objects group by object_type;
 </blockquote>
 
                             <h2> 本文链接：</h2>
-                            <a href='https://xuziyan.ga/archive/1546588114/' target="_blank">https://xuziyan.ga/archive/1546588114/</a>
+                            <a href='https://ziyan1215.github.io/archive/1546588114/' target="_blank">https://ziyan1215.github.io/archive/1546588114/</a>
                     </div>
                   </article>
                   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
@@ -237,9 +237,9 @@ select object_type,count(*) from user_objects group by object_type;
     </div>
   </footer>
     
-<script src="https://xuziyan.ga/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
-<script src="https://xuziyan.ga/lib/typed.js"></script>
-<script src="https://xuziyan.ga/js/main.js"></script>
+<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://ziyan1215.github.io/lib/typed.js"></script>
+<script src="https://ziyan1215.github.io/js/main.js"></script>
 
 
 

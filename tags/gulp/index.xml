@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gulp on XuziYan</title>
-    <link>https://xuziyan.ga/tags/gulp/</link>
+    <link>https://ziyan1215.github.io/tags/gulp/</link>
     <description>Recent content in Gulp on XuziYan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Sat, 29 Dec 2018 16:14:41 +0000</lastBuildDate>
     
-	<atom:link href="https://xuziyan.ga/tags/gulp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ziyan1215.github.io/tags/gulp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Gulp入门</title>
-      <link>https://xuziyan.ga/archive/1546071281/</link>
+      <link>https://ziyan1215.github.io/archive/1546071281/</link>
       <pubDate>Sat, 29 Dec 2018 16:14:41 +0000</pubDate>
       
-      <guid>https://xuziyan.ga/archive/1546071281/</guid>
+      <guid>https://ziyan1215.github.io/archive/1546071281/</guid>
       <description> 入门指南 全局安装gulp $ npm install --global gulp  作为项目的开发依赖（devDependencies）安装 $ npm install --save-dev gulp  在项目根目录下创建一个名为 gulpfile.js 的文件 var gulp = require(&#39;gulp&#39;); gulp.task(&#39;default&#39;, function() { // 将你的默认的任务代码放在这 });  运行gulp $ gulp  </description>
     </item>
     

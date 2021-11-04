@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sql on XuziYan</title>
-    <link>https://xuziyan.ga/tags/sql/</link>
+    <link>https://ziyan1215.github.io/tags/sql/</link>
     <description>Recent content in Sql on XuziYan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Sat, 26 Jan 2019 17:16:50 +0000</lastBuildDate>
     
-	<atom:link href="https://xuziyan.ga/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ziyan1215.github.io/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Sql经典题目的mysql实现②</title>
-      <link>https://xuziyan.ga/archive/1548494210/</link>
+      <link>https://ziyan1215.github.io/archive/1548494210/</link>
       <pubDate>Sat, 26 Jan 2019 17:16:50 +0000</pubDate>
       
-      <guid>https://xuziyan.ga/archive/1548494210/</guid>
+      <guid>https://ziyan1215.github.io/archive/1548494210/</guid>
       <description>25、查询各科成绩前三名的记录（不考虑成绩并列情况）： select t1.s_id,t1.c_id,t1.s_score from score t1 where exists ( select count(1) from score where t1.c_id = c_id and t1.s_score &amp;lt; s_score having count(1) &amp;lt; 3 ) order by t1.c_id,s_score desc;  26、查询每门课程被选修的学生数： -- 思路： 成绩表有修的应该就有选 select c_id,count(s_id) from score group by c_id; -- 27、查询出只选修一门课程的全部学生的学号和姓名： select s.s_id,s_name ,count(s_score) from score s,student where s.s_id=student.s_id group by s_id having count(s_score) =1;  28、查询男生、女生人数： select sum(case when s.s_sex=&#39;男&#39; then 1 else 0 end) as 男生人数, sum(case when s.</description>
     </item>
     
     <item>
       <title>Sql经典题目的mysql实现①</title>
-      <link>https://xuziyan.ga/archive/1548473871/</link>
+      <link>https://ziyan1215.github.io/archive/1548473871/</link>
       <pubDate>Sat, 26 Jan 2019 11:37:51 +0000</pubDate>
       
-      <guid>https://xuziyan.ga/archive/1548473871/</guid>
+      <guid>https://ziyan1215.github.io/archive/1548473871/</guid>
       <description>数据准备请看文章底部 点击我查看
  题目 1、查询“01”课程比“02”课程成绩高的所有学生的学号 select a.s_id from (select sc.s_id, sc.s_score from score sc where sc.c_id=&#39;01&#39;) a, (select sc.s_id, sc.s_score from score sc where sc.c_id=&#39;02&#39;) b where a.s_score&amp;gt;b.s_score and a.s_id=b.s_id    s_id     02   04   
 2、查询平均成绩大于60分的同学的学号和平均成绩 select sc.s_id , avg(sc.s_score) from score sc group by sc.s_id having avg(sc.s_score)&amp;gt;60    s_id avg(sc.s_score)     01 89.</description>
