@@ -1,423 +1,444 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/</loc>
-    <lastmod>2019-07-27T16:12:37+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/tags/elasticsearch/</loc>
-    <lastmod>2019-07-27T16:12:37+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/1564215157/</loc>
+    <loc>https://xuziyan.ga/archive/1564215157/</loc>
     <lastmod>2019-07-27T16:12:37+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/tags/</loc>
-    <lastmod>2019-07-27T16:12:37+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/</loc>
-    <lastmod>2019-07-27T16:12:37+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/1563940854/</loc>
+    <loc>https://xuziyan.ga/archive/1563940854/</loc>
     <lastmod>2019-07-24T12:00:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1563796794/</loc>
+    <loc>https://xuziyan.ga/archive/1563796794/</loc>
     <lastmod>2019-07-22T19:59:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1563681594/</loc>
+    <loc>https://xuziyan.ga/archive/1563681594/</loc>
     <lastmod>2019-07-21T11:59:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1563598794/</loc>
+    <loc>https://xuziyan.ga/archive/1563598794/</loc>
     <lastmod>2019-07-20T12:59:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1563522787/</loc>
+    <loc>https://xuziyan.ga/archive/1563522787/</loc>
     <lastmod>2019-07-19T15:53:07+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1563415780/</loc>
+    <loc>https://xuziyan.ga/archive/1563415780/</loc>
     <lastmod>2019-07-18T10:09:40+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1563379192/</loc>
+    <loc>https://xuziyan.ga/archive/1563379192/</loc>
     <lastmod>2019-07-17T23:59:52+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1563203474/</loc>
+    <loc>https://xuziyan.ga/archive/1563203474/</loc>
     <lastmod>2019-07-15T23:11:14+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/tags/%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2019-07-15T23:11:14+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/tags/sql/</loc>
-    <lastmod>2019-01-26T17:16:50+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/1548494210/</loc>
+    <loc>https://xuziyan.ga/archive/1548494210/</loc>
     <lastmod>2019-01-26T17:16:50+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1548473871/</loc>
+    <loc>https://xuziyan.ga/archive/1548473871/</loc>
     <lastmod>2019-01-26T11:37:51+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/tags/linux/</loc>
-    <lastmod>2019-01-22T10:36:38+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/1548124598/</loc>
+    <loc>https://xuziyan.ga/archive/1548124598/</loc>
     <lastmod>2019-01-22T10:36:38+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/tags/java/</loc>
-    <lastmod>2019-01-21T16:18:31+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/1548058711/</loc>
+    <loc>https://xuziyan.ga/archive/1548058711/</loc>
     <lastmod>2019-01-21T16:18:31+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/tags/junit/</loc>
-    <lastmod>2019-01-21T15:42:22+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/1548056542/</loc>
+    <loc>https://xuziyan.ga/archive/1548056542/</loc>
     <lastmod>2019-01-21T15:42:22+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/tags/tools/</loc>
-    <lastmod>2019-01-15T17:46:09+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/1547545569/</loc>
+    <loc>https://xuziyan.ga/archive/1547545569/</loc>
     <lastmod>2019-01-15T17:46:09+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/tags/git/</loc>
-    <lastmod>2019-01-10T10:26:32+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/1547087192/</loc>
+    <loc>https://xuziyan.ga/archive/1547087192/</loc>
     <lastmod>2019-01-10T10:26:32+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1547010912/</loc>
+    <loc>https://xuziyan.ga/archive/1547010912/</loc>
     <lastmod>2019-01-09T13:15:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/tags/other/</loc>
-    <lastmod>2019-01-09T13:15:12+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/1547009595/</loc>
+    <loc>https://xuziyan.ga/archive/1547009595/</loc>
     <lastmod>2019-01-09T12:53:15+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1546939102/</loc>
+    <loc>https://xuziyan.ga/archive/1546939102/</loc>
     <lastmod>2019-01-08T17:18:22+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/tags/windows/</loc>
-    <lastmod>2019-01-08T17:18:22+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/tags/oracle/</loc>
-    <lastmod>2019-01-08T14:48:42+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/1546930122/</loc>
+    <loc>https://xuziyan.ga/archive/1546930122/</loc>
     <lastmod>2019-01-08T14:48:42+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1546928060/</loc>
+    <loc>https://xuziyan.ga/archive/1546928060/</loc>
     <lastmod>2019-01-08T14:14:20+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1546591306/</loc>
+    <loc>https://xuziyan.ga/archive/1546591306/</loc>
     <lastmod>2019-01-04T16:41:46+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1546590921/</loc>
+    <loc>https://xuziyan.ga/archive/1546590921/</loc>
     <lastmod>2019-01-04T16:35:21+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1546588698/</loc>
+    <loc>https://xuziyan.ga/archive/1546588698/</loc>
     <lastmod>2019-01-04T15:58:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1546588114/</loc>
+    <loc>https://xuziyan.ga/archive/1546588114/</loc>
     <lastmod>2019-01-04T15:48:34+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1546417063/</loc>
+    <loc>https://xuziyan.ga/archive/1546417063/</loc>
     <lastmod>2019-01-02T16:17:43+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1546400558/</loc>
+    <loc>https://xuziyan.ga/archive/1546400558/</loc>
     <lastmod>2019-01-02T11:42:38+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1546353054/</loc>
+    <loc>https://xuziyan.ga/archive/1546353054/</loc>
     <lastmod>2019-01-01T22:30:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/tags/life/</loc>
-    <lastmod>2019-01-01T22:30:54+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/1546352162/</loc>
+    <loc>https://xuziyan.ga/archive/1546352162/</loc>
     <lastmod>2019-01-01T22:16:02+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/tags/gulp/</loc>
-    <lastmod>2018-12-29T16:14:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/1546071281/</loc>
+    <loc>https://xuziyan.ga/archive/1546071281/</loc>
     <lastmod>2018-12-29T16:14:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/tags/seo/</loc>
-    <lastmod>2018-12-29T15:12:59+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/1546067579/</loc>
+    <loc>https://xuziyan.ga/archive/1546067579/</loc>
     <lastmod>2018-12-29T15:12:59+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/tags/loadrunner/</loc>
-    <lastmod>2018-12-28T17:04:18+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/1545987858/</loc>
+    <loc>https://xuziyan.ga/archive/1545987858/</loc>
     <lastmod>2018-12-28T17:04:18+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1545987472/</loc>
+    <loc>https://xuziyan.ga/archive/1545987472/</loc>
     <lastmod>2018-12-28T16:57:52+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1545974928/</loc>
+    <loc>https://xuziyan.ga/archive/1545974928/</loc>
     <lastmod>2018-12-28T13:28:48+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1545974550/</loc>
+    <loc>https://xuziyan.ga/archive/1545974550/</loc>
     <lastmod>2018-12-28T13:22:30+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1545973462/</loc>
+    <loc>https://xuziyan.ga/archive/1545973462/</loc>
     <lastmod>2018-12-28T13:04:22+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1545971875/</loc>
+    <loc>https://xuziyan.ga/archive/1545971875/</loc>
     <lastmod>2018-12-28T12:37:55+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/1545969891/</loc>
+    <loc>https://xuziyan.ga/archive/1545969891/</loc>
     <lastmod>2018-12-28T12:04:51+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/about/</loc>
+    <loc>https://xuziyan.ga/about/</loc>
     <lastmod>2018-12-28T11:22:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/2018-12-28t011917-0800/</loc>
+    <loc>https://xuziyan.ga/archive/2018-12-28t011917-0800/</loc>
     <lastmod>2018-12-28T01:19:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/archive/2018-12-28t011747-0800/</loc>
+    <loc>https://xuziyan.ga/archive/2018-12-28t011747-0800/</loc>
     <lastmod>2018-12-28T01:17:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/tags/test/</loc>
-    <lastmod>2018-12-26T15:34:25+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ziyan1215.github.io/archive/23101033/</loc>
+    <loc>https://xuziyan.ga/archive/23101033/</loc>
     <lastmod>2018-12-26T15:34:25+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/secret/</loc>
+    <loc>https://xuziyan.ga/secret/</loc>
     <lastmod>2016-05-27T14:31:51+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://ziyan1215.github.io/categories/</loc>
+    <loc>https://xuziyan.ga/archive/</loc>
+    <lastmod>2019-07-27T16:12:37+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/categories/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/elasticsearch/</loc>
+    <lastmod>2019-07-27T16:12:37+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/git/</loc>
+    <lastmod>2019-01-10T10:26:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/gulp/</loc>
+    <lastmod>2018-12-29T16:14:41+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/java/</loc>
+    <lastmod>2019-01-21T16:18:31+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/junit/</loc>
+    <lastmod>2019-01-21T15:42:22+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/life/</loc>
+    <lastmod>2019-01-01T22:30:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/linux/</loc>
+    <lastmod>2019-01-22T10:36:38+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/loadrunner/</loc>
+    <lastmod>2018-12-28T17:04:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/oracle/</loc>
+    <lastmod>2019-01-08T14:48:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/other/</loc>
+    <lastmod>2019-01-09T13:15:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/seo/</loc>
+    <lastmod>2018-12-29T15:12:59+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/sql/</loc>
+    <lastmod>2019-01-26T17:16:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/</loc>
+    <lastmod>2019-07-27T16:12:37+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/test/</loc>
+    <lastmod>2018-12-26T15:34:25+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/tools/</loc>
+    <lastmod>2019-01-15T17:46:09+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/windows/</loc>
+    <lastmod>2019-01-08T17:18:22+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/</loc>
+    <lastmod>2019-07-27T16:12:37+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuziyan.ga/tags/%E6%97%A5%E5%B8%B8/</loc>
+    <lastmod>2019-07-15T23:11:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   

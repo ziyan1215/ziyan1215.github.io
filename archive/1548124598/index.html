@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 	<head>
-		<meta name="generator" content="Hugo 0.55.6" />
+		<meta name="generator" content="Hugo 0.54.0" />
 		
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,29 +21,29 @@
 		
 		<meta property="og:locale" content="en_US">
 		<meta property="og:title" content="Linux计划任务程序crond简单应用">
-		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:image" content="https://xuziyan.ga/images/logo2.png">
 		<meta property="og:description" content="运用crontab 命令可以进行linux下的定时任务，就如windows系统中的计划任务
 在centos7下测试
  cron服务 //启动服务 systemctl start crond //停止服务 systemctl stop crond //重启服务 systemctl restart crond //重新加载配置 systemctl reload crond  要把cron设为在开机的时">
 		<meta property="og:site_name" content="XuziYan">
 
 		<title>Linux计划任务程序crond简单应用 | Xuzi</title>
-		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		<link rel="shortcut icon" href="https://xuziyan.ga/images/i.ico">
 		
 		<link rel="manifest" href="/manifest.json">
-		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://xuziyan.ga/lib/font-awesome/css/font-awesome.min.css">
 		
-		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
-		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+		<link rel="stylesheet" href="https://xuziyan.ga/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://xuziyan.ga/css/style.css">
 
 		
 
 		
 		
-		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script src="https://xuziyan.ga/lib/highlight.min.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
 		
-		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script src="https://xuziyan.ga/lib/jquery/jquery.min.js"></script>
 		<script>
 			document.addEventListener("error", function (e) {
 			  var elem = e.target;
@@ -55,7 +55,7 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
-				"@id": "https:\/\/ziyan1215.github.io\/archive\/1548124598\/",
+				"@id": "https://xuziyan.ga/archive/1548124598/",
 				"appid": "1621056720407734", 
 				"title": "Linux计划任务程序crond简单应用 | Xuzi JAVA!!!", 
 				"images": [],
@@ -82,10 +82,10 @@
           <span id="actions">
             <ul>
                 
-                <li><a class="icon" href="https://ziyan1215.github.io/archive/1548058711/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                <li><a class="icon" href="https://xuziyan.ga/archive/1548058711/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
                 
                 
-                <li><a class="icon" href="https://ziyan1215.github.io/archive/1548473871/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                <li><a class="icon" href="https://xuziyan.ga/archive/1548473871/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
                 
               <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
               <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
@@ -98,16 +98,16 @@
           <br/>
           <div id="share" style="display: none">
               <ul>
-        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548124598%2f&text=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548124598%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548124598%2f&text=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548124598%2f&title=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548124598%2f&is_video=false&description=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="mailto:?subject=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1548124598%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548124598%2f&title=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548124598%2f&title=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548124598%2f&title=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548124598%2f&title=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fxuziyan.ga%2farchive%2f1548124598%2f&text=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fxuziyan.ga%2farchive%2f1548124598%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1548124598%2f&text=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1548124598%2f&title=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1548124598%2f&is_video=false&description=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8&body=Check out this article: https%3a%2f%2fxuziyan.ga%2farchive%2f1548124598%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1548124598%2f&title=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1548124598%2f&title=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1548124598%2f&title=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1548124598%2f&title=Linux%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e7%a8%8b%e5%ba%8fcrond%e7%ae%80%e5%8d%95%e5%ba%94%e7%94%a8"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
  </ul>
       
           </div>
@@ -253,7 +253,7 @@ Tue, 22 Jan 2019 10:19:54 +0800
 </code></pre>
 
                             <h2> 本文链接：</h2>
-                            <a href='https://ziyan1215.github.io/archive/1548124598/' target="_blank">https://ziyan1215.github.io/archive/1548124598/</a>
+                            <a href='https://xuziyan.ga/archive/1548124598/' target="_blank">https://xuziyan.ga/archive/1548124598/</a>
                     </div>
                   </article>
                   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
@@ -262,8 +262,8 @@ Tue, 22 Jan 2019 10:19:54 +0800
 <script>
     new Valine({
         el: '.blog-post-comments', 
-        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
-        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        app_id: 'SLtavJMR8oR0nSmBDwrkFeP1-gzGzoHsz', 
+        app_key: 'kaSxo1UEKokiv3IOI3p54wHV', 
         placeholder: '说点什么呗?', 
         avatar:'robohash',
         notify:true,
@@ -279,7 +279,7 @@ Tue, 22 Jan 2019 10:19:54 +0800
       
   <footer id="footer">
     <div class="footer-left">
-        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+        Copyright © 2021  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
       
    </div>
     <div class="footer-right">
@@ -294,9 +294,9 @@ Tue, 22 Jan 2019 10:19:54 +0800
     </div>
   </footer>
     
-<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
-<script src="https://ziyan1215.github.io/lib/typed.js"></script>
-<script src="https://ziyan1215.github.io/js/main.js"></script>
+<script src="https://xuziyan.ga/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://xuziyan.ga/lib/typed.js"></script>
+<script src="https://xuziyan.ga/js/main.js"></script>
 
 
 

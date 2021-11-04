@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on XuziYan</title>
-    <link>https://ziyan1215.github.io/tags/linux/</link>
+    <link>https://xuziyan.ga/tags/linux/</link>
     <description>Recent content in Linux on XuziYan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Tue, 22 Jan 2019 10:36:38 +0000</lastBuildDate>
     
-	<atom:link href="https://ziyan1215.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xuziyan.ga/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux计划任务程序crond简单应用</title>
-      <link>https://ziyan1215.github.io/archive/1548124598/</link>
+      <link>https://xuziyan.ga/archive/1548124598/</link>
       <pubDate>Tue, 22 Jan 2019 10:36:38 +0000</pubDate>
       
-      <guid>https://ziyan1215.github.io/archive/1548124598/</guid>
+      <guid>https://xuziyan.ga/archive/1548124598/</guid>
       <description>运用crontab 命令可以进行linux下的定时任务，就如windows系统中的计划任务
 在centos7下测试
  cron服务 //启动服务 systemctl start crond //停止服务 systemctl stop crond //重启服务 systemctl restart crond //重新加载配置 systemctl reload crond  要把cron设为在开机的时候自动启动，在 /etc/rc.d/rc.local 脚本中加入 /sbin/service crond start 即可
@@ -29,19 +29,19 @@ crontab进行计划任务 查看用户的crontab
     
     <item>
       <title>CentOS7搭建git服务器</title>
-      <link>https://ziyan1215.github.io/archive/1545974928/</link>
+      <link>https://xuziyan.ga/archive/1545974928/</link>
       <pubDate>Fri, 28 Dec 2018 13:28:48 +0000</pubDate>
       
-      <guid>https://ziyan1215.github.io/archive/1545974928/</guid>
+      <guid>https://xuziyan.ga/archive/1545974928/</guid>
       <description>安装Git yum –y install git  初始化 git init --bare hexo.git  将远程的ssr公匙加入到文件中 /home/git/.ssh/authorized_keys  远程用户clone F:\LyDocument\hugo\blog\public&amp;gt;git clone git@xuziyan.tk:/opt/hexo/hexo.git/ Cloning into &#39;hexo&#39;... git@xuziyan.tk&#39;s password: warning: You appear to have cloned an empty repository.  查询 F:\LyDocument\hugo\blog\public\hexo&amp;gt;git status On branch master No commits yet  新增文件提交 git add -A git commit -m &amp;quot;add&amp;quot; F:\LyDocument\hugo\blog\public\hexo&amp;gt;git push origin master git@xuziyan.tk&#39;s password: ounting objects: 107, done. Delta compression using up to 4 threads. Compressing objects: 100% (94/94), done.</description>
     </item>
     
     <item>
       <title>Linux常用命令</title>
-      <link>https://ziyan1215.github.io/archive/1545974550/</link>
+      <link>https://xuziyan.ga/archive/1545974550/</link>
       <pubDate>Fri, 28 Dec 2018 13:22:30 +0000</pubDate>
       
-      <guid>https://ziyan1215.github.io/archive/1545974550/</guid>
+      <guid>https://xuziyan.ga/archive/1545974550/</guid>
       <description>多用 --help帮助命令
 常用命令  查找文件 [root@vultr hexo]# find / -name nginx /usr/sbin/nginx  查找历史语句 [root@vultr hexo]# history | grep nginx 85 yum install -y git nginx 87 ps -ef|grep nginx  修改linux系统里打开文件描述符的最大值 [root@localhost ~]# ulimit -n 10240 [root@localhost ~]# ulimit -n 10240  查询某些进程 [root@localhost ~]# ps -ef|grep java root 20850 20813 0 17:22 pts/0 00:00:00 grep java  删除某文件夹下的文件 [root@localhost ~]# rm -rf /opt/work/*   rm -rf误操作的后果是可怕的，rm -f也要三思而行，不能轻易使用;如果使用 rm 来删除文件，通常仍可以将该文件恢复原状</description>
     </item>

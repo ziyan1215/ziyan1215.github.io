@@ -1,379 +1,379 @@
 [
     {
-        "uri": "https://ziyan1215.github.io/archive/",
-        "title": "Archives",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/tags/elasticsearch/",
-        "title": "Elasticsearch",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/1564215157/",
+        "uri": "https://xuziyan.ga/archive/1564215157/",
         "title": "Java应用中访问ElasticSearch",
         "tags": ["Elasticsearch"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/tags/",
-        "title": "Tags",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/",
-        "title": "XuziYan",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/1563940854/",
+        "uri": "https://xuziyan.ga/archive/1563940854/",
         "title": "ElasticSearch原理",
         "tags": ["Elasticsearch"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1563796794/",
+        "uri": "https://xuziyan.ga/archive/1563796794/",
         "title": "ES的嵌套字段",
         "tags": ["Elasticsearch"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1563681594/",
+        "uri": "https://xuziyan.ga/archive/1563681594/",
         "title": "ES的聚合&amp;复合查询",
         "tags": ["Elasticsearch"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1563598794/",
+        "uri": "https://xuziyan.ga/archive/1563598794/",
         "title": "ES的filter查询",
         "tags": ["Elasticsearch"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1563522787/",
+        "uri": "https://xuziyan.ga/archive/1563522787/",
         "title": "ES基本查询",
         "tags": ["Elasticsearch"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1563415780/",
+        "uri": "https://xuziyan.ga/archive/1563415780/",
         "title": "ES基本操作",
         "tags": ["Elasticsearch"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1563379192/",
+        "uri": "https://xuziyan.ga/archive/1563379192/",
         "title": "ES入门",
         "tags": ["Elasticsearch"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1563203474/",
+        "uri": "https://xuziyan.ga/archive/1563203474/",
         "title": "NewJob",
         "tags": ["日常"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/tags/%E6%97%A5%E5%B8%B8/",
-        "title": "日常",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/tags/sql/",
-        "title": "Sql",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/1548494210/",
+        "uri": "https://xuziyan.ga/archive/1548494210/",
         "title": "Sql经典题目的mysql实现②",
         "tags": ["Sql"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1548473871/",
+        "uri": "https://xuziyan.ga/archive/1548473871/",
         "title": "Sql经典题目的mysql实现①",
         "tags": ["Sql"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/tags/linux/",
-        "title": "Linux",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/1548124598/",
+        "uri": "https://xuziyan.ga/archive/1548124598/",
         "title": "Linux计划任务程序crond简单应用",
         "tags": ["Linux"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/tags/java/",
-        "title": "Java",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/1548058711/",
+        "uri": "https://xuziyan.ga/archive/1548058711/",
         "title": "Java基础之集合",
         "tags": ["Java"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/tags/junit/",
-        "title": "Junit",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/1548056542/",
+        "uri": "https://xuziyan.ga/archive/1548056542/",
         "title": "Junit4加载spring配置文件进行单元测试",
         "tags": ["Java", "Junit"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/tags/tools/",
-        "title": "Tools",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/1547545569/",
+        "uri": "https://xuziyan.ga/archive/1547545569/",
         "title": "Windows右键获取管理员权限",
         "tags": ["Tools"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/tags/git/",
-        "title": "Git",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/1547087192/",
+        "uri": "https://xuziyan.ga/archive/1547087192/",
         "title": "Gui乱码解决方法",
         "tags": ["Git"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1547010912/",
+        "uri": "https://xuziyan.ga/archive/1547010912/",
         "title": "Echarts日历",
         "tags": ["Other"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/tags/other/",
-        "title": "Other",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/1547009595/",
+        "uri": "https://xuziyan.ga/archive/1547009595/",
         "title": "TestEchartSH",
         "tags": ["Tools"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1546939102/",
+        "uri": "https://xuziyan.ga/archive/1546939102/",
         "title": "Netstat查看某端口号被谁占用",
         "tags": ["Windows"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/tags/windows/",
-        "title": "Windows",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/tags/oracle/",
-        "title": "Oracle",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/1546930122/",
+        "uri": "https://xuziyan.ga/archive/1546930122/",
         "title": "通过ip限制Oracle数据库访问的方法",
         "tags": ["Oracle"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1546928060/",
+        "uri": "https://xuziyan.ga/archive/1546928060/",
         "title": "Oracle常用语句",
         "tags": ["Oracle"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1546591306/",
+        "uri": "https://xuziyan.ga/archive/1546591306/",
         "title": "Oracle数据库修改字符集方法",
         "tags": ["Oracle"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1546590921/",
+        "uri": "https://xuziyan.ga/archive/1546590921/",
         "title": "Oracle字符集",
         "tags": ["Oracle"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1546588698/",
+        "uri": "https://xuziyan.ga/archive/1546588698/",
         "title": "Dmp导入后乱码的解决方法",
         "tags": ["Oracle"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1546588114/",
+        "uri": "https://xuziyan.ga/archive/1546588114/",
         "title": "Oracle11G导出空表方法",
         "tags": ["Oracle"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1546417063/",
+        "uri": "https://xuziyan.ga/archive/1546417063/",
         "title": "我的网络收藏夹",
         "tags": ["Other", "Tools"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1546400558/",
+        "uri": "https://xuziyan.ga/archive/1546400558/",
         "title": "Jar包在CMD运行后乱码",
         "tags": ["Java"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1546353054/",
+        "uri": "https://xuziyan.ga/archive/1546353054/",
         "title": "2019年新年快乐",
         "tags": ["Life"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/tags/life/",
-        "title": "Life",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/1546352162/",
+        "uri": "https://xuziyan.ga/archive/1546352162/",
         "title": "2019年",
         "tags": ["Life"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/tags/gulp/",
-        "title": "Gulp",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/1546071281/",
+        "uri": "https://xuziyan.ga/archive/1546071281/",
         "title": "Gulp入门",
         "tags": ["Gulp"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/tags/seo/",
-        "title": "Seo",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/1546067579/",
+        "uri": "https://xuziyan.ga/archive/1546067579/",
         "title": "Seo初探",
         "tags": ["Seo"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/tags/loadrunner/",
-        "title": "LoadRunner",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/1545987858/",
+        "uri": "https://xuziyan.ga/archive/1545987858/",
         "title": "LoadRunner录制adf框架经验",
         "tags": ["LoadRunner"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1545987472/",
+        "uri": "https://xuziyan.ga/archive/1545987472/",
         "title": "LoadRunner实战",
         "tags": ["LoadRunner"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1545974928/",
+        "uri": "https://xuziyan.ga/archive/1545974928/",
         "title": "CentOS7搭建git服务器",
         "tags": ["Linux"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1545974550/",
+        "uri": "https://xuziyan.ga/archive/1545974550/",
         "title": "Linux常用命令",
         "tags": ["Linux"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1545973462/",
+        "uri": "https://xuziyan.ga/archive/1545973462/",
         "title": "git init与git init --bare demo.git的区别",
         "tags": ["Git"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1545971875/",
+        "uri": "https://xuziyan.ga/archive/1545971875/",
         "title": "Git基本用法",
         "tags": ["Git"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/1545969891/",
+        "uri": "https://xuziyan.ga/archive/1545969891/",
         "title": "Git常用命令",
         "tags": ["Git"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/about/",
+        "uri": "https://xuziyan.ga/about/",
         "title": "About Me",
         "tags": [],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/2018-12-28t011917-0800/",
+        "uri": "https://xuziyan.ga/archive/2018-12-28t011917-0800/",
         "title": "由TravisCI自动部署hugo",
         "tags": [],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/archive/2018-12-28t011747-0800/",
+        "uri": "https://xuziyan.ga/archive/2018-12-28t011747-0800/",
         "title": "搭建博客hugo",
         "tags": [],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/tags/test/",
-        "title": "Test",
-        "tags": [],
-        "description": ""
-    },
-    {
-        "uri": "https://ziyan1215.github.io/archive/23101033/",
+        "uri": "https://xuziyan.ga/archive/23101033/",
         "title": "travisCI自动部署",
         "tags": ["Test"],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/secret/",
+        "uri": "https://xuziyan.ga/secret/",
         "title": "归档",
         "tags": [],
         "description": ""
     },
     {
-        "uri": "https://ziyan1215.github.io/categories/",
+        "uri": "https://xuziyan.ga/archive/",
+        "title": "Archives",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/categories/",
         "title": "Categories",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/elasticsearch/",
+        "title": "Elasticsearch",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/git/",
+        "title": "Git",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/gulp/",
+        "title": "Gulp",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/java/",
+        "title": "Java",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/junit/",
+        "title": "Junit",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/life/",
+        "title": "Life",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/linux/",
+        "title": "Linux",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/loadrunner/",
+        "title": "Loadrunner",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/oracle/",
+        "title": "Oracle",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/other/",
+        "title": "Other",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/seo/",
+        "title": "Seo",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/sql/",
+        "title": "Sql",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/",
+        "title": "Tags",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/test/",
+        "title": "Test",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/tools/",
+        "title": "Tools",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/windows/",
+        "title": "Windows",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/",
+        "title": "XuziYan",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://xuziyan.ga/tags/%E6%97%A5%E5%B8%B8/",
+        "title": "日常",
         "tags": [],
         "description": ""
     }]

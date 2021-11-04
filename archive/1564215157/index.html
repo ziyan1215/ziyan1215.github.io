@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 	<head>
-		<meta name="generator" content="Hugo 0.55.6" />
+		<meta name="generator" content="Hugo 0.54.0" />
 		
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,27 +19,27 @@
 		
 		<meta property="og:locale" content="en_US">
 		<meta property="og:title" content="Java应用中访问ElasticSearch">
-		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:image" content="https://xuziyan.ga/images/logo2.png">
 		<meta property="og:description" content="4 在Java应用中访问ElasticSearch 4.1 在Java应用中实现查询文档 ##pom中加入ElasticSearch6.2.4的依赖： &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.elasticsearch.client&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;transport&amp;">
 		<meta property="og:site_name" content="XuziYan">
 
 		<title>Java应用中访问ElasticSearch | Xuzi</title>
-		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		<link rel="shortcut icon" href="https://xuziyan.ga/images/i.ico">
 		
 		<link rel="manifest" href="/manifest.json">
-		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://xuziyan.ga/lib/font-awesome/css/font-awesome.min.css">
 		
-		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
-		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+		<link rel="stylesheet" href="https://xuziyan.ga/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://xuziyan.ga/css/style.css">
 
 		
 
 		
 		
-		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script src="https://xuziyan.ga/lib/highlight.min.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
 		
-		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script src="https://xuziyan.ga/lib/jquery/jquery.min.js"></script>
 		<script>
 			document.addEventListener("error", function (e) {
 			  var elem = e.target;
@@ -51,7 +51,7 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
-				"@id": "https:\/\/ziyan1215.github.io\/archive\/1564215157\/",
+				"@id": "https://xuziyan.ga/archive/1564215157/",
 				"appid": "1621056720407734", 
 				"title": "Java应用中访问ElasticSearch | Xuzi JAVA!!!", 
 				"images": [],
@@ -78,7 +78,7 @@
           <span id="actions">
             <ul>
                 
-                <li><a class="icon" href="https://ziyan1215.github.io/archive/1563940854/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                <li><a class="icon" href="https://xuziyan.ga/archive/1563940854/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
                 
                 
               <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
@@ -92,16 +92,16 @@
           <br/>
           <div id="share" style="display: none">
               <ul>
-        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1564215157%2f&text=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1564215157%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1564215157%2f&text=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1564215157%2f&title=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1564215157%2f&is_video=false&description=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="mailto:?subject=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1564215157%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1564215157%2f&title=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1564215157%2f&title=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1564215157%2f&title=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1564215157%2f&title=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fxuziyan.ga%2farchive%2f1564215157%2f&text=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fxuziyan.ga%2farchive%2f1564215157%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1564215157%2f&text=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1564215157%2f&title=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1564215157%2f&is_video=false&description=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch&body=Check out this article: https%3a%2f%2fxuziyan.ga%2farchive%2f1564215157%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1564215157%2f&title=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1564215157%2f&title=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1564215157%2f&title=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1564215157%2f&title=Java%e5%ba%94%e7%94%a8%e4%b8%ad%e8%ae%bf%e9%97%aeElasticSearch"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
  </ul>
       
           </div>
@@ -114,9 +114,6 @@
 <ul>
 <li><a href="#4-1-在java应用中实现查询文档">4.1 在Java应用中实现查询文档</a></li>
 <li><a href="#4-2-在java应用中实现添加文档">4.2 在Java应用中实现添加文档</a></li>
-<li><a href="#4-3-在java应用中实现删除文档">4.3 在Java应用中实现删除文档</a></li>
-<li><a href="#4-4-在java应用中实现更新文档">4.4 在Java应用中实现更新文档</a></li>
-<li><a href="#4-5-在java应用中实现批量操作">4.5 在Java应用中实现批量操作</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -191,18 +188,18 @@
   
   &lt;build&gt;
       &lt;plugins&gt;
-            &lt;!-- java编译插件 --&gt;
-            &lt;plugin&gt;
-                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
-                &lt;version&gt;3.2&lt;/version&gt;
-                &lt;configuration&gt;
-                    &lt;source&gt;1.8&lt;/source&gt;
-                    &lt;target&gt;1.8&lt;/target&gt;
-                    &lt;encoding&gt;UTF-8&lt;/encoding&gt;
-                &lt;/configuration&gt;
-            &lt;/plugin&gt;
-        &lt;/plugins&gt;
+			&lt;!-- java编译插件 --&gt;
+			&lt;plugin&gt;
+				&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+				&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+				&lt;version&gt;3.2&lt;/version&gt;
+				&lt;configuration&gt;
+					&lt;source&gt;1.8&lt;/source&gt;
+					&lt;target&gt;1.8&lt;/target&gt;
+					&lt;encoding&gt;UTF-8&lt;/encoding&gt;
+				&lt;/configuration&gt;
+			&lt;/plugin&gt;
+		&lt;/plugins&gt;
   &lt;/build&gt;  
 </code></pre>
 
@@ -231,109 +228,109 @@
                 .setSource(doc1)
                 .get();
         
-        System.out.println(response.status());
+		System.out.println(response.status());
+```		
+### 4.3 在Java应用中实现删除文档
 </code></pre>
 
-<h3 id="4-3-在java应用中实现删除文档">4.3 在Java应用中实现删除文档</h3>
+<p>DeleteResponse response=client.prepareDelete(&ldquo;index1&rdquo;,&ldquo;blog&rdquo;,&ldquo;SzYJjWMBjSAutsuLRP_P&rdquo;).get();</p>
 
-<pre><code>DeleteResponse response=client.prepareDelete(&quot;index1&quot;,&quot;blog&quot;,&quot;SzYJjWMBjSAutsuLRP_P&quot;).get();
+<p>//删除成功返回OK，否则返回NOT_FOUND</p>
 
-//删除成功返回OK，否则返回NOT_FOUND
+<p>System.out.println(response.status());</p>
 
-System.out.println(response.status());
+<pre><code>### 4.4 在Java应用中实现更新文档
 </code></pre>
 
-<h3 id="4-4-在java应用中实现更新文档">4.4 在Java应用中实现更新文档</h3>
-
-<pre><code> UpdateRequest request=new UpdateRequest();
-        request.index(&quot;index1&quot;)
-                .type(&quot;blog&quot;)
-                .id(&quot;2&quot;)
+<p>UpdateRequest request=new UpdateRequest();
+        request.index(&ldquo;index1&rdquo;)
+                .type(&ldquo;blog&rdquo;)
+                .id(&ldquo;2&rdquo;)
                 .doc(
                         XContentFactory.jsonBuilder().startObject()
-                        .field(&quot;title&quot;,&quot;单例模式解读&quot;)
+                        .field(&ldquo;title&rdquo;,&ldquo;单例模式解读&rdquo;)
                         .endObject()
                 );
-UpdateResponse response=client.update(request).get();
+UpdateResponse response=client.update(request).get();</p>
 
-//更新成功返回OK，否则返回NOT_FOUND
+<p>//更新成功返回OK，否则返回NOT_FOUND</p>
 
-System.out.println(response.status());
+<p>System.out.println(response.status());</p>
 
-upsert方式：
+<p>upsert方式：</p>
 
-IndexRequest request1 =new IndexRequest(&quot;index1&quot;,&quot;blog&quot;,&quot;3&quot;)
+<p>IndexRequest request1 =new IndexRequest(&ldquo;index1&rdquo;,&ldquo;blog&rdquo;,&ldquo;3&rdquo;)
                 .source(
                         XContentFactory.jsonBuilder().startObject()
-                                .field(&quot;id&quot;,&quot;3&quot;)
-                                .field(&quot;title&quot;,&quot;装饰模式&quot;)
-                                .field(&quot;content&quot;,&quot;动态地扩展一个对象的功能&quot;)
-                                .field(&quot;postdate&quot;,&quot;2018-05-23&quot;)
-                                .field(&quot;url&quot;,&quot;csdn.net/79239072&quot;)
+                                .field(&ldquo;id&rdquo;,&ldquo;3&rdquo;)
+                                .field(&ldquo;title&rdquo;,&ldquo;装饰模式&rdquo;)
+                                .field(&ldquo;content&rdquo;,&ldquo;动态地扩展一个对象的功能&rdquo;)
+                                .field(&ldquo;postdate&rdquo;,&ldquo;2018-05-23&rdquo;)
+                                .field(&ldquo;url&rdquo;,&ldquo;csdn.net/79239072&rdquo;)
                                 .endObject()
                 );
-        UpdateRequest request2=new UpdateRequest(&quot;index1&quot;,&quot;blog&quot;,&quot;3&quot;)
+        UpdateRequest request2=new UpdateRequest(&ldquo;index1&rdquo;,&ldquo;blog&rdquo;,&ldquo;3&rdquo;)
                 .doc(
                         XContentFactory.jsonBuilder().startObject()
-                        .field(&quot;title&quot;,&quot;装饰模式解读&quot;)
+                        .field(&ldquo;title&rdquo;,&ldquo;装饰模式解读&rdquo;)
                         .endObject()
-                ).upsert(request1);
-        
-UpdateResponse response=client.update(request2).get();
-        
-//upsert操作成功返回OK，否则返回NOT_FOUND
+                ).upsert(request1);</p>
 
-System.out.println(response.status());
+<p>UpdateResponse response=client.update(request2).get();</p>
 
+<p>//upsert操作成功返回OK，否则返回NOT_FOUND</p>
+
+<p>System.out.println(response.status());</p>
+
+<pre><code>### 4.5 在Java应用中实现批量操作
 </code></pre>
 
-<h3 id="4-5-在java应用中实现批量操作">4.5 在Java应用中实现批量操作</h3>
+<p>MultiGetResponse mgResponse = client.prepareMultiGet()
+                    .add(&ldquo;index1&rdquo;,&ldquo;blog&rdquo;,&ldquo;3&rdquo;,&ldquo;2&rdquo;)
+                    .add(&ldquo;lib3&rdquo;,&ldquo;user&rdquo;,&ldquo;1&rdquo;,&ldquo;2&rdquo;,&ldquo;3&rdquo;)
+                    .get();</p>
 
-<pre><code> MultiGetResponse mgResponse = client.prepareMultiGet()
-                    .add(&quot;index1&quot;,&quot;blog&quot;,&quot;3&quot;,&quot;2&quot;)
-                    .add(&quot;lib3&quot;,&quot;user&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;)
-                    .get();
-            
-for(MultiGetItemResponse response:mgResponse){
+<p>for(MultiGetItemResponse response:mgResponse){
                 GetResponse rp=response.getResponse();
                 if(rp!=null &amp;&amp; rp.isExists()){
                     System.out.println(rp.getSourceAsString());
                 }
-            }
-            
-bulk：
+            }</p>
 
-BulkRequestBuilder bulkRequest = client.prepareBulk();
+<p>bulk：</p>
 
-bulkRequest.add(client.prepareIndex(&quot;lib2&quot;, &quot;books&quot;, &quot;4&quot;)
+<p>BulkRequestBuilder bulkRequest = client.prepareBulk();</p>
+
+<p>bulkRequest.add(client.prepareIndex(&ldquo;lib2&rdquo;, &ldquo;books&rdquo;, &ldquo;4&rdquo;)
                 .setSource(XContentFactory.jsonBuilder()
                         .startObject()
-                        .field(&quot;title&quot;, &quot;python&quot;)
-                        .field(&quot;price&quot;, 68)
+                        .field(&ldquo;title&rdquo;, &ldquo;python&rdquo;)
+                        .field(&ldquo;price&rdquo;, 68)
                         .endObject()
                 )
         );
-bulkRequest.add(client.prepareIndex(&quot;lib2&quot;, &quot;books&quot;, &quot;5&quot;)
+bulkRequest.add(client.prepareIndex(&ldquo;lib2&rdquo;, &ldquo;books&rdquo;, &ldquo;5&rdquo;)
                 .setSource(XContentFactory.jsonBuilder()
                         .startObject()
-                        .field(&quot;title&quot;, &quot;VR&quot;)
-                        .field(&quot;price&quot;, 38)
+                        .field(&ldquo;title&rdquo;, &ldquo;VR&rdquo;)
+                        .field(&ldquo;price&rdquo;, 38)
                         .endObject()
                 )
         );
         //批量执行
-BulkResponse bulkResponse = bulkRequest.get();
-        
-System.out.println(bulkResponse.status());
-if (bulkResponse.hasFailures()) {
-            
-            System.out.println(&quot;存在失败操作&quot;);
-        }
+BulkResponse bulkResponse = bulkRequest.get();</p>
 
+<p>System.out.println(bulkResponse.status());
+if (bulkResponse.hasFailures()) {</p>
+
+<pre><code>        System.out.println(&quot;存在失败操作&quot;);
+    }
 </code></pre>
 
+<p>```</p>
+
                             <h2> 本文链接：</h2>
-                            <a href='https://ziyan1215.github.io/archive/1564215157/' target="_blank">https://ziyan1215.github.io/archive/1564215157/</a>
+                            <a href='https://xuziyan.ga/archive/1564215157/' target="_blank">https://xuziyan.ga/archive/1564215157/</a>
                     </div>
                   </article>
                   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
@@ -342,8 +339,8 @@ if (bulkResponse.hasFailures()) {
 <script>
     new Valine({
         el: '.blog-post-comments', 
-        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
-        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        app_id: 'SLtavJMR8oR0nSmBDwrkFeP1-gzGzoHsz', 
+        app_key: 'kaSxo1UEKokiv3IOI3p54wHV', 
         placeholder: '说点什么呗?', 
         avatar:'robohash',
         notify:true,
@@ -359,7 +356,7 @@ if (bulkResponse.hasFailures()) {
       
   <footer id="footer">
     <div class="footer-left">
-        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+        Copyright © 2021  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
       
    </div>
     <div class="footer-right">
@@ -374,9 +371,9 @@ if (bulkResponse.hasFailures()) {
     </div>
   </footer>
     
-<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
-<script src="https://ziyan1215.github.io/lib/typed.js"></script>
-<script src="https://ziyan1215.github.io/js/main.js"></script>
+<script src="https://xuziyan.ga/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://xuziyan.ga/lib/typed.js"></script>
+<script src="https://xuziyan.ga/js/main.js"></script>
 
 
 

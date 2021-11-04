@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Oracle on XuziYan</title>
-    <link>https://ziyan1215.github.io/tags/oracle/</link>
+    <link>https://xuziyan.ga/tags/oracle/</link>
     <description>Recent content in Oracle on XuziYan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Tue, 08 Jan 2019 14:48:42 +0000</lastBuildDate>
     
-	<atom:link href="https://ziyan1215.github.io/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xuziyan.ga/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>通过ip限制Oracle数据库访问的方法</title>
-      <link>https://ziyan1215.github.io/archive/1546930122/</link>
+      <link>https://xuziyan.ga/archive/1546930122/</link>
       <pubDate>Tue, 08 Jan 2019 14:48:42 +0000</pubDate>
       
-      <guid>https://ziyan1215.github.io/archive/1546930122/</guid>
+      <guid>https://xuziyan.ga/archive/1546930122/</guid>
       <description>Windows环境 通过路径：F:\app\orcl\product\12.1.0\dbhome_1\NETWORK\ADMIN找到sqlnet.ora 文件
 增加以下内容来设置允许访问的ip： tcp.validnode_checking=yes
 tcp.invited_nodes=(192.168.6.195,192.168.6.196,192.168.6.55)
@@ -31,19 +31,19 @@ tcp.invited_nodes=(192.168.6.195,192.168.6.196,192.168.6.55)
     
     <item>
       <title>Oracle常用语句</title>
-      <link>https://ziyan1215.github.io/archive/1546928060/</link>
+      <link>https://xuziyan.ga/archive/1546928060/</link>
       <pubDate>Tue, 08 Jan 2019 14:14:20 +0000</pubDate>
       
-      <guid>https://ziyan1215.github.io/archive/1546928060/</guid>
+      <guid>https://xuziyan.ga/archive/1546928060/</guid>
       <description>查询 -----查询所有对象个数 select object_type,count(*) from user_objects group by object_type; --查看表空间 select * from dba_tablespaces --查看用户和默认表空间的关系 select username,default_tablespace from dba_users; --查看表空间文件路径 select tablespace_name,file_id,bytes/1024/1024,file_name from dba_data_files order by file_id; select count(*) from WP_UDB_ROLE_OPERATION;--计算表行数 --查看服务器版本 select * from v$version --查看字符集 select * from nls_database_parameters --查看默认表空间 select * from database_properties where property_name=&#39;DEFAULT_TEMP_TABLESPACE&#39;; --查看临时表空间状态 select tablespace_name,file_name,bytes/1024/1024 file_size,autoextensible from dba_temp_files; select count(*) from user_tables;-----某个用户下所有表 select count(*) from dba_tables;------数据库下所有表 --会话字符集环境 select * from nls_session_parameters; --客户端字符集环境 select * from nls_instance_parameters; --数据库服务器字符集 select * from nls_database_parameters; -- 有数据库连接时用以下语句解决 select sid,serial# from v$session where username=&#39;programmer&#39; alter system kill session &#39;15,19095&#39;;  创建 --新建表空间 CREATE SMALLFILE TABLESPACE orcl DATAFILE &#39;/opt/oradata/orcl&#39; --非oracle下的目录 SIZE 300M AUTOEXTEND ON NEXT 100K MAXSIZE UNLIMITED LOGGING EXTENT MANAGEMENT LOCAL SEGMENT SPACE MANAGEMENT AUTO --新建临时表空间 CREATE temporary TABLESPACE tstemp tempfile &#39;/opt/oradata/tstemp&#39; --非oracle下的目录 SIZE 32M AUTOEXTEND ON NEXT 100K MAXSIZE UNLIMITED EXTENT MANAGEMENT LOCAL --删除表 drop table xzy; --删除用户 drop user pts cascade; --删除表空间 drop tablespace gwypts including contents and datafiles cascade constraints; DELETE FROM WP_UDB_ROLE_OPERATION;--删除表内容 --新建用户，并且给用户赋权限 CREATE USER pts PROFILE &amp;quot;DEFAULT&amp;quot; IDENTIFIED BY pts DEFAULT TABLESPACE pts TEMPORARY TABLESPACE &amp;quot;TEMP&amp;quot; ACCOUNT UNLOCK; grant resource,connect,imp_full_database,exp_full_database,CREATE ANY JOB to pts; --授权语句 grant connect,resource,dba to pts grant all privileges to pts -- Create table 创建版本语句 create table VERSION ( VERSIONID VARCHAR2(50), UPDTDATE DATE ); insert into version(versionid,updtdate) values(&#39;V2.</description>
     </item>
     
     <item>
       <title>Oracle数据库修改字符集方法</title>
-      <link>https://ziyan1215.github.io/archive/1546591306/</link>
+      <link>https://xuziyan.ga/archive/1546591306/</link>
       <pubDate>Fri, 04 Jan 2019 16:41:46 +0000</pubDate>
       
-      <guid>https://ziyan1215.github.io/archive/1546591306/</guid>
+      <guid>https://xuziyan.ga/archive/1546591306/</guid>
       <description>select * from nls_database_parameters
 修改数据库的字符集NLS_CHARACTERSET值
 客户端的字符集要求与服务器一致，才能正确显示数据库的非Ascii字符。字符集要求一致，但是语言设置却可以不同，语言设置建议用英文。如字符集是utf8，则nls_lang可以是American_America.utf8
@@ -57,10 +57,10 @@ sql&amp;gt; conn user/password as sysdba; sql&amp;gt; shutdown immediate; --每�
     
     <item>
       <title>Oracle字符集</title>
-      <link>https://ziyan1215.github.io/archive/1546590921/</link>
+      <link>https://xuziyan.ga/archive/1546590921/</link>
       <pubDate>Fri, 04 Jan 2019 16:35:21 +0000</pubDate>
       
-      <guid>https://ziyan1215.github.io/archive/1546590921/</guid>
+      <guid>https://xuziyan.ga/archive/1546590921/</guid>
       <description> ORACLE数据库有国家字符集（national character set）与数据库字符集(database character set)之分。两者都是在创建数据库时需要设置的  国家字符集主要是用于NCHAR、NVARCHAR、NCLOB类型的字段数据
 数据库字符集使用很广泛，它用于：CHAR、VARCHAR、CLOB、LONG类型的字段数据
 NLS( National Language Support)国家语言支持。
@@ -79,30 +79,30 @@ ORACLE中有两大类字符型数据，VARCHAR2是按照数据库字符集来存
     
     <item>
       <title>Dmp导入后乱码的解决方法</title>
-      <link>https://ziyan1215.github.io/archive/1546588698/</link>
+      <link>https://xuziyan.ga/archive/1546588698/</link>
       <pubDate>Fri, 04 Jan 2019 15:58:18 +0000</pubDate>
       
-      <guid>https://ziyan1215.github.io/archive/1546588698/</guid>
+      <guid>https://xuziyan.ga/archive/1546588698/</guid>
       <description>在实际工作中，导入现场环境的数据库会发现数据乱码、变成问号、数据库对象缺失等问题，很多时候是因为导出时和导入时的环境不一致导致的。
  处理方法  保证现场库和本地库字符集环境一致，现场导出时的环境和导入本地库的环境一致。
  通过查询语句
 select * from nls_database_parameters;  查询数据库字符集，确认现场库和本地库字符集环境一致的情况下，检查现场环境导出的方式，包括导出所使用的是windows环境还是linux环境、导出的字符集是UTF-8还是AL32UTF8或者ZHS16GBK等。然后我们导入本地库的时候使用和现场一致的环境应该就能够成功导入数据，至少不会如开始那样缺少很多对象
-windows下修改字符集环境 在cmd中输入regedit.exe打开注册表
+  windows下修改字符集环境 在cmd中输入regedit.exe打开注册表
 按照如下步骤修改注册表，就可以把客户端从中文修改成英文（注意如果64位windows路径会有不同）。
 HKEY_LOCAL_MACHINE -&amp;gt; SOFTWARE -&amp;gt; Oracle -&amp;gt; KEY_OraClient10g_home1 -&amp;gt; NLS_LANG
 修改&amp;rsquo;SIMPLIFIED CHINESE_CHINA.ZHS16GBK&amp;rsquo; to &amp;lsquo;SIMPLIFIED CHINESE_CHINA.UTF8&amp;rsquo;
-Linux下导入的时候可以设置字符集的环境变量 [oracle@localhost ~]$ export NLS_LANG=&amp;quot;SIMPLIFIED CHINESE_CHINA.ZHS16GBK&amp;quot;   4.查看当前会话窗口的字符集环境：
+Linux下导入的时候可以设置字符集的环境变量 [oracle@localhost ~]$ export NLS_LANG=&amp;quot;SIMPLIFIED CHINESE_CHINA.ZHS16GBK&amp;quot;  4.查看当前会话窗口的字符集环境：
 [oracle@localhost ~]$ echo $NLS_LANG  注：LANG是针对Linux系统的语言、地区、字符集的设置,对linux下的应用程序有效，如date；NLS_LANG是针对Oracle语言、地区、字符集的设置，对oracle中的工具有效
 linux下查看系统的环境变量：
-[oracle@localhost ~]$ local -bash: local: can only be used in a function [oracle@localhost ~]$ locale LANG=en_US.UTF-8 LC_CTYPE=&amp;quot;en_US.UTF-8&amp;quot; LC_NUMERIC=&amp;quot;en_US.UTF-8&amp;quot; LC_TIME=&amp;quot;en_US.UTF-8&amp;quot; LC_COLLATE=&amp;quot;en_US.UTF-8&amp;quot; LC_MONETARY=&amp;quot;en_US.UTF-8&amp;quot; LC_MESSAGES=&amp;quot;en_US.UTF-8&amp;quot; LC_PAPER=&amp;quot;en_US.</description>
+[oracle@localhost ~]$ local -bash: local: can only be used in a function [oracle@localhost ~]$ locale LANG=en_US.UTF-8 LC_CTYPE=&amp;quot;en_US.UTF-8&amp;quot; LC_NUMERIC=&amp;quot;en_US.UTF-8&amp;quot; LC_TIME=&amp;quot;en_US.UTF-8&amp;quot; LC_COLLATE=&amp;quot;en_US.UTF-8&amp;quot; LC_MONETARY=&amp;quot;en_US.UTF-8&amp;quot; LC_MESSAGES=&amp;quot;en_US.</description>
     </item>
     
     <item>
       <title>Oracle11G导出空表方法</title>
-      <link>https://ziyan1215.github.io/archive/1546588114/</link>
+      <link>https://xuziyan.ga/archive/1546588114/</link>
       <pubDate>Fri, 04 Jan 2019 15:48:34 +0000</pubDate>
       
-      <guid>https://ziyan1215.github.io/archive/1546588114/</guid>
+      <guid>https://xuziyan.ga/archive/1546588114/</guid>
       <description>  导DMP时请做以下操作！！！ 若需要在oracle11g数据库执行dmp的导入导出，为了确保11g数据库能够导出空表，请先做以下操作 （sys和要导出的数据库用户两个用户都要进行此操作）其中sys要用sysdba权限登录
 方法 --用plsql developer 的 command 窗口操作。 SQL&amp;gt;show parameter deferred_segment_creation; --如果为TRUE,则将该参数改为FALSE； --在sqlplus中，执行如下命令： SQL&amp;gt;alter system set deferred_segment_creation=false; --然后，可以针对数据表、索引、物化视图等手工分配Extent SQL&amp;gt;Select &#39;alter table &#39;||table_name||&#39; allocate extent;&#39; from user_tables where num_rows=0; --将查询出来的结果，进行复制出来，用command窗口进行SQL执行。 --导出语句例子： exp user/user@localhost/orcl file=d:\user0406.dmp log=d:\user0406.log statistics=none  验证 在需要导出的用户下查询表数量（注意在my object下查询）,查询原导出库和现导入库的对象是否一致。
 -----查询所有对象个数--------------- select object_type,count(*) from user_objects group by object_type;   </description>

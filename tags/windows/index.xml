@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on XuziYan</title>
-    <link>https://ziyan1215.github.io/tags/windows/</link>
+    <link>https://xuziyan.ga/tags/windows/</link>
     <description>Recent content in Windows on XuziYan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Tue, 08 Jan 2019 17:18:22 +0000</lastBuildDate>
     
-	<atom:link href="https://ziyan1215.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xuziyan.ga/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Netstat查看某端口号被谁占用</title>
-      <link>https://ziyan1215.github.io/archive/1546939102/</link>
+      <link>https://xuziyan.ga/archive/1546939102/</link>
       <pubDate>Tue, 08 Jan 2019 17:18:22 +0000</pubDate>
       
-      <guid>https://ziyan1215.github.io/archive/1546939102/</guid>
+      <guid>https://xuziyan.ga/archive/1546939102/</guid>
       <description>列出所有端口的情况 在cmd窗口下执行 netstat -ano
 查看被占用端口对应的PID 输入命令：netstat -aon|findstr &amp;quot;1313&amp;quot;
 查看是哪个进程或者程序占用了1313端口 tasklist|findstr &amp;quot;10328&amp;quot;

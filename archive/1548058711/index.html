@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 	<head>
-		<meta name="generator" content="Hugo 0.55.6" />
+		<meta name="generator" content="Hugo 0.54.0" />
 		
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +23,7 @@
 		
 		<meta property="og:locale" content="en_US">
 		<meta property="og:title" content="Java基础之集合">
-		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:image" content="https://xuziyan.ga/images/logo2.png">
 		<meta property="og:description" content="在使用一个体系时，原则：参阅顶层内容。建立底层对象。
 集合是可变长度的，用于存储对象，只能存储引用数据类型，可以存储不同类型的对象
  使用集合的技巧 看到Array就是数组结构，有角标，查询速度很快。
@@ -32,22 +32,22 @@
 		<meta property="og:site_name" content="XuziYan">
 
 		<title>Java基础之集合 | Xuzi</title>
-		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		<link rel="shortcut icon" href="https://xuziyan.ga/images/i.ico">
 		
 		<link rel="manifest" href="/manifest.json">
-		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://xuziyan.ga/lib/font-awesome/css/font-awesome.min.css">
 		
-		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
-		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+		<link rel="stylesheet" href="https://xuziyan.ga/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://xuziyan.ga/css/style.css">
 
 		
 
 		
 		
-		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+		<script src="https://xuziyan.ga/lib/highlight.min.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
 		
-		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script src="https://xuziyan.ga/lib/jquery/jquery.min.js"></script>
 		<script>
 			document.addEventListener("error", function (e) {
 			  var elem = e.target;
@@ -59,7 +59,7 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
-				"@id": "https:\/\/ziyan1215.github.io\/archive\/1548058711\/",
+				"@id": "https://xuziyan.ga/archive/1548058711/",
 				"appid": "1621056720407734", 
 				"title": "Java基础之集合 | Xuzi JAVA!!!", 
 				"images": [],
@@ -86,10 +86,10 @@
           <span id="actions">
             <ul>
                 
-                <li><a class="icon" href="https://ziyan1215.github.io/archive/1548056542/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+                <li><a class="icon" href="https://xuziyan.ga/archive/1548056542/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
                 
                 
-                <li><a class="icon" href="https://ziyan1215.github.io/archive/1548124598/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+                <li><a class="icon" href="https://xuziyan.ga/archive/1548124598/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
                 
               <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
               <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
@@ -102,16 +102,16 @@
           <br/>
           <div id="share" style="display: none">
               <ul>
-        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&text=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&text=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&is_video=false&description=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="mailto:?subject=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fxuziyan.ga%2farchive%2f1548058711%2f&text=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fxuziyan.ga%2farchive%2f1548058711%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1548058711%2f&text=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1548058711%2f&is_video=false&description=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="mailto:?subject=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88&body=Check out this article: https%3a%2f%2fxuziyan.ga%2farchive%2f1548058711%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fxuziyan.ga%2farchive%2f1548058711%2f&title=Java%e5%9f%ba%e7%a1%80%e4%b9%8b%e9%9b%86%e5%90%88"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
  </ul>
       
           </div>
@@ -231,20 +231,20 @@ LinkedHashSet，LinkedHashMap:这两个集合可以保证哈希表有存入顺�
 <p>void    |<code>remove()</code>| 从迭代器指向的 collection 中移除迭代器返回的最后一个元素（可选操作）</p>
 
 <pre><code class="language-java">public static void main(String[] args) {
-        Collection coll = new ArrayList();
-        coll.add(&quot;abc0&quot;);
-        coll.add(&quot;abc1&quot;);
-        coll.add(&quot;abc2&quot;);
-        //--------------方式1----------------------
-        Iterator it = coll.iterator();
-        while(it.hasNext()){
-            System.out.println(it.next());
-        }
-        //---------------方式2用此种----------------------
-        for(Iterator it = coll.iterator();it.hasNext(); ){
-            System.out.println(it.next());
-        }
-    }
+		Collection coll = new ArrayList();
+		coll.add(&quot;abc0&quot;);
+		coll.add(&quot;abc1&quot;);
+		coll.add(&quot;abc2&quot;);
+		//--------------方式1----------------------
+		Iterator it = coll.iterator();
+		while(it.hasNext()){
+			System.out.println(it.next());
+		}
+		//---------------方式2用此种----------------------
+		for(Iterator it = coll.iterator();it.hasNext(); ){
+			System.out.println(it.next());
+		}
+	}
 </code></pre>
 
 <blockquote>
@@ -265,7 +265,7 @@ LinkedHashSet，LinkedHashMap:这两个集合可以保证哈希表有存入顺�
 
 <pre><code class="language-java">//List集合因为角标有了自己的获取元素的方式： 遍历。
 for(int x=0; x&lt;list.size(); x++){
-    sop(&quot;get:&quot;+list.get(x));
+	sop(&quot;get:&quot;+list.get(x));
 }
 </code></pre>
 
@@ -319,7 +319,7 @@ HashSet集合保证元素唯一性：通过元素的hashCode方法，和equals�
 <p>对于HashSet集合，判断元素是否存在，或者删除元素，底层依据的是hashCode方法和equals方法。</p>
 
                             <h2> 本文链接：</h2>
-                            <a href='https://ziyan1215.github.io/archive/1548058711/' target="_blank">https://ziyan1215.github.io/archive/1548058711/</a>
+                            <a href='https://xuziyan.ga/archive/1548058711/' target="_blank">https://xuziyan.ga/archive/1548058711/</a>
                     </div>
                   </article>
                   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
@@ -328,8 +328,8 @@ HashSet集合保证元素唯一性：通过元素的hashCode方法，和equals�
 <script>
     new Valine({
         el: '.blog-post-comments', 
-        app_id: 'RklimuckFp5qKalglwQv9VIv-gzGzoHsz', 
-        app_key: 'oFa0Y4kpYJz3svGKqDeCF46D', 
+        app_id: 'SLtavJMR8oR0nSmBDwrkFeP1-gzGzoHsz', 
+        app_key: 'kaSxo1UEKokiv3IOI3p54wHV', 
         placeholder: '说点什么呗?', 
         avatar:'robohash',
         notify:true,
@@ -345,7 +345,7 @@ HashSet集合保证元素唯一性：通过元素的hashCode方法，和equals�
       
   <footer id="footer">
     <div class="footer-left">
-        Copyright © 2020  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
+        Copyright © 2021  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">xxx</a>
       
    </div>
     <div class="footer-right">
@@ -360,9 +360,9 @@ HashSet集合保证元素唯一性：通过元素的hashCode方法，和equals�
     </div>
   </footer>
     
-<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
-<script src="https://ziyan1215.github.io/lib/typed.js"></script>
-<script src="https://ziyan1215.github.io/js/main.js"></script>
+<script src="https://xuziyan.ga/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://xuziyan.ga/lib/typed.js"></script>
+<script src="https://xuziyan.ga/js/main.js"></script>
 
 
 

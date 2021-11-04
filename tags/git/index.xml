@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on XuziYan</title>
-    <link>https://ziyan1215.github.io/tags/git/</link>
+    <link>https://xuziyan.ga/tags/git/</link>
     <description>Recent content in Git on XuziYan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Thu, 10 Jan 2019 10:26:32 +0000</lastBuildDate>
     
-	<atom:link href="https://ziyan1215.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xuziyan.ga/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Gui乱码解决方法</title>
-      <link>https://ziyan1215.github.io/archive/1547087192/</link>
+      <link>https://xuziyan.ga/archive/1547087192/</link>
       <pubDate>Thu, 10 Jan 2019 10:26:32 +0000</pubDate>
       
-      <guid>https://ziyan1215.github.io/archive/1547087192/</guid>
+      <guid>https://xuziyan.ga/archive/1547087192/</guid>
       <description> 今天试着用了下git gui 发现查看文件时中文乱码了，我想应该就是字符集设置的问题了  </description>
     </item>
     
     <item>
       <title>git init与git init --bare demo.git的区别</title>
-      <link>https://ziyan1215.github.io/archive/1545973462/</link>
+      <link>https://xuziyan.ga/archive/1545973462/</link>
       <pubDate>Fri, 28 Dec 2018 13:04:22 +0000</pubDate>
       
-      <guid>https://ziyan1215.github.io/archive/1545973462/</guid>
+      <guid>https://xuziyan.ga/archive/1545973462/</guid>
       <description>用法与区别 初始化一个git仓库，一般用于本地 git init 初始化一个裸仓库，一般用于远程仓库 git init --bare demo.git  注意事项 假如在vps上面安装git后，用git init --bare demo.git来初始化了一个远程仓库
 那么在本地上传commit到vps的远程仓库上的话，文件是不会显示出来的。
 通过命令git --work-tree=/opt/demo --git-dir=/opt/demo.git checkout -f
@@ -34,10 +34,10 @@
     
     <item>
       <title>Git基本用法</title>
-      <link>https://ziyan1215.github.io/archive/1545971875/</link>
+      <link>https://xuziyan.ga/archive/1545971875/</link>
       <pubDate>Fri, 28 Dec 2018 12:37:55 +0000</pubDate>
       
-      <guid>https://ziyan1215.github.io/archive/1545971875/</guid>
+      <guid>https://xuziyan.ga/archive/1545971875/</guid>
       <description>安装完后的配置 安装完成后，还需要最后一步设置，在命令行输入：
 $ git config --global user.name &amp;quot;Your Name&amp;quot;
 $ git config --global user.email &amp;quot;email@example.com&amp;quot;
@@ -57,10 +57,10 @@ $ git commit -m &amp;quot;wrote a readme file&amp;quot;</description>
     
     <item>
       <title>Git常用命令</title>
-      <link>https://ziyan1215.github.io/archive/1545969891/</link>
+      <link>https://xuziyan.ga/archive/1545969891/</link>
       <pubDate>Fri, 28 Dec 2018 12:04:51 +0000</pubDate>
       
-      <guid>https://ziyan1215.github.io/archive/1545969891/</guid>
+      <guid>https://xuziyan.ga/archive/1545969891/</guid>
       <description>常用命令 git init 项目初始化 git clone 拉取项目 git add . 添加到暂存区 git commit -m 添加commit信息 git push 将本地分支推送到服务器上去 git pull origin master 本地与服务器端同步 git log 查看日志 git status 查看当前状态 git tag 查看版本号 git diff 查看尚未提交的更新  实际运用 拉取远程仓库内容 git pull origin master  推送本地到远程仓库 git push -u origin master  创建dev分支 git checkout -b dev   git checkout命令加上-b参数表示创建并切换，相当于以下两条命令
  git branch dev git checkout dev  用git branch命令查看当前分支</description>
     </item>
