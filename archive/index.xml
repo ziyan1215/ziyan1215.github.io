@@ -6,10 +6,24 @@
     <description>Recent content in Archives on XuziYan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Thu, 04 Nov 2021 11:12:43 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 Nov 2021 13:19:10 +0000</lastBuildDate>
     
 	<atom:link href="https://ziyan1215.github.io/archive/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo博客加入搜索功能</title>
+      <link>https://ziyan1215.github.io/archive/1636089550/</link>
+      <pubDate>Fri, 05 Nov 2021 13:19:10 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1636089550/</guid>
+      <description>博客嘛，随着文章多起来，终究还是需要进行搜索，方便自己找到之前发布的内容
+ 网上搜索 第一步，面向百度编程，找到资料一：https://gist.github.com/cmod/5410eae147e4318164258742dd053993。 但是，按照上面的方法部署后一点用处也没有，调试的时候js报错，那就只能看源码了，发现index.json问卷内容生产不对
+第二步：通过细读这个文章，发现另外一个优化的方案： https://gist.github.com/Arty2/8b0c43581013753438a3d35c15091a9f。 部署后遇到同样的问题
+第三步：看源码改脚本。
+先是根据自己的实际修改index.json模板。
+[{{ range $index, $page := .Site.Pages }} {{- if ne $page.Type &amp;quot;json&amp;quot; -}} {{- if and $index (gt $index 0) -}},{{- end }} { &amp;quot;uri&amp;quot;: &amp;quot;{{ $page.Permalink }}&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;{{ htmlEscape $page.Title}}&amp;quot;, &amp;quot;date&amp;quot;: &amp;quot;{{ htmlEscape $page.Date | time.Format &amp;quot;2006-01-02&amp;quot; }}&amp;quot;, &amp;quot;tags&amp;quot;: [{{ range $tindex, $tag := $page.Params.tags }}{{ if $tindex }}, {{ end }}&amp;quot;{{ $tag| htmlEscape }}&amp;quot;{{ end }}], &amp;quot;description&amp;quot;: &amp;quot;{{ htmlEscape .</description>
+    </item>
     
     <item>
       <title>2021年，重启记录之旅</title>
@@ -18,8 +32,8 @@
       
       <guid>https://ziyan1215.github.io/archive/1635995563/</guid>
       <description>年纪  子曰：吾十有五而志于学，三十而立，四十而不惑，五十而知天命， 六十而耳顺，七十而从心所欲，不逾矩。
- 而立之年，事情越发的多，渐渐的也越发容易遗忘，就想起了记录这件事，特别事这个信息碎片化的时代，没了总结，没了思考，没了记忆，这个特别可怕。
-来年 希望从此刻开始，多点记录，不枉此生</description>
+ 而立之年，事情越发的多，渐渐的也越发容易遗忘，就想起了记录这件事，特别是这个信息碎片化的时代，没了总结，没了思考，没了记忆，这个特别可怕。
+来年 希望从此刻开始，多点记录</description>
     </item>
     
     <item>
@@ -165,6 +179,18 @@ GET /lib3/user/_search { &amp;quot;query&amp;quot;:{ &amp;quot;terms&amp;quot;:{
 五月份 接着，很快就到了五月份，也不知道是为什么，应该是着急了吧，就开始找开发的同时随便投一下测试。 这个社会，经验还是很重要啊，所以面试测试的时候，随便吹吹逼，就收了N多份的offer，面了第二家测试，感觉差不多就接了offer，好吧，就这样进入了今年的第一个坑。面试的时候说是不用加班，结果进去发现大家都熬到晚上9点后才走，一天接近12个小时的工作时间。好吧，没经历过互联网996的表示，原来8小说内的工作硬是用12个小时来完成，效率是真的低。加上新公司的办公环境是新装修的办公室，怕甲醛+超长工作时间会带来严重的健康问题，所以，我再一次裸辞了。
 六月份 端午节给自己放了一两周假，然后就开始找工作，这回就直接投回测试岗位了，然后一周就收了2个offer。好吧，挑了个离家近工资低的。。。也不知道是不是个坑。不过呢，一个新的行业，可以学到很多新的东西，也算是一个好的方面吧
 7月份 入职新公司也快一个月了，总的来说，还行吧。很多新技术可以去学，虽然不好的地方也有很多，但是不好的东西变好的过程也会经历一下，不管后面怎样，或者当下吧</description>
+    </item>
+    
+    <item>
+      <title>2019 1 29</title>
+      <link>https://ziyan1215.github.io/archive/1548758636/</link>
+      <pubDate>Tue, 29 Jan 2019 18:43:56 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1548758636/</guid>
+      <description> dao&amp;ndash;》service&amp;ndash;》controller&amp;ndash;》前端展示 店铺注册功能 新增店铺 更新店铺
+店铺信息编辑 店铺列表展示 商品类别 商品模块 前端展示系统
+报错  Cannot delete or update a parent row: a foreign key constraint fails[](https://blog.csdn.net/u010429286/article/details/79042886) 删除表的时候 有表关联无法删除
+ idea Method does not override method from its superclass </description>
     </item>
     
     <item>

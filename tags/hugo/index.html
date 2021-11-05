@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta name="generator" content="Hugo 0.54.0" />
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<meta name="wap-font-scale" content="no">
+		
+		
+		
+		<meta name="author" content="XuziYan">
+		<meta name='description' itemprop="description" content="XuziYan">
+		
+		<meta name="keywords" content="XuziYan, web前端博客, 性能优化, 网页制作, 前端, js, html5, css, node.js" >
+		
+		
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="Hugo">
+		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
+		<meta property="og:description" content="XuziYan">
+		<meta property="og:site_name" content="XuziYan">
+
+		<title>Hugo | Xuzi</title>
+		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
+		
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
+		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
+
+		
+
+		
+		
+		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+		<script>
+			document.addEventListener("error", function (e) {
+			  var elem = e.target;
+			  if (elem.tagName.toLowerCase() == 'img') {
+				elem.style.display='none'
+			  }
+			}, true);
+			</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+				"@id": "https://ziyan1215.github.io/tags/hugo/",
+				"appid": "1621056720407734", 
+				"title": "Hugo | Xuzi JAVA!!!", 
+				"images": [],
+				"pubDate": "2021-11-05T13:19:10"
+			} 
+			</script>
+
+
+	</head>
+
+
+<form id="search-form" class="noscript" method="GET" action="https://duckduckgo.com/" data-language-prefix="">
+	<div class="search-bar">
+		<input id="search-input" class="search--display" name="q" tabindex="0" autocomplete="off" value=" site:https://ziyan1215.github.io/" placeholder="">
+		<input id="search-submit" class="icon" type="submit" value="⌕">
+	</div>
+	<ul id="search-results" class="search--display"></ul>
+</form>
+
+
+<script src="https://ziyan1215.github.io/js/fuse.js"></script>
+<script src="https://ziyan1215.github.io/js/fixedsearch.js"></script>
+
+<style>
+	#search-form {
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 0;
+		margin: 0;
+		padding: 0;
+		min-width: var(--icon-size, 1.2rem);
+		max-width: 15rem;
+		max-height: 100vh;
+		z-index: 1000;
+	}
+
+	#search-form.search--display,
+	#search-form[data-focus='false'] .search--display {
+		display: none;
+	}
+
+	#search-form[data-focus='true'] .search--display {
+		display: block;
+	}
+
+	#search-form .search-bar {
+		display: flex;
+		height: 1.4rem;
+		align-items: center;
+	}
+ 
+	#search-form .search-bar {
+		background: rgb(var(--page-color, '240,240,240'));
+		color: #2ba55b;
+	}
+
+	#search-form[data-focus='true'] .search-bar {
+		border: 2.5px solid rgb(var(--accent-color, '40.188.138'));
+	}
+
+	#search-form[data-focus='true'] .search-bar:not(:focus-within) {
+		background: rgb(var(--text-color, '3,3,3'));
+		color: #0af185; 
+		border-color: rgb(var(--text-color, '3,3,3'));
+	}
+
+	#search-input {
+		display: block;
+		padding: 0.3rem;
+		width: 15rem;
+		max-width: 100vw;
+		height: 100%;
+
+		background: inherit;
+		border: none;
+		color: inherit;
+		outline: none;
+		text-align: left;
+
+		font-size: var(--s-2, 0.8rem);
+	}
+
+	#search-submit {
+		display: block;
+		margin: 0 var(--icon-pad, 0.1rem) 0 0;
+		padding: 0;
+		width:       var(--icon-size, 1.2rem);
+		height:      var(--icon-size, 1.2rem);
+		line-height: var(--icon-size, 1.2rem);
+
+		background: inherit;
+		color: inherit;
+	}
+
+	#search-submit:hover,
+	#search-submit:focus {
+		color: rgb(var(--accent-color, '40.188.138'));
+	}
+
+	#search-results {
+		display: block;
+		flex-grow: 2;
+		margin: 0.5px 0 0 0;
+		padding: 0;
+		max-height: calc(100vh - 1.4rem - 0.5px);
+		width: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+
+		backdrop-filter: blur(var(--page-color-blur, 2px));
+		border: 2.5px solid;
+		color: #2bbc8a; 
+		font-size: var(--s-2, 0.8rem);
+        
+		scrollbar-color: rgb(var(--text-color, '43,165,91')) rgb(var(--page-color, '240,240,240')) !important;
+		scrollbar-width: thin !important;
+	}
+
+	#search-results:empty {
+		display: none;
+		opacity: 0;
+	}
+
+	#search-results li {
+		margin: 0;
+		width: 100%;
+
+		background-color: rgba(var(--page-color, '240,240,240'), var(--page-color-transparency, 0.89));
+		border-top: 0.5px dashed;
+		list-style: none;
+	}
+		#search-results li:first-child {
+			border: none;
+		}
+
+	#search-results a {
+		display: block;
+		padding: 0.3rem;
+		display: block;
+        color: #c9cacc; 
+		text-decoration: none;
+	}
+
+	#search-results a:hover,
+	#search-results a:focus {
+		background: rgb(var(--text-color, '3,3,3'));
+		color: rgb(var(--page-color, '240,240,240'));
+		outline: 0;
+	}
+
+	#search-results a:active {
+		background: rgb(var(--accent-color, '40.188.138'));
+		color: rgb(var(--page-color, '240,240,240'));
+	}
+
+	#search-results li span:empty {
+		display: none;
+	}
+
+	#search-results li span:not(:last-child)::after {
+		content: ' – ';
+	}
+
+	#search-results li .title {
+		display: block;
+		margin-bottom: calc(var(--line-height, 1.4em)/3);
+	}
+
+	#search-results li .title::after {
+		display: none;
+	}
+</style>
+
+	<body>
+	<div class="content index width mx-auto px3 my4">
+		
+<header id="header">
+	<a href="/">
+	
+		<div id="logo" style='background-image: url(/images/logo2.png);'></div>
+	  <div id="title">
+		<h1>Hugo</h1>
+	  </div>
+	</a>
+	<div id="nav">
+	  <ul>
+		<li class="icon">
+		  <a href="#"><i class="fa fa-bars fa-2x"></i></a>
+		</li>
+		<li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+
+	  </ul>
+	</div>
+
+  </header>
+  
+		<div id="theme-tagcloud" class="tagcloud-wrap">
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <a href="/tags/elasticsearch" style="font-size:16px; text-transform:capitalize;">
+        elasticsearch 
+    </a>
+        
+   
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <a href="/tags/git" style="font-size:12px; text-transform:capitalize;">
+        git 
+    </a>
+        
+   
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <a href="/tags/java" style="font-size:12px; text-transform:capitalize;">
+        java 
+    </a>
+        
+   
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <a href="/tags/life" style="font-size:12px; text-transform:capitalize;">
+        life 
+    </a>
+        
+   
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <a href="/tags/linux" style="font-size:12px; text-transform:capitalize;">
+        linux 
+    </a>
+        
+   
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <a href="/tags/loadrunner" style="font-size:12px; text-transform:capitalize;">
+        loadrunner 
+    </a>
+        
+   
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <a href="/tags/oracle" style="font-size:16px; text-transform:capitalize;">
+        oracle 
+    </a>
+        
+   
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <a href="/tags/other" style="font-size:12px; text-transform:capitalize;">
+        other 
+    </a>
+        
+   
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <a href="/tags/sql" style="font-size:12px; text-transform:capitalize;">
+        sql 
+    </a>
+        
+   
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <a href="/tags/tools" style="font-size:12px; text-transform:capitalize;">
+        tools 
+    </a>
+        
+   
+    
+    
+</div>
+		<section id="wrapper" class="home">
+			
+			<div class="archive">
+				<h3>2021</h3>
+				<ul class="post-list" id="post-list">
+						
+						
+							
+							<li class="post-item">
+									<div class="meta">
+									<time datetime='2021-11-05' itemprop="datePublished">2021-11-05</time>
+								</div>
+									<span> <a href='https://ziyan1215.github.io/archive/1636089550/'>Hugo博客加入搜索功能</a></span>
+								</li>
+							
+						
+				</ul>
+			</div>
+			
+			
+		</section>
+
+    </div>
+	  
+  <footer id="footer">
+    <div class="footer-left">
+        Copyright © 2021  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank"></a>
+      
+   </div>
+    <div class="footer-right">
+      <nav>
+        <ul>
+          <li> <a href="/">Home</a></li>
+<li> <a href=" /archive/">Archives</a></li>
+<li> <a href="/about/">About</a></li>
+
+
+        </ul>
+      </nav>
+    </div>
+  </footer>
+	
+<script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="https://ziyan1215.github.io/lib/typed.js"></script>
+<script src="https://ziyan1215.github.io/js/main.js"></script>
+
+
+
+
+
+
+
+
+
+<script async src=""></script>
+<script>
+(function(){
+  if(location.host!=='xuziyan.ga')return;
+  var ga = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-129382678-1';       
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129382678-1');
+})()
+</script>
+
+
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+
+
+  
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+          navigator.serviceWorker
+              .register('/sw.js')
+              .then(registration => {
+                  console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                  console.log('SW registration failed: ', registrationError);
+              });
+      });
+  }
+  </script>
+	</body>
+</html>

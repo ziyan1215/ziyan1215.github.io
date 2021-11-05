@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>经验 on XuziYan</title>
+    <link>https://ziyan1215.github.io/tags/%E7%BB%8F%E9%AA%8C/</link>
+    <description>Recent content in 经验 on XuziYan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 05 Nov 2021 13:19:10 +0000</lastBuildDate>
+    
+	<atom:link href="https://ziyan1215.github.io/tags/%E7%BB%8F%E9%AA%8C/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo博客加入搜索功能</title>
+      <link>https://ziyan1215.github.io/archive/1636089550/</link>
+      <pubDate>Fri, 05 Nov 2021 13:19:10 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1636089550/</guid>
+      <description>博客嘛，随着文章多起来，终究还是需要进行搜索，方便自己找到之前发布的内容
+ 网上搜索 第一步，面向百度编程，找到资料一：https://gist.github.com/cmod/5410eae147e4318164258742dd053993。 但是，按照上面的方法部署后一点用处也没有，调试的时候js报错，那就只能看源码了，发现index.json问卷内容生产不对
+第二步：通过细读这个文章，发现另外一个优化的方案： https://gist.github.com/Arty2/8b0c43581013753438a3d35c15091a9f。 部署后遇到同样的问题
+第三步：看源码改脚本。
+先是根据自己的实际修改index.json模板。
+[{{ range $index, $page := .Site.Pages }} {{- if ne $page.Type &amp;quot;json&amp;quot; -}} {{- if and $index (gt $index 0) -}},{{- end }} { &amp;quot;uri&amp;quot;: &amp;quot;{{ $page.Permalink }}&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;{{ htmlEscape $page.Title}}&amp;quot;, &amp;quot;date&amp;quot;: &amp;quot;{{ htmlEscape $page.Date | time.Format &amp;quot;2006-01-02&amp;quot; }}&amp;quot;, &amp;quot;tags&amp;quot;: [{{ range $tindex, $tag := $page.Params.tags }}{{ if $tindex }}, {{ end }}&amp;quot;{{ $tag| htmlEscape }}&amp;quot;{{ end }}], &amp;quot;description&amp;quot;: &amp;quot;{{ htmlEscape .</description>
+    </item>
+    
+  </channel>
+</rss>
