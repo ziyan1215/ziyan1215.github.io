@@ -257,39 +257,50 @@
             <div class="content">
                 
 
-<div id="echarts300" style="width: 100%;height: 300px;margin: 0 auto"></div>
-<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
-<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.min.js"></script>
-<script src="https://cdn.bootcss.com/echarts/3.8.0/extension/dataTool.min.js"></script>
-<script type="text/javascript">
+<h1 id="联系方式">联系方式</h1>
 
-    
-    var myChart = echarts.init(document.getElementById('echarts300'));
-    
+<ul>
+<li>Email：xuziyanmiss@gmail.com</li>
+</ul>
 
-    function getVirtulData(year) {
-    year = year || '2017';
-    var date = +echarts.number.parseDate(year + '-01-01');
-    var end = +echarts.number.parseDate((+year + 1) + '-01-01');
-    var dayTime = 3600 * 24 * 1000;
-    var data = [];
-    for (var time = date; time < end; time += dayTime) {
-        data.push([
-            echarts.format.formatTime('yyyy-MM-dd', time),
-            Math.floor(Math.random() * 10000)
-        ]);
-    }
-    console.log(data);
-    return data;
-}
-    
-    var option = JSON.parse("{\"xAxis\":[{\"boundaryGap\":\"false\",\"type\":\"category\",\"splitLine\":{\"show\":false},\"axisTick\":{\"show\":false},\"axisLabel\":{\"show\":false,\"interval\":0,\"textStyle\":{\"color\":\"white\",\"fontSize\":14},\"rotate\":45},\"axisLine\":{\"show\":false}}],\"yAxis\":[{\"type\":\"value\",\"splitLine\":{\"show\":false},\"axisTick\":{\"show\":false},\"axisLabel\":{\"show\":false,\"textStyle\":{\"color\":\"white\",\"fontSize\":14}},\"axisLine\":{\"show\":false},\"min\":2,\"max\":0}],\"series\":[{\"type\":\"effectScatter\",\"data\":[{\"value\":1,\"symbolSize\":90}],\"showEffectOn\":\"render\",\"rippleEffect\":{\"period\":4,\"brushtype\":\"stroke\",\"scale\":1.5},\"label\":{\"normal\":{\"show\":true,\"formatter\":\"{b}\",\"fontSize\":16,\"color\":\"white\",\"offset\":[0,0]}},\"itemStyle\":{\"normal\":{\"color\":{\"type\":\"radial\",\"x\":0.5,\"y\":0.5,\"r\":0.5,\"colorStops\":[{\"offset\":0,\"color\":\"rgba(158,158,158,0)\"},{\"offset\":0.4,\"color\":\"rgba(158,158,158,0)\"},{\"offset\":0.9,\"color\":\"rgba(158,158,158,0.2)\"},{\"offset\":1,\"color\":\"rgba(158,158,158,0.4)\"}],\"globalCoord\":\"true\"},\"shadowBlur\":0,\"shadowcolor\":\"#25fffb\"}}}]}")
-    console.log(option);
+<h1 id="个人信息">个人信息</h1>
 
-    
-    myChart.setOption(option);
-</script>
+<ul>
+<li>职业: 测试工程师</li>
+<li>城市：广州</li>
+</ul>
 
+<h1 id="𝗠𝘆-𝗧𝗲𝗰𝗸-𝗦𝘁𝗮𝗰𝗸">𝗠𝘆 𝗧𝗲𝗰𝗸 𝗦𝘁𝗮𝗰𝗸</h1>
+
+<h2 id="常用的系统">常用的系统</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/MacOS"><img src="https://img.shields.io/badge/OS-macOS-informational?style=flat-square&amp;logo=apple&amp;logoColor=white" alt="OS" /></a>
+<a href="https://en.wikipedia.org/wiki/Linux"><img src="https://img.shields.io/badge/OS-Linux-informational?style=flat-square&amp;logo=linux&amp;logoColor=white" alt="OS" /></a>
+<a href="https://code.visualstudio.com/"><img src="https://img.shields.io/badge/OS-Win-informational?style=flat-square&amp;logo=Windows&amp;logoColor=white" alt="OS" /></a></p>
+
+<h2 id="常用的语言">常用的语言</h2>
+
+<p><img src="https://img.shields.io/badge/-JAVA-%23E44D27?style=flat-square&amp;logo=java&amp;logoColor=ffffff" alt="JAVA" />
+<img src="https://img.shields.io/badge/-Python-%23E44D27?style=flat-square&amp;logo=python&amp;logoColor=ffffff" alt="Python" /></p>
+
+<h2 id="常用的工具">常用的工具</h2>
+
+<p><a href="https://ziyan1215.github.io/"><img src="https://img.shields.io/badge/-Jmeter-%23282C34?style=flat-square&amp;logo=linux" alt="Jmeter" /></a>
+<a href="https://ziyan1215.github.io/"><img src="https://img.shields.io/badge/-Loadrunner-%232C3A42?style=flat-square&amp;logo=Windows" alt="Loadrunner" /></a>
+<a href="https://ziyan1215.github.io/"><img src="https://img.shields.io/badge/-Mysql-%232C3A42?style=flat-square&amp;logo=mysql&amp;logoColor=white" alt="Mysql" /></a>
+<a href="https://ziyan1215.github.io/"><img src="https://img.shields.io/badge/-ElasticSearch-%232C3A42?style=flat-square&amp;logo=elasticsearch&amp;logoColor=white" alt="ES" /></a></p>
+
+<!-- 
+![HTML5](https://img.shields.io/badge/-HTML5-%23E44D27?style=flat-square&logo=html5&logoColor=ffffff)
+![CSS3](https://img.shields.io/badge/-CSS3-%231572B6?style=flat-square&logo=css3)
+![JavaScript](https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flat-square&logo=javascript&logoColor=000000&labelColor=%23F7DF1C&color=%23FFCE5A)
+![React](https://img.shields.io/badge/-React-%23282C34?style=flat-square&logo=react)
+![Webpack](https://img.shields.io/badge/-Webpack-%232C3A42?style=flat-square&logo=webpack)
+![ESlint](https://img.shields.io/badge/-ESLint-%234B32C3?style=flat-square&logo=eslint)
+
+![Git](https://img.shields.io/badge/-Git-%23F05032?style=flat-square&logo=git&logoColor=%23ffffff)
+![Sass](https://img.shields.io/badge/-Sass-%23CC6699?style=flat-square&logo=sass&logoColor=ffffff)
+![Stylus](https://img.shields.io/badge/-Stylus-%23333333?style=flat-square&logo=stylus) -->
 
 <h1 id="留言板">留言板</h1>
 

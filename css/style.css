@@ -1508,7 +1508,7 @@ Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
 .hljs-link {
   text-decoration: underline;
 }
-//hljs结束
+
 
 
 
@@ -1639,4 +1639,8 @@ Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
     #more-post-list .dates{
         display: none;
     }
+}
+
+article .content img[src^="https://img.shields.io"]  { 
+    display: inline;
 }
