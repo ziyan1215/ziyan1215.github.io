@@ -1644,3 +1644,13 @@ Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
 article .content img[src^="https://img.shields.io"]  { 
     display: inline;
 }
+
+.post-entry img[alt$=">"] {
+    float: right;
+    margin: 0.7rem;      /* this margin is totally up to you 测试图片排版*/
+    box-shadow: 0 0 10px #555;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 0 0px #ece7e7;
+    -moz-box-shadow: 0 0 0px #ece7e7;
+    max-width: 45%;
+}

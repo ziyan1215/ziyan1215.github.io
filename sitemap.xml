@@ -17,6 +17,13 @@
   </url>
   
   <url>
+    <loc>https://ziyan1215.github.io/archive/1573200125/</loc>
+    <lastmod>2019-11-08T16:02:05+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ziyan1215.github.io/archive/1564215157/</loc>
     <lastmod>2019-07-27T16:12:37+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -325,6 +332,12 @@
   </url>
   
   <url>
+    <loc>https://ziyan1215.github.io/archive/1636449990/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ziyan1215.github.io/archive/</loc>
     <lastmod>2021-11-05T13:19:10+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -416,7 +429,13 @@
   
   <url>
     <loc>https://ziyan1215.github.io/tags/other/</loc>
-    <lastmod>2019-07-15T23:11:14+00:00</lastmod>
+    <lastmod>2019-11-08T16:02:05+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ziyan1215.github.io/tags/photo/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

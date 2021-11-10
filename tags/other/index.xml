@@ -6,10 +6,26 @@
     <description>Recent content in Other on XuziYan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Mon, 15 Jul 2019 23:11:14 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Nov 2019 16:02:05 +0000</lastBuildDate>
     
 	<atom:link href="https://ziyan1215.github.io/tags/other/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Typora&#43;PicGo图床编写md</title>
+      <link>https://ziyan1215.github.io/archive/1573200125/</link>
+      <pubDate>Fri, 08 Nov 2019 16:02:05 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/archive/1573200125/</guid>
+      <description>食用方法 下载picpgo软件
+https://github.com/Molunerfinn/PicGo/releases/
+配置仓库令牌：
+下载插件：
+这个插件可以支持选择分支
+配置图床：
+配置typora
+gitee作为图床的缺点：有容量限制，毕竟是免费的，如果真的有需求的话还是买个阿里云OSS</description>
+    </item>
     
     <item>
       <title>NewJob</title>

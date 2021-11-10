@@ -14,6 +14,13 @@
         "description": ""
     },
     {
+        "uri": "https://ziyan1215.github.io/archive/1573200125/",
+        "title": "Typora+PicGo图床编写md",
+        "date": "2019-11-08",
+        "tags": ["Other"],
+        "description": ""
+    },
+    {
         "uri": "https://ziyan1215.github.io/archive/1564215157/",
         "title": "Java应用中访问ElasticSearch",
         "date": "2019-07-27",
@@ -322,6 +329,13 @@
         "description": ""
     },
     {
+        "uri": "https://ziyan1215.github.io/archive/1636449990/",
+        "title": "21年11月09日的卷积云",
+        "date": "0001-01-01",
+        "tags": ["Photo"],
+        "description": ""
+    },
+    {
         "uri": "https://ziyan1215.github.io/archive/",
         "title": "Archives",
         "date": "2021-11-05",
@@ -415,7 +429,14 @@
     {
         "uri": "https://ziyan1215.github.io/tags/other/",
         "title": "Other",
-        "date": "2019-07-15",
+        "date": "2019-11-08",
+        "tags": [],
+        "description": ""
+    },
+    {
+        "uri": "https://ziyan1215.github.io/tags/photo/",
+        "title": "Photo",
+        "date": "0001-01-01",
         "tags": [],
         "description": ""
     },
