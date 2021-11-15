@@ -10,5 +10,5 @@ Disallow: /secret
 
 Allow: /archive/
 
-Sitemap: https://alili.tech/sitemap.xml
-Sitemap: https://alili.tech/sitemap/index.html
+Sitemap: https://ziyan1215.github.io/sitemap.xml
+Sitemap: https://ziyan1215.github.io/sitemap/index.html
