@@ -1,5 +1,12 @@
 [
     {
+        "uri": "https://ziyan1215.github.io/daily/1638860110/",
+        "title": "Hugo文章加密",
+        "date": "2021-12-07",
+        "tags": [],
+        "description": ""
+    },
+    {
         "uri": "https://ziyan1215.github.io/archive/1636449990/",
         "title": "21年11月09日的卷积云",
         "date": "2021-11-09",
@@ -350,6 +357,13 @@
         "description": ""
     },
     {
+        "uri": "https://ziyan1215.github.io/daily/",
+        "title": "Dailies",
+        "date": "2021-12-07",
+        "tags": [],
+        "description": ""
+    },
+    {
         "uri": "https://ziyan1215.github.io/tags/ddd/",
         "title": "Ddd",
         "date": "2021-11-04",
@@ -485,7 +499,7 @@
     {
         "uri": "https://ziyan1215.github.io/",
         "title": "XuziYan",
-        "date": "2021-11-09",
+        "date": "2021-12-07",
         "tags": [],
         "description": ""
     },

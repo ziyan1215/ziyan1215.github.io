@@ -1,49 +1,30 @@
 <!DOCTYPE html>
 <html lang="zh">
-	<head>
-		<meta name="generator" content="Hugo 0.54.0" />
-		
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="HandheldFriendly" content="True">
-		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
-		<meta name="wap-font-scale" content="no">
-		
-		
-		
-		<meta name="author" content="XuziYan">
-		<meta name='description' itemprop="description" content=" 今天试着用了下git gui 发现查看文件时中文乱码了，我想应该就是字符集设置的问题了  ">
-		 
-		<meta name="keywords" content="Gui乱码解决方法" >
-		
-		
-		<meta property="og:locale" content="en_US">
-		<meta property="og:title" content="Gui乱码解决方法">
-		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
-		<meta property="og:description" content=" 今天试着用了下git gui 发现查看文件时中文乱码了，我想应该就是字符集设置的问题了  ">
-		<meta property="og:site_name" content="XuziYan">
-
-		<title>Gui乱码解决方法 | Xuzi</title>
-		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
-		
-		<link rel="manifest" href="/manifest.json">
-		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
-		
-		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
-		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
-
-		
-
-		
-		
-
-		
-
-		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
-		<script>hljs.initHighlightingOnLoad();</script>
-		
-		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
-		<script>
+<head>
+<meta content="Hugo 0.54.0" name="generator"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport"/>
+<meta content="no" name="wap-font-scale"/>
+<meta content="XuziYan" name="author"/>
+<meta content=" 今天试着用了下git gui 发现查看文件时中文乱码了，我想应该就是字符集设置的问题了  " itemprop="description" name="description"/>
+<meta content="Gui乱码解决方法" name="keywords"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Gui乱码解决方法" property="og:title"/>
+<meta content="https://ziyan1215.github.io/images/logo2.png" property="og:image"/>
+<meta content=" 今天试着用了下git gui 发现查看文件时中文乱码了，我想应该就是字符集设置的问题了  " property="og:description"/>
+<meta content="XuziYan" property="og:site_name"/>
+<title>Gui乱码解决方法 | Xuzi</title>
+<link href="https://ziyan1215.github.io/images/i.ico" rel="shortcut icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<link href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css" rel="stylesheet"/>
+<link href="https://ziyan1215.github.io/css/style.css" rel="stylesheet"/>
+<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+<script>
 			document.addEventListener("error", function (e) {
 			  var elem = e.target;
 			  if (elem.tagName.toLowerCase() == 'img') {
@@ -51,7 +32,7 @@
 			  }
 			}, true);
 			</script>
-		<script type="application/ld+json">
+<script type="application/ld+json">
 			{
 				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
 				"@id": "https://ziyan1215.github.io/archive/1547087192/",
@@ -61,279 +42,247 @@
 				"pubDate": "2019-01-10T10:26:32"
 			} 
 			</script>
-
-
-	</head>
-
-
-<form id="search-form" class="noscript" method="GET" action="https://duckduckgo.com/" data-language-prefix="">
-	<div class="search-bar">
-		<input id="search-input" class="search--display" name="q" tabindex="0" autocomplete="off" value=" site:https://ziyan1215.github.io/" placeholder="">
-		<input id="search-submit" class="icon" type="submit" value="⌕">
-	</div>
-	<ul id="search-results" class="search--display"></ul>
+</head>
+<body><form action="https://duckduckgo.com/" class="noscript" data-language-prefix="" id="search-form" method="GET">
+<div class="search-bar">
+<input autocomplete="off" class="search--display" id="search-input" name="q" placeholder="" tabindex="0" value=" site:https://ziyan1215.github.io/"/>
+<input class="icon" id="search-submit" type="submit" value="⌕"/>
+</div>
+<ul class="search--display" id="search-results"></ul>
 </form>
-
-
 <script src="https://ziyan1215.github.io/js/fuse.js"></script>
 <script src="https://ziyan1215.github.io/js/fixedsearch.js"></script>
-
-<style>
-	#search-form {
-		display: block;
-		position: fixed;
-		top: 0;
-		right: 0;
-		margin: 0;
-		padding: 0;
-		min-width: var(--icon-size, 1.2rem);
-		max-width: 15rem;
-		max-height: 100vh;
-		z-index: 1000;
-	}
-
-	#search-form.search--display,
-	#search-form[data-focus='false'] .search--display {
-		display: none;
-	}
-
-	#search-form[data-focus='true'] .search--display {
-		display: block;
-	}
-
-	#search-form .search-bar {
-		display: flex;
-		height: 1.4rem;
-		align-items: center;
-	}
- 
-	#search-form .search-bar {
-		background: rgb(var(--page-color, '240,240,240'));
-		color: #2ba55b;
-	}
-
-	#search-form[data-focus='true'] .search-bar {
-		border: 2.5px solid rgb(var(--accent-color, '40.188.138'));
-	}
-
-	#search-form[data-focus='true'] .search-bar:not(:focus-within) {
-		background: rgb(var(--text-color, '3,3,3'));
-		color: #0af185; 
-		border-color: rgb(var(--text-color, '3,3,3'));
-	}
-
-	#search-input {
-		display: block;
-		padding: 0.3rem;
-		width: 15rem;
-		max-width: 100vw;
-		height: 100%;
-
-		background: inherit;
-		border: none;
-		color: inherit;
-		outline: none;
-		text-align: left;
-
-		font-size: var(--s-2, 0.8rem);
-	}
-
-	#search-submit {
-		display: block;
-		margin: 0 var(--icon-pad, 0.1rem) 0 0;
-		padding: 0;
-		width:       var(--icon-size, 1.2rem);
-		height:      var(--icon-size, 1.2rem);
-		line-height: var(--icon-size, 1.2rem);
-
-		background: inherit;
-		color: inherit;
-	}
-
-	#search-submit:hover,
-	#search-submit:focus {
-		color: rgb(var(--accent-color, '40.188.138'));
-	}
-
-	#search-results {
-		display: block;
-		flex-grow: 2;
-		margin: 0.5px 0 0 0;
-		padding: 0;
-		max-height: calc(100vh - 1.4rem - 0.5px);
-		width: 100%;
-		overflow-x: hidden;
-		overflow-y: auto;
-
-		backdrop-filter: blur(var(--page-color-blur, 2px));
-		border: 2.5px solid;
-		color: #2bbc8a; 
-		font-size: var(--s-2, 0.8rem);
-        
-		scrollbar-color: rgb(var(--text-color, '43,165,91')) rgb(var(--page-color, '240,240,240')) !important;
-		scrollbar-width: thin !important;
-	}
-
-	#search-results:empty {
-		display: none;
-		opacity: 0;
-	}
-
-	#search-results li {
-		margin: 0;
-		width: 100%;
-
-		background-color: rgba(var(--page-color, '240,240,240'), var(--page-color-transparency, 0.89));
-		border-top: 0.5px dashed;
-		list-style: none;
-	}
-		#search-results li:first-child {
-			border: none;
-		}
-
-	#search-results a {
-		display: block;
-		padding: 0.3rem;
-		display: block;
-        color: #c9cacc; 
-		text-decoration: none;
-	}
-
-	#search-results a:hover,
-	#search-results a:focus {
-		background: rgb(var(--text-color, '3,3,3'));
-		color: rgb(var(--page-color, '240,240,240'));
-		outline: 0;
-	}
-
-	#search-results a:active {
-		background: rgb(var(--accent-color, '40.188.138'));
-		color: rgb(var(--page-color, '240,240,240'));
-	}
-
-	#search-results li span:empty {
-		display: none;
-	}
-
-	#search-results li span:not(:last-child)::after {
-		content: ' – ';
-	}
-
-	#search-results li .title {
-		display: block;
-		margin-bottom: calc(var(--line-height, 1.4em)/3);
-	}
-
-	#search-results li .title::after {
-		display: none;
-	}
+<style>
+	#search-form {
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 0;
+		margin: 0;
+		padding: 0;
+		min-width: var(--icon-size, 1.2rem);
+		max-width: 15rem;
+		max-height: 100vh;
+		z-index: 1000;
+	}
+
+	#search-form.search--display,
+	#search-form[data-focus='false'] .search--display {
+		display: none;
+	}
+
+	#search-form[data-focus='true'] .search--display {
+		display: block;
+	}
+
+	#search-form .search-bar {
+		display: flex;
+		height: 1.4rem;
+		align-items: center;
+	}
+ 
+	#search-form .search-bar {
+		background: rgb(var(--page-color, '240,240,240'));
+		color: #2ba55b;
+	}
+
+	#search-form[data-focus='true'] .search-bar {
+		border: 2.5px solid rgb(var(--accent-color, '40.188.138'));
+	}
+
+	#search-form[data-focus='true'] .search-bar:not(:focus-within) {
+		background: rgb(var(--text-color, '3,3,3'));
+		color: #0af185; 
+		border-color: rgb(var(--text-color, '3,3,3'));
+	}
+
+	#search-input {
+		display: block;
+		padding: 0.3rem;
+		width: 15rem;
+		max-width: 100vw;
+		height: 100%;
+
+		background: inherit;
+		border: none;
+		color: inherit;
+		outline: none;
+		text-align: left;
+
+		font-size: var(--s-2, 0.8rem);
+	}
+
+	#search-submit {
+		display: block;
+		margin: 0 var(--icon-pad, 0.1rem) 0 0;
+		padding: 0;
+		width:       var(--icon-size, 1.2rem);
+		height:      var(--icon-size, 1.2rem);
+		line-height: var(--icon-size, 1.2rem);
+
+		background: inherit;
+		color: inherit;
+	}
+
+	#search-submit:hover,
+	#search-submit:focus {
+		color: rgb(var(--accent-color, '40.188.138'));
+	}
+
+	#search-results {
+		display: block;
+		flex-grow: 2;
+		margin: 0.5px 0 0 0;
+		padding: 0;
+		max-height: calc(100vh - 1.4rem - 0.5px);
+		width: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+
+		backdrop-filter: blur(var(--page-color-blur, 2px));
+		border: 2.5px solid;
+		color: #2bbc8a; 
+		font-size: var(--s-2, 0.8rem);
+        
+		scrollbar-color: rgb(var(--text-color, '43,165,91')) rgb(var(--page-color, '240,240,240')) !important;
+		scrollbar-width: thin !important;
+	}
+
+	#search-results:empty {
+		display: none;
+		opacity: 0;
+	}
+
+	#search-results li {
+		margin: 0;
+		width: 100%;
+
+		background-color: rgba(var(--page-color, '240,240,240'), var(--page-color-transparency, 0.89));
+		border-top: 0.5px dashed;
+		list-style: none;
+	}
+		#search-results li:first-child {
+			border: none;
+		}
+
+	#search-results a {
+		display: block;
+		padding: 0.3rem;
+		display: block;
+        color: #c9cacc; 
+		text-decoration: none;
+	}
+
+	#search-results a:hover,
+	#search-results a:focus {
+		background: rgb(var(--text-color, '3,3,3'));
+		color: rgb(var(--page-color, '240,240,240'));
+		outline: 0;
+	}
+
+	#search-results a:active {
+		background: rgb(var(--accent-color, '40.188.138'));
+		color: rgb(var(--page-color, '240,240,240'));
+	}
+
+	#search-results li span:empty {
+		display: none;
+	}
+
+	#search-results li span:not(:last-child)::after {
+		content: ' – ';
+	}
+
+	#search-results li .title {
+		display: block;
+		margin-bottom: calc(var(--line-height, 1.4em)/3);
+	}
+
+	#search-results li .title::after {
+		display: none;
+	}
 </style>
-
-<body>
-    <div id="header-post">
-        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
-        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
-        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
-        <span id="menu">
-          <span id="nav">
-            <ul>
-              <li> <a href="/">Home</a></li>
+<div id="header-post">
+<a href="#" id="menu-icon"><i class="fa fa-bars fa-lg"></i></a>
+<a href="#" id="menu-icon-tablet"><i class="fa fa-bars fa-lg"></i></a>
+<a href="#" id="top-icon-tablet" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+<span id="menu">
+<span id="nav">
+<ul>
+<li> <a href="/">Home</a></li>
 <li> <a href=" /archive/">Archives</a></li>
 <li> <a href="/about/">About</a></li>
-
-
-            </ul>
-          </span>
-          <br/>
-          <span id="actions">
-            <ul>
-                
-                <li><a class="icon" href="https://ziyan1215.github.io/archive/1547010912/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
-                
-                
-                <li><a class="icon" href="https://ziyan1215.github.io/archive/1547545569/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
-                
-              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
-              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
-            </ul>
-            <span id="i-prev" class="info" style="display:none;">Previous post</span>
-            <span id="i-next" class="info" style="display:none;">Next post</span>
-            <span id="i-top" class="info" style="display:none;">Back to top</span>
-            <span id="i-share" class="info" style="display:none;">Share post</span>
-          </span>
-          <br/>
-          <div id="share" style="display: none">
-              <ul>
-        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&text=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&text=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&title=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&is_video=false&description=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="mailto:?subject=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&title=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&title=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&title=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&title=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
- </ul>
-      
-          </div>
-          <div id="toc">
-                
-          </div>
-        </span>
-      </div>
-      
-    <div class="content index width mx-auto px3 my3">
-        <section id="wrapper" class="home">
-                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-                    <header>
-                    <h1 class="posttitle" itemprop="name headline">
+</ul>
+</span>
+<br/>
+<span id="actions">
+<ul>
+<li><a class="icon" href="https://ziyan1215.github.io/archive/1547010912/"><i aria-hidden="true" class="fa fa-chevron-left" onmouseout='$("#i-prev").toggle();' onmouseover='$("#i-prev").toggle();'></i></a></li>
+<li><a class="icon" href="https://ziyan1215.github.io/archive/1547545569/"><i aria-hidden="true" class="fa fa-chevron-right" onmouseout='$("#i-next").toggle();' onmouseover='$("#i-next").toggle();'></i></a></li>
+<li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i aria-hidden="true" class="fa fa-chevron-up" onmouseout='$("#i-top").toggle();' onmouseover='$("#i-top").toggle();'></i></a></li>
+<li><a class="icon" href="#"><i aria-hidden="true" class="fa fa-share-alt" onclick='$("#share").toggle();return false;' onmouseout='$("#i-share").toggle();' onmouseover='$("#i-share").toggle();'></i></a></li>
+</ul>
+<span class="info" id="i-prev" style="display:none;">Previous post</span>
+<span class="info" id="i-next" style="display:none;">Next post</span>
+<span class="info" id="i-top" style="display:none;">Back to top</span>
+<span class="info" id="i-share" style="display:none;">Share post</span>
+</span>
+<br/>
+<div id="share" style="display: none">
+<ul>
+<li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&amp;text=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-weibo"></i></a></li>
+<li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f"><i aria-hidden="true" class="fa fa-facebook"></i></a></li>
+<li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&amp;text=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-twitter"></i></a></li>
+<li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&amp;title=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-linkedin"></i></a></li>
+<li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&amp;is_video=false&amp;description=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-pinterest"></i></a></li>
+<li><a class="icon" href="mailto:?subject=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95&amp;body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f"><i aria-hidden="true" class="fa fa-envelope"></i></a></li>
+<li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&amp;title=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-get-pocket"></i></a></li>
+<li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&amp;title=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-reddit"></i></a></li>
+<li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&amp;title=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-stumbleupon"></i></a></li>
+<li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1547087192%2f&amp;title=Gui%e4%b9%b1%e7%a0%81%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-digg"></i></a></li>
+</ul>
+</div>
+<div id="toc">
+</div>
+</span>
+</div>
+<div class="content index width mx-auto px3 my3">
+<section class="home" id="wrapper">
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+<header>
+<h1 class="posttitle" itemprop="name headline">
                             Gui乱码解决方法
                         </h1>
-                      <div class="meta">
-                        <div class="postdate">
-                                <time datetime='2019-01-10' itemprop="datePublished">2019-01-10</time>
-                            </div>
-                        <div class="article-tag">
-                            <i class="fa fa-eye"></i>
-                            <span id="busuanzi_container_page_pv">
-                                <span id="busuanzi_value_page_pv">0</span>
-                              </span>
-                            </span>
-                        </div>
-                        
-                        <div class="article-tag">
-                            <i class="fa fa-tag"></i>
-                            
-                            <a href="/tags/git">
-                               Git</a> 
-                             
-                        </div>
-                        
-                        
-                        
-                        <div class="article-tag-box">
-                               
-                        </div>
-
-                        
-                      </div>
-                    </header>
-                    
-
-                    <div class="content" itemprop="articleBody">
-                            
-                            <blockquote>
+<div class="meta">
+<div class="postdate">
+<time datetime="2019-01-10" itemprop="datePublished">2019-01-10</time>
+</div>
+<div class="article-tag">
+<i class="fa fa-eye"></i>
+<span id="busuanzi_container_page_pv">
+<span id="busuanzi_value_page_pv">0</span>
+</span>
+</div>
+<div class="article-tag">
+<i class="fa fa-tag"></i>
+<a href="/tags/git">
+                               Git</a>
+</div>
+<div class="article-tag-box">
+</div>
+</div>
+</header>
+<div class="content" itemprop="articleBody">
+<blockquote>
 <p>今天试着用了下git gui 发现查看文件时中文乱码了，我想应该就是字符集设置的问题了
-<img src="https://xuziyan.ga/images/guiencode.gif" alt="gif" /></p>
+<img alt="gif" src="https://xuziyan.ga/images/guiencode.gif"/></p>
 </blockquote>
-
-                            <h2> 本文链接：</h2>
-                            <a href='https://ziyan1215.github.io/archive/1547087192/' target="_blank">https://ziyan1215.github.io/archive/1547087192/</a>
-                    </div>
-                  </article>
-                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<h2> 本文链接：</h2>
+<a href="https://ziyan1215.github.io/archive/1547087192/" target="_blank">https://ziyan1215.github.io/archive/1547087192/</a>
+</div>
+</article>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <div class="blog-post-comments"></div>
 <script>
     new Valine({
@@ -346,93 +295,59 @@
         verify:true
     });
 </script>
-                  <h1># 最新文章</h1>
-<ul id="more-post-list" class="archive readmore">
-
-    
-    
-    
-        <li>
-            <a href="/archive/1636449990/">21年11月09日的卷积云<aside class="dates">2021-11-09</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1636089550/">Hugo博客加入搜索功能<aside class="dates">2021-11-05</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1635995563/">2021年，重启记录之旅<aside class="dates">2021-11-04</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1573200125/">Typora&#43;PicGo图床编写md<aside class="dates">2019-11-08</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1564215157/">Java应用中访问ElasticSearch<aside class="dates">2019-07-27</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563940854/">ElasticSearch原理<aside class="dates">2019-07-24</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563796794/">ES的嵌套字段<aside class="dates">2019-07-22</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563681594/">ES的聚合&amp;复合查询<aside class="dates">2019-07-21</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563598794/">ES的filter查询<aside class="dates">2019-07-20</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563522787/">ES基本查询<aside class="dates">2019-07-19</aside></a>
-        </li>
-    
+<h1># 最新文章</h1>
+<ul class="archive readmore" id="more-post-list">
+<li>
+<a href="/daily/1638860110/">Hugo文章加密<aside class="dates">2021-12-07</aside></a>
+</li>
+<li>
+<a href="/archive/1636449990/">21年11月09日的卷积云<aside class="dates">2021-11-09</aside></a>
+</li>
+<li>
+<a href="/archive/1636089550/">Hugo博客加入搜索功能<aside class="dates">2021-11-05</aside></a>
+</li>
+<li>
+<a href="/archive/1635995563/">2021年，重启记录之旅<aside class="dates">2021-11-04</aside></a>
+</li>
+<li>
+<a href="/archive/1573200125/">Typora+PicGo图床编写md<aside class="dates">2019-11-08</aside></a>
+</li>
+<li>
+<a href="/archive/1564215157/">Java应用中访问ElasticSearch<aside class="dates">2019-07-27</aside></a>
+</li>
+<li>
+<a href="/archive/1563940854/">ElasticSearch原理<aside class="dates">2019-07-24</aside></a>
+</li>
+<li>
+<a href="/archive/1563796794/">ES的嵌套字段<aside class="dates">2019-07-22</aside></a>
+</li>
+<li>
+<a href="/archive/1563681594/">ES的聚合&amp;复合查询<aside class="dates">2019-07-21</aside></a>
+</li>
+<li>
+<a href="/archive/1563598794/">ES的filter查询<aside class="dates">2019-07-20</aside></a>
+</li>
 </ul>
-
-
-
-                  
-                  
-        </section>
-
-    </div>
-      
-  <footer id="footer">
-    <div class="footer-left">
+</section>
+</div>
+<footer id="footer">
+<div class="footer-left">
         Copyright © 2021  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank"></a>
-      
-   </div>
-    <div class="footer-right">
-      <nav>
-        <ul>
-          <li> <a href="/">Home</a></li>
+</div>
+<div class="footer-right">
+<nav>
+<ul>
+<li> <a href="/">Home</a></li>
 <li> <a href=" /archive/">Archives</a></li>
 <li> <a href="/about/">About</a></li>
-
-
-        </ul>
-      </nav>
-    </div>
-  </footer>
-    
+</ul>
+</nav>
+</div>
+</footer>
 <script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
 <script src="https://ziyan1215.github.io/lib/typed.js"></script>
 <script src="https://ziyan1215.github.io/js/main.js"></script>
-
-
-
-
-
-
-
-
-
-<script async src=""></script>
+<script async="" src=""></script>
 <script>
 (function(){
   if(location.host!=='xuziyan.ga')return;
@@ -448,8 +363,6 @@
   gtag('config', 'UA-129382678-1');
 })()
 </script>
-
-
 <script>
     (function(){
         var bp = document.createElement('script');
@@ -464,18 +377,7 @@
         s.parentNode.insertBefore(bp, s);
     })();
     </script>
-    
-
-
-  
-
-
-
-
-
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+<script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script>
   if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -490,7 +392,4 @@
       });
   }
   </script>
-</body>
-
-</html>
-
+</body></html>

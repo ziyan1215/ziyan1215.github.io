@@ -1,51 +1,32 @@
 <!DOCTYPE html>
 <html lang="zh">
-	<head>
-		<meta name="generator" content="Hugo 0.54.0" />
-		
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="HandheldFriendly" content="True">
-		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
-		<meta name="wap-font-scale" content="no">
-		
-		
-		
-		<meta name="author" content="XuziYan">
-		<meta name='description' itemprop="description" content="数据准备请看文章底部 点击我查看
- 题目 1、查询“01”课程比“02”课程成绩高的所有学生的学号 select a.s_id from (select sc.s_id, sc.s_score from score sc where sc.c_id=&#39;01&#39;) a, (select sc.s_id, sc.s_score from score sc where sc.c_id=&#39;02&#39;) b wh">
-		 
-		<meta name="keywords" content="Sql经典题目的mysql实现" >
-		
-		
-		<meta property="og:locale" content="en_US">
-		<meta property="og:title" content="Sql经典题目的mysql实现①">
-		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
-		<meta property="og:description" content="数据准备请看文章底部 点击我查看
- 题目 1、查询“01”课程比“02”课程成绩高的所有学生的学号 select a.s_id from (select sc.s_id, sc.s_score from score sc where sc.c_id=&#39;01&#39;) a, (select sc.s_id, sc.s_score from score sc where sc.c_id=&#39;02&#39;) b wh">
-		<meta property="og:site_name" content="XuziYan">
-
-		<title>Sql经典题目的mysql实现① | Xuzi</title>
-		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
-		
-		<link rel="manifest" href="/manifest.json">
-		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
-		
-		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
-		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
-
-		
-
-		
-		
-
-		
-
-		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
-		<script>hljs.initHighlightingOnLoad();</script>
-		
-		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
-		<script>
+<head>
+<meta content="Hugo 0.54.0" name="generator"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport"/>
+<meta content="no" name="wap-font-scale"/>
+<meta content="XuziYan" name="author"/>
+<meta content="数据准备请看文章底部 点击我查看
+ 题目 1、查询“01”课程比“02”课程成绩高的所有学生的学号 select a.s_id from (select sc.s_id, sc.s_score from score sc where sc.c_id='01') a, (select sc.s_id, sc.s_score from score sc where sc.c_id='02') b wh" itemprop="description" name="description"/>
+<meta content="Sql经典题目的mysql实现" name="keywords"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Sql经典题目的mysql实现①" property="og:title"/>
+<meta content="https://ziyan1215.github.io/images/logo2.png" property="og:image"/>
+<meta content="数据准备请看文章底部 点击我查看
+ 题目 1、查询“01”课程比“02”课程成绩高的所有学生的学号 select a.s_id from (select sc.s_id, sc.s_score from score sc where sc.c_id='01') a, (select sc.s_id, sc.s_score from score sc where sc.c_id='02') b wh" property="og:description"/>
+<meta content="XuziYan" property="og:site_name"/>
+<title>Sql经典题目的mysql实现① | Xuzi</title>
+<link href="https://ziyan1215.github.io/images/i.ico" rel="shortcut icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<link href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css" rel="stylesheet"/>
+<link href="https://ziyan1215.github.io/css/style.css" rel="stylesheet"/>
+<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+<script>
 			document.addEventListener("error", function (e) {
 			  var elem = e.target;
 			  if (elem.tagName.toLowerCase() == 'img') {
@@ -53,7 +34,7 @@
 			  }
 			}, true);
 			</script>
-		<script type="application/ld+json">
+<script type="application/ld+json">
 			{
 				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
 				"@id": "https://ziyan1215.github.io/archive/1548473871/",
@@ -63,224 +44,208 @@
 				"pubDate": "2019-01-26T11:37:51"
 			} 
 			</script>
-
-
-	</head>
-
-
-<form id="search-form" class="noscript" method="GET" action="https://duckduckgo.com/" data-language-prefix="">
-	<div class="search-bar">
-		<input id="search-input" class="search--display" name="q" tabindex="0" autocomplete="off" value=" site:https://ziyan1215.github.io/" placeholder="">
-		<input id="search-submit" class="icon" type="submit" value="⌕">
-	</div>
-	<ul id="search-results" class="search--display"></ul>
+</head>
+<body><form action="https://duckduckgo.com/" class="noscript" data-language-prefix="" id="search-form" method="GET">
+<div class="search-bar">
+<input autocomplete="off" class="search--display" id="search-input" name="q" placeholder="" tabindex="0" value=" site:https://ziyan1215.github.io/"/>
+<input class="icon" id="search-submit" type="submit" value="⌕"/>
+</div>
+<ul class="search--display" id="search-results"></ul>
 </form>
-
-
 <script src="https://ziyan1215.github.io/js/fuse.js"></script>
 <script src="https://ziyan1215.github.io/js/fixedsearch.js"></script>
-
-<style>
-	#search-form {
-		display: block;
-		position: fixed;
-		top: 0;
-		right: 0;
-		margin: 0;
-		padding: 0;
-		min-width: var(--icon-size, 1.2rem);
-		max-width: 15rem;
-		max-height: 100vh;
-		z-index: 1000;
-	}
-
-	#search-form.search--display,
-	#search-form[data-focus='false'] .search--display {
-		display: none;
-	}
-
-	#search-form[data-focus='true'] .search--display {
-		display: block;
-	}
-
-	#search-form .search-bar {
-		display: flex;
-		height: 1.4rem;
-		align-items: center;
-	}
- 
-	#search-form .search-bar {
-		background: rgb(var(--page-color, '240,240,240'));
-		color: #2ba55b;
-	}
-
-	#search-form[data-focus='true'] .search-bar {
-		border: 2.5px solid rgb(var(--accent-color, '40.188.138'));
-	}
-
-	#search-form[data-focus='true'] .search-bar:not(:focus-within) {
-		background: rgb(var(--text-color, '3,3,3'));
-		color: #0af185; 
-		border-color: rgb(var(--text-color, '3,3,3'));
-	}
-
-	#search-input {
-		display: block;
-		padding: 0.3rem;
-		width: 15rem;
-		max-width: 100vw;
-		height: 100%;
-
-		background: inherit;
-		border: none;
-		color: inherit;
-		outline: none;
-		text-align: left;
-
-		font-size: var(--s-2, 0.8rem);
-	}
-
-	#search-submit {
-		display: block;
-		margin: 0 var(--icon-pad, 0.1rem) 0 0;
-		padding: 0;
-		width:       var(--icon-size, 1.2rem);
-		height:      var(--icon-size, 1.2rem);
-		line-height: var(--icon-size, 1.2rem);
-
-		background: inherit;
-		color: inherit;
-	}
-
-	#search-submit:hover,
-	#search-submit:focus {
-		color: rgb(var(--accent-color, '40.188.138'));
-	}
-
-	#search-results {
-		display: block;
-		flex-grow: 2;
-		margin: 0.5px 0 0 0;
-		padding: 0;
-		max-height: calc(100vh - 1.4rem - 0.5px);
-		width: 100%;
-		overflow-x: hidden;
-		overflow-y: auto;
-
-		backdrop-filter: blur(var(--page-color-blur, 2px));
-		border: 2.5px solid;
-		color: #2bbc8a; 
-		font-size: var(--s-2, 0.8rem);
-        
-		scrollbar-color: rgb(var(--text-color, '43,165,91')) rgb(var(--page-color, '240,240,240')) !important;
-		scrollbar-width: thin !important;
-	}
-
-	#search-results:empty {
-		display: none;
-		opacity: 0;
-	}
-
-	#search-results li {
-		margin: 0;
-		width: 100%;
-
-		background-color: rgba(var(--page-color, '240,240,240'), var(--page-color-transparency, 0.89));
-		border-top: 0.5px dashed;
-		list-style: none;
-	}
-		#search-results li:first-child {
-			border: none;
-		}
-
-	#search-results a {
-		display: block;
-		padding: 0.3rem;
-		display: block;
-        color: #c9cacc; 
-		text-decoration: none;
-	}
-
-	#search-results a:hover,
-	#search-results a:focus {
-		background: rgb(var(--text-color, '3,3,3'));
-		color: rgb(var(--page-color, '240,240,240'));
-		outline: 0;
-	}
-
-	#search-results a:active {
-		background: rgb(var(--accent-color, '40.188.138'));
-		color: rgb(var(--page-color, '240,240,240'));
-	}
-
-	#search-results li span:empty {
-		display: none;
-	}
-
-	#search-results li span:not(:last-child)::after {
-		content: ' – ';
-	}
-
-	#search-results li .title {
-		display: block;
-		margin-bottom: calc(var(--line-height, 1.4em)/3);
-	}
-
-	#search-results li .title::after {
-		display: none;
-	}
+<style>
+	#search-form {
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 0;
+		margin: 0;
+		padding: 0;
+		min-width: var(--icon-size, 1.2rem);
+		max-width: 15rem;
+		max-height: 100vh;
+		z-index: 1000;
+	}
+
+	#search-form.search--display,
+	#search-form[data-focus='false'] .search--display {
+		display: none;
+	}
+
+	#search-form[data-focus='true'] .search--display {
+		display: block;
+	}
+
+	#search-form .search-bar {
+		display: flex;
+		height: 1.4rem;
+		align-items: center;
+	}
+ 
+	#search-form .search-bar {
+		background: rgb(var(--page-color, '240,240,240'));
+		color: #2ba55b;
+	}
+
+	#search-form[data-focus='true'] .search-bar {
+		border: 2.5px solid rgb(var(--accent-color, '40.188.138'));
+	}
+
+	#search-form[data-focus='true'] .search-bar:not(:focus-within) {
+		background: rgb(var(--text-color, '3,3,3'));
+		color: #0af185; 
+		border-color: rgb(var(--text-color, '3,3,3'));
+	}
+
+	#search-input {
+		display: block;
+		padding: 0.3rem;
+		width: 15rem;
+		max-width: 100vw;
+		height: 100%;
+
+		background: inherit;
+		border: none;
+		color: inherit;
+		outline: none;
+		text-align: left;
+
+		font-size: var(--s-2, 0.8rem);
+	}
+
+	#search-submit {
+		display: block;
+		margin: 0 var(--icon-pad, 0.1rem) 0 0;
+		padding: 0;
+		width:       var(--icon-size, 1.2rem);
+		height:      var(--icon-size, 1.2rem);
+		line-height: var(--icon-size, 1.2rem);
+
+		background: inherit;
+		color: inherit;
+	}
+
+	#search-submit:hover,
+	#search-submit:focus {
+		color: rgb(var(--accent-color, '40.188.138'));
+	}
+
+	#search-results {
+		display: block;
+		flex-grow: 2;
+		margin: 0.5px 0 0 0;
+		padding: 0;
+		max-height: calc(100vh - 1.4rem - 0.5px);
+		width: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+
+		backdrop-filter: blur(var(--page-color-blur, 2px));
+		border: 2.5px solid;
+		color: #2bbc8a; 
+		font-size: var(--s-2, 0.8rem);
+        
+		scrollbar-color: rgb(var(--text-color, '43,165,91')) rgb(var(--page-color, '240,240,240')) !important;
+		scrollbar-width: thin !important;
+	}
+
+	#search-results:empty {
+		display: none;
+		opacity: 0;
+	}
+
+	#search-results li {
+		margin: 0;
+		width: 100%;
+
+		background-color: rgba(var(--page-color, '240,240,240'), var(--page-color-transparency, 0.89));
+		border-top: 0.5px dashed;
+		list-style: none;
+	}
+		#search-results li:first-child {
+			border: none;
+		}
+
+	#search-results a {
+		display: block;
+		padding: 0.3rem;
+		display: block;
+        color: #c9cacc; 
+		text-decoration: none;
+	}
+
+	#search-results a:hover,
+	#search-results a:focus {
+		background: rgb(var(--text-color, '3,3,3'));
+		color: rgb(var(--page-color, '240,240,240'));
+		outline: 0;
+	}
+
+	#search-results a:active {
+		background: rgb(var(--accent-color, '40.188.138'));
+		color: rgb(var(--page-color, '240,240,240'));
+	}
+
+	#search-results li span:empty {
+		display: none;
+	}
+
+	#search-results li span:not(:last-child)::after {
+		content: ' – ';
+	}
+
+	#search-results li .title {
+		display: block;
+		margin-bottom: calc(var(--line-height, 1.4em)/3);
+	}
+
+	#search-results li .title::after {
+		display: none;
+	}
 </style>
-
-<body>
-    <div id="header-post">
-        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
-        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
-        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
-        <span id="menu">
-          <span id="nav">
-            <ul>
-              <li> <a href="/">Home</a></li>
+<div id="header-post">
+<a href="#" id="menu-icon"><i class="fa fa-bars fa-lg"></i></a>
+<a href="#" id="menu-icon-tablet"><i class="fa fa-bars fa-lg"></i></a>
+<a href="#" id="top-icon-tablet" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+<span id="menu">
+<span id="nav">
+<ul>
+<li> <a href="/">Home</a></li>
 <li> <a href=" /archive/">Archives</a></li>
 <li> <a href="/about/">About</a></li>
-
-
-            </ul>
-          </span>
-          <br/>
-          <span id="actions">
-            <ul>
-                
-                <li><a class="icon" href="https://ziyan1215.github.io/archive/1548124598/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
-                
-                
-                <li><a class="icon" href="https://ziyan1215.github.io/archive/1548494210/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
-                
-              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
-              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
-            </ul>
-            <span id="i-prev" class="info" style="display:none;">Previous post</span>
-            <span id="i-next" class="info" style="display:none;">Next post</span>
-            <span id="i-top" class="info" style="display:none;">Back to top</span>
-            <span id="i-share" class="info" style="display:none;">Share post</span>
-          </span>
-          <br/>
-          <div id="share" style="display: none">
-              <ul>
-        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&text=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&text=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&is_video=false&description=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="mailto:?subject=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
- </ul>
-      
-          </div>
-          <div id="toc">
-                <nav id="TableOfContents">
+</ul>
+</span>
+<br/>
+<span id="actions">
+<ul>
+<li><a class="icon" href="https://ziyan1215.github.io/archive/1548124598/"><i aria-hidden="true" class="fa fa-chevron-left" onmouseout='$("#i-prev").toggle();' onmouseover='$("#i-prev").toggle();'></i></a></li>
+<li><a class="icon" href="https://ziyan1215.github.io/archive/1548494210/"><i aria-hidden="true" class="fa fa-chevron-right" onmouseout='$("#i-next").toggle();' onmouseover='$("#i-next").toggle();'></i></a></li>
+<li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i aria-hidden="true" class="fa fa-chevron-up" onmouseout='$("#i-top").toggle();' onmouseover='$("#i-top").toggle();'></i></a></li>
+<li><a class="icon" href="#"><i aria-hidden="true" class="fa fa-share-alt" onclick='$("#share").toggle();return false;' onmouseout='$("#i-share").toggle();' onmouseover='$("#i-share").toggle();'></i></a></li>
+</ul>
+<span class="info" id="i-prev" style="display:none;">Previous post</span>
+<span class="info" id="i-next" style="display:none;">Next post</span>
+<span class="info" id="i-top" style="display:none;">Back to top</span>
+<span class="info" id="i-share" style="display:none;">Share post</span>
+</span>
+<br/>
+<div id="share" style="display: none">
+<ul>
+<li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&amp;text=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i aria-hidden="true" class="fa fa-weibo"></i></a></li>
+<li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f"><i aria-hidden="true" class="fa fa-facebook"></i></a></li>
+<li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&amp;text=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i aria-hidden="true" class="fa fa-twitter"></i></a></li>
+<li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&amp;title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i aria-hidden="true" class="fa fa-linkedin"></i></a></li>
+<li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&amp;is_video=false&amp;description=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i aria-hidden="true" class="fa fa-pinterest"></i></a></li>
+<li><a class="icon" href="mailto:?subject=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0&amp;body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f"><i aria-hidden="true" class="fa fa-envelope"></i></a></li>
+<li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&amp;title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i aria-hidden="true" class="fa fa-get-pocket"></i></a></li>
+<li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&amp;title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i aria-hidden="true" class="fa fa-reddit"></i></a></li>
+<li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&amp;title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i aria-hidden="true" class="fa fa-stumbleupon"></i></a></li>
+<li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1548473871%2f&amp;title=Sql%e7%bb%8f%e5%85%b8%e9%a2%98%e7%9b%ae%e7%9a%84mysql%e5%ae%9e%e7%8e%b0%e2%91%a0"><i aria-hidden="true" class="fa fa-digg"></i></a></li>
+</ul>
+</div>
+<div id="toc">
+<nav id="TableOfContents">
 <ul>
 <li><a href="#题目">题目</a>
 <ul>
@@ -317,131 +282,104 @@
 </ul></li>
 </ul>
 </nav>
-          </div>
-        </span>
-      </div>
-      
-    <div class="content index width mx-auto px3 my3">
-        <section id="wrapper" class="home">
-                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-                    <header>
-                    <h1 class="posttitle" itemprop="name headline">
+</div>
+</span>
+</div>
+<div class="content index width mx-auto px3 my3">
+<section class="home" id="wrapper">
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+<header>
+<h1 class="posttitle" itemprop="name headline">
                             Sql经典题目的mysql实现①
                         </h1>
-                      <div class="meta">
-                        <div class="postdate">
-                                <time datetime='2019-01-26' itemprop="datePublished">2019-01-26</time>
-                            </div>
-                        <div class="article-tag">
-                            <i class="fa fa-eye"></i>
-                            <span id="busuanzi_container_page_pv">
-                                <span id="busuanzi_value_page_pv">0</span>
-                              </span>
-                            </span>
-                        </div>
-                        
-                        <div class="article-tag">
-                            <i class="fa fa-tag"></i>
-                            
-                            <a href="/tags/sql">
-                               Sql</a> 
-                             
-                        </div>
-                        
-                        
-                        
-                        <div class="article-tag-box">
-                               
-                        </div>
-
-                        
-                      </div>
-                    </header>
-                    
-
-                    <div class="content" itemprop="articleBody">
-                            
-                            
-
+<div class="meta">
+<div class="postdate">
+<time datetime="2019-01-26" itemprop="datePublished">2019-01-26</time>
+</div>
+<div class="article-tag">
+<i class="fa fa-eye"></i>
+<span id="busuanzi_container_page_pv">
+<span id="busuanzi_value_page_pv">0</span>
+</span>
+</div>
+<div class="article-tag">
+<i class="fa fa-tag"></i>
+<a href="/tags/sql">
+                               Sql</a>
+</div>
+<div class="article-tag-box">
+</div>
+</div>
+</header>
+<div class="content" itemprop="articleBody">
 <blockquote>
 <p>数据准备请看文章底部
 <a href="#数据准备">点击我查看</a></p>
 </blockquote>
-
 <h1 id="题目">题目</h1>
-
 <h2 id="1-查询-01-课程比-02-课程成绩高的所有学生的学号">1、查询“01”课程比“02”课程成绩高的所有学生的学号</h2>
-
 <pre><code class="language-sql">select  a.s_id from 
 (select sc.s_id, sc.s_score from score sc where sc.c_id='01') a,
 (select sc.s_id, sc.s_score from score sc where sc.c_id='02') b 
 where a.s_score&gt;b.s_score 
 and a.s_id=b.s_id
 </code></pre>
-
-<p><table caption="a (2 rows)">
-      <thead>
-        <tr>
-          <th class="col0">s_id</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="col0">02</td>
-        </tr>
-        <tr>
-          <td class="col0">04</td>
-        </tr>
-      </tbody>
-    </table></p>
-
+<p></p><table caption="a (2 rows)">
+<thead>
+<tr>
+<th class="col0">s_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col0">02</td>
+</tr>
+<tr>
+<td class="col0">04</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-查询平均成绩大于60分的同学的学号和平均成绩">2、查询平均成绩大于60分的同学的学号和平均成绩</h2>
-
 <pre><code class="language-sql">select sc.s_id ,
  avg(sc.s_score) 
  from score sc 
  group by sc.s_id 
  having avg(sc.s_score)&gt;60
 </code></pre>
-
-<p><table caption="score (5 rows)">
-      <thead>
-        <tr>
-          <th class="col0">s_id</th>
-          <th class="col1">avg(sc.s_score)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="col0">01</td>
-          <td class="col1">89.6667</td>
-        </tr>
-        <tr>
-          <td class="col0">02</td>
-          <td class="col1">70.0000</td>
-        </tr>
-        <tr>
-          <td class="col0">03</td>
-          <td class="col1">80.0000</td>
-        </tr>
-        <tr>
-          <td class="col0">05</td>
-          <td class="col1">81.5000</td>
-        </tr>
-        <tr>
-          <td class="col0">07</td>
-          <td class="col1">95.0000</td>
-        </tr>
-      </tbody>
-    </table></p>
-
+<p></p><table caption="score (5 rows)">
+<thead>
+<tr>
+<th class="col0">s_id</th>
+<th class="col1">avg(sc.s_score)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col0">01</td>
+<td class="col1">89.6667</td>
+</tr>
+<tr>
+<td class="col0">02</td>
+<td class="col1">70.0000</td>
+</tr>
+<tr>
+<td class="col0">03</td>
+<td class="col1">80.0000</td>
+</tr>
+<tr>
+<td class="col0">05</td>
+<td class="col1">81.5000</td>
+</tr>
+<tr>
+<td class="col0">07</td>
+<td class="col1">95.0000</td>
+</tr>
+</tbody>
+</table>
 <h2 id="3-查询姓-李-的老师的个数">3、查询姓‘李’的老师的个数</h2>
-
 <pre><code class="language-sql">select count(t.t_id) from teacher t where t.t_name like '李%';
 </code></pre>
-
 <h2 id="4-查询所有同学的学号-姓名-选课数-总成绩">4、查询所有同学的学号、姓名、选课数、总成绩</h2>
-
 <pre><code class="language-sql">-- 自己的思路，先查到 选课数、总成绩，然后在关联查询
 select  sc.s_id,count(sc.c_id) xks from score sc group by sc.s_id; #学生的选课数
 select sc2.s_id ,(sc2.s_score) zcj from score sc2 group by sc2.s_id; #总成绩
@@ -460,57 +398,52 @@ left join score sc on s.s_id=sc.s_id group by s_id,s_name;
 -- 总结 两次左联结都是同一张表，所以可以合并，一次查出选课数 和总成绩
 select count(s_id),sum(s_score) from score group by s_id ;
 </code></pre>
-
-<p><table caption="未知表 (8 rows)">
-      <thead>
-        <tr>
-          <th class="col0">count(s_id)</th>
-          <th class="col1">sum(s_score)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="col0">3</td>
-          <td class="col1">269</td>
-        </tr>
-        <tr>
-          <td class="col0">3</td>
-          <td class="col1">210</td>
-        </tr>
-        <tr>
-          <td class="col0">3</td>
-          <td class="col1">240</td>
-        </tr>
-        <tr>
-          <td class="col0">4</td>
-          <td class="col1">160</td>
-        </tr>
-        <tr>
-          <td class="col0">2</td>
-          <td class="col1">163</td>
-        </tr>
-        <tr>
-          <td class="col0">2</td>
-          <td class="col1">65</td>
-        </tr>
-        <tr>
-          <td class="col0">3</td>
-          <td class="col1">285</td>
-        </tr>
-        <tr>
-          <td class="col0">1</td>
-          <td class="col1">60</td>
-        </tr>
-      </tbody>
-    </table></p>
-
+<p></p><table caption="未知表 (8 rows)">
+<thead>
+<tr>
+<th class="col0">count(s_id)</th>
+<th class="col1">sum(s_score)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col0">3</td>
+<td class="col1">269</td>
+</tr>
+<tr>
+<td class="col0">3</td>
+<td class="col1">210</td>
+</tr>
+<tr>
+<td class="col0">3</td>
+<td class="col1">240</td>
+</tr>
+<tr>
+<td class="col0">4</td>
+<td class="col1">160</td>
+</tr>
+<tr>
+<td class="col0">2</td>
+<td class="col1">163</td>
+</tr>
+<tr>
+<td class="col0">2</td>
+<td class="col1">65</td>
+</tr>
+<tr>
+<td class="col0">3</td>
+<td class="col1">285</td>
+</tr>
+<tr>
+<td class="col0">1</td>
+<td class="col1">60</td>
+</tr>
+</tbody>
+</table>
 <h2 id="5-查询姓-李-的老师的个数">5、查询姓‘李’的老师的个数：</h2>
-
-<pre><code class="language-sql">select count(t.t_id) from teacher t where t.t_name like &quot;李%&quot;
+<pre><code class="language-sql">select count(t.t_id) from teacher t where t.t_name like "李%"
 </code></pre>
-
 <h2 id="6-查询没有学过-张三-老师课-数学-的同学的学号-姓名">6、查询没有学过“张三”老师课(数学)的同学的学号、姓名：</h2>
-
 <pre><code class="language-sql">select * from score ;
 select * from course  where t_id not in(01);
 
@@ -524,9 +457,7 @@ from Student
 where s_id not in (select distinct(score.s_id) from score,course,teacher
 where score.c_id=course.c_id AND teacher.t_id=course.t_id AND teacher.t_name ='张三');
 </code></pre>
-
 <h2 id="7-查询学过-张三-老师-数学-所教的所有课的同学的学号-姓名">7、查询学过“张三”老师（数学）所教的所有课的同学的学号、姓名</h2>
-
 <pre><code class="language-sql">select * from course where t_id in (select t_id from teacher where t_name='张三') ;
 select * from score t where t.c_id in (select c_id from course where t_id in (select t_id from teacher where t_name='张三'));
 
@@ -542,9 +473,7 @@ having count(score.c_id)=(select count(c_id) from course,teacher
 where teacher.t_id=course.t_id and t_name='张三'));
 
 </code></pre>
-
 <h2 id="8-查询学过-01-并且也学过编号-02-课程的同学的学号-姓名">8、查询学过“01”并且也学过编号“02”课程的同学的学号、姓名：</h2>
-
 <pre><code class="language-sql">select * from course where c_id='01'and c_id='02';
 select * from score where c_id in ('01','02');
 select * from  student st ,score sc ;
@@ -552,9 +481,7 @@ select * from  student st ,score sc ;
 -- 如果外表的记录很多而子查询的记录相对较少的话，建议采用子查询IN写法；相反，如果子查询的记录很多而外表的记录相对较少，则建议采用子查询EXISTS写法。
 select st.s_id,st.s_name from  student st ,score sc where st.s_id=sc.s_id and sc.c_id='01' and exists(select * from  score sc2 where sc2.s_id=sc.s_id and sc2.c_id='02');
 </code></pre>
-
 <h2 id="9-查询课程编号-02-的成绩比课程编号-01-课程低的所有同学的学号-姓名">9、查询课程编号“02”的成绩比课程编号“01”课程低的所有同学的学号、姓名：</h2>
-
 <pre><code class="language-sql">select  sc.s_id,s.s_name,sc.s_score from student s ,score sc where s.s_id=sc.s_id and sc.c_id='02';
 select  sc.s_id,s.s_name,sc.s_score from student s ,score sc where s.s_id=sc.s_id and sc.c_id='01';
 select * from student s ;--  4*8
@@ -570,27 +497,21 @@ from student,score
 where student.s_id=score.s_id and c_id ='01') t2 -- 这个表别名一定要取一个，不然会报错
 where s_score2 &lt; s_score;
 </code></pre>
-
 <h2 id="10-查询所有课程成绩小于60的同学的学号-姓名">10、查询所有课程成绩小于60的同学的学号、姓名：</h2>
-
 <pre><code class="language-sql">select s_score from score where s_score&gt;60; -- &gt;60的
 select s.s_id ,s.s_name from student s ,score sc where s.s_id=sc.s_id and sc.s_score not in (select s_score from score where s_score&gt;60); -- 错误的
 select s_id ,s_name from student s where s.s_id not in(select t1.s_id from student t1,score t2 where t1.s_id = t2.s_id and t2.s_score&gt;60); -- 正确的解法
 select s.s_id ,s.s_name from student s ,score sc where s.s_id=sc.s_id and sc.s_id not in (select s_id from score where s_score&gt;60); -- 也是错误的
 -- 思考： 查询的是学生，应该以学生为主表，不然的话学号是08的学生是没有成绩的，那么是查询不出来的
 </code></pre>
-
 <h2 id="11-查询没有学全所有课的同学的学号-姓名">11、查询没有学全所有课的同学的学号、姓名：</h2>
-
 <pre><code class="language-sql">-- 这里学生08 没有学习过一门课程，没有查询出来
 select t.s_id,t.s_name from student t,score s
 where t.s_id=s.s_id
 group by t.s_id ,t.s_name
 having count(s.c_id)&lt;(select count(c_id) from course);
 </code></pre>
-
 <h2 id="12-查询至少有一门课与学号为-01-同学所学相同的同学的学号和姓名">12、查询至少有一门课与学号为“01”同学所学相同的同学的学号和姓名：</h2>
-
 <pre><code class="language-sql">select * from student s ,score sc where s.s_id=sc.s_id and s.s_id='01';
 select distinct s.s_id,s.s_name from student s ,score sc
 where s.s_id=sc.s_id and sc.c_id
@@ -600,9 +521,7 @@ select distinct s.s_id,s.s_name from student s ,score sc
 where s.s_id=sc.s_id 
 and sc.c_id in(select c_id from score t where t.s_id='01');
 </code></pre>
-
 <h2 id="13-查询学过学号为-01-同学所有课程的其他同学学号和姓名">13、查询学过学号为“01”同学所有课程的其他同学学号和姓名</h2>
-
 <pre><code class="language-sql">select s.s_id,s.s_name, count(t.c_id) from student s,score t
 where s.s_id=t.s_id and t.c_id in
 (select c_id from score where s_id='01')
@@ -611,9 +530,7 @@ having count(t.c_id)=(
 select count(1) from score where s_id='01'
 )
 </code></pre>
-
 <h2 id="14-把-sc-表中-李四-老师教的课的成绩都更改为此课程的平均成绩">14、把“SC”表中“李四”老师教的课的成绩都更改为此课程的平均成绩：</h2>
-
 <pre><code class="language-sql">select distinct(sc.c_id) from score sc,course c,teacher t where t.t_id=c.t_id and c.c_id=sc.c_id and t.t_name='李四'; --  李四老师的课程编号
 select avg(sc.s_score) from score sc,course c,teacher t where t.t_id=c.t_id and c.c_id=sc.c_id and t.t_name='李四'; -- 这里就不能用group by 语句了  李四老师的课程平均成绩
 -- 两个括号里面的查询要用到表别名，不然在mysql里面会报错，oracle不知道会不会
@@ -649,9 +566,7 @@ insert into Score values('06' , '03' , 34);
 insert into Score values('07' , '02' , 89);
 insert into Score values('07' , '03' , 98);
 </code></pre>
-
 <h2 id="15-查询和-02-号的同学学习的课程完全相同的其他同学学号和姓名">15、查询和“02”号的同学学习的课程完全相同的其他同学学号和姓名</h2>
-
 <pre><code class="language-sql">-- 加入测试数据
 INSERT INTO `sampledb`.`course` (`c_id`, `c_name`, `t_id`) VALUES ('04', '生物', '01');
 INSERT INTO `sampledb`.`score` (`s_id`, `c_id`, `s_score`) VALUES ('04', '04', '60');
@@ -681,26 +596,19 @@ group by s_id having count(distinct c_id)=
 where t1.s_id=t2.s_id and t1.cnt1=t2.cnt2;
 -- 思路，首先在其它同学所学的课程要在02同学所学习的课程之中，且计数要等于02同学的计算。
 </code></pre>
-
 <h2 id="16-删除学习-王五-老师课的sc表记录">16、删除学习“王五”老师课的SC表记录：</h2>
-
 <pre><code class="language-sql">INSERT INTO `sampledb`.`teacher` (`t_id`, `t_name`) VALUES ('04', '叶平');
 delete  score from score,course,teacher where score.c_id=course.c_id and course.t_id = teacher.t_id and t_name='叶平';
 </code></pre>
-
 <h2 id="17-向sc表中插入一些记录">17、向SC表中插入一些记录</h2>
-
 <p><code>这些记录要求符合以下条件：没有上过编号“03”课程的同学学号、02号课的平均成绩</code></p>
-
 <pre><code class="language-sql">INSERT INTO `sampledb`.`score` (`s_id`, `c_id`, `s_score`) VALUES ('04', '04', '60');
 
 Insert SC select s_id,'02',
 (Select avg(s_score) from score where c_id='02')
 from Student where s_id not in (Select s_id from score where c_id='03');
 </code></pre>
-
 <h2 id="18-按平均成绩从高到低显示所有学生的-语文-数学-英语-三门的课程成绩">18、按平均成绩从高到低显示所有学生的“语文”、“数学”、“英语”三门的课程成绩</h2>
-
 <pre><code class="language-sql">-- 按如下形式显示：学生ID，“语文”、“数学”、“英语，有效课程数，有效平均分：
 
 select s_id as 学生ID,
@@ -723,17 +631,12 @@ select s_id as 学生ID,
 from score t
 group by t.s_id;
 </code></pre>
-
 <h2 id="19-查询各科成绩最高和最低的分">19、查询各科成绩最高和最低的分：</h2>
-
 <p><code>以如下的形式显示：课程ID，最高分，最低分</code></p>
-
 <pre><code class="language-sql">select * from score where score.c_id=02 order by s_score desc;
 select c_id,max(s_score) ,min(s_score) from score group by c_id;
 </code></pre>
-
 <h2 id="20-按各科平均成绩从低到高和及格率的百分数从高到低顺序">20、按各科平均成绩从低到高和及格率的百分数从高到低顺序：</h2>
-
 <pre><code class="language-sql">
 select *,avg(s_score)  from score group by c_id ;
 
@@ -744,74 +647,70 @@ sum(case when s_score&gt;59 then 1 else 0 end )/count(*)as 及格率 from score 
 select *,round(avg(s_score),2) as 平均成绩 ,
  CONCAT(round(sum(case when s_score&gt;59 then 1 else 0 end )/count(1)*100,2),'%')及格率 from score group by c_id order by 平均成绩,及格率 desc ;
 </code></pre>
-
 <table caption="score (4 rows)">
-      <thead>
-        <tr>
-          <th class="col0">s_id</th>
-          <th class="col1">c_id</th>
-          <th class="col2">s_score</th>
-          <th class="col3">平均成绩</th>
-          <th class="col4">及格率</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="col0">01</td>
-          <td class="col1">01</td>
-          <td class="col2">80</td>
-          <td class="col3">63.86</td>
-          <td class="col4">71.43%</td>
-        </tr>
-        <tr>
-          <td class="col0">01</td>
-          <td class="col1">03</td>
-          <td class="col2">99</td>
-          <td class="col3">68.50</td>
-          <td class="col4">66.67%</td>
-        </tr>
-        <tr>
-          <td class="col0">01</td>
-          <td class="col1">02</td>
-          <td class="col2">90</td>
-          <td class="col3">72.67</td>
-          <td class="col4">83.33%</td>
-        </tr>
-        <tr>
-          <td class="col0">04</td>
-          <td class="col1">04</td>
-          <td class="col2">60</td>
-          <td class="col3">79.00</td>
-          <td class="col4">100.00%</td>
-        </tr>
-      </tbody>
+<thead>
+<tr>
+<th class="col0">s_id</th>
+<th class="col1">c_id</th>
+<th class="col2">s_score</th>
+<th class="col3">平均成绩</th>
+<th class="col4">及格率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col0">01</td>
+<td class="col1">01</td>
+<td class="col2">80</td>
+<td class="col3">63.86</td>
+<td class="col4">71.43%</td>
+</tr>
+<tr>
+<td class="col0">01</td>
+<td class="col1">03</td>
+<td class="col2">99</td>
+<td class="col3">68.50</td>
+<td class="col4">66.67%</td>
+</tr>
+<tr>
+<td class="col0">01</td>
+<td class="col1">02</td>
+<td class="col2">90</td>
+<td class="col3">72.67</td>
+<td class="col4">83.33%</td>
+</tr>
+<tr>
+<td class="col0">04</td>
+<td class="col1">04</td>
+<td class="col2">60</td>
+<td class="col3">79.00</td>
+<td class="col4">100.00%</td>
+</tr>
+</tbody>
 </table>
-
 <h2 id="21-查询如下课程平均成绩和及格率的百分数-用-1行-显示">21、查询如下课程平均成绩和及格率的百分数(用”1行”显示):</h2>
-
 <table caption="未知表 (1 rows)">
-      <thead>
-        <tr>
-          <th class="col0">语文平均成绩</th>
-          <th class="col1">语文及格率</th>
-          <th class="col2">数学平均成绩</th>
-          <th class="col3">数学及格率</th>
-          <th class="col4">英语平均成绩</th>
-          <th class="col5">英语及格率</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="col0">63.86</td>
-          <td class="col1">71.43%</td>
-          <td class="col2">72.67</td>
-          <td class="col3">83.33%</td>
-          <td class="col4">68.50</td>
-          <td class="col5">66.67%</td>
-        </tr>
-      </tbody>
-    </table>
-
+<thead>
+<tr>
+<th class="col0">语文平均成绩</th>
+<th class="col1">语文及格率</th>
+<th class="col2">数学平均成绩</th>
+<th class="col3">数学及格率</th>
+<th class="col4">英语平均成绩</th>
+<th class="col5">英语及格率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col0">63.86</td>
+<td class="col1">71.43%</td>
+<td class="col2">72.67</td>
+<td class="col3">83.33%</td>
+<td class="col4">68.50</td>
+<td class="col5">66.67%</td>
+</tr>
+</tbody>
+</table>
 <pre><code class="language-sql">-- 下面这条语句实现不了拼接吧。。。
 select *,round(avg(s_score),2) as 平均成绩 ,
 CONCAT(round(sum(case when s_score&gt;59 then 1 else 0 end )/count(1)*100,2),'%')及格率 from score where c_id='01'group by c_id order by 平均成绩,及格率 desc ;
@@ -824,24 +723,17 @@ round(avg(case when c_id='03' then s_score end),2)as 英语平均成绩,
 CONCAT(round(sum(case when c_id='03' and s_score&gt;59 then 1 else 0 end )/sum(case when c_id='03' then 1 else 0 end)*100,2),'%') as 英语及格率
 from score;
 </code></pre>
-
 <h2 id="22-查询不同老师所教不同课程平均分从高到低显示">22、查询不同老师所教不同课程平均分从高到低显示：</h2>
-
 <pre><code class="language-sql">-- 实现语句
 select t3.t_name,t2.c_name ,round(avg(t1.s_score),2) 平均成绩 from score t1
 left join course t2 on t1.c_id=t2.c_id
 left join teacher t3 on t2.t_id=t3.t_id group by t1.c_id;
 </code></pre>
-
 <h2 id="23-查询如下课程成绩第3名到第5名的学生成绩单-语文01-数学02-英语03">23、查询如下课程成绩第3名到第5名的学生成绩单：语文01、数学02、英语03</h2>
-
 <pre><code class="language-sql">select * ,s_score from score where c_id='01' LIMIT 2,3;
 </code></pre>
-
 <h2 id="24-统计下列各科成绩-各分数段人数">24、统计下列各科成绩，各分数段人数：</h2>
-
 <p><code>课程ID，课程名称，[100-85],[85-70],[70-60],[ 小于60] ：</code></p>
-
 <pre><code class="language-sql">select s.* ,
 sum(case when s_score  between 85 and 100 then 1 else 0 end) as '[100-85]' ,
 sum(case when s_score  between 70 and 84 then 1 else 0 end) as '[85-70]',
@@ -860,61 +752,58 @@ from course c, score s
 where c.c_id=s.c_id
 group by s.c_id;
 </code></pre>
-
 <table caption="score (4 rows)">
-      <thead>
-        <tr>
-          <th class="col0">s_id</th>
-          <th class="col1">c_id</th>
-          <th class="col2">s_score</th>
-          <th class="col3">[100-85]</th>
-          <th class="col4">[85-70]</th>
-          <th class="col5">[70-60]</th>
-          <th class="col6">[小于60]</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="col0">01</td>
-          <td class="col1">01</td>
-          <td class="col2">80</td>
-          <td class="col3">0</td>
-          <td class="col4">4</td>
-          <td class="col5">1</td>
-          <td class="col6">2</td>
-        </tr>
-        <tr>
-          <td class="col0">01</td>
-          <td class="col1">02</td>
-          <td class="col2">90</td>
-          <td class="col3">3</td>
-          <td class="col4">1</td>
-          <td class="col5">1</td>
-          <td class="col6">1</td>
-        </tr>
-        <tr>
-          <td class="col0">01</td>
-          <td class="col1">03</td>
-          <td class="col2">99</td>
-          <td class="col3">2</td>
-          <td class="col4">2</td>
-          <td class="col5">0</td>
-          <td class="col6">2</td>
-        </tr>
-        <tr>
-          <td class="col0">04</td>
-          <td class="col1">04</td>
-          <td class="col2">60</td>
-          <td class="col3">1</td>
-          <td class="col4">0</td>
-          <td class="col5">1</td>
-          <td class="col6">0</td>
-        </tr>
-      </tbody>
-    </table>
-
+<thead>
+<tr>
+<th class="col0">s_id</th>
+<th class="col1">c_id</th>
+<th class="col2">s_score</th>
+<th class="col3">[100-85]</th>
+<th class="col4">[85-70]</th>
+<th class="col5">[70-60]</th>
+<th class="col6">[小于60]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col0">01</td>
+<td class="col1">01</td>
+<td class="col2">80</td>
+<td class="col3">0</td>
+<td class="col4">4</td>
+<td class="col5">1</td>
+<td class="col6">2</td>
+</tr>
+<tr>
+<td class="col0">01</td>
+<td class="col1">02</td>
+<td class="col2">90</td>
+<td class="col3">3</td>
+<td class="col4">1</td>
+<td class="col5">1</td>
+<td class="col6">1</td>
+</tr>
+<tr>
+<td class="col0">01</td>
+<td class="col1">03</td>
+<td class="col2">99</td>
+<td class="col3">2</td>
+<td class="col4">2</td>
+<td class="col5">0</td>
+<td class="col6">2</td>
+</tr>
+<tr>
+<td class="col0">04</td>
+<td class="col1">04</td>
+<td class="col2">60</td>
+<td class="col3">1</td>
+<td class="col4">0</td>
+<td class="col5">1</td>
+<td class="col6">0</td>
+</tr>
+</tbody>
+</table>
 <h2 id="25-查询学生平均成绩及其名次">25、查询学生平均成绩及其名次：</h2>
-
 <pre><code class="language-sql">-- 错误的方法
 select * ,avg(s_score) as mc from student st,score sc
 where st.s_id=sc.s_id
@@ -940,28 +829,24 @@ from score
 group by s_id)as t2
 order by pjcj desc;
 </code></pre>
-
 <table caption="score (1 rows)">
-      <thead>
-        <tr>
-          <th class="col0">mc</th>
-          <th class="col1">xh</th>
-          <th class="col2">pjcj</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="col0">2</td>
-          <td class="col1">01</td>
-          <td class="col2">89.6667</td>
-        </tr>
-      </tbody>
+<thead>
+<tr>
+<th class="col0">mc</th>
+<th class="col1">xh</th>
+<th class="col2">pjcj</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col0">2</td>
+<td class="col1">01</td>
+<td class="col2">89.6667</td>
+</tr>
+</tbody>
 </table>
-
-<hr />
-
+<hr/>
 <h2 id="数据准备">数据准备</h2>
-
 <pre><code class="language-sql">CREATE TABLE `Student`(
 `s_id` VARCHAR(20),
 `s_name` VARCHAR(20) NOT NULL DEFAULT '',
@@ -1029,258 +914,249 @@ insert into Score values('06' , '03' , 34);
 insert into Score values('07' , '02' , 89);
 insert into Score values('07' , '03' , 98);
 </code></pre>
-
 <h2 id="学生表">学生表</h2>
-
-<p><table caption="student (8 rows)">
-      <thead>
-        <tr>
-          <th class="col0">s_id</th>
-          <th class="col1">s_name</th>
-          <th class="col2">s_birth</th>
-          <th class="col3">s_sex</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="col0">01</td>
-          <td class="col1">赵雷</td>
-          <td class="col2">1990-01-01</td>
-          <td class="col3">男</td>
-        </tr>
-        <tr>
-          <td class="col0">02</td>
-          <td class="col1">钱电</td>
-          <td class="col2">1990-12-21</td>
-          <td class="col3">男</td>
-        </tr>
-        <tr>
-          <td class="col0">03</td>
-          <td class="col1">孙风</td>
-          <td class="col2">1990-05-20</td>
-          <td class="col3">男</td>
-        </tr>
-        <tr>
-          <td class="col0">04</td>
-          <td class="col1">李云</td>
-          <td class="col2">1990-08-06</td>
-          <td class="col3">男</td>
-        </tr>
-        <tr>
-          <td class="col0">05</td>
-          <td class="col1">周梅</td>
-          <td class="col2">1991-12-01</td>
-          <td class="col3">女</td>
-        </tr>
-        <tr>
-          <td class="col0">06</td>
-          <td class="col1">吴兰</td>
-          <td class="col2">1992-03-01</td>
-          <td class="col3">女</td>
-        </tr>
-        <tr>
-          <td class="col0">07</td>
-          <td class="col1">郑竹</td>
-          <td class="col2">1989-07-01</td>
-          <td class="col3">女</td>
-        </tr>
-        <tr>
-          <td class="col0">08</td>
-          <td class="col1">王菊</td>
-          <td class="col2">1990-01-20</td>
-          <td class="col3">男</td>
-        </tr>
-      </tbody>
-    </table></p>
-
+<p></p><table caption="student (8 rows)">
+<thead>
+<tr>
+<th class="col0">s_id</th>
+<th class="col1">s_name</th>
+<th class="col2">s_birth</th>
+<th class="col3">s_sex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col0">01</td>
+<td class="col1">赵雷</td>
+<td class="col2">1990-01-01</td>
+<td class="col3">男</td>
+</tr>
+<tr>
+<td class="col0">02</td>
+<td class="col1">钱电</td>
+<td class="col2">1990-12-21</td>
+<td class="col3">男</td>
+</tr>
+<tr>
+<td class="col0">03</td>
+<td class="col1">孙风</td>
+<td class="col2">1990-05-20</td>
+<td class="col3">男</td>
+</tr>
+<tr>
+<td class="col0">04</td>
+<td class="col1">李云</td>
+<td class="col2">1990-08-06</td>
+<td class="col3">男</td>
+</tr>
+<tr>
+<td class="col0">05</td>
+<td class="col1">周梅</td>
+<td class="col2">1991-12-01</td>
+<td class="col3">女</td>
+</tr>
+<tr>
+<td class="col0">06</td>
+<td class="col1">吴兰</td>
+<td class="col2">1992-03-01</td>
+<td class="col3">女</td>
+</tr>
+<tr>
+<td class="col0">07</td>
+<td class="col1">郑竹</td>
+<td class="col2">1989-07-01</td>
+<td class="col3">女</td>
+</tr>
+<tr>
+<td class="col0">08</td>
+<td class="col1">王菊</td>
+<td class="col2">1990-01-20</td>
+<td class="col3">男</td>
+</tr>
+</tbody>
+</table>
 <h2 id="教师表">教师表</h2>
-
-<p><table caption="teacher (4 rows)">
-      <thead>
-        <tr>
-          <th class="col0">t_id</th>
-          <th class="col1">t_name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="col0">01</td>
-          <td class="col1">张三</td>
-        </tr>
-        <tr>
-          <td class="col0">02</td>
-          <td class="col1">李四</td>
-        </tr>
-        <tr>
-          <td class="col0">03</td>
-          <td class="col1">王五</td>
-        </tr>
-        <tr>
-          <td class="col0">04</td>
-          <td class="col1">叶平</td>
-        </tr>
-      </tbody>
-    </table></p>
-
+<p></p><table caption="teacher (4 rows)">
+<thead>
+<tr>
+<th class="col0">t_id</th>
+<th class="col1">t_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col0">01</td>
+<td class="col1">张三</td>
+</tr>
+<tr>
+<td class="col0">02</td>
+<td class="col1">李四</td>
+</tr>
+<tr>
+<td class="col0">03</td>
+<td class="col1">王五</td>
+</tr>
+<tr>
+<td class="col0">04</td>
+<td class="col1">叶平</td>
+</tr>
+</tbody>
+</table>
 <h2 id="课程表">课程表</h2>
-
 <table caption="course (4 rows)">
-      <thead>
-        <tr>
-          <th class="col0">c_id</th>
-          <th class="col1">c_name</th>
-          <th class="col2">t_id</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="col0">01</td>
-          <td class="col1">语文</td>
-          <td class="col2">02</td>
-        </tr>
-        <tr>
-          <td class="col0">02</td>
-          <td class="col1">数学</td>
-          <td class="col2">01</td>
-        </tr>
-        <tr>
-          <td class="col0">03</td>
-          <td class="col1">英语</td>
-          <td class="col2">03</td>
-        </tr>
-        <tr>
-          <td class="col0">04</td>
-          <td class="col1">生物</td>
-          <td class="col2">04</td>
-        </tr>
-      </tbody>
-    </table>
-
+<thead>
+<tr>
+<th class="col0">c_id</th>
+<th class="col1">c_name</th>
+<th class="col2">t_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col0">01</td>
+<td class="col1">语文</td>
+<td class="col2">02</td>
+</tr>
+<tr>
+<td class="col0">02</td>
+<td class="col1">数学</td>
+<td class="col2">01</td>
+</tr>
+<tr>
+<td class="col0">03</td>
+<td class="col1">英语</td>
+<td class="col2">03</td>
+</tr>
+<tr>
+<td class="col0">04</td>
+<td class="col1">生物</td>
+<td class="col2">04</td>
+</tr>
+</tbody>
+</table>
 <h2 id="成绩表">成绩表</h2>
-
-<p><table caption="score (21 rows)">
-      <thead>
-        <tr>
-          <th class="col0">s_id</th>
-          <th class="col1">c_id</th>
-          <th class="col2">s_score</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="col0">01</td>
-          <td class="col1">01</td>
-          <td class="col2">80</td>
-        </tr>
-        <tr>
-          <td class="col0">02</td>
-          <td class="col1">01</td>
-          <td class="col2">70</td>
-        </tr>
-        <tr>
-          <td class="col0">03</td>
-          <td class="col1">01</td>
-          <td class="col2">80</td>
-        </tr>
-        <tr>
-          <td class="col0">04</td>
-          <td class="col1">01</td>
-          <td class="col2">50</td>
-        </tr>
-        <tr>
-          <td class="col0">05</td>
-          <td class="col1">01</td>
-          <td class="col2">76</td>
-        </tr>
-        <tr>
-          <td class="col0">06</td>
-          <td class="col1">01</td>
-          <td class="col2">31</td>
-        </tr>
-        <tr>
-          <td class="col0">08</td>
-          <td class="col1">01</td>
-          <td class="col2">60</td>
-        </tr>
-        <tr>
-          <td class="col0">01</td>
-          <td class="col1">02</td>
-          <td class="col2">90</td>
-        </tr>
-        <tr>
-          <td class="col0">02</td>
-          <td class="col1">02</td>
-          <td class="col2">60</td>
-        </tr>
-        <tr>
-          <td class="col0">03</td>
-          <td class="col1">02</td>
-          <td class="col2">80</td>
-        </tr>
-        <tr>
-          <td class="col0">04</td>
-          <td class="col1">02</td>
-          <td class="col2">30</td>
-        </tr>
-        <tr>
-          <td class="col0">05</td>
-          <td class="col1">02</td>
-          <td class="col2">87</td>
-        </tr>
-        <tr>
-          <td class="col0">07</td>
-          <td class="col1">02</td>
-          <td class="col2">89</td>
-        </tr>
-        <tr>
-          <td class="col0">01</td>
-          <td class="col1">03</td>
-          <td class="col2">99</td>
-        </tr>
-        <tr>
-          <td class="col0">02</td>
-          <td class="col1">03</td>
-          <td class="col2">80</td>
-        </tr>
-        <tr>
-          <td class="col0">03</td>
-          <td class="col1">03</td>
-          <td class="col2">80</td>
-        </tr>
-        <tr>
-          <td class="col0">04</td>
-          <td class="col1">03</td>
-          <td class="col2">20</td>
-        </tr>
-        <tr>
-          <td class="col0">06</td>
-          <td class="col1">03</td>
-          <td class="col2">34</td>
-        </tr>
-        <tr>
-          <td class="col0">07</td>
-          <td class="col1">03</td>
-          <td class="col2">98</td>
-        </tr>
-        <tr>
-          <td class="col0">04</td>
-          <td class="col1">04</td>
-          <td class="col2">60</td>
-        </tr>
-        <tr>
-          <td class="col0">07</td>
-          <td class="col1">04</td>
-          <td class="col2">98</td>
-        </tr>
-      </tbody>
-    </table></p>
-
-                            <h2> 本文链接：</h2>
-                            <a href='https://ziyan1215.github.io/archive/1548473871/' target="_blank">https://ziyan1215.github.io/archive/1548473871/</a>
-                    </div>
-                  </article>
-                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<p></p><table caption="score (21 rows)">
+<thead>
+<tr>
+<th class="col0">s_id</th>
+<th class="col1">c_id</th>
+<th class="col2">s_score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="col0">01</td>
+<td class="col1">01</td>
+<td class="col2">80</td>
+</tr>
+<tr>
+<td class="col0">02</td>
+<td class="col1">01</td>
+<td class="col2">70</td>
+</tr>
+<tr>
+<td class="col0">03</td>
+<td class="col1">01</td>
+<td class="col2">80</td>
+</tr>
+<tr>
+<td class="col0">04</td>
+<td class="col1">01</td>
+<td class="col2">50</td>
+</tr>
+<tr>
+<td class="col0">05</td>
+<td class="col1">01</td>
+<td class="col2">76</td>
+</tr>
+<tr>
+<td class="col0">06</td>
+<td class="col1">01</td>
+<td class="col2">31</td>
+</tr>
+<tr>
+<td class="col0">08</td>
+<td class="col1">01</td>
+<td class="col2">60</td>
+</tr>
+<tr>
+<td class="col0">01</td>
+<td class="col1">02</td>
+<td class="col2">90</td>
+</tr>
+<tr>
+<td class="col0">02</td>
+<td class="col1">02</td>
+<td class="col2">60</td>
+</tr>
+<tr>
+<td class="col0">03</td>
+<td class="col1">02</td>
+<td class="col2">80</td>
+</tr>
+<tr>
+<td class="col0">04</td>
+<td class="col1">02</td>
+<td class="col2">30</td>
+</tr>
+<tr>
+<td class="col0">05</td>
+<td class="col1">02</td>
+<td class="col2">87</td>
+</tr>
+<tr>
+<td class="col0">07</td>
+<td class="col1">02</td>
+<td class="col2">89</td>
+</tr>
+<tr>
+<td class="col0">01</td>
+<td class="col1">03</td>
+<td class="col2">99</td>
+</tr>
+<tr>
+<td class="col0">02</td>
+<td class="col1">03</td>
+<td class="col2">80</td>
+</tr>
+<tr>
+<td class="col0">03</td>
+<td class="col1">03</td>
+<td class="col2">80</td>
+</tr>
+<tr>
+<td class="col0">04</td>
+<td class="col1">03</td>
+<td class="col2">20</td>
+</tr>
+<tr>
+<td class="col0">06</td>
+<td class="col1">03</td>
+<td class="col2">34</td>
+</tr>
+<tr>
+<td class="col0">07</td>
+<td class="col1">03</td>
+<td class="col2">98</td>
+</tr>
+<tr>
+<td class="col0">04</td>
+<td class="col1">04</td>
+<td class="col2">60</td>
+</tr>
+<tr>
+<td class="col0">07</td>
+<td class="col1">04</td>
+<td class="col2">98</td>
+</tr>
+</tbody>
+</table>
+<h2> 本文链接：</h2>
+<a href="https://ziyan1215.github.io/archive/1548473871/" target="_blank">https://ziyan1215.github.io/archive/1548473871/</a>
+</div>
+</article>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <div class="blog-post-comments"></div>
 <script>
     new Valine({
@@ -1293,93 +1169,59 @@ insert into Score values('07' , '03' , 98);
         verify:true
     });
 </script>
-                  <h1># 最新文章</h1>
-<ul id="more-post-list" class="archive readmore">
-
-    
-    
-    
-        <li>
-            <a href="/archive/1636449990/">21年11月09日的卷积云<aside class="dates">2021-11-09</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1636089550/">Hugo博客加入搜索功能<aside class="dates">2021-11-05</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1635995563/">2021年，重启记录之旅<aside class="dates">2021-11-04</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1573200125/">Typora&#43;PicGo图床编写md<aside class="dates">2019-11-08</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1564215157/">Java应用中访问ElasticSearch<aside class="dates">2019-07-27</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563940854/">ElasticSearch原理<aside class="dates">2019-07-24</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563796794/">ES的嵌套字段<aside class="dates">2019-07-22</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563681594/">ES的聚合&amp;复合查询<aside class="dates">2019-07-21</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563598794/">ES的filter查询<aside class="dates">2019-07-20</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563522787/">ES基本查询<aside class="dates">2019-07-19</aside></a>
-        </li>
-    
+<h1># 最新文章</h1>
+<ul class="archive readmore" id="more-post-list">
+<li>
+<a href="/daily/1638860110/">Hugo文章加密<aside class="dates">2021-12-07</aside></a>
+</li>
+<li>
+<a href="/archive/1636449990/">21年11月09日的卷积云<aside class="dates">2021-11-09</aside></a>
+</li>
+<li>
+<a href="/archive/1636089550/">Hugo博客加入搜索功能<aside class="dates">2021-11-05</aside></a>
+</li>
+<li>
+<a href="/archive/1635995563/">2021年，重启记录之旅<aside class="dates">2021-11-04</aside></a>
+</li>
+<li>
+<a href="/archive/1573200125/">Typora+PicGo图床编写md<aside class="dates">2019-11-08</aside></a>
+</li>
+<li>
+<a href="/archive/1564215157/">Java应用中访问ElasticSearch<aside class="dates">2019-07-27</aside></a>
+</li>
+<li>
+<a href="/archive/1563940854/">ElasticSearch原理<aside class="dates">2019-07-24</aside></a>
+</li>
+<li>
+<a href="/archive/1563796794/">ES的嵌套字段<aside class="dates">2019-07-22</aside></a>
+</li>
+<li>
+<a href="/archive/1563681594/">ES的聚合&amp;复合查询<aside class="dates">2019-07-21</aside></a>
+</li>
+<li>
+<a href="/archive/1563598794/">ES的filter查询<aside class="dates">2019-07-20</aside></a>
+</li>
 </ul>
-
-
-
-                  
-                  
-        </section>
-
-    </div>
-      
-  <footer id="footer">
-    <div class="footer-left">
+</section>
+</div>
+<footer id="footer">
+<div class="footer-left">
         Copyright © 2021  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank"></a>
-      
-   </div>
-    <div class="footer-right">
-      <nav>
-        <ul>
-          <li> <a href="/">Home</a></li>
+</div>
+<div class="footer-right">
+<nav>
+<ul>
+<li> <a href="/">Home</a></li>
 <li> <a href=" /archive/">Archives</a></li>
 <li> <a href="/about/">About</a></li>
-
-
-        </ul>
-      </nav>
-    </div>
-  </footer>
-    
+</ul>
+</nav>
+</div>
+</footer>
 <script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
 <script src="https://ziyan1215.github.io/lib/typed.js"></script>
 <script src="https://ziyan1215.github.io/js/main.js"></script>
-
-
-
-
-
-
-
-
-
-<script async src=""></script>
+<script async="" src=""></script>
 <script>
 (function(){
   if(location.host!=='xuziyan.ga')return;
@@ -1395,8 +1237,6 @@ insert into Score values('07' , '03' , 98);
   gtag('config', 'UA-129382678-1');
 })()
 </script>
-
-
 <script>
     (function(){
         var bp = document.createElement('script');
@@ -1411,18 +1251,7 @@ insert into Score values('07' , '03' , 98);
         s.parentNode.insertBefore(bp, s);
     })();
     </script>
-    
-
-
-  
-
-
-
-
-
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+<script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script>
   if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -1437,7 +1266,4 @@ insert into Score values('07' , '03' , 98);
       });
   }
   </script>
-</body>
-
-</html>
-
+</body></html>

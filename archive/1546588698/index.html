@@ -1,55 +1,36 @@
 <!DOCTYPE html>
 <html lang="zh">
-	<head>
-		<meta name="generator" content="Hugo 0.54.0" />
-		
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="HandheldFriendly" content="True">
-		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
-		<meta name="wap-font-scale" content="no">
-		
-		
-		
-		<meta name="author" content="XuziYan">
-		<meta name='description' itemprop="description" content="在实际工作中，导入现场环境的数据库会发现数据乱码、变成问号、数据库对象缺失等问题，很多时候是因为导出时和导入时的环境不一致导致的。
+<head>
+<meta content="Hugo 0.54.0" name="generator"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport"/>
+<meta content="no" name="wap-font-scale"/>
+<meta content="XuziYan" name="author"/>
+<meta content="在实际工作中，导入现场环境的数据库会发现数据乱码、变成问号、数据库对象缺失等问题，很多时候是因为导出时和导入时的环境不一致导致的。
  处理方法  保证现场库和本地库字符集环境一致，现场导出时的环境和导入本地库的环境一致。
  通过查询语句
-select * from nls_database_parameters;  查询数据库字符集，确认现场库和本地库字符集环境一致的情况下，检查现场环境导出的方式">
-		 
-		<meta name="keywords" content="dmp导入乱码, 导入后乱码" >
-		
-		
-		<meta property="og:locale" content="en_US">
-		<meta property="og:title" content="Dmp导入后乱码的解决方法">
-		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
-		<meta property="og:description" content="在实际工作中，导入现场环境的数据库会发现数据乱码、变成问号、数据库对象缺失等问题，很多时候是因为导出时和导入时的环境不一致导致的。
+select * from nls_database_parameters;  查询数据库字符集，确认现场库和本地库字符集环境一致的情况下，检查现场环境导出的方式" itemprop="description" name="description"/>
+<meta content="dmp导入乱码, 导入后乱码" name="keywords"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Dmp导入后乱码的解决方法" property="og:title"/>
+<meta content="https://ziyan1215.github.io/images/logo2.png" property="og:image"/>
+<meta content="在实际工作中，导入现场环境的数据库会发现数据乱码、变成问号、数据库对象缺失等问题，很多时候是因为导出时和导入时的环境不一致导致的。
  处理方法  保证现场库和本地库字符集环境一致，现场导出时的环境和导入本地库的环境一致。
  通过查询语句
-select * from nls_database_parameters;  查询数据库字符集，确认现场库和本地库字符集环境一致的情况下，检查现场环境导出的方式">
-		<meta property="og:site_name" content="XuziYan">
-
-		<title>Dmp导入后乱码的解决方法 | Xuzi</title>
-		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
-		
-		<link rel="manifest" href="/manifest.json">
-		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
-		
-		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
-		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
-
-		
-
-		
-		
-
-		
-
-		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
-		<script>hljs.initHighlightingOnLoad();</script>
-		
-		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
-		<script>
+select * from nls_database_parameters;  查询数据库字符集，确认现场库和本地库字符集环境一致的情况下，检查现场环境导出的方式" property="og:description"/>
+<meta content="XuziYan" property="og:site_name"/>
+<title>Dmp导入后乱码的解决方法 | Xuzi</title>
+<link href="https://ziyan1215.github.io/images/i.ico" rel="shortcut icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<link href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css" rel="stylesheet"/>
+<link href="https://ziyan1215.github.io/css/style.css" rel="stylesheet"/>
+<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+<script>
 			document.addEventListener("error", function (e) {
 			  var elem = e.target;
 			  if (elem.tagName.toLowerCase() == 'img') {
@@ -57,7 +38,7 @@ select * from nls_database_parameters;  查询数据库字符集，确认现�
 			  }
 			}, true);
 			</script>
-		<script type="application/ld+json">
+<script type="application/ld+json">
 			{
 				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
 				"@id": "https://ziyan1215.github.io/archive/1546588698/",
@@ -67,224 +48,208 @@ select * from nls_database_parameters;  查询数据库字符集，确认现�
 				"pubDate": "2019-01-04T15:58:18"
 			} 
 			</script>
-
-
-	</head>
-
-
-<form id="search-form" class="noscript" method="GET" action="https://duckduckgo.com/" data-language-prefix="">
-	<div class="search-bar">
-		<input id="search-input" class="search--display" name="q" tabindex="0" autocomplete="off" value=" site:https://ziyan1215.github.io/" placeholder="">
-		<input id="search-submit" class="icon" type="submit" value="⌕">
-	</div>
-	<ul id="search-results" class="search--display"></ul>
+</head>
+<body><form action="https://duckduckgo.com/" class="noscript" data-language-prefix="" id="search-form" method="GET">
+<div class="search-bar">
+<input autocomplete="off" class="search--display" id="search-input" name="q" placeholder="" tabindex="0" value=" site:https://ziyan1215.github.io/"/>
+<input class="icon" id="search-submit" type="submit" value="⌕"/>
+</div>
+<ul class="search--display" id="search-results"></ul>
 </form>
-
-
 <script src="https://ziyan1215.github.io/js/fuse.js"></script>
 <script src="https://ziyan1215.github.io/js/fixedsearch.js"></script>
-
-<style>
-	#search-form {
-		display: block;
-		position: fixed;
-		top: 0;
-		right: 0;
-		margin: 0;
-		padding: 0;
-		min-width: var(--icon-size, 1.2rem);
-		max-width: 15rem;
-		max-height: 100vh;
-		z-index: 1000;
-	}
-
-	#search-form.search--display,
-	#search-form[data-focus='false'] .search--display {
-		display: none;
-	}
-
-	#search-form[data-focus='true'] .search--display {
-		display: block;
-	}
-
-	#search-form .search-bar {
-		display: flex;
-		height: 1.4rem;
-		align-items: center;
-	}
- 
-	#search-form .search-bar {
-		background: rgb(var(--page-color, '240,240,240'));
-		color: #2ba55b;
-	}
-
-	#search-form[data-focus='true'] .search-bar {
-		border: 2.5px solid rgb(var(--accent-color, '40.188.138'));
-	}
-
-	#search-form[data-focus='true'] .search-bar:not(:focus-within) {
-		background: rgb(var(--text-color, '3,3,3'));
-		color: #0af185; 
-		border-color: rgb(var(--text-color, '3,3,3'));
-	}
-
-	#search-input {
-		display: block;
-		padding: 0.3rem;
-		width: 15rem;
-		max-width: 100vw;
-		height: 100%;
-
-		background: inherit;
-		border: none;
-		color: inherit;
-		outline: none;
-		text-align: left;
-
-		font-size: var(--s-2, 0.8rem);
-	}
-
-	#search-submit {
-		display: block;
-		margin: 0 var(--icon-pad, 0.1rem) 0 0;
-		padding: 0;
-		width:       var(--icon-size, 1.2rem);
-		height:      var(--icon-size, 1.2rem);
-		line-height: var(--icon-size, 1.2rem);
-
-		background: inherit;
-		color: inherit;
-	}
-
-	#search-submit:hover,
-	#search-submit:focus {
-		color: rgb(var(--accent-color, '40.188.138'));
-	}
-
-	#search-results {
-		display: block;
-		flex-grow: 2;
-		margin: 0.5px 0 0 0;
-		padding: 0;
-		max-height: calc(100vh - 1.4rem - 0.5px);
-		width: 100%;
-		overflow-x: hidden;
-		overflow-y: auto;
-
-		backdrop-filter: blur(var(--page-color-blur, 2px));
-		border: 2.5px solid;
-		color: #2bbc8a; 
-		font-size: var(--s-2, 0.8rem);
-        
-		scrollbar-color: rgb(var(--text-color, '43,165,91')) rgb(var(--page-color, '240,240,240')) !important;
-		scrollbar-width: thin !important;
-	}
-
-	#search-results:empty {
-		display: none;
-		opacity: 0;
-	}
-
-	#search-results li {
-		margin: 0;
-		width: 100%;
-
-		background-color: rgba(var(--page-color, '240,240,240'), var(--page-color-transparency, 0.89));
-		border-top: 0.5px dashed;
-		list-style: none;
-	}
-		#search-results li:first-child {
-			border: none;
-		}
-
-	#search-results a {
-		display: block;
-		padding: 0.3rem;
-		display: block;
-        color: #c9cacc; 
-		text-decoration: none;
-	}
-
-	#search-results a:hover,
-	#search-results a:focus {
-		background: rgb(var(--text-color, '3,3,3'));
-		color: rgb(var(--page-color, '240,240,240'));
-		outline: 0;
-	}
-
-	#search-results a:active {
-		background: rgb(var(--accent-color, '40.188.138'));
-		color: rgb(var(--page-color, '240,240,240'));
-	}
-
-	#search-results li span:empty {
-		display: none;
-	}
-
-	#search-results li span:not(:last-child)::after {
-		content: ' – ';
-	}
-
-	#search-results li .title {
-		display: block;
-		margin-bottom: calc(var(--line-height, 1.4em)/3);
-	}
-
-	#search-results li .title::after {
-		display: none;
-	}
+<style>
+	#search-form {
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 0;
+		margin: 0;
+		padding: 0;
+		min-width: var(--icon-size, 1.2rem);
+		max-width: 15rem;
+		max-height: 100vh;
+		z-index: 1000;
+	}
+
+	#search-form.search--display,
+	#search-form[data-focus='false'] .search--display {
+		display: none;
+	}
+
+	#search-form[data-focus='true'] .search--display {
+		display: block;
+	}
+
+	#search-form .search-bar {
+		display: flex;
+		height: 1.4rem;
+		align-items: center;
+	}
+ 
+	#search-form .search-bar {
+		background: rgb(var(--page-color, '240,240,240'));
+		color: #2ba55b;
+	}
+
+	#search-form[data-focus='true'] .search-bar {
+		border: 2.5px solid rgb(var(--accent-color, '40.188.138'));
+	}
+
+	#search-form[data-focus='true'] .search-bar:not(:focus-within) {
+		background: rgb(var(--text-color, '3,3,3'));
+		color: #0af185; 
+		border-color: rgb(var(--text-color, '3,3,3'));
+	}
+
+	#search-input {
+		display: block;
+		padding: 0.3rem;
+		width: 15rem;
+		max-width: 100vw;
+		height: 100%;
+
+		background: inherit;
+		border: none;
+		color: inherit;
+		outline: none;
+		text-align: left;
+
+		font-size: var(--s-2, 0.8rem);
+	}
+
+	#search-submit {
+		display: block;
+		margin: 0 var(--icon-pad, 0.1rem) 0 0;
+		padding: 0;
+		width:       var(--icon-size, 1.2rem);
+		height:      var(--icon-size, 1.2rem);
+		line-height: var(--icon-size, 1.2rem);
+
+		background: inherit;
+		color: inherit;
+	}
+
+	#search-submit:hover,
+	#search-submit:focus {
+		color: rgb(var(--accent-color, '40.188.138'));
+	}
+
+	#search-results {
+		display: block;
+		flex-grow: 2;
+		margin: 0.5px 0 0 0;
+		padding: 0;
+		max-height: calc(100vh - 1.4rem - 0.5px);
+		width: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+
+		backdrop-filter: blur(var(--page-color-blur, 2px));
+		border: 2.5px solid;
+		color: #2bbc8a; 
+		font-size: var(--s-2, 0.8rem);
+        
+		scrollbar-color: rgb(var(--text-color, '43,165,91')) rgb(var(--page-color, '240,240,240')) !important;
+		scrollbar-width: thin !important;
+	}
+
+	#search-results:empty {
+		display: none;
+		opacity: 0;
+	}
+
+	#search-results li {
+		margin: 0;
+		width: 100%;
+
+		background-color: rgba(var(--page-color, '240,240,240'), var(--page-color-transparency, 0.89));
+		border-top: 0.5px dashed;
+		list-style: none;
+	}
+		#search-results li:first-child {
+			border: none;
+		}
+
+	#search-results a {
+		display: block;
+		padding: 0.3rem;
+		display: block;
+        color: #c9cacc; 
+		text-decoration: none;
+	}
+
+	#search-results a:hover,
+	#search-results a:focus {
+		background: rgb(var(--text-color, '3,3,3'));
+		color: rgb(var(--page-color, '240,240,240'));
+		outline: 0;
+	}
+
+	#search-results a:active {
+		background: rgb(var(--accent-color, '40.188.138'));
+		color: rgb(var(--page-color, '240,240,240'));
+	}
+
+	#search-results li span:empty {
+		display: none;
+	}
+
+	#search-results li span:not(:last-child)::after {
+		content: ' – ';
+	}
+
+	#search-results li .title {
+		display: block;
+		margin-bottom: calc(var(--line-height, 1.4em)/3);
+	}
+
+	#search-results li .title::after {
+		display: none;
+	}
 </style>
-
-<body>
-    <div id="header-post">
-        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
-        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
-        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
-        <span id="menu">
-          <span id="nav">
-            <ul>
-              <li> <a href="/">Home</a></li>
+<div id="header-post">
+<a href="#" id="menu-icon"><i class="fa fa-bars fa-lg"></i></a>
+<a href="#" id="menu-icon-tablet"><i class="fa fa-bars fa-lg"></i></a>
+<a href="#" id="top-icon-tablet" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+<span id="menu">
+<span id="nav">
+<ul>
+<li> <a href="/">Home</a></li>
 <li> <a href=" /archive/">Archives</a></li>
 <li> <a href="/about/">About</a></li>
-
-
-            </ul>
-          </span>
-          <br/>
-          <span id="actions">
-            <ul>
-                
-                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546588114/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
-                
-                
-                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546590921/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
-                
-              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
-              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
-            </ul>
-            <span id="i-prev" class="info" style="display:none;">Previous post</span>
-            <span id="i-next" class="info" style="display:none;">Next post</span>
-            <span id="i-top" class="info" style="display:none;">Back to top</span>
-            <span id="i-share" class="info" style="display:none;">Share post</span>
-          </span>
-          <br/>
-          <div id="share" style="display: none">
-              <ul>
-        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&text=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&text=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&is_video=false&description=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="mailto:?subject=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
- </ul>
-      
-          </div>
-          <div id="toc">
-                <nav id="TableOfContents">
+</ul>
+</span>
+<br/>
+<span id="actions">
+<ul>
+<li><a class="icon" href="https://ziyan1215.github.io/archive/1546588114/"><i aria-hidden="true" class="fa fa-chevron-left" onmouseout='$("#i-prev").toggle();' onmouseover='$("#i-prev").toggle();'></i></a></li>
+<li><a class="icon" href="https://ziyan1215.github.io/archive/1546590921/"><i aria-hidden="true" class="fa fa-chevron-right" onmouseout='$("#i-next").toggle();' onmouseover='$("#i-next").toggle();'></i></a></li>
+<li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i aria-hidden="true" class="fa fa-chevron-up" onmouseout='$("#i-top").toggle();' onmouseover='$("#i-top").toggle();'></i></a></li>
+<li><a class="icon" href="#"><i aria-hidden="true" class="fa fa-share-alt" onclick='$("#share").toggle();return false;' onmouseout='$("#i-share").toggle();' onmouseover='$("#i-share").toggle();'></i></a></li>
+</ul>
+<span class="info" id="i-prev" style="display:none;">Previous post</span>
+<span class="info" id="i-next" style="display:none;">Next post</span>
+<span class="info" id="i-top" style="display:none;">Back to top</span>
+<span class="info" id="i-share" style="display:none;">Share post</span>
+</span>
+<br/>
+<div id="share" style="display: none">
+<ul>
+<li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&amp;text=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-weibo"></i></a></li>
+<li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f"><i aria-hidden="true" class="fa fa-facebook"></i></a></li>
+<li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&amp;text=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-twitter"></i></a></li>
+<li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&amp;title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-linkedin"></i></a></li>
+<li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&amp;is_video=false&amp;description=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-pinterest"></i></a></li>
+<li><a class="icon" href="mailto:?subject=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95&amp;body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f"><i aria-hidden="true" class="fa fa-envelope"></i></a></li>
+<li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&amp;title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-get-pocket"></i></a></li>
+<li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&amp;title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-reddit"></i></a></li>
+<li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&amp;title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-stumbleupon"></i></a></li>
+<li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546588698%2f&amp;title=Dmp%e5%af%bc%e5%85%a5%e5%90%8e%e4%b9%b1%e7%a0%81%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-digg"></i></a></li>
+</ul>
+</div>
+<div id="toc">
+<nav id="TableOfContents">
 <ul>
 <li><a href="#处理方法">处理方法</a>
 <ul>
@@ -294,130 +259,87 @@ select * from nls_database_parameters;  查询数据库字符集，确认现�
 <li><a href="#相关知识点">相关知识点</a></li>
 </ul>
 </nav>
-          </div>
-        </span>
-      </div>
-      
-    <div class="content index width mx-auto px3 my3">
-        <section id="wrapper" class="home">
-                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-                    <header>
-                    <h1 class="posttitle" itemprop="name headline">
+</div>
+</span>
+</div>
+<div class="content index width mx-auto px3 my3">
+<section class="home" id="wrapper">
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+<header>
+<h1 class="posttitle" itemprop="name headline">
                             Dmp导入后乱码的解决方法
                         </h1>
-                      <div class="meta">
-                        <div class="postdate">
-                                <time datetime='2019-01-04' itemprop="datePublished">2019-01-04</time>
-                            </div>
-                        <div class="article-tag">
-                            <i class="fa fa-eye"></i>
-                            <span id="busuanzi_container_page_pv">
-                                <span id="busuanzi_value_page_pv">0</span>
-                              </span>
-                            </span>
-                        </div>
-                        
-                        <div class="article-tag">
-                            <i class="fa fa-tag"></i>
-                            
-                            <a href="/tags/oracle">
-                               Oracle</a> 
-                             
-                        </div>
-                        
-                        
-                        
-                        <div class="article-tag-box">
-                               
-                        </div>
-
-                        
-                      </div>
-                    </header>
-                    
-
-                    <div class="content" itemprop="articleBody">
-                            
-                            
-
+<div class="meta">
+<div class="postdate">
+<time datetime="2019-01-04" itemprop="datePublished">2019-01-04</time>
+</div>
+<div class="article-tag">
+<i class="fa fa-eye"></i>
+<span id="busuanzi_container_page_pv">
+<span id="busuanzi_value_page_pv">0</span>
+</span>
+</div>
+<div class="article-tag">
+<i class="fa fa-tag"></i>
+<a href="/tags/oracle">
+                               Oracle</a>
+</div>
+<div class="article-tag-box">
+</div>
+</div>
+</header>
+<div class="content" itemprop="articleBody">
 <blockquote>
 <p>在实际工作中，导入现场环境的数据库会发现数据乱码、变成问号、数据库对象缺失等问题，很多时候是因为<strong>导出时</strong>和<strong>导入时</strong>的环境不一致导致的。</p>
 </blockquote>
-
 <h1 id="处理方法">处理方法</h1>
-
 <ol>
 <li><p>保证现场库和本地库字符集环境一致，现场导出时的环境和导入本地库的环境一致。</p></li>
-
 <li><p>通过查询语句</p>
-
 <pre><code class="language-sql">select * from nls_database_parameters; 
 </code></pre>
-
 <p>查询数据库字符集，确认现场库和本地库字符集环境一致的情况下，检查现场环境导出的方式，包括导出所使用的是windows环境还是linux环境、导出的字符集是UTF-8还是AL32UTF8或者ZHS16GBK等。然后我们导入本地库的时候使用和现场一致的环境应该就能够成功导入数据，至少不会如开始那样缺少很多对象</p></li>
 </ol>
-
 <h2 id="windows下修改字符集环境">windows下修改字符集环境</h2>
-
 <p>在cmd中输入regedit.exe打开注册表</p>
-
 <p>按照如下步骤修改注册表，就可以把客户端从中文修改成英文（注意如果64位windows路径会有不同）。</p>
-
 <p><code>HKEY_LOCAL_MACHINE -&gt; SOFTWARE -&gt; Oracle -&gt; KEY_OraClient10g_home1 -&gt; NLS_LANG</code></p>
-
-<p>修改&rsquo;SIMPLIFIED CHINESE_CHINA.ZHS16GBK&rsquo; to &lsquo;SIMPLIFIED CHINESE_CHINA.UTF8&rsquo;</p>
-
+<p>修改’SIMPLIFIED CHINESE_CHINA.ZHS16GBK’ to ‘SIMPLIFIED CHINESE_CHINA.UTF8’</p>
 <h2 id="linux下导入的时候可以设置字符集的环境变量">Linux下导入的时候可以设置字符集的环境变量</h2>
-
-<pre><code class="language-bash">[oracle@localhost ~]$ export NLS_LANG=&quot;SIMPLIFIED CHINESE_CHINA.ZHS16GBK&quot;
+<pre><code class="language-bash">[oracle@localhost ~]$ export NLS_LANG="SIMPLIFIED CHINESE_CHINA.ZHS16GBK"
 </code></pre>
-
 <p>4.查看当前会话窗口的字符集环境：</p>
-
 <pre><code class="language-bash">[oracle@localhost ~]$ echo $NLS_LANG
 </code></pre>
-
 <p>注：LANG是针对Linux系统的语言、地区、字符集的设置,对linux下的应用程序有效，如date；NLS_LANG是针对Oracle语言、地区、字符集的设置，对oracle中的工具有效</p>
-
 <p>linux下查看系统的环境变量：</p>
-
 <pre><code class="language-bash">[oracle@localhost ~]$ local
 -bash: local: can only be used in a function
 [oracle@localhost ~]$ locale
 LANG=en_US.UTF-8
-LC_CTYPE=&quot;en_US.UTF-8&quot;
-LC_NUMERIC=&quot;en_US.UTF-8&quot;
-LC_TIME=&quot;en_US.UTF-8&quot;
-LC_COLLATE=&quot;en_US.UTF-8&quot;
-LC_MONETARY=&quot;en_US.UTF-8&quot;
-LC_MESSAGES=&quot;en_US.UTF-8&quot;
-LC_PAPER=&quot;en_US.UTF-8&quot;
-LC_NAME=&quot;en_US.UTF-8&quot;
-LC_ADDRESS=&quot;en_US.UTF-8&quot;
-LC_TELEPHONE=&quot;en_US.UTF-8&quot;
-LC_MEASUREMENT=&quot;en_US.UTF-8&quot;
-LC_IDENTIFICATION=&quot;en_US.UTF-8&quot;
+LC_CTYPE="en_US.UTF-8"
+LC_NUMERIC="en_US.UTF-8"
+LC_TIME="en_US.UTF-8"
+LC_COLLATE="en_US.UTF-8"
+LC_MONETARY="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_PAPER="en_US.UTF-8"
+LC_NAME="en_US.UTF-8"
+LC_ADDRESS="en_US.UTF-8"
+LC_TELEPHONE="en_US.UTF-8"
+LC_MEASUREMENT="en_US.UTF-8"
+LC_IDENTIFICATION="en_US.UTF-8"
 LC_ALL=
 </code></pre>
-
 <p>这里LC_ALL没有设置，如果它设置了，上面所有的设置都无效的，系统会读取LC_ALL。</p>
-
 <p>locale -a 查看本地字符集</p>
-
 <p>locale -m 查看所有支持的字符集</p>
-
 <h1 id="相关知识点">相关知识点</h1>
-
 <p>常用字符集设定值：</p>
-
 <p><code>AMERICAN_AMERICA.AL32UTF8</code></p>
-
 <p><code>AMERICAN_AMERICA.UTF8</code></p>
-
 <p><code>SIMPLIFIED CHINESE_CHINA.ZHS16GBK</code></p>
-
 <p>常用字符集查询语句：</p>
-
 <pre><code class="language-sql">--查看Oracle数据库可用字符集参数设置
 SELECT*FROM v$nls_valid_values;
 --查看Oracle数据库字符集(常用)
@@ -425,15 +347,13 @@ select*from nls_database_parameters;
 --查看Oracle客户端字符集环境
 select*from nls_instance_parameters;
 </code></pre>
-
 <p>客户端的字符集要求与服务器一致，才能正确显示数据库的非Ascii字符。字符集要求一致，但是语言设置却可以不同，语言设置建议用英文。如字符集是utf8，则nls_lang可以是American_America.utf8。</p>
-
-                            <h2> 本文链接：</h2>
-                            <a href='https://ziyan1215.github.io/archive/1546588698/' target="_blank">https://ziyan1215.github.io/archive/1546588698/</a>
-                    </div>
-                  </article>
-                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<h2> 本文链接：</h2>
+<a href="https://ziyan1215.github.io/archive/1546588698/" target="_blank">https://ziyan1215.github.io/archive/1546588698/</a>
+</div>
+</article>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <div class="blog-post-comments"></div>
 <script>
     new Valine({
@@ -446,93 +366,59 @@ select*from nls_instance_parameters;
         verify:true
     });
 </script>
-                  <h1># 最新文章</h1>
-<ul id="more-post-list" class="archive readmore">
-
-    
-    
-    
-        <li>
-            <a href="/archive/1636449990/">21年11月09日的卷积云<aside class="dates">2021-11-09</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1636089550/">Hugo博客加入搜索功能<aside class="dates">2021-11-05</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1635995563/">2021年，重启记录之旅<aside class="dates">2021-11-04</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1573200125/">Typora&#43;PicGo图床编写md<aside class="dates">2019-11-08</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1564215157/">Java应用中访问ElasticSearch<aside class="dates">2019-07-27</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563940854/">ElasticSearch原理<aside class="dates">2019-07-24</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563796794/">ES的嵌套字段<aside class="dates">2019-07-22</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563681594/">ES的聚合&amp;复合查询<aside class="dates">2019-07-21</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563598794/">ES的filter查询<aside class="dates">2019-07-20</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563522787/">ES基本查询<aside class="dates">2019-07-19</aside></a>
-        </li>
-    
+<h1># 最新文章</h1>
+<ul class="archive readmore" id="more-post-list">
+<li>
+<a href="/daily/1638860110/">Hugo文章加密<aside class="dates">2021-12-07</aside></a>
+</li>
+<li>
+<a href="/archive/1636449990/">21年11月09日的卷积云<aside class="dates">2021-11-09</aside></a>
+</li>
+<li>
+<a href="/archive/1636089550/">Hugo博客加入搜索功能<aside class="dates">2021-11-05</aside></a>
+</li>
+<li>
+<a href="/archive/1635995563/">2021年，重启记录之旅<aside class="dates">2021-11-04</aside></a>
+</li>
+<li>
+<a href="/archive/1573200125/">Typora+PicGo图床编写md<aside class="dates">2019-11-08</aside></a>
+</li>
+<li>
+<a href="/archive/1564215157/">Java应用中访问ElasticSearch<aside class="dates">2019-07-27</aside></a>
+</li>
+<li>
+<a href="/archive/1563940854/">ElasticSearch原理<aside class="dates">2019-07-24</aside></a>
+</li>
+<li>
+<a href="/archive/1563796794/">ES的嵌套字段<aside class="dates">2019-07-22</aside></a>
+</li>
+<li>
+<a href="/archive/1563681594/">ES的聚合&amp;复合查询<aside class="dates">2019-07-21</aside></a>
+</li>
+<li>
+<a href="/archive/1563598794/">ES的filter查询<aside class="dates">2019-07-20</aside></a>
+</li>
 </ul>
-
-
-
-                  
-                  
-        </section>
-
-    </div>
-      
-  <footer id="footer">
-    <div class="footer-left">
+</section>
+</div>
+<footer id="footer">
+<div class="footer-left">
         Copyright © 2021  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank"></a>
-      
-   </div>
-    <div class="footer-right">
-      <nav>
-        <ul>
-          <li> <a href="/">Home</a></li>
+</div>
+<div class="footer-right">
+<nav>
+<ul>
+<li> <a href="/">Home</a></li>
 <li> <a href=" /archive/">Archives</a></li>
 <li> <a href="/about/">About</a></li>
-
-
-        </ul>
-      </nav>
-    </div>
-  </footer>
-    
+</ul>
+</nav>
+</div>
+</footer>
 <script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
 <script src="https://ziyan1215.github.io/lib/typed.js"></script>
 <script src="https://ziyan1215.github.io/js/main.js"></script>
-
-
-
-
-
-
-
-
-
-<script async src=""></script>
+<script async="" src=""></script>
 <script>
 (function(){
   if(location.host!=='xuziyan.ga')return;
@@ -548,8 +434,6 @@ select*from nls_instance_parameters;
   gtag('config', 'UA-129382678-1');
 })()
 </script>
-
-
 <script>
     (function(){
         var bp = document.createElement('script');
@@ -564,18 +448,7 @@ select*from nls_instance_parameters;
         s.parentNode.insertBefore(bp, s);
     })();
     </script>
-    
-
-
-  
-
-
-
-
-
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+<script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script>
   if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -590,7 +463,4 @@ select*from nls_instance_parameters;
       });
   }
   </script>
-</body>
-
-</html>
-
+</body></html>

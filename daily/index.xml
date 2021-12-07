@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dailies on XuziYan</title>
+    <link>https://ziyan1215.github.io/daily/</link>
+    <description>Recent content in Dailies on XuziYan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 07 Dec 2021 14:55:10 +0000</lastBuildDate>
+    
+	<atom:link href="https://ziyan1215.github.io/daily/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo文章加密</title>
+      <link>https://ziyan1215.github.io/daily/1638860110/</link>
+      <pubDate>Tue, 07 Dec 2021 14:55:10 +0000</pubDate>
+      
+      <guid>https://ziyan1215.github.io/daily/1638860110/</guid>
+      <description>&lt;hr /&gt;
+
+&lt;h1 id=&#34;安装hugo-encryptor&#34;&gt;安装hugo_encryptor&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/Li4n0/hugo_encryptor&#34;&gt;hugo_encryptor&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;安装依赖&#34;&gt;安装依赖&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;pycrypto==2.6.1
+beautifulsoup4==4.7.1
+lxml==4.6.3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装过程中&lt;code&gt;pycrypto&lt;/code&gt;是最难安装的，折腾了我好久，因为它需要vc环境进行编译。&lt;/p&gt;
+
+&lt;h2 id=&#34;放置软链接&#34;&gt;放置软链接&lt;/h2&gt;
+
+&lt;p&gt;安装完成后把&lt;code&gt;\hugo_encryptor\shortcodes\hugo-encryptor.html&lt;/code&gt;复制到博客的&lt;code&gt;layouts\shortcodes&lt;/code&gt;路径下&lt;/p&gt;
+
+&lt;h2 id=&#34;加密文章编写&#34;&gt;加密文章编写&lt;/h2&gt;
+
+&lt;p&gt;将希望加密的内容放置在&lt;code&gt;hugo-encryptor&lt;/code&gt;标签里面&lt;/p&gt;
+
+&lt;h1 id=&#34;文章加密&#34;&gt;文章加密&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;加密原理其实就是对生成的public文件夹的静态文件中打上了&lt;code&gt;hugo-encryptor&lt;/code&gt;标签的内容进行加密&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;hugo生成静态页面&#34;&gt;hugo生成静态页面&lt;/h2&gt;
+
+&lt;p&gt;执行hugo即可,注意生成时应该先将旧的public文件夹的内容删除&lt;/p&gt;
+
+&lt;h2 id=&#34;进行加密&#34;&gt;进行加密&lt;/h2&gt;
+
+&lt;p&gt;运行hugo-encryptor.py即可，注意运行hugo-encryptor.py文件要与public文件夹在同一级目录下&lt;/p&gt;
+
+&lt;h1 id=&#34;上传静态文件进行博客部署&#34;&gt;上传静态文件进行博客部署&lt;/h1&gt;
+
+&lt;p&gt;将public发布&lt;/p&gt;
+
+&lt;h1 id=&#34;效果展示&#34;&gt;效果展示&lt;/h1&gt;
+
+&lt;p&gt;输入&lt;code&gt;password&lt;/code&gt;进行查看文章&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,57 +1,97 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>XuziYan</title>
-    <link>https://ziyan1215.github.io/</link>
-    <description>Recent content on XuziYan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <lastBuildDate>Tue, 09 Nov 2021 17:26:30 +0000</lastBuildDate>
-    
-	<atom:link href="https://ziyan1215.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>21年11月09日的卷积云</title>
-      <link>https://ziyan1215.github.io/archive/1636449990/</link>
-      <pubDate>Tue, 09 Nov 2021 17:26:30 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1636449990/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo博客加入搜索功能</title>
-      <link>https://ziyan1215.github.io/archive/1636089550/</link>
-      <pubDate>Fri, 05 Nov 2021 13:19:10 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1636089550/</guid>
-      <description>博客嘛，随着文章多起来，终究还是需要进行搜索，方便自己找到之前发布的内容
+<channel>
+<title>XuziYan</title>
+<link>https://ziyan1215.github.io/</link>
+<description>Recent content on XuziYan</description>
+<generator>Hugo -- gohugo.io</generator>
+<language>zh</language>
+<lastBuildDate>Tue, 07 Dec 2021 14:55:10 +0000</lastBuildDate>
+<atom:link href="https://ziyan1215.github.io/index.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>Hugo文章加密</title>
+<link>https://ziyan1215.github.io/daily/1638860110/</link>
+<pubDate>Tue, 07 Dec 2021 14:55:10 +0000</pubDate>
+<guid>https://ziyan1215.github.io/daily/1638860110/</guid>
+<description>&lt;hr /&gt;
+
+&lt;h1 id="安装hugo-encryptor"&gt;安装hugo_encryptor&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/Li4n0/hugo_encryptor"&gt;hugo_encryptor&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="安装依赖"&gt;安装依赖&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;pycrypto==2.6.1
+beautifulsoup4==4.7.1
+lxml==4.6.3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装过程中&lt;code&gt;pycrypto&lt;/code&gt;是最难安装的，折腾了我好久，因为它需要vc环境进行编译。&lt;/p&gt;
+
+&lt;h2 id="放置软链接"&gt;放置软链接&lt;/h2&gt;
+
+&lt;p&gt;安装完成后把&lt;code&gt;\hugo_encryptor\shortcodes\hugo-encryptor.html&lt;/code&gt;复制到博客的&lt;code&gt;layouts\shortcodes&lt;/code&gt;路径下&lt;/p&gt;
+
+&lt;h2 id="加密文章编写"&gt;加密文章编写&lt;/h2&gt;
+
+&lt;p&gt;将希望加密的内容放置在&lt;code&gt;hugo-encryptor&lt;/code&gt;标签里面&lt;/p&gt;
+
+&lt;h1 id="文章加密"&gt;文章加密&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;加密原理其实就是对生成的public文件夹的静态文件中打上了&lt;code&gt;hugo-encryptor&lt;/code&gt;标签的内容进行加密&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id="hugo生成静态页面"&gt;hugo生成静态页面&lt;/h2&gt;
+
+&lt;p&gt;执行hugo即可,注意生成时应该先将旧的public文件夹的内容删除&lt;/p&gt;
+
+&lt;h2 id="进行加密"&gt;进行加密&lt;/h2&gt;
+
+&lt;p&gt;运行hugo-encryptor.py即可，注意运行hugo-encryptor.py文件要与public文件夹在同一级目录下&lt;/p&gt;
+
+&lt;h1 id="上传静态文件进行博客部署"&gt;上传静态文件进行博客部署&lt;/h1&gt;
+
+&lt;p&gt;将public发布&lt;/p&gt;
+
+&lt;h1 id="效果展示"&gt;效果展示&lt;/h1&gt;
+
+&lt;p&gt;输入&lt;code&gt;password&lt;/code&gt;进行查看文章&lt;/p&gt;</description>
+</item>
+<item>
+<title>21年11月09日的卷积云</title>
+<link>https://ziyan1215.github.io/archive/1636449990/</link>
+<pubDate>Tue, 09 Nov 2021 17:26:30 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1636449990/</guid>
+<description/>
+</item>
+<item>
+<title>Hugo博客加入搜索功能</title>
+<link>https://ziyan1215.github.io/archive/1636089550/</link>
+<pubDate>Fri, 05 Nov 2021 13:19:10 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1636089550/</guid>
+<description>博客嘛，随着文章多起来，终究还是需要进行搜索，方便自己找到之前发布的内容
  网上搜索 第一步，面向百度编程，找到资料一：https://gist.github.com/cmod/5410eae147e4318164258742dd053993。 但是，按照上面的方法部署后一点用处也没有，调试的时候js报错，那就只能看源码了，发现index.json问卷内容生产不对
 第二步：通过细读这个文章，发现另外一个优化的方案： https://gist.github.com/Arty2/8b0c43581013753438a3d35c15091a9f。 部署后遇到同样的问题
 第三步：看源码改脚本。
 先是根据自己的实际修改index.json模板。
 [{{ range $index, $page := .Site.Pages }} {{- if ne $page.Type &amp;quot;json&amp;quot; -}} {{- if and $index (gt $index 0) -}},{{- end }} { &amp;quot;uri&amp;quot;: &amp;quot;{{ $page.Permalink }}&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;{{ htmlEscape $page.Title}}&amp;quot;, &amp;quot;date&amp;quot;: &amp;quot;{{ htmlEscape $page.Date | time.Format &amp;quot;2006-01-02&amp;quot; }}&amp;quot;, &amp;quot;tags&amp;quot;: [{{ range $tindex, $tag := $page.Params.tags }}{{ if $tindex }}, {{ end }}&amp;quot;{{ $tag| htmlEscape }}&amp;quot;{{ end }}], &amp;quot;description&amp;quot;: &amp;quot;{{ htmlEscape .</description>
-    </item>
-    
-    <item>
-      <title>2021年，重启记录之旅</title>
-      <link>https://ziyan1215.github.io/archive/1635995563/</link>
-      <pubDate>Thu, 04 Nov 2021 11:12:43 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1635995563/</guid>
-      <description>年纪  子曰：吾十有五而志于学，三十而立，四十而不惑，五十而知天命， 六十而耳顺，七十而从心所欲，不逾矩。
+</item>
+<item>
+<title>2021年，重启记录之旅</title>
+<link>https://ziyan1215.github.io/archive/1635995563/</link>
+<pubDate>Thu, 04 Nov 2021 11:12:43 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1635995563/</guid>
+<description>年纪  子曰：吾十有五而志于学，三十而立，四十而不惑，五十而知天命， 六十而耳顺，七十而从心所欲，不逾矩。
  而立之年，事情越发的多，渐渐的也越发容易遗忘，就想起了记录这件事，特别是这个信息碎片化的时代，没了总结，没了思考，没了记忆，这个特别可怕。
 来年 希望从此刻开始，多点记录</description>
-    </item>
-    
-    <item>
-      <title>Typora&#43;PicGo图床编写md</title>
-      <link>https://ziyan1215.github.io/archive/1573200125/</link>
-      <pubDate>Fri, 08 Nov 2019 16:02:05 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1573200125/</guid>
-      <description>食用方法 下载picpgo软件
+</item>
+<item>
+<title>Typora+PicGo图床编写md</title>
+<link>https://ziyan1215.github.io/archive/1573200125/</link>
+<pubDate>Fri, 08 Nov 2019 16:02:05 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1573200125/</guid>
+<description>食用方法 下载picpgo软件
 https://github.com/Molunerfinn/PicGo/releases/
 配置仓库令牌：
 下载插件：
@@ -59,24 +99,20 @@ https://github.com/Molunerfinn/PicGo/releases/
 配置图床：
 配置typora
 gitee作为图床的缺点：有容量限制，毕竟是免费的，如果真的有需求的话还是买个阿里云OSS</description>
-    </item>
-    
-    <item>
-      <title>Java应用中访问ElasticSearch</title>
-      <link>https://ziyan1215.github.io/archive/1564215157/</link>
-      <pubDate>Sat, 27 Jul 2019 16:12:37 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1564215157/</guid>
-      <description>4 在Java应用中访问ElasticSearch 4.1 在Java应用中实现查询文档 ##pom中加入ElasticSearch6.2.4的依赖： &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.elasticsearch.client&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;transport&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;6.2.4&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.12&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;!-- java编译插件 --&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.2&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;source&amp;gt;1.8&amp;lt;/source&amp;gt; &amp;lt;target&amp;gt;1.8&amp;lt;/target&amp;gt; &amp;lt;encoding&amp;gt;UTF-8&amp;lt;/encoding&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt;  4.2 在Java应用中实现添加文档  &amp;quot;{&amp;quot; + &amp;quot;\&amp;quot;id\&amp;quot;:\&amp;quot;1\&amp;quot;,&amp;quot; + &amp;quot;\&amp;quot;title\&amp;quot;:\&amp;quot;Java设计模式之装饰模式\&amp;quot;,&amp;quot; + &amp;quot;\&amp;quot;content\&amp;quot;:\&amp;quot;在不必改变原类文件和使用继承的情况下，动态地扩展一个对象的功能。\&amp;quot;,&amp;quot; + &amp;quot;\&amp;quot;postdate\&amp;quot;:\&amp;quot;2018-05-20 14:38:00\&amp;quot;,&amp;quot; + &amp;quot;\&amp;quot;url\&amp;quot;:\&amp;quot;csdn.net/79239072\&amp;quot;&amp;quot; + &amp;quot;}&amp;quot; XContentBuilder doc1 = XContentFactory.jsonBuilder() .startObject() .field(&amp;quot;id&amp;quot;,&amp;quot;3&amp;quot;) .field(&amp;quot;title&amp;quot;,&amp;quot;Java设计模式之单例模式&amp;quot;) .field(&amp;quot;content&amp;quot;,&amp;quot;枚举单例模式可以防反射攻击。&amp;quot;) .field(&amp;quot;postdate&amp;quot;,&amp;quot;2018-02-03&amp;quot;) .field(&amp;quot;url&amp;quot;,&amp;quot;csdn.net/79247746&amp;quot;) .endObject(); IndexResponse response = client.prepareIndex(&amp;quot;index1&amp;quot;, &amp;quot;blog&amp;quot;, null) .</description>
-    </item>
-    
-    <item>
-      <title>ElasticSearch原理</title>
-      <link>https://ziyan1215.github.io/archive/1563940854/</link>
-      <pubDate>Wed, 24 Jul 2019 12:00:54 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1563940854/</guid>
-      <description>3 ElasticSearch原理 3.1 解析es的分布式架构 3.1.1 分布式架构的透明隐藏特性 ElasticSearch是一个分布式系统，隐藏了复杂的处理机制
+</item>
+<item>
+<title>Java应用中访问ElasticSearch</title>
+<link>https://ziyan1215.github.io/archive/1564215157/</link>
+<pubDate>Sat, 27 Jul 2019 16:12:37 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1564215157/</guid>
+<description>4 在Java应用中访问ElasticSearch 4.1 在Java应用中实现查询文档 ##pom中加入ElasticSearch6.2.4的依赖： &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.elasticsearch.client&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;transport&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;6.2.4&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.12&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;!-- java编译插件 --&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.2&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;source&amp;gt;1.8&amp;lt;/source&amp;gt; &amp;lt;target&amp;gt;1.8&amp;lt;/target&amp;gt; &amp;lt;encoding&amp;gt;UTF-8&amp;lt;/encoding&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt;  4.2 在Java应用中实现添加文档  &amp;quot;{&amp;quot; + &amp;quot;\&amp;quot;id\&amp;quot;:\&amp;quot;1\&amp;quot;,&amp;quot; + &amp;quot;\&amp;quot;title\&amp;quot;:\&amp;quot;Java设计模式之装饰模式\&amp;quot;,&amp;quot; + &amp;quot;\&amp;quot;content\&amp;quot;:\&amp;quot;在不必改变原类文件和使用继承的情况下，动态地扩展一个对象的功能。\&amp;quot;,&amp;quot; + &amp;quot;\&amp;quot;postdate\&amp;quot;:\&amp;quot;2018-05-20 14:38:00\&amp;quot;,&amp;quot; + &amp;quot;\&amp;quot;url\&amp;quot;:\&amp;quot;csdn.net/79239072\&amp;quot;&amp;quot; + &amp;quot;}&amp;quot; XContentBuilder doc1 = XContentFactory.jsonBuilder() .startObject() .field(&amp;quot;id&amp;quot;,&amp;quot;3&amp;quot;) .field(&amp;quot;title&amp;quot;,&amp;quot;Java设计模式之单例模式&amp;quot;) .field(&amp;quot;content&amp;quot;,&amp;quot;枚举单例模式可以防反射攻击。&amp;quot;) .field(&amp;quot;postdate&amp;quot;,&amp;quot;2018-02-03&amp;quot;) .field(&amp;quot;url&amp;quot;,&amp;quot;csdn.net/79247746&amp;quot;) .endObject(); IndexResponse response = client.prepareIndex(&amp;quot;index1&amp;quot;, &amp;quot;blog&amp;quot;, null) .</description>
+</item>
+<item>
+<title>ElasticSearch原理</title>
+<link>https://ziyan1215.github.io/archive/1563940854/</link>
+<pubDate>Wed, 24 Jul 2019 12:00:54 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1563940854/</guid>
+<description>3 ElasticSearch原理 3.1 解析es的分布式架构 3.1.1 分布式架构的透明隐藏特性 ElasticSearch是一个分布式系统，隐藏了复杂的处理机制
 分片机制：我们不用关心数据是按照什么机制分片的、最后放入到哪个分片中
 分片的副本：
 集群发现机制(cluster discovery)：比如当前我们启动了一个es进程，当启动了第二个es进程时，这个进程作为一个node自动就发现了集群，并且加入了进去
@@ -96,63 +132,53 @@ shard负载均衡：比如现在有10shard，集群中有3个节点，es会进�
 7.primary shard的默认数量是5，replica默认是1，默认有10个shard，5个primary shard，5个replica shard
 8.primary shard不能和自己的replica shard放在同一个节点上（否则节点宕机，primary shard和副本都丢失，起不到容错的作用），但是可以和其他primary shard的replica shard放在同一个节点上
 3.3 单节点环境下创建索引分析 PUT /myindex { &amp;quot;settings&amp;quot; : { &amp;quot;number_of_shards&amp;quot; : 3, &amp;quot;number_of_replicas&amp;quot; : 1 } }  这个时候，只会将3个primary shard分配到仅有的一个node上去，另外3个replica shard是无法分配的（一个shard的副本replica，他们两个是不能在同一个节点的）。集群可以正常工作，但是一旦出现节点宕机，数据全部丢失，而且集群不可用，无法接收任何请求。</description>
-    </item>
-    
-    <item>
-      <title>ES的嵌套字段</title>
-      <link>https://ziyan1215.github.io/archive/1563796794/</link>
-      <pubDate>Mon, 22 Jul 2019 19:59:54 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1563796794/</guid>
-      <description>2.11 嵌套字段  由于在 Elasticsearch 中单个文档的增删改都是原子性操作,那么将相关实体数据都存储在同一文档中也就理所当然。 比如说,我们可以将订单及其明细数据存储在一个文档中。又比如,我们可以将一篇博客文章的评论以一个 comments 数组的形式和博客文章放在一起：
+</item>
+<item>
+<title>ES的嵌套字段</title>
+<link>https://ziyan1215.github.io/archive/1563796794/</link>
+<pubDate>Mon, 22 Jul 2019 19:59:54 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1563796794/</guid>
+<description>2.11 嵌套字段  由于在 Elasticsearch 中单个文档的增删改都是原子性操作,那么将相关实体数据都存储在同一文档中也就理所当然。 比如说,我们可以将订单及其明细数据存储在一个文档中。又比如,我们可以将一篇博客文章的评论以一个 comments 数组的形式和博客文章放在一起：
  PUT /my_index/blogpost/1 { &amp;quot;title&amp;quot;: &amp;quot;Nest eggs&amp;quot;, &amp;quot;body&amp;quot;: &amp;quot;Making your money work...&amp;quot;, &amp;quot;tags&amp;quot;: [ &amp;quot;cash&amp;quot;, &amp;quot;shares&amp;quot; ], &amp;quot;comments&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;John Smith&amp;quot;, &amp;quot;comment&amp;quot;: &amp;quot;Great article&amp;quot;, &amp;quot;age&amp;quot;: 28, &amp;quot;stars&amp;quot;: 4, &amp;quot;date&amp;quot;: &amp;quot;2014-09-01&amp;quot; }, { &amp;quot;name&amp;quot;: &amp;quot;Alice White&amp;quot;, &amp;quot;comment&amp;quot;: &amp;quot;More like this please&amp;quot;, &amp;quot;age&amp;quot;: 31, &amp;quot;stars&amp;quot;: 5, &amp;quot;date&amp;quot;: &amp;quot;2014-10-22&amp;quot; } ] }  如果我们依赖字段自动映射,那么 comments 字段会自动映射为 object 类型。
 由于所有的信息都在一个文档中,当我们查询时就没有必要去联合文章和评论文档,查询效率就很高。
 但是当我们使用如下查询时,上面的文档也会被当做是符合条件的结果：
 GET /_search { &amp;quot;query&amp;quot;: { &amp;quot;bool&amp;quot;: { &amp;quot;must&amp;quot;: [ { &amp;quot;match&amp;quot;: { &amp;quot;name&amp;quot;: &amp;quot;Alice&amp;quot; }}, { &amp;quot;match&amp;quot;: { &amp;quot;age&amp;quot;: 28 }} ] } } }  ==Alice实际是31岁,不是28!</description>
-    </item>
-    
-    <item>
-      <title>ES的聚合&amp;复合查询</title>
-      <link>https://ziyan1215.github.io/archive/1563681594/</link>
-      <pubDate>Sun, 21 Jul 2019 11:59:54 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1563681594/</guid>
-      <description>2.9 聚合查询 (1)sum
+</item>
+<item>
+<title>ES的聚合&amp;复合查询</title>
+<link>https://ziyan1215.github.io/archive/1563681594/</link>
+<pubDate>Sun, 21 Jul 2019 11:59:54 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1563681594/</guid>
+<description>2.9 聚合查询 (1)sum
 GET /lib4/items/_search { &amp;quot;size&amp;quot;:0, &amp;quot;aggs&amp;quot;: { &amp;quot;price_of_sum&amp;quot;: { &amp;quot;sum&amp;quot;: { &amp;quot;field&amp;quot;: &amp;quot;price&amp;quot; } } } }  (2)min
 GET /lib4/items/_search { &amp;quot;size&amp;quot;: 0, &amp;quot;aggs&amp;quot;: { &amp;quot;price_of_min&amp;quot;: { &amp;quot;min&amp;quot;: { &amp;quot;field&amp;quot;: &amp;quot;price&amp;quot; } } } }  (3)max
 GET /lib4/items/_search { &amp;quot;size&amp;quot;: 0, &amp;quot;aggs&amp;quot;: { &amp;quot;price_of_max&amp;quot;: { &amp;quot;max&amp;quot;: { &amp;quot;field&amp;quot;: &amp;quot;price&amp;quot; } } } }  (4)avg
 GET /lib4/items/_search { &amp;quot;size&amp;quot;:0, &amp;quot;aggs&amp;quot;: { &amp;quot;price_of_avg&amp;quot;: { &amp;quot;avg&amp;quot;: { &amp;quot;field&amp;quot;: &amp;quot;price&amp;quot; } } } }  (5)cardinality:求基数</description>
-    </item>
-    
-    <item>
-      <title>ES的filter查询</title>
-      <link>https://ziyan1215.github.io/archive/1563598794/</link>
-      <pubDate>Sat, 20 Jul 2019 12:59:54 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1563598794/</guid>
-      <description>2.8 Filter查询 filter是不计算相关性的，同时可以cache。因此，filter速度要快于query。
+</item>
+<item>
+<title>ES的filter查询</title>
+<link>https://ziyan1215.github.io/archive/1563598794/</link>
+<pubDate>Sat, 20 Jul 2019 12:59:54 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1563598794/</guid>
+<description>2.8 Filter查询 filter是不计算相关性的，同时可以cache。因此，filter速度要快于query。
 POST /lib4/items/_bulk {&amp;quot;index&amp;quot;: {&amp;quot;_id&amp;quot;: 1}} {&amp;quot;price&amp;quot;: 40,&amp;quot;itemID&amp;quot;: &amp;quot;ID100123&amp;quot;} {&amp;quot;index&amp;quot;: {&amp;quot;_id&amp;quot;: 2}} {&amp;quot;price&amp;quot;: 50,&amp;quot;itemID&amp;quot;: &amp;quot;ID100124&amp;quot;} {&amp;quot;index&amp;quot;: {&amp;quot;_id&amp;quot;: 3}} {&amp;quot;price&amp;quot;: 25,&amp;quot;itemID&amp;quot;: &amp;quot;ID100124&amp;quot;} {&amp;quot;index&amp;quot;: {&amp;quot;_id&amp;quot;: 4}} {&amp;quot;price&amp;quot;: 30,&amp;quot;itemID&amp;quot;: &amp;quot;ID100125&amp;quot;} {&amp;quot;index&amp;quot;: {&amp;quot;_id&amp;quot;: 5}} {&amp;quot;price&amp;quot;: null,&amp;quot;itemID&amp;quot;: &amp;quot;ID100127&amp;quot;}  2.8.1 简单的过滤查询 GET /lib4/items/_search { &amp;quot;post_filter&amp;quot;: { &amp;quot;term&amp;quot;: { &amp;quot;price&amp;quot;: 40 } } } GET /lib4/items/_search { &amp;quot;post_filter&amp;quot;: { &amp;quot;terms&amp;quot;: { &amp;quot;price&amp;quot;: [25,40] } } } GET /lib4/items/_search { &amp;quot;post_filter&amp;quot;: { &amp;quot;term&amp;quot;: { &amp;quot;itemID&amp;quot;: &amp;quot;ID100123&amp;quot; } } }  查看分词器分析的结果：</description>
-    </item>
-    
-    <item>
-      <title>ES基本查询</title>
-      <link>https://ziyan1215.github.io/archive/1563522787/</link>
-      <pubDate>Fri, 19 Jul 2019 15:53:07 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1563522787/</guid>
-      <description>2.7 基本查询(Query查询) 2.7.1数据准备 PUT /lib3 { &amp;quot;settings&amp;quot;:{ &amp;quot;number_of_shards&amp;quot; : 3, &amp;quot;number_of_replicas&amp;quot; : 0 }, &amp;quot;mappings&amp;quot;:{ &amp;quot;user&amp;quot;:{ &amp;quot;properties&amp;quot;:{ &amp;quot;name&amp;quot;: {&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;}, &amp;quot;address&amp;quot;: {&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;}, &amp;quot;age&amp;quot;: {&amp;quot;type&amp;quot;:&amp;quot;integer&amp;quot;}, &amp;quot;interests&amp;quot;: {&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;}, &amp;quot;birthday&amp;quot;: {&amp;quot;type&amp;quot;:&amp;quot;date&amp;quot;} } } } } GET /lib3/user/_search?q=name:lisi GET /lib3/user/_search?q=name:zhaoliu&amp;amp;sort=age:desc  2.7.2 term查询和terms查询 term query会去倒排索引中寻找确切的term，它并不知道分词器的存在。这种查询适合keyword 、numeric、date。
+</item>
+<item>
+<title>ES基本查询</title>
+<link>https://ziyan1215.github.io/archive/1563522787/</link>
+<pubDate>Fri, 19 Jul 2019 15:53:07 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1563522787/</guid>
+<description>2.7 基本查询(Query查询) 2.7.1数据准备 PUT /lib3 { &amp;quot;settings&amp;quot;:{ &amp;quot;number_of_shards&amp;quot; : 3, &amp;quot;number_of_replicas&amp;quot; : 0 }, &amp;quot;mappings&amp;quot;:{ &amp;quot;user&amp;quot;:{ &amp;quot;properties&amp;quot;:{ &amp;quot;name&amp;quot;: {&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;}, &amp;quot;address&amp;quot;: {&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;}, &amp;quot;age&amp;quot;: {&amp;quot;type&amp;quot;:&amp;quot;integer&amp;quot;}, &amp;quot;interests&amp;quot;: {&amp;quot;type&amp;quot;:&amp;quot;text&amp;quot;}, &amp;quot;birthday&amp;quot;: {&amp;quot;type&amp;quot;:&amp;quot;date&amp;quot;} } } } } GET /lib3/user/_search?q=name:lisi GET /lib3/user/_search?q=name:zhaoliu&amp;amp;sort=age:desc  2.7.2 term查询和terms查询 term query会去倒排索引中寻找确切的term，它并不知道分词器的存在。这种查询适合keyword 、numeric、date。
 term:查询某个字段里含有某个关键词的文档
 GET /lib3/user/_search/ { &amp;quot;query&amp;quot;: { &amp;quot;term&amp;quot;: {&amp;quot;interests&amp;quot;: &amp;quot;changge&amp;quot;} } }  terms:查询某个字段里含有多个关键词的文档
 GET /lib3/user/_search { &amp;quot;query&amp;quot;:{ &amp;quot;terms&amp;quot;:{ &amp;quot;interests&amp;quot;: [&amp;quot;hejiu&amp;quot;,&amp;quot;changge&amp;quot;] } } }  2.7.3 控制查询返回的数量 from：从哪一个文档开始 size：需要的个数</description>
-    </item>
-    
-    <item>
-      <title>ES基本操作</title>
-      <link>https://ziyan1215.github.io/archive/1563415780/</link>
-      <pubDate>Thu, 18 Jul 2019 10:09:40 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1563415780/</guid>
-      <description>2节 ElasticSearch基本操作 2.1 倒排索引  Elasticsearch 使用一种称为 倒排索引 的结构，它适用于快速的全文搜索。一个倒排索引由文档中所有不重复词的列表构成，对于其中每个词，有一个包含它的文档列表。
+</item>
+<item>
+<title>ES基本操作</title>
+<link>https://ziyan1215.github.io/archive/1563415780/</link>
+<pubDate>Thu, 18 Jul 2019 10:09:40 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1563415780/</guid>
+<description>2节 ElasticSearch基本操作 2.1 倒排索引  Elasticsearch 使用一种称为 倒排索引 的结构，它适用于快速的全文搜索。一个倒排索引由文档中所有不重复词的列表构成，对于其中每个词，有一个包含它的文档列表。
  示例：
 (1)：假设文档集合包含五个文档，每个文档内容如图所示，在图中最左端一栏是每个文档对应的文档编号。我们的任务就是对这个文档集合建立倒排索引。 (2):中文和英文等语言不同，单词之间没有明确分隔符号，所以首先要用分词系统将文档自动切分成单词序列。这样每个文档就转换为由单词序列构成的数据流，为了系统后续处理方便，需要对每个不同的单词赋予唯一的单词编号，同时记录下哪些文档包含这个单词，在如此处理结束后，我们可以得到最简单的倒排索引
 “单词ID”：记录了每个单词的单词编号；
@@ -171,15 +197,13 @@ GET /lib3/user/_search { &amp;quot;query&amp;quot;:{ &amp;quot;terms&amp;quot;:{
  jumped 和 leap, 尽管没有相同的词根，但他们的意思很相近。他们是同义词。
  搜索含有 Quick fox的文档是搜索不到的
   使用标准化规则(normalization)： 建立倒排索引的时候，会对拆分出的各个单词进行相应的处理，以提升后面搜索的时候能够搜索到相关联的文档的概率</description>
-    </item>
-    
-    <item>
-      <title>ES入门</title>
-      <link>https://ziyan1215.github.io/archive/1563379192/</link>
-      <pubDate>Wed, 17 Jul 2019 23:59:52 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1563379192/</guid>
-      <description>1 ElasticSearch概述 1.1 什么是ElasticSearch  ElasticSearch是一个基于Lucene的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于RESTfulweb接口。ElasticSearch是用Java开发的，并作为Apache许可条款下的开放源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。构建在全文检索开源软件Lucene之上的Elasticsearch，不仅能对海量规模的数据完成分布式索引与检索，还能提供数据聚合分析。据国际权威的数据库产品评测机构DBEngines的统计，在2016年1月，Elasticsearch已超过Solr等，成为排名第一的搜索引擎类应用 概括：基于Restful标准的高扩展高可用的实时数据分析的全文搜索工具
+</item>
+<item>
+<title>ES入门</title>
+<link>https://ziyan1215.github.io/archive/1563379192/</link>
+<pubDate>Wed, 17 Jul 2019 23:59:52 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1563379192/</guid>
+<description>1 ElasticSearch概述 1.1 什么是ElasticSearch  ElasticSearch是一个基于Lucene的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于RESTfulweb接口。ElasticSearch是用Java开发的，并作为Apache许可条款下的开放源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。构建在全文检索开源软件Lucene之上的Elasticsearch，不仅能对海量规模的数据完成分布式索引与检索，还能提供数据聚合分析。据国际权威的数据库产品评测机构DBEngines的统计，在2016年1月，Elasticsearch已超过Solr等，成为排名第一的搜索引擎类应用 概括：基于Restful标准的高扩展高可用的实时数据分析的全文搜索工具
  1.2 ElasticSearch的基本概念 1.3 Elasticsearch的架构  Gateway层   es用来存储索引文件的一个文件系统且它支持很多类型，例如：本地磁盘、共享存储（做snapshot的时候需要用到）、hadoop的hdfs分布式存储、亚马逊的S3。它的主要职责是用来对数据进行长持久化以及整个集群重启之后可以通过gateway重新恢复数据。
   Distributed Lucene Directory   Gateway上层就是一个lucene的分布式框架，lucene是做检索的，但是它是一个单机的搜索引擎，像这种es分布式搜索引擎系统，虽然底层用lucene，但是需要在每个节点上都运行lucene进行相应的索引、查询以及更新，所以需要做成一个分布式的运行框架来满足业务的需要。
   四大模块组件   districted lucene directory之上就是一些es的模块，Index Module是索引模块，就是对数据建立索引也就是通常所说的建立一些倒排索引等；Search Module是搜索模块，就是对数据进行查询搜索；Mapping模块是数据映射与解析模块，就是你的数据的每个字段可以根据你建立的表结构通过mapping进行映射解析，如果你没有建立表结构，es就会根据你的数据类型推测你的数据结构之后自己生成一个mapping，然后都是根据这个mapping进行解析你的数据；River模块在es2.0之后应该是被取消了，它的意思表示是第三方插件，例如可以通过一些自定义的脚本将传统的数据库（mysql）等数据源通过格式化转换后直接同步到es集群里，这个river大部分是自己写的，写出来的东西质量参差不齐，将这些东西集成到es中会引发很多内部bug，严重影响了es的正常应用，所以在es2.0之后考虑将其去掉。
@@ -189,62 +213,52 @@ GET /lib3/user/_search { &amp;quot;query&amp;quot;:{ &amp;quot;terms&amp;quot;:{
  1.4 RESTfull API  一种软件架构风格、设计风格，而不是标准，只是提供了一组设计原则和约束条件。它主要用于客户端和服务器交互类的软件。基于这个风格设计的软件可以更简洁，更有层次，更易于实现缓存等机制。在目前主流的三种Web服务交互方案中，REST相比于SOAP（Simple Object Access protocol，简单对象访问协议）以及XML-RPC更加简单明了。
 (Representational State Transfer 意思是：表述性状态传递)
  它使用典型的HTTP方法，诸如GET,POST.</description>
-    </item>
-    
-    <item>
-      <title>NewJob</title>
-      <link>https://ziyan1215.github.io/archive/1563203474/</link>
-      <pubDate>Mon, 15 Jul 2019 23:11:14 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1563203474/</guid>
-      <description>我的2019上半年总结  可以说是过得很惨。
+</item>
+<item>
+<title>NewJob</title>
+<link>https://ziyan1215.github.io/archive/1563203474/</link>
+<pubDate>Mon, 15 Jul 2019 23:11:14 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1563203474/</guid>
+<description>我的2019上半年总结  可以说是过得很惨。
  2月28日 正式离职后，算一下这是我的第三次裸辞了。每一次裸辞都有一定的目的性，现在看来，每一次目的都没有达到。但是工资确是涨了，算是唯一的欣慰吧，也或许是自己没什么追求？
 3月份 先是慢悠悠的休息了一两周，那时刚好身体不舒服，就顺便搞了下医保（工作后第一次用医保卡）跑医院去看了下医生。差不多了就开始投java的简历了。然而这回是真真切切的体验了一把互联网寒冬,投出去很多简历，缺没有收到很多的面试邀请，基本一天一个面试或者一周两三个面试那样子，就这样前前后后的找了2个月吧。期间收到了2家offer，但是不理想就给推了。
 4月份 工作没找到，但是4月份的心态还是比较稳定的，还在坚持着。还坚持经常跑步，接女朋友下班，做菜，刷题，投简历，面试。但是吧，一家接着一家，笔试题答得是越来越好了，但是到技术面的时候，到底是没有实际的开发经验，估计是很容易被面试官发现了吧，所以即使是压低薪资，人家也不敢要。。。
 五月份 接着，很快就到了五月份，也不知道是为什么，应该是着急了吧，就开始找开发的同时随便投一下测试。 这个社会，经验还是很重要啊，所以面试测试的时候，随便吹吹逼，就收了N多份的offer，面了第二家测试，感觉差不多就接了offer，好吧，就这样进入了今年的第一个坑。面试的时候说是不用加班，结果进去发现大家都熬到晚上9点后才走，一天接近12个小时的工作时间。好吧，没经历过互联网996的表示，原来8小说内的工作硬是用12个小时来完成，效率是真的低。加上新公司的办公环境是新装修的办公室，怕甲醛+超长工作时间会带来严重的健康问题，所以，我再一次裸辞了。
 六月份 端午节给自己放了一两周假，然后就开始找工作，这回就直接投回测试岗位了，然后一周就收了2个offer。好吧，挑了个离家近工资低的。。。也不知道是不是个坑。不过呢，一个新的行业，可以学到很多新的东西，也算是一个好的方面吧
 7月份 入职新公司也快一个月了，总的来说，还行吧。很多新技术可以去学，虽然不好的地方也有很多，但是不好的东西变好的过程也会经历一下，不管后面怎样，或者当下吧</description>
-    </item>
-    
-    <item>
-      <title>2019 1 29</title>
-      <link>https://ziyan1215.github.io/archive/1548758636/</link>
-      <pubDate>Tue, 29 Jan 2019 18:43:56 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1548758636/</guid>
-      <description> dao&amp;ndash;》service&amp;ndash;》controller&amp;ndash;》前端展示 店铺注册功能 新增店铺 更新店铺
+</item>
+<item>
+<title>2019 1 29</title>
+<link>https://ziyan1215.github.io/archive/1548758636/</link>
+<pubDate>Tue, 29 Jan 2019 18:43:56 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1548758636/</guid>
+<description> dao&amp;ndash;》service&amp;ndash;》controller&amp;ndash;》前端展示 店铺注册功能 新增店铺 更新店铺
 店铺信息编辑 店铺列表展示 商品类别 商品模块 前端展示系统
 报错  Cannot delete or update a parent row: a foreign key constraint fails[](https://blog.csdn.net/u010429286/article/details/79042886) 删除表的时候 有表关联无法删除
  idea Method does not override method from its superclass </description>
-    </item>
-    
-    <item>
-      <title>Sql经典题目的mysql实现②</title>
-      <link>https://ziyan1215.github.io/archive/1548494210/</link>
-      <pubDate>Sat, 26 Jan 2019 17:16:50 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1548494210/</guid>
-      <description>25、查询各科成绩前三名的记录（不考虑成绩并列情况）： select t1.s_id,t1.c_id,t1.s_score from score t1 where exists ( select count(1) from score where t1.c_id = c_id and t1.s_score &amp;lt; s_score having count(1) &amp;lt; 3 ) order by t1.c_id,s_score desc;  26、查询每门课程被选修的学生数： -- 思路： 成绩表有修的应该就有选 select c_id,count(s_id) from score group by c_id; -- 27、查询出只选修一门课程的全部学生的学号和姓名： select s.s_id,s_name ,count(s_score) from score s,student where s.s_id=student.s_id group by s_id having count(s_score) =1;  28、查询男生、女生人数： select sum(case when s.s_sex=&#39;男&#39; then 1 else 0 end) as 男生人数, sum(case when s.</description>
-    </item>
-    
-    <item>
-      <title>Sql经典题目的mysql实现①</title>
-      <link>https://ziyan1215.github.io/archive/1548473871/</link>
-      <pubDate>Sat, 26 Jan 2019 11:37:51 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1548473871/</guid>
-      <description>数据准备请看文章底部 点击我查看
- 题目 1、查询“01”课程比“02”课程成绩高的所有学生的学号 select a.s_id from (select sc.s_id, sc.s_score from score sc where sc.c_id=&#39;01&#39;) a, (select sc.s_id, sc.s_score from score sc where sc.c_id=&#39;02&#39;) b where a.s_score&amp;gt;b.s_score and a.s_id=b.s_id    s_id     02   04   
+</item>
+<item>
+<title>Sql经典题目的mysql实现②</title>
+<link>https://ziyan1215.github.io/archive/1548494210/</link>
+<pubDate>Sat, 26 Jan 2019 17:16:50 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1548494210/</guid>
+<description>25、查询各科成绩前三名的记录（不考虑成绩并列情况）： select t1.s_id,t1.c_id,t1.s_score from score t1 where exists ( select count(1) from score where t1.c_id = c_id and t1.s_score &amp;lt; s_score having count(1) &amp;lt; 3 ) order by t1.c_id,s_score desc;  26、查询每门课程被选修的学生数： -- 思路： 成绩表有修的应该就有选 select c_id,count(s_id) from score group by c_id; -- 27、查询出只选修一门课程的全部学生的学号和姓名： select s.s_id,s_name ,count(s_score) from score s,student where s.s_id=student.s_id group by s_id having count(s_score) =1;  28、查询男生、女生人数： select sum(case when s.s_sex='男' then 1 else 0 end) as 男生人数, sum(case when s.</description>
+</item>
+<item>
+<title>Sql经典题目的mysql实现①</title>
+<link>https://ziyan1215.github.io/archive/1548473871/</link>
+<pubDate>Sat, 26 Jan 2019 11:37:51 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1548473871/</guid>
+<description>数据准备请看文章底部 点击我查看
+ 题目 1、查询“01”课程比“02”课程成绩高的所有学生的学号 select a.s_id from (select sc.s_id, sc.s_score from score sc where sc.c_id='01') a, (select sc.s_id, sc.s_score from score sc where sc.c_id='02') b where a.s_score&amp;gt;b.s_score and a.s_id=b.s_id    s_id     02   04   
 2、查询平均成绩大于60分的同学的学号和平均成绩 select sc.s_id , avg(sc.s_score) from score sc group by sc.s_id having avg(sc.s_score)&amp;gt;60    s_id avg(sc.s_score)     01 89.</description>
-    </item>
-    
-    <item>
-      <title>Linux计划任务程序crond简单应用</title>
-      <link>https://ziyan1215.github.io/archive/1548124598/</link>
-      <pubDate>Tue, 22 Jan 2019 10:36:38 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1548124598/</guid>
-      <description>运用crontab 命令可以进行linux下的定时任务，就如windows系统中的计划任务
+</item>
+<item>
+<title>Linux计划任务程序crond简单应用</title>
+<link>https://ziyan1215.github.io/archive/1548124598/</link>
+<pubDate>Tue, 22 Jan 2019 10:36:38 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1548124598/</guid>
+<description>运用crontab 命令可以进行linux下的定时任务，就如windows系统中的计划任务
 在centos7下测试
  cron服务 //启动服务 systemctl start crond //停止服务 systemctl stop crond //重启服务 systemctl restart crond //重新加载配置 systemctl reload crond  要把cron设为在开机的时候自动启动，在 /etc/rc.d/rc.local 脚本中加入 /sbin/service crond start 即可
 crontab进行计划任务 查看用户的crontab
@@ -252,15 +266,13 @@ crontab进行计划任务 查看用户的crontab
 删除crontab，输入 crontab -r (会删除所有计划任务)
  在运用过程中，发现计划任务没有执行，寻找了一些原因，总结如下
  查看日志 [root@vultr bin]# tail -f /var/log/cron Jan 22 02:44:36 vultr crontab[25585]: (root) LIST (root) Jan 22 02:44:50 vultr crontab[25598]: (root) LIST (root) Jan 22 02:45:33 vultr crontab[25634]: (root) BEGIN EDIT (root) Jan 22 02:45:49 vultr crontab[25634]: (root) END EDIT (root) Jan 22 02:46:09 vultr crontab[25667]: (root) DELETE (root) Jan 22 02:46:14 vultr crontab[25672]: (root) BEGIN EDIT (root) Jan 22 02:46:59 vultr crontab[25672]: (root) REPLACE (root) Jan 22 02:46:59 vultr crontab[25672]: (root) END EDIT (root) Jan 22 02:47:01 vultr crond[24384]: (root) RELOAD (/var/spool/cron/root) Jan 22 02:47:03 vultr crontab[25715]: (root) LIST (root)  或者去查看/var/log路径下cron-XXX的日志文件</description>
-    </item>
-    
-    <item>
-      <title>Java基础之集合</title>
-      <link>https://ziyan1215.github.io/archive/1548058711/</link>
-      <pubDate>Mon, 21 Jan 2019 16:18:31 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1548058711/</guid>
-      <description>在使用一个体系时，原则：参阅顶层内容。建立底层对象。
+</item>
+<item>
+<title>Java基础之集合</title>
+<link>https://ziyan1215.github.io/archive/1548058711/</link>
+<pubDate>Mon, 21 Jan 2019 16:18:31 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1548058711/</guid>
+<description>在使用一个体系时，原则：参阅顶层内容。建立底层对象。
 集合是可变长度的，用于存储对象，只能存储引用数据类型，可以存储不同类型的对象
  使用集合的技巧 看到Array就是数组结构，有角标，查询速度很快。
 看到link就是链表结构：增删速度快，而且有特有方法 addFirst();addLast();removeFirst();removeLast(); getFirst();getLast();
@@ -270,79 +282,65 @@ crontab进行计划任务 查看用户的crontab
 E |next()| 返回迭代的下一个元素
 void |remove()| 从迭代器指向的 collection 中移除迭代器返回的最后一个元素（可选操作）
 public static void main(String[] args) { Collection coll = new ArrayList(); coll.add(&amp;quot;abc0&amp;quot;); coll.add(&amp;quot;abc1&amp;quot;); coll.add(&amp;quot;abc2&amp;quot;); //--------------方式1---------------------- Iterator it = coll.iterator(); while(it.hasNext()){ System.out.println(it.next()); } //---------------方式2用此种---------------------- for(Iterator it = coll.iterator();it.hasNext(); ){ System.</description>
-    </item>
-    
-    <item>
-      <title>Junit4加载spring配置文件进行单元测试</title>
-      <link>https://ziyan1215.github.io/archive/1548056542/</link>
-      <pubDate>Mon, 21 Jan 2019 15:42:22 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1548056542/</guid>
-      <description>  配置BaseTest，然后后面的测试类继承此类即可进行单元测试
+</item>
+<item>
+<title>Junit4加载spring配置文件进行单元测试</title>
+<link>https://ziyan1215.github.io/archive/1548056542/</link>
+<pubDate>Mon, 21 Jan 2019 15:42:22 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1548056542/</guid>
+<description>  配置BaseTest，然后后面的测试类继承此类即可进行单元测试
  基类 @RunWith(SpringJUnit4ClassRunner.class) // 告诉junit spring配置文件 @ContextConfiguration({ &amp;quot;classpath:spring/spring-dao.xml&amp;quot;, &amp;quot;classpath:spring/spring-service.xml&amp;quot; }) public class BaseTest { }  测试类 public class AreaDaoTest extends BaseTest{ @Autowired private AreaDao areaDao; @Test public void testQueryArea() {	List&amp;lt;Area&amp;gt; listArea=new ArrayList&amp;lt;Area&amp;gt;(); listArea=areaDao.queryArea(); System.out.println(listArea.size()); } }  </description>
-    </item>
-    
-    <item>
-      <title>Windows右键获取管理员权限</title>
-      <link>https://ziyan1215.github.io/archive/1547545569/</link>
-      <pubDate>Tue, 15 Jan 2019 17:46:09 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1547545569/</guid>
-      <description>有时候我们删除文件时提示需要获取管理员权限，这个方法可以实现
+</item>
+<item>
+<title>Windows右键获取管理员权限</title>
+<link>https://ziyan1215.github.io/archive/1547545569/</link>
+<pubDate>Tue, 15 Jan 2019 17:46:09 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1547545569/</guid>
+<description>有时候我们删除文件时提示需要获取管理员权限，这个方法可以实现
  步骤一 新建一个txt文件，然后把文件的后缀名改成.reg
 步骤二 编辑该文件，在文件中加入如下内容
 Windows Registry Editor Version 5.00 [HKEY_CLASSES_ROOT\*\shell\runas] @=&amp;quot;获取管理员权限&amp;quot; &amp;quot;NoWorkingDirectory&amp;quot;=&amp;quot;&amp;quot; [HKEY_CLASSES_ROOT\*\shell\runas\command] @=&amp;quot;cmd.exe /c takeown /f \&amp;quot;%1\&amp;quot; &amp;amp;&amp;amp; icacls \&amp;quot;%1\&amp;quot; /grant administrators:F&amp;quot; &amp;quot;IsolatedCommand&amp;quot;=&amp;quot;cmd.exe /c takeown /f \&amp;quot;%1\&amp;quot; &amp;amp;&amp;amp; icacls \&amp;quot;%1\&amp;quot; /grant administrators:F&amp;quot; [HKEY_CLASSES_ROOT\exefile\shell\runas2] @=&amp;quot;获取管理员权限&amp;quot; &amp;quot;NoWorkingDirectory&amp;quot;=&amp;quot;&amp;quot; [HKEY_CLASSES_ROOT\exefile\shell\runas2\command] @=&amp;quot;cmd.exe /c takeown /f \&amp;quot;%1\&amp;quot; &amp;amp;&amp;amp; icacls \&amp;quot;%1\&amp;quot; /grant administrators:F&amp;quot; &amp;quot;IsolatedCommand&amp;quot;=&amp;quot;cmd.exe /c takeown /f \&amp;quot;%1\&amp;quot; &amp;amp;&amp;amp; icacls \&amp;quot;%1\&amp;quot; /grant administrators:F&amp;quot; [HKEY_CLASSES_ROOT\Directory\shell\runas] @=&amp;quot;获取管理员权限&amp;quot; &amp;quot;NoWorkingDirectory&amp;quot;=&amp;quot;&amp;quot; [HKEY_CLASSES_ROOT\Directory\shell\runas\command] @=&amp;quot;cmd.exe /c takeown /f \&amp;quot;%1\&amp;quot; /r /d y &amp;amp;&amp;amp; icacls \&amp;quot;%1\&amp;quot; /grant administrators:F /t&amp;quot; &amp;quot;IsolatedCommand&amp;quot;=&amp;quot;cmd.</description>
-    </item>
-    
-    <item>
-      <title>Gui乱码解决方法</title>
-      <link>https://ziyan1215.github.io/archive/1547087192/</link>
-      <pubDate>Thu, 10 Jan 2019 10:26:32 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1547087192/</guid>
-      <description> 今天试着用了下git gui 发现查看文件时中文乱码了，我想应该就是字符集设置的问题了  </description>
-    </item>
-    
-    <item>
-      <title>Echarts日历</title>
-      <link>https://ziyan1215.github.io/archive/1547010912/</link>
-      <pubDate>Wed, 09 Jan 2019 13:15:12 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1547010912/</guid>
-      <description>还是有一定的限制 ╮(╯▽╰)╭，不过基本图表应该都能实现吧
-     var myChart = echarts.init(document.getElementById(&#39;echarts800&#39;)); function getVirtulData(year) { year = year || &#39;2017&#39;; var date = +echarts.number.parseDate(year + &#39;-01-01&#39;); var end = +echarts.number.parseDate((+year + 1) + &#39;-01-01&#39;); var dayTime = 3600 * 24 * 1000; var data = []; for (var time = date; time Echarts json压缩转义工具</description>
-    </item>
-    
-    <item>
-      <title>TestEchartSH</title>
-      <link>https://ziyan1215.github.io/archive/1547009595/</link>
-      <pubDate>Wed, 09 Jan 2019 12:53:15 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1547009595/</guid>
-      <description> 通过shortcode来生成,引入echart图表
-     var myChart = echarts.init(document.getElementById(&#39;echarts300&#39;)); function getVirtulData(year) { year = year || &#39;2017&#39;; var date = +echarts.number.parseDate(year + &#39;-01-01&#39;); var end = +echarts.number.parseDate((+year + 1) + &#39;-01-01&#39;); var dayTime = 3600 * 24 * 1000; var data = []; for (var time = date; time </description>
-    </item>
-    
-    <item>
-      <title>Netstat查看某端口号被谁占用</title>
-      <link>https://ziyan1215.github.io/archive/1546939102/</link>
-      <pubDate>Tue, 08 Jan 2019 17:18:22 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1546939102/</guid>
-      <description>列出所有端口的情况 在cmd窗口下执行 netstat -ano
+</item>
+<item>
+<title>Gui乱码解决方法</title>
+<link>https://ziyan1215.github.io/archive/1547087192/</link>
+<pubDate>Thu, 10 Jan 2019 10:26:32 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1547087192/</guid>
+<description> 今天试着用了下git gui 发现查看文件时中文乱码了，我想应该就是字符集设置的问题了  </description>
+</item>
+<item>
+<title>Echarts日历</title>
+<link>https://ziyan1215.github.io/archive/1547010912/</link>
+<pubDate>Wed, 09 Jan 2019 13:15:12 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1547010912/</guid>
+<description>还是有一定的限制 ╮(╯▽╰)╭，不过基本图表应该都能实现吧
+     var myChart = echarts.init(document.getElementById('echarts800')); function getVirtulData(year) { year = year || '2017'; var date = +echarts.number.parseDate(year + '-01-01'); var end = +echarts.number.parseDate((+year + 1) + '-01-01'); var dayTime = 3600 * 24 * 1000; var data = []; for (var time = date; time Echarts json压缩转义工具</description>
+</item>
+<item>
+<title>TestEchartSH</title>
+<link>https://ziyan1215.github.io/archive/1547009595/</link>
+<pubDate>Wed, 09 Jan 2019 12:53:15 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1547009595/</guid>
+<description> 通过shortcode来生成,引入echart图表
+     var myChart = echarts.init(document.getElementById('echarts300')); function getVirtulData(year) { year = year || '2017'; var date = +echarts.number.parseDate(year + '-01-01'); var end = +echarts.number.parseDate((+year + 1) + '-01-01'); var dayTime = 3600 * 24 * 1000; var data = []; for (var time = date; time </description>
+</item>
+<item>
+<title>Netstat查看某端口号被谁占用</title>
+<link>https://ziyan1215.github.io/archive/1546939102/</link>
+<pubDate>Tue, 08 Jan 2019 17:18:22 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1546939102/</guid>
+<description>列出所有端口的情况 在cmd窗口下执行 netstat -ano
 查看被占用端口对应的PID 输入命令：netstat -aon|findstr &amp;quot;1313&amp;quot;
 查看是哪个进程或者程序占用了1313端口 tasklist|findstr &amp;quot;10328&amp;quot;
 到任务管理器结束相应的进程 或者直接输入命令： taskkill /im hugo.exe /f
 C:\Users\Administrator&amp;gt;netstat -aon|findstr &amp;quot;1313&amp;quot; TCP 127.0.0.1:1313 0.0.0.0:0 LISTENING 10328 TCP 127.0.0.1:1313 127.0.0.1:61709 ESTABLISHED 10328 TCP 127.0.0.1:1313 127.0.0.1:61710 ESTABLISHED 10328 TCP 127.0.0.1:1313 127.0.0.1:61720 ESTABLISHED 10328 TCP 127.0.0.1:1313 127.0.0.1:61722 ESTABLISHED 10328 TCP 127.0.0.1:1313 127.0.0.1:61723 ESTABLISHED 10328 TCP 127.0.0.1:1313 127.0.0.1:61724 ESTABLISHED 10328 TCP 127.0.0.1:1313 127.0.0.1:61732 ESTABLISHED 10328 TCP 127.0.0.1:1313 127.0.0.1:61999 ESTABLISHED 10328 TCP 127.0.0.1:61709 127.0.0.1:1313 ESTABLISHED 8312 TCP 127.</description>
-    </item>
-    
-    <item>
-      <title>通过ip限制Oracle数据库访问的方法</title>
-      <link>https://ziyan1215.github.io/archive/1546930122/</link>
-      <pubDate>Tue, 08 Jan 2019 14:48:42 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1546930122/</guid>
-      <description>Windows环境 通过路径：F:\app\orcl\product\12.1.0\dbhome_1\NETWORK\ADMIN找到sqlnet.ora 文件
+</item>
+<item>
+<title>通过ip限制Oracle数据库访问的方法</title>
+<link>https://ziyan1215.github.io/archive/1546930122/</link>
+<pubDate>Tue, 08 Jan 2019 14:48:42 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1546930122/</guid>
+<description>Windows环境 通过路径：F:\app\orcl\product\12.1.0\dbhome_1\NETWORK\ADMIN找到sqlnet.ora 文件
 增加以下内容来设置允许访问的ip： tcp.validnode_checking=yes
 tcp.invited_nodes=(192.168.6.195,192.168.6.196,192.168.6.55)
 到window服务里重启服务 在任务管理器里面找到OracleOraDb10g_home1TNSListener 右键停止，再右键启动即可。 重启监听之后要等几分钟，数据库才能真正连上
@@ -352,24 +350,20 @@ tcp.invited_nodes=(192.168.6.195,192.168.6.196,192.168.6.55)
 特别说明 因为linux下是默认没有这个文件的，可以从windows下copy过来
 重启服务 打开xshell，进入oracle账号，重启监听即可
 # su – oracle $lsnrctl stop --停止监听 $lsnrctl start --启动监听  重启监听之后要等几分钟，数据库才能真正连上</description>
-    </item>
-    
-    <item>
-      <title>Oracle常用语句</title>
-      <link>https://ziyan1215.github.io/archive/1546928060/</link>
-      <pubDate>Tue, 08 Jan 2019 14:14:20 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1546928060/</guid>
-      <description>查询 -----查询所有对象个数 select object_type,count(*) from user_objects group by object_type; --查看表空间 select * from dba_tablespaces --查看用户和默认表空间的关系 select username,default_tablespace from dba_users; --查看表空间文件路径 select tablespace_name,file_id,bytes/1024/1024,file_name from dba_data_files order by file_id; select count(*) from WP_UDB_ROLE_OPERATION;--计算表行数 --查看服务器版本 select * from v$version --查看字符集 select * from nls_database_parameters --查看默认表空间 select * from database_properties where property_name=&#39;DEFAULT_TEMP_TABLESPACE&#39;; --查看临时表空间状态 select tablespace_name,file_name,bytes/1024/1024 file_size,autoextensible from dba_temp_files; select count(*) from user_tables;-----某个用户下所有表 select count(*) from dba_tables;------数据库下所有表 --会话字符集环境 select * from nls_session_parameters; --客户端字符集环境 select * from nls_instance_parameters; --数据库服务器字符集 select * from nls_database_parameters; -- 有数据库连接时用以下语句解决 select sid,serial# from v$session where username=&#39;programmer&#39; alter system kill session &#39;15,19095&#39;;  创建 --新建表空间 CREATE SMALLFILE TABLESPACE orcl DATAFILE &#39;/opt/oradata/orcl&#39; --非oracle下的目录 SIZE 300M AUTOEXTEND ON NEXT 100K MAXSIZE UNLIMITED LOGGING EXTENT MANAGEMENT LOCAL SEGMENT SPACE MANAGEMENT AUTO --新建临时表空间 CREATE temporary TABLESPACE tstemp tempfile &#39;/opt/oradata/tstemp&#39; --非oracle下的目录 SIZE 32M AUTOEXTEND ON NEXT 100K MAXSIZE UNLIMITED EXTENT MANAGEMENT LOCAL --删除表 drop table xzy; --删除用户 drop user pts cascade; --删除表空间 drop tablespace gwypts including contents and datafiles cascade constraints; DELETE FROM WP_UDB_ROLE_OPERATION;--删除表内容 --新建用户，并且给用户赋权限 CREATE USER pts PROFILE &amp;quot;DEFAULT&amp;quot; IDENTIFIED BY pts DEFAULT TABLESPACE pts TEMPORARY TABLESPACE &amp;quot;TEMP&amp;quot; ACCOUNT UNLOCK; grant resource,connect,imp_full_database,exp_full_database,CREATE ANY JOB to pts; --授权语句 grant connect,resource,dba to pts grant all privileges to pts -- Create table 创建版本语句 create table VERSION ( VERSIONID VARCHAR2(50), UPDTDATE DATE ); insert into version(versionid,updtdate) values(&#39;V2.</description>
-    </item>
-    
-    <item>
-      <title>Oracle数据库修改字符集方法</title>
-      <link>https://ziyan1215.github.io/archive/1546591306/</link>
-      <pubDate>Fri, 04 Jan 2019 16:41:46 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1546591306/</guid>
-      <description>select * from nls_database_parameters
+</item>
+<item>
+<title>Oracle常用语句</title>
+<link>https://ziyan1215.github.io/archive/1546928060/</link>
+<pubDate>Tue, 08 Jan 2019 14:14:20 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1546928060/</guid>
+<description>查询 -----查询所有对象个数 select object_type,count(*) from user_objects group by object_type; --查看表空间 select * from dba_tablespaces --查看用户和默认表空间的关系 select username,default_tablespace from dba_users; --查看表空间文件路径 select tablespace_name,file_id,bytes/1024/1024,file_name from dba_data_files order by file_id; select count(*) from WP_UDB_ROLE_OPERATION;--计算表行数 --查看服务器版本 select * from v$version --查看字符集 select * from nls_database_parameters --查看默认表空间 select * from database_properties where property_name='DEFAULT_TEMP_TABLESPACE'; --查看临时表空间状态 select tablespace_name,file_name,bytes/1024/1024 file_size,autoextensible from dba_temp_files; select count(*) from user_tables;-----某个用户下所有表 select count(*) from dba_tables;------数据库下所有表 --会话字符集环境 select * from nls_session_parameters; --客户端字符集环境 select * from nls_instance_parameters; --数据库服务器字符集 select * from nls_database_parameters; -- 有数据库连接时用以下语句解决 select sid,serial# from v$session where username='programmer' alter system kill session '15,19095';  创建 --新建表空间 CREATE SMALLFILE TABLESPACE orcl DATAFILE '/opt/oradata/orcl' --非oracle下的目录 SIZE 300M AUTOEXTEND ON NEXT 100K MAXSIZE UNLIMITED LOGGING EXTENT MANAGEMENT LOCAL SEGMENT SPACE MANAGEMENT AUTO --新建临时表空间 CREATE temporary TABLESPACE tstemp tempfile '/opt/oradata/tstemp' --非oracle下的目录 SIZE 32M AUTOEXTEND ON NEXT 100K MAXSIZE UNLIMITED EXTENT MANAGEMENT LOCAL --删除表 drop table xzy; --删除用户 drop user pts cascade; --删除表空间 drop tablespace gwypts including contents and datafiles cascade constraints; DELETE FROM WP_UDB_ROLE_OPERATION;--删除表内容 --新建用户，并且给用户赋权限 CREATE USER pts PROFILE &amp;quot;DEFAULT&amp;quot; IDENTIFIED BY pts DEFAULT TABLESPACE pts TEMPORARY TABLESPACE &amp;quot;TEMP&amp;quot; ACCOUNT UNLOCK; grant resource,connect,imp_full_database,exp_full_database,CREATE ANY JOB to pts; --授权语句 grant connect,resource,dba to pts grant all privileges to pts -- Create table 创建版本语句 create table VERSION ( VERSIONID VARCHAR2(50), UPDTDATE DATE ); insert into version(versionid,updtdate) values('V2.</description>
+</item>
+<item>
+<title>Oracle数据库修改字符集方法</title>
+<link>https://ziyan1215.github.io/archive/1546591306/</link>
+<pubDate>Fri, 04 Jan 2019 16:41:46 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1546591306/</guid>
+<description>select * from nls_database_parameters
 修改数据库的字符集NLS_CHARACTERSET值
 客户端的字符集要求与服务器一致，才能正确显示数据库的非Ascii字符。字符集要求一致，但是语言设置却可以不同，语言设置建议用英文。如字符集是utf8，则nls_lang可以是American_America.utf8
  修改方法（dba身份执行） 对于不同的实例，用以下方法改字符集：
@@ -378,15 +372,13 @@ sqlplus / as sysdba //连接数据库，注意有空格
 之后按照下面的修改方法进行即可
 修改字符集，需要去数据库所在的服务器系统，使用sqlplus执行下面命令：
 sql&amp;gt; conn user/password as sysdba; sql&amp;gt; shutdown immediate; --每个用户在执行完当前的SQL后，立即关闭。平时用的比较多的是这个 database closed. database dismounted. oracle instance shut down. sql&amp;gt; startup mount; oracle instance started. total system global area 135337420 bytes fixed size 452044 bytes variable size 109051904 bytes database buffers 25165824 bytes redo buffers 667648 bytes database mounted. sql&amp;gt; alter system enable restricted session; system altered.</description>
-    </item>
-    
-    <item>
-      <title>Oracle字符集</title>
-      <link>https://ziyan1215.github.io/archive/1546590921/</link>
-      <pubDate>Fri, 04 Jan 2019 16:35:21 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1546590921/</guid>
-      <description> ORACLE数据库有国家字符集（national character set）与数据库字符集(database character set)之分。两者都是在创建数据库时需要设置的  国家字符集主要是用于NCHAR、NVARCHAR、NCLOB类型的字段数据
+</item>
+<item>
+<title>Oracle字符集</title>
+<link>https://ziyan1215.github.io/archive/1546590921/</link>
+<pubDate>Fri, 04 Jan 2019 16:35:21 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1546590921/</guid>
+<description> ORACLE数据库有国家字符集（national character set）与数据库字符集(database character set)之分。两者都是在创建数据库时需要设置的  国家字符集主要是用于NCHAR、NVARCHAR、NCLOB类型的字段数据
 数据库字符集使用很广泛，它用于：CHAR、VARCHAR、CLOB、LONG类型的字段数据
 NLS( National Language Support)国家语言支持。
  这个nls_lang应该就是指我们的客户端的字符集环境
@@ -400,15 +392,13 @@ NLS_NCHAR_CHARACTERSET是国家字符集
 ORACLE中有两大类字符型数据，VARCHAR2是按照数据库字符集来存储数据。而NVARCHAR2是按照国家字符集存储数据的。同样，CHAR和NCHAR也一样，一是数据库字符符，一是国家字符集。 字符集不同，二进制码的组合就不同。
  引用来源
  </description>
-    </item>
-    
-    <item>
-      <title>Dmp导入后乱码的解决方法</title>
-      <link>https://ziyan1215.github.io/archive/1546588698/</link>
-      <pubDate>Fri, 04 Jan 2019 15:58:18 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1546588698/</guid>
-      <description>在实际工作中，导入现场环境的数据库会发现数据乱码、变成问号、数据库对象缺失等问题，很多时候是因为导出时和导入时的环境不一致导致的。
+</item>
+<item>
+<title>Dmp导入后乱码的解决方法</title>
+<link>https://ziyan1215.github.io/archive/1546588698/</link>
+<pubDate>Fri, 04 Jan 2019 15:58:18 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1546588698/</guid>
+<description>在实际工作中，导入现场环境的数据库会发现数据乱码、变成问号、数据库对象缺失等问题，很多时候是因为导出时和导入时的环境不一致导致的。
  处理方法  保证现场库和本地库字符集环境一致，现场导出时的环境和导入本地库的环境一致。
  通过查询语句
 select * from nls_database_parameters;  查询数据库字符集，确认现场库和本地库字符集环境一致的情况下，检查现场环境导出的方式，包括导出所使用的是windows环境还是linux环境、导出的字符集是UTF-8还是AL32UTF8或者ZHS16GBK等。然后我们导入本地库的时候使用和现场一致的环境应该就能够成功导入数据，至少不会如开始那样缺少很多对象
@@ -420,144 +410,118 @@ Linux下导入的时候可以设置字符集的环境变量 [oracle@localhost ~]
 [oracle@localhost ~]$ echo $NLS_LANG  注：LANG是针对Linux系统的语言、地区、字符集的设置,对linux下的应用程序有效，如date；NLS_LANG是针对Oracle语言、地区、字符集的设置，对oracle中的工具有效
 linux下查看系统的环境变量：
 [oracle@localhost ~]$ local -bash: local: can only be used in a function [oracle@localhost ~]$ locale LANG=en_US.UTF-8 LC_CTYPE=&amp;quot;en_US.UTF-8&amp;quot; LC_NUMERIC=&amp;quot;en_US.UTF-8&amp;quot; LC_TIME=&amp;quot;en_US.UTF-8&amp;quot; LC_COLLATE=&amp;quot;en_US.UTF-8&amp;quot; LC_MONETARY=&amp;quot;en_US.UTF-8&amp;quot; LC_MESSAGES=&amp;quot;en_US.</description>
-    </item>
-    
-    <item>
-      <title>Oracle11G导出空表方法</title>
-      <link>https://ziyan1215.github.io/archive/1546588114/</link>
-      <pubDate>Fri, 04 Jan 2019 15:48:34 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1546588114/</guid>
-      <description>  导DMP时请做以下操作！！！ 若需要在oracle11g数据库执行dmp的导入导出，为了确保11g数据库能够导出空表，请先做以下操作 （sys和要导出的数据库用户两个用户都要进行此操作）其中sys要用sysdba权限登录
-方法 --用plsql developer 的 command 窗口操作。 SQL&amp;gt;show parameter deferred_segment_creation; --如果为TRUE,则将该参数改为FALSE； --在sqlplus中，执行如下命令： SQL&amp;gt;alter system set deferred_segment_creation=false; --然后，可以针对数据表、索引、物化视图等手工分配Extent SQL&amp;gt;Select &#39;alter table &#39;||table_name||&#39; allocate extent;&#39; from user_tables where num_rows=0; --将查询出来的结果，进行复制出来，用command窗口进行SQL执行。 --导出语句例子： exp user/user@localhost/orcl file=d:\user0406.dmp log=d:\user0406.log statistics=none  验证 在需要导出的用户下查询表数量（注意在my object下查询）,查询原导出库和现导入库的对象是否一致。
+</item>
+<item>
+<title>Oracle11G导出空表方法</title>
+<link>https://ziyan1215.github.io/archive/1546588114/</link>
+<pubDate>Fri, 04 Jan 2019 15:48:34 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1546588114/</guid>
+<description>  导DMP时请做以下操作！！！ 若需要在oracle11g数据库执行dmp的导入导出，为了确保11g数据库能够导出空表，请先做以下操作 （sys和要导出的数据库用户两个用户都要进行此操作）其中sys要用sysdba权限登录
+方法 --用plsql developer 的 command 窗口操作。 SQL&amp;gt;show parameter deferred_segment_creation; --如果为TRUE,则将该参数改为FALSE； --在sqlplus中，执行如下命令： SQL&amp;gt;alter system set deferred_segment_creation=false; --然后，可以针对数据表、索引、物化视图等手工分配Extent SQL&amp;gt;Select 'alter table '||table_name||' allocate extent;' from user_tables where num_rows=0; --将查询出来的结果，进行复制出来，用command窗口进行SQL执行。 --导出语句例子： exp user/user@localhost/orcl file=d:\user0406.dmp log=d:\user0406.log statistics=none  验证 在需要导出的用户下查询表数量（注意在my object下查询）,查询原导出库和现导入库的对象是否一致。
 -----查询所有对象个数--------------- select object_type,count(*) from user_objects group by object_type;   </description>
-    </item>
-    
-    <item>
-      <title>我的网络收藏夹</title>
-      <link>https://ziyan1215.github.io/archive/1546417063/</link>
-      <pubDate>Wed, 02 Jan 2019 16:17:43 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1546417063/</guid>
-      <description>工具类 java7API 百度云盘 百度搜索资源平台 travis-ci google stackoverflow VPS：vultr leancloud
+</item>
+<item>
+<title>我的网络收藏夹</title>
+<link>https://ziyan1215.github.io/archive/1546417063/</link>
+<pubDate>Wed, 02 Jan 2019 16:17:43 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1546417063/</guid>
+<description>工具类 java7API 百度云盘 百度搜索资源平台 travis-ci google stackoverflow VPS：vultr leancloud
 开源项目-JAVA spring-framework spring-boot mybatis-3 commons-lang log4j guava incubator-dubbo WxJava （微信开发 Java SDK）
 stackoverflow上Java相关回答整理翻译 99-problems-JAVA JAVA设计模式 JAVA资料库 Java-Interview（Star:7k） Java学习+面试指南 interViews elasticsearch proxyee-down
 开源项目 CS-Notes highlight.js valine.js commentit ant.design SUI Mobile 开源网盘系统：Cloudreve
 精品网站 微软系统镜像：MSDN 我告诉你 维基百科
 其他 壁纸 gravatar 国内下载谷歌浏览器 别人的收藏</description>
-    </item>
-    
-    <item>
-      <title>Jar包在CMD运行后乱码</title>
-      <link>https://ziyan1215.github.io/archive/1546400558/</link>
-      <pubDate>Wed, 02 Jan 2019 11:42:38 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1546400558/</guid>
-      <description>  问题来源：今天写了个小的应用，把网络请求的内容转成文件保存到本地。在eclipse测试通过后打包成jar包在cmd执行后发现文件内容乱码
+</item>
+<item>
+<title>Jar包在CMD运行后乱码</title>
+<link>https://ziyan1215.github.io/archive/1546400558/</link>
+<pubDate>Wed, 02 Jan 2019 11:42:38 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1546400558/</guid>
+<description>  问题来源：今天写了个小的应用，把网络请求的内容转成文件保存到本地。在eclipse测试通过后打包成jar包在cmd执行后发现文件内容乱码
  处理方法  设定cmd的编码为utf-8
 打开cmd执行 (GBK(默认) chcp 936）
 chcp 65001
  运行jar语句加入编码设置
 java -Dfile.encoding=utf-8 -jar sb.jar
   </description>
-    </item>
-    
-    <item>
-      <title>2019年新年快乐</title>
-      <link>https://ziyan1215.github.io/archive/1546353054/</link>
-      <pubDate>Tue, 01 Jan 2019 22:30:54 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1546353054/</guid>
-      <description> 新的一年，希望所有愿望都能达成。 先给自己立3个Flag，希望都要实现
+</item>
+<item>
+<title>2019年新年快乐</title>
+<link>https://ziyan1215.github.io/archive/1546353054/</link>
+<pubDate>Tue, 01 Jan 2019 22:30:54 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1546353054/</guid>
+<description> 新的一年，希望所有愿望都能达成。 先给自己立3个Flag，希望都要实现
 目标一：占坑 目标二：占坑 目标三：占坑 </description>
-    </item>
-    
-    <item>
-      <title>2019年</title>
-      <link>https://ziyan1215.github.io/archive/1546352162/</link>
-      <pubDate>Tue, 01 Jan 2019 22:16:02 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1546352162/</guid>
-      <description>新的一年 还以为现在已经是2号、3号了，结果今天才是1号，2019年1月1日 22:19:34
+</item>
+<item>
+<title>2019年</title>
+<link>https://ziyan1215.github.io/archive/1546352162/</link>
+<pubDate>Tue, 01 Jan 2019 22:16:02 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1546352162/</guid>
+<description>新的一年 还以为现在已经是2号、3号了，结果今天才是1号，2019年1月1日 22:19:34
 此刻，忙碌了大半天还在想争分夺秒的完成剩下的琐碎事情，结果发现还有一篇2018年工作总结需要写， 哔哩啪啦的写了一通后，竟然发现</description>
-    </item>
-    
-    <item>
-      <title>Gulp入门</title>
-      <link>https://ziyan1215.github.io/archive/1546071281/</link>
-      <pubDate>Sat, 29 Dec 2018 16:14:41 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1546071281/</guid>
-      <description> 入门指南 全局安装gulp $ npm install --global gulp  作为项目的开发依赖（devDependencies）安装 $ npm install --save-dev gulp  在项目根目录下创建一个名为 gulpfile.js 的文件 var gulp = require(&#39;gulp&#39;); gulp.task(&#39;default&#39;, function() { // 将你的默认的任务代码放在这 });  运行gulp $ gulp  </description>
-    </item>
-    
-    <item>
-      <title>Seo初探</title>
-      <link>https://ziyan1215.github.io/archive/1546067579/</link>
-      <pubDate>Sat, 29 Dec 2018 15:12:59 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1546067579/</guid>
-      <description> How 先注册百度熊掌号. 通过百度的站长管理.
+</item>
+<item>
+<title>Gulp入门</title>
+<link>https://ziyan1215.github.io/archive/1546071281/</link>
+<pubDate>Sat, 29 Dec 2018 16:14:41 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1546071281/</guid>
+<description> 入门指南 全局安装gulp $ npm install --global gulp  作为项目的开发依赖（devDependencies）安装 $ npm install --save-dev gulp  在项目根目录下创建一个名为 gulpfile.js 的文件 var gulp = require('gulp'); gulp.task('default', function() { // 将你的默认的任务代码放在这 });  运行gulp $ gulp  </description>
+</item>
+<item>
+<title>Seo初探</title>
+<link>https://ziyan1215.github.io/archive/1546067579/</link>
+<pubDate>Sat, 29 Dec 2018 15:12:59 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1546067579/</guid>
+<description> How 先注册百度熊掌号. 通过百度的站长管理.
 待整理&amp;hellip; </description>
-    </item>
-    
-    <item>
-      <title>LoadRunner录制adf框架经验</title>
-      <link>https://ziyan1215.github.io/archive/1545987858/</link>
-      <pubDate>Fri, 28 Dec 2018 17:04:18 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1545987858/</guid>
-      <description>配置关联规则 用LoadRunner11录制ADF框架系统是，回放会报错，因为adf框架的原因，录制时要加入关联脚本
+</item>
+<item>
+<title>LoadRunner录制adf框架经验</title>
+<link>https://ziyan1215.github.io/archive/1545987858/</link>
+<pubDate>Fri, 28 Dec 2018 17:04:18 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1545987858/</guid>
+<description>配置关联规则 用LoadRunner11录制ADF框架系统是，回放会报错，因为adf框架的原因，录制时要加入关联脚本
 &amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt; &amp;lt;CorrelationSettings&amp;gt; &amp;lt;Group Name=&amp;quot;Oracle ADF&amp;quot; Enable=&amp;quot;1&amp;quot; Icon=&amp;quot;logo_default.bmp&amp;quot;&amp;gt; &amp;lt;Rule Name=&amp;quot;adf.ctrl-state&amp;quot; LeftBoundText=&amp;quot;_adf.ctrl-state=&amp;quot; LeftBoundType=&amp;quot;1&amp;quot; LeftBoundInstance=&amp;quot;0&amp;quot; RightBoundText=&amp;quot;&amp;amp;quot;&amp;quot; RightBoundType=&amp;quot;1&amp;quot; AltRightBoundText=&amp;quot;Newline Character&amp;quot; AltRightBoundType=&amp;quot;4&amp;quot; Flags=&amp;quot;137&amp;quot; ParamPrefix=&amp;quot;adf.ctrl-state&amp;quot; Type=&amp;quot;8&amp;quot; SaveOffset=&amp;quot;0&amp;quot; SaveLen=&amp;quot;-1&amp;quot; CallbackName=&amp;quot;&amp;quot; CallbackDLLName=&amp;quot;&amp;quot; FormField=&amp;quot;&amp;quot; ReplaceLB=&amp;quot;&amp;quot; ReplaceRB=&amp;quot;&amp;quot; /&amp;gt; &amp;lt;Rule Name=&amp;quot;adf.winId&amp;quot; LeftBoundText=&amp;quot;_adf.winId=&amp;quot; LeftBoundType=&amp;quot;1&amp;quot; LeftBoundInstance=&amp;quot;0&amp;quot; RightBoundText=&amp;quot;&amp;amp;amp;&amp;quot; RightBoundType=&amp;quot;1&amp;quot; AltRightBoundText=&amp;quot;&amp;quot; AltRightBoundType=&amp;quot;1&amp;quot; Flags=&amp;quot;137&amp;quot; ParamPrefix=&amp;quot;adf.winId&amp;quot; Type=&amp;quot;8&amp;quot; SaveOffset=&amp;quot;0&amp;quot; SaveLen=&amp;quot;-1&amp;quot; CallbackName=&amp;quot;&amp;quot; CallbackDLLName=&amp;quot;&amp;quot; FormField=&amp;quot;&amp;quot; ReplaceLB=&amp;quot;&amp;quot; ReplaceRB=&amp;quot;&amp;quot; /&amp;gt; &amp;lt;Rule Name=&amp;quot;jsessionid&amp;quot; LeftBoundText=&amp;quot;jsessionid=&amp;quot; LeftBoundType=&amp;quot;1&amp;quot; LeftBoundInstance=&amp;quot;0&amp;quot; RightBoundText=&amp;quot;&amp;amp;quot;&amp;quot; RightBoundType=&amp;quot;1&amp;quot; AltRightBoundText=&amp;quot;&amp;quot; AltRightBoundType=&amp;quot;1&amp;quot; Flags=&amp;quot;136&amp;quot; ParamPrefix=&amp;quot;jsessionid&amp;quot; Type=&amp;quot;8&amp;quot; SaveOffset=&amp;quot;0&amp;quot; SaveLen=&amp;quot;-1&amp;quot; CallbackName=&amp;quot;&amp;quot; CallbackDLLName=&amp;quot;&amp;quot; FormField=&amp;quot;&amp;quot; ReplaceLB=&amp;quot;&amp;quot; ReplaceRB=&amp;quot;&amp;quot; /&amp;gt; &amp;lt;Rule Name=&amp;quot;STATETOKEN&amp;quot; LeftBoundText=&amp;quot;javax.</description>
-    </item>
-    
-    <item>
-      <title>LoadRunner实战</title>
-      <link>https://ziyan1215.github.io/archive/1545987472/</link>
-      <pubDate>Fri, 28 Dec 2018 16:57:52 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1545987472/</guid>
-      <description> 工作流程 录制脚本 设计场景 进行压测 性能分析 性能调优 </description>
-    </item>
-    
-    <item>
-      <title>CentOS7搭建git服务器</title>
-      <link>https://ziyan1215.github.io/archive/1545974928/</link>
-      <pubDate>Fri, 28 Dec 2018 13:28:48 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1545974928/</guid>
-      <description>安装Git yum –y install git  初始化 git init --bare hexo.git  将远程的ssr公匙加入到文件中 /home/git/.ssh/authorized_keys  远程用户clone F:\LyDocument\hugo\blog\public&amp;gt;git clone git@xuziyan.tk:/opt/hexo/hexo.git/ Cloning into &#39;hexo&#39;... git@xuziyan.tk&#39;s password: warning: You appear to have cloned an empty repository.  查询 F:\LyDocument\hugo\blog\public\hexo&amp;gt;git status On branch master No commits yet  新增文件提交 git add -A git commit -m &amp;quot;add&amp;quot; F:\LyDocument\hugo\blog\public\hexo&amp;gt;git push origin master git@xuziyan.tk&#39;s password: ounting objects: 107, done. Delta compression using up to 4 threads. Compressing objects: 100% (94/94), done.</description>
-    </item>
-    
-    <item>
-      <title>Linux常用命令</title>
-      <link>https://ziyan1215.github.io/archive/1545974550/</link>
-      <pubDate>Fri, 28 Dec 2018 13:22:30 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1545974550/</guid>
-      <description>多用 --help帮助命令
+</item>
+<item>
+<title>LoadRunner实战</title>
+<link>https://ziyan1215.github.io/archive/1545987472/</link>
+<pubDate>Fri, 28 Dec 2018 16:57:52 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1545987472/</guid>
+<description> 工作流程 录制脚本 设计场景 进行压测 性能分析 性能调优 </description>
+</item>
+<item>
+<title>CentOS7搭建git服务器</title>
+<link>https://ziyan1215.github.io/archive/1545974928/</link>
+<pubDate>Fri, 28 Dec 2018 13:28:48 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1545974928/</guid>
+<description>安装Git yum –y install git  初始化 git init --bare hexo.git  将远程的ssr公匙加入到文件中 /home/git/.ssh/authorized_keys  远程用户clone F:\LyDocument\hugo\blog\public&amp;gt;git clone git@xuziyan.tk:/opt/hexo/hexo.git/ Cloning into 'hexo'... git@xuziyan.tk's password: warning: You appear to have cloned an empty repository.  查询 F:\LyDocument\hugo\blog\public\hexo&amp;gt;git status On branch master No commits yet  新增文件提交 git add -A git commit -m &amp;quot;add&amp;quot; F:\LyDocument\hugo\blog\public\hexo&amp;gt;git push origin master git@xuziyan.tk's password: ounting objects: 107, done. Delta compression using up to 4 threads. Compressing objects: 100% (94/94), done.</description>
+</item>
+<item>
+<title>Linux常用命令</title>
+<link>https://ziyan1215.github.io/archive/1545974550/</link>
+<pubDate>Fri, 28 Dec 2018 13:22:30 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1545974550/</guid>
+<description>多用 --help帮助命令
 常用命令  查找文件 [root@vultr hexo]# find / -name nginx /usr/sbin/nginx  查找历史语句 [root@vultr hexo]# history | grep nginx 85 yum install -y git nginx 87 ps -ef|grep nginx  修改linux系统里打开文件描述符的最大值 [root@localhost ~]# ulimit -n 10240 [root@localhost ~]# ulimit -n 10240  查询某些进程 [root@localhost ~]# ps -ef|grep java root 20850 20813 0 17:22 pts/0 00:00:00 grep java  删除某文件夹下的文件 [root@localhost ~]# rm -rf /opt/work/*   rm -rf误操作的后果是可怕的，rm -f也要三思而行，不能轻易使用;如果使用 rm 来删除文件，通常仍可以将该文件恢复原状</description>
-    </item>
-    
-    <item>
-      <title>git init与git init --bare demo.git的区别</title>
-      <link>https://ziyan1215.github.io/archive/1545973462/</link>
-      <pubDate>Fri, 28 Dec 2018 13:04:22 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1545973462/</guid>
-      <description>用法与区别 初始化一个git仓库，一般用于本地 git init 初始化一个裸仓库，一般用于远程仓库 git init --bare demo.git  注意事项 假如在vps上面安装git后，用git init --bare demo.git来初始化了一个远程仓库
+</item>
+<item>
+<title>git init与git init --bare demo.git的区别</title>
+<link>https://ziyan1215.github.io/archive/1545973462/</link>
+<pubDate>Fri, 28 Dec 2018 13:04:22 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1545973462/</guid>
+<description>用法与区别 初始化一个git仓库，一般用于本地 git init 初始化一个裸仓库，一般用于远程仓库 git init --bare demo.git  注意事项 假如在vps上面安装git后，用git init --bare demo.git来初始化了一个远程仓库
 那么在本地上传commit到vps的远程仓库上的话，文件是不会显示出来的。
 通过命令git --work-tree=/opt/demo --git-dir=/opt/demo.git checkout -f
 设定一个work-tree才会把文件显示出来。</description>
-    </item>
-    
-    <item>
-      <title>Git基本用法</title>
-      <link>https://ziyan1215.github.io/archive/1545971875/</link>
-      <pubDate>Fri, 28 Dec 2018 12:37:55 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1545971875/</guid>
-      <description>安装完后的配置 安装完成后，还需要最后一步设置，在命令行输入：
+</item>
+<item>
+<title>Git基本用法</title>
+<link>https://ziyan1215.github.io/archive/1545971875/</link>
+<pubDate>Fri, 28 Dec 2018 12:37:55 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1545971875/</guid>
+<description>安装完后的配置 安装完成后，还需要最后一步设置，在命令行输入：
 $ git config --global user.name &amp;quot;Your Name&amp;quot;
 $ git config --global user.email &amp;quot;email@example.com&amp;quot;
 因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。你也许会担心，如果有人故意冒充别人怎么办？这个不必担心，首先我们相信大家都是善良无知的群众，其次，真的有冒充的也是有办法可查的。
@@ -572,57 +536,48 @@ Administrator@LY-20170308GWTH MINGW64 /d/exercise (master) $ git config user.nam
 $ git add readme.txt
 第二步，用命令git commit告诉Git，把文件提交到仓库：
 $ git commit -m &amp;quot;wrote a readme file&amp;quot;</description>
-    </item>
-    
-    <item>
-      <title>Git常用命令</title>
-      <link>https://ziyan1215.github.io/archive/1545969891/</link>
-      <pubDate>Fri, 28 Dec 2018 12:04:51 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/1545969891/</guid>
-      <description>常用命令 git init 项目初始化 git clone 拉取项目 git add . 添加到暂存区 git commit -m 添加commit信息 git push 将本地分支推送到服务器上去 git pull origin master 本地与服务器端同步 git log 查看日志 git status 查看当前状态 git tag 查看版本号 git diff 查看尚未提交的更新  实际运用 拉取远程仓库内容 git pull origin master  推送本地到远程仓库 git push -u origin master  创建dev分支 git checkout -b dev   git checkout命令加上-b参数表示创建并切换，相当于以下两条命令
+</item>
+<item>
+<title>Git常用命令</title>
+<link>https://ziyan1215.github.io/archive/1545969891/</link>
+<pubDate>Fri, 28 Dec 2018 12:04:51 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/1545969891/</guid>
+<description>常用命令 git init 项目初始化 git clone 拉取项目 git add . 添加到暂存区 git commit -m 添加commit信息 git push 将本地分支推送到服务器上去 git pull origin master 本地与服务器端同步 git log 查看日志 git status 查看当前状态 git tag 查看版本号 git diff 查看尚未提交的更新  实际运用 拉取远程仓库内容 git pull origin master  推送本地到远程仓库 git push -u origin master  创建dev分支 git checkout -b dev   git checkout命令加上-b参数表示创建并切换，相当于以下两条命令
  git branch dev git checkout dev  用git branch命令查看当前分支</description>
-    </item>
-    
-    <item>
-      <title>由TravisCI自动部署hugo</title>
-      <link>https://ziyan1215.github.io/archive/2018-12-28t011917-0800/</link>
-      <pubDate>Fri, 28 Dec 2018 01:19:17 +0800</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/2018-12-28t011917-0800/</guid>
-      <description>#步骤 通过Travis CI 自动部署
+</item>
+<item>
+<title>由TravisCI自动部署hugo</title>
+<link>https://ziyan1215.github.io/archive/2018-12-28t011917-0800/</link>
+<pubDate>Fri, 28 Dec 2018 01:19:17 +0800</pubDate>
+<guid>https://ziyan1215.github.io/archive/2018-12-28t011917-0800/</guid>
+<description>#步骤 通过Travis CI 自动部署
 本地写完md
 上传git
 自动部署
 2018年12月27日 15:51:34</description>
-    </item>
-    
-    <item>
-      <title>搭建博客hugo</title>
-      <link>https://ziyan1215.github.io/archive/2018-12-28t011747-0800/</link>
-      <pubDate>Fri, 28 Dec 2018 01:17:47 +0800</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/2018-12-28t011747-0800/</guid>
-      <description>最终还是选了github page 因为用自己的vps 自动部署搞起来比较麻烦
+</item>
+<item>
+<title>搭建博客hugo</title>
+<link>https://ziyan1215.github.io/archive/2018-12-28t011747-0800/</link>
+<pubDate>Fri, 28 Dec 2018 01:17:47 +0800</pubDate>
+<guid>https://ziyan1215.github.io/archive/2018-12-28t011747-0800/</guid>
+<description>最终还是选了github page 因为用自己的vps 自动部署搞起来比较麻烦
 git github 新增一个github.io
 git init  本地 ...clone  hugo 安装hugo Windows下Hugo提供了Chocolatey方式的安装，通过如下命令即可。
 choco install hugo -confirm  验证安装
 安转完成后，我们打开终端，输入如下命令进行验证是否安装成功
-hugo version  创建一个站点 hugo new site quickstart  添加一个主题 cd quickstart;\ git init;\ git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke;\ # 编辑你的 config.toml 配置文件 # 添加一个叫 Ananke 的主题 echo &#39;theme = &amp;quot;ananke&amp;quot;&#39; &amp;gt;&amp;gt; config.toml  新建一篇文章 hugo new posts/my-first-post.md  本地开启Hugo服务 hugo server -D  构建静态站点 hugo  Hugo-theme Travis CI brew install hugo  Debian and Ubuntu平台下</description>
-    </item>
-    
-    <item>
-      <title>travisCI自动部署</title>
-      <link>https://ziyan1215.github.io/archive/23101033/</link>
-      <pubDate>Wed, 26 Dec 2018 15:34:25 +0000</pubDate>
-      
-      <guid>https://ziyan1215.github.io/archive/23101033/</guid>
-      <description>#步骤 通过Travis CI 自动部署
+hugo version  创建一个站点 hugo new site quickstart  添加一个主题 cd quickstart;\ git init;\ git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke;\ # 编辑你的 config.toml 配置文件 # 添加一个叫 Ananke 的主题 echo 'theme = &amp;quot;ananke&amp;quot;' &amp;gt;&amp;gt; config.toml  新建一篇文章 hugo new posts/my-first-post.md  本地开启Hugo服务 hugo server -D  构建静态站点 hugo  Hugo-theme Travis CI brew install hugo  Debian and Ubuntu平台下</description>
+</item>
+<item>
+<title>travisCI自动部署</title>
+<link>https://ziyan1215.github.io/archive/23101033/</link>
+<pubDate>Wed, 26 Dec 2018 15:34:25 +0000</pubDate>
+<guid>https://ziyan1215.github.io/archive/23101033/</guid>
+<description>#步骤 通过Travis CI 自动部署
 本地写完md
 上传git
 自动部署
 2018年12月27日 15:51:34</description>
-    </item>
-    
-  </channel>
+</item>
+</channel>
 </rss>

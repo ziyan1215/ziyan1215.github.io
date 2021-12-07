@@ -1,55 +1,36 @@
 <!DOCTYPE html>
 <html lang="zh">
-	<head>
-		<meta name="generator" content="Hugo 0.54.0" />
-		
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="HandheldFriendly" content="True">
-		<meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
-		<meta name="wap-font-scale" content="no">
-		
-		
-		
-		<meta name="author" content="XuziYan">
-		<meta name='description' itemprop="description" content="select * from nls_database_parameters
+<head>
+<meta content="Hugo 0.54.0" name="generator"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="initial-scale=1,width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport"/>
+<meta content="no" name="wap-font-scale"/>
+<meta content="XuziYan" name="author"/>
+<meta content="select * from nls_database_parameters
 修改数据库的字符集NLS_CHARACTERSET值
 客户端的字符集要求与服务器一致，才能正确显示数据库的非Ascii字符。字符集要求一致，但是语言设置却可以不同，语言设置建议用英文。如字符集是utf8，则nls_lang可以是American_America.utf8
- 修改方法（dba身份执行） 对于不同的实例，用以下">
-		 
-		<meta name="keywords" content="Oracle数据库修改字符集方法" >
-		
-		
-		<meta property="og:locale" content="en_US">
-		<meta property="og:title" content="Oracle数据库修改字符集方法">
-		<meta property="og:image" content="https://ziyan1215.github.io/images/logo2.png">
-		<meta property="og:description" content="select * from nls_database_parameters
+ 修改方法（dba身份执行） 对于不同的实例，用以下" itemprop="description" name="description"/>
+<meta content="Oracle数据库修改字符集方法" name="keywords"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Oracle数据库修改字符集方法" property="og:title"/>
+<meta content="https://ziyan1215.github.io/images/logo2.png" property="og:image"/>
+<meta content="select * from nls_database_parameters
 修改数据库的字符集NLS_CHARACTERSET值
 客户端的字符集要求与服务器一致，才能正确显示数据库的非Ascii字符。字符集要求一致，但是语言设置却可以不同，语言设置建议用英文。如字符集是utf8，则nls_lang可以是American_America.utf8
- 修改方法（dba身份执行） 对于不同的实例，用以下">
-		<meta property="og:site_name" content="XuziYan">
-
-		<title>Oracle数据库修改字符集方法 | Xuzi</title>
-		<link rel="shortcut icon" href="https://ziyan1215.github.io/images/i.ico">
-		
-		<link rel="manifest" href="/manifest.json">
-		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css">
-		
-		<link rel="stylesheet" href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css">
-		<link rel="stylesheet" href="https://ziyan1215.github.io/css/style.css">
-
-		
-
-		
-		
-
-		
-
-		<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
-		<script>hljs.initHighlightingOnLoad();</script>
-		
-		<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
-		<script>
+ 修改方法（dba身份执行） 对于不同的实例，用以下" property="og:description"/>
+<meta content="XuziYan" property="og:site_name"/>
+<title>Oracle数据库修改字符集方法 | Xuzi</title>
+<link href="https://ziyan1215.github.io/images/i.ico" rel="shortcut icon"/>
+<link href="/manifest.json" rel="manifest"/>
+<link href="https://ziyan1215.github.io/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://ziyan1215.github.io/lib/justified-gallery/justifiedGallery.min.css" rel="stylesheet"/>
+<link href="https://ziyan1215.github.io/css/style.css" rel="stylesheet"/>
+<script src="https://ziyan1215.github.io/lib/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="https://ziyan1215.github.io/lib/jquery/jquery.min.js"></script>
+<script>
 			document.addEventListener("error", function (e) {
 			  var elem = e.target;
 			  if (elem.tagName.toLowerCase() == 'img') {
@@ -57,7 +38,7 @@
 			  }
 			}, true);
 			</script>
-		<script type="application/ld+json">
+<script type="application/ld+json">
 			{
 				"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
 				"@id": "https://ziyan1215.github.io/archive/1546591306/",
@@ -67,224 +48,208 @@
 				"pubDate": "2019-01-04T16:41:46"
 			} 
 			</script>
-
-
-	</head>
-
-
-<form id="search-form" class="noscript" method="GET" action="https://duckduckgo.com/" data-language-prefix="">
-	<div class="search-bar">
-		<input id="search-input" class="search--display" name="q" tabindex="0" autocomplete="off" value=" site:https://ziyan1215.github.io/" placeholder="">
-		<input id="search-submit" class="icon" type="submit" value="⌕">
-	</div>
-	<ul id="search-results" class="search--display"></ul>
+</head>
+<body><form action="https://duckduckgo.com/" class="noscript" data-language-prefix="" id="search-form" method="GET">
+<div class="search-bar">
+<input autocomplete="off" class="search--display" id="search-input" name="q" placeholder="" tabindex="0" value=" site:https://ziyan1215.github.io/"/>
+<input class="icon" id="search-submit" type="submit" value="⌕"/>
+</div>
+<ul class="search--display" id="search-results"></ul>
 </form>
-
-
 <script src="https://ziyan1215.github.io/js/fuse.js"></script>
 <script src="https://ziyan1215.github.io/js/fixedsearch.js"></script>
-
-<style>
-	#search-form {
-		display: block;
-		position: fixed;
-		top: 0;
-		right: 0;
-		margin: 0;
-		padding: 0;
-		min-width: var(--icon-size, 1.2rem);
-		max-width: 15rem;
-		max-height: 100vh;
-		z-index: 1000;
-	}
-
-	#search-form.search--display,
-	#search-form[data-focus='false'] .search--display {
-		display: none;
-	}
-
-	#search-form[data-focus='true'] .search--display {
-		display: block;
-	}
-
-	#search-form .search-bar {
-		display: flex;
-		height: 1.4rem;
-		align-items: center;
-	}
- 
-	#search-form .search-bar {
-		background: rgb(var(--page-color, '240,240,240'));
-		color: #2ba55b;
-	}
-
-	#search-form[data-focus='true'] .search-bar {
-		border: 2.5px solid rgb(var(--accent-color, '40.188.138'));
-	}
-
-	#search-form[data-focus='true'] .search-bar:not(:focus-within) {
-		background: rgb(var(--text-color, '3,3,3'));
-		color: #0af185; 
-		border-color: rgb(var(--text-color, '3,3,3'));
-	}
-
-	#search-input {
-		display: block;
-		padding: 0.3rem;
-		width: 15rem;
-		max-width: 100vw;
-		height: 100%;
-
-		background: inherit;
-		border: none;
-		color: inherit;
-		outline: none;
-		text-align: left;
-
-		font-size: var(--s-2, 0.8rem);
-	}
-
-	#search-submit {
-		display: block;
-		margin: 0 var(--icon-pad, 0.1rem) 0 0;
-		padding: 0;
-		width:       var(--icon-size, 1.2rem);
-		height:      var(--icon-size, 1.2rem);
-		line-height: var(--icon-size, 1.2rem);
-
-		background: inherit;
-		color: inherit;
-	}
-
-	#search-submit:hover,
-	#search-submit:focus {
-		color: rgb(var(--accent-color, '40.188.138'));
-	}
-
-	#search-results {
-		display: block;
-		flex-grow: 2;
-		margin: 0.5px 0 0 0;
-		padding: 0;
-		max-height: calc(100vh - 1.4rem - 0.5px);
-		width: 100%;
-		overflow-x: hidden;
-		overflow-y: auto;
-
-		backdrop-filter: blur(var(--page-color-blur, 2px));
-		border: 2.5px solid;
-		color: #2bbc8a; 
-		font-size: var(--s-2, 0.8rem);
-        
-		scrollbar-color: rgb(var(--text-color, '43,165,91')) rgb(var(--page-color, '240,240,240')) !important;
-		scrollbar-width: thin !important;
-	}
-
-	#search-results:empty {
-		display: none;
-		opacity: 0;
-	}
-
-	#search-results li {
-		margin: 0;
-		width: 100%;
-
-		background-color: rgba(var(--page-color, '240,240,240'), var(--page-color-transparency, 0.89));
-		border-top: 0.5px dashed;
-		list-style: none;
-	}
-		#search-results li:first-child {
-			border: none;
-		}
-
-	#search-results a {
-		display: block;
-		padding: 0.3rem;
-		display: block;
-        color: #c9cacc; 
-		text-decoration: none;
-	}
-
-	#search-results a:hover,
-	#search-results a:focus {
-		background: rgb(var(--text-color, '3,3,3'));
-		color: rgb(var(--page-color, '240,240,240'));
-		outline: 0;
-	}
-
-	#search-results a:active {
-		background: rgb(var(--accent-color, '40.188.138'));
-		color: rgb(var(--page-color, '240,240,240'));
-	}
-
-	#search-results li span:empty {
-		display: none;
-	}
-
-	#search-results li span:not(:last-child)::after {
-		content: ' – ';
-	}
-
-	#search-results li .title {
-		display: block;
-		margin-bottom: calc(var(--line-height, 1.4em)/3);
-	}
-
-	#search-results li .title::after {
-		display: none;
-	}
+<style>
+	#search-form {
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 0;
+		margin: 0;
+		padding: 0;
+		min-width: var(--icon-size, 1.2rem);
+		max-width: 15rem;
+		max-height: 100vh;
+		z-index: 1000;
+	}
+
+	#search-form.search--display,
+	#search-form[data-focus='false'] .search--display {
+		display: none;
+	}
+
+	#search-form[data-focus='true'] .search--display {
+		display: block;
+	}
+
+	#search-form .search-bar {
+		display: flex;
+		height: 1.4rem;
+		align-items: center;
+	}
+ 
+	#search-form .search-bar {
+		background: rgb(var(--page-color, '240,240,240'));
+		color: #2ba55b;
+	}
+
+	#search-form[data-focus='true'] .search-bar {
+		border: 2.5px solid rgb(var(--accent-color, '40.188.138'));
+	}
+
+	#search-form[data-focus='true'] .search-bar:not(:focus-within) {
+		background: rgb(var(--text-color, '3,3,3'));
+		color: #0af185; 
+		border-color: rgb(var(--text-color, '3,3,3'));
+	}
+
+	#search-input {
+		display: block;
+		padding: 0.3rem;
+		width: 15rem;
+		max-width: 100vw;
+		height: 100%;
+
+		background: inherit;
+		border: none;
+		color: inherit;
+		outline: none;
+		text-align: left;
+
+		font-size: var(--s-2, 0.8rem);
+	}
+
+	#search-submit {
+		display: block;
+		margin: 0 var(--icon-pad, 0.1rem) 0 0;
+		padding: 0;
+		width:       var(--icon-size, 1.2rem);
+		height:      var(--icon-size, 1.2rem);
+		line-height: var(--icon-size, 1.2rem);
+
+		background: inherit;
+		color: inherit;
+	}
+
+	#search-submit:hover,
+	#search-submit:focus {
+		color: rgb(var(--accent-color, '40.188.138'));
+	}
+
+	#search-results {
+		display: block;
+		flex-grow: 2;
+		margin: 0.5px 0 0 0;
+		padding: 0;
+		max-height: calc(100vh - 1.4rem - 0.5px);
+		width: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+
+		backdrop-filter: blur(var(--page-color-blur, 2px));
+		border: 2.5px solid;
+		color: #2bbc8a; 
+		font-size: var(--s-2, 0.8rem);
+        
+		scrollbar-color: rgb(var(--text-color, '43,165,91')) rgb(var(--page-color, '240,240,240')) !important;
+		scrollbar-width: thin !important;
+	}
+
+	#search-results:empty {
+		display: none;
+		opacity: 0;
+	}
+
+	#search-results li {
+		margin: 0;
+		width: 100%;
+
+		background-color: rgba(var(--page-color, '240,240,240'), var(--page-color-transparency, 0.89));
+		border-top: 0.5px dashed;
+		list-style: none;
+	}
+		#search-results li:first-child {
+			border: none;
+		}
+
+	#search-results a {
+		display: block;
+		padding: 0.3rem;
+		display: block;
+        color: #c9cacc; 
+		text-decoration: none;
+	}
+
+	#search-results a:hover,
+	#search-results a:focus {
+		background: rgb(var(--text-color, '3,3,3'));
+		color: rgb(var(--page-color, '240,240,240'));
+		outline: 0;
+	}
+
+	#search-results a:active {
+		background: rgb(var(--accent-color, '40.188.138'));
+		color: rgb(var(--page-color, '240,240,240'));
+	}
+
+	#search-results li span:empty {
+		display: none;
+	}
+
+	#search-results li span:not(:last-child)::after {
+		content: ' – ';
+	}
+
+	#search-results li .title {
+		display: block;
+		margin-bottom: calc(var(--line-height, 1.4em)/3);
+	}
+
+	#search-results li .title::after {
+		display: none;
+	}
 </style>
-
-<body>
-    <div id="header-post">
-        <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
-        <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
-        <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
-        <span id="menu">
-          <span id="nav">
-            <ul>
-              <li> <a href="/">Home</a></li>
+<div id="header-post">
+<a href="#" id="menu-icon"><i class="fa fa-bars fa-lg"></i></a>
+<a href="#" id="menu-icon-tablet"><i class="fa fa-bars fa-lg"></i></a>
+<a href="#" id="top-icon-tablet" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+<span id="menu">
+<span id="nav">
+<ul>
+<li> <a href="/">Home</a></li>
 <li> <a href=" /archive/">Archives</a></li>
 <li> <a href="/about/">About</a></li>
-
-
-            </ul>
-          </span>
-          <br/>
-          <span id="actions">
-            <ul>
-                
-                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546590921/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
-                
-                
-                <li><a class="icon" href="https://ziyan1215.github.io/archive/1546928060/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
-                
-              <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
-              <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
-            </ul>
-            <span id="i-prev" class="info" style="display:none;">Previous post</span>
-            <span id="i-next" class="info" style="display:none;">Next post</span>
-            <span id="i-top" class="info" style="display:none;">Back to top</span>
-            <span id="i-share" class="info" style="display:none;">Share post</span>
-          </span>
-          <br/>
-          <div id="share" style="display: none">
-              <ul>
-        <li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&text=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-weibo " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&text=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&is_video=false&description=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="mailto:?subject=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95&body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-        <li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
- </ul>
-      
-          </div>
-          <div id="toc">
-                <nav id="TableOfContents">
+</ul>
+</span>
+<br/>
+<span id="actions">
+<ul>
+<li><a class="icon" href="https://ziyan1215.github.io/archive/1546590921/"><i aria-hidden="true" class="fa fa-chevron-left" onmouseout='$("#i-prev").toggle();' onmouseover='$("#i-prev").toggle();'></i></a></li>
+<li><a class="icon" href="https://ziyan1215.github.io/archive/1546928060/"><i aria-hidden="true" class="fa fa-chevron-right" onmouseout='$("#i-next").toggle();' onmouseover='$("#i-next").toggle();'></i></a></li>
+<li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i aria-hidden="true" class="fa fa-chevron-up" onmouseout='$("#i-top").toggle();' onmouseover='$("#i-top").toggle();'></i></a></li>
+<li><a class="icon" href="#"><i aria-hidden="true" class="fa fa-share-alt" onclick='$("#share").toggle();return false;' onmouseout='$("#i-share").toggle();' onmouseover='$("#i-share").toggle();'></i></a></li>
+</ul>
+<span class="info" id="i-prev" style="display:none;">Previous post</span>
+<span class="info" id="i-next" style="display:none;">Next post</span>
+<span class="info" id="i-top" style="display:none;">Back to top</span>
+<span class="info" id="i-share" style="display:none;">Share post</span>
+</span>
+<br/>
+<div id="share" style="display: none">
+<ul>
+<li><a class="icon" href="http://v.t.sina.com.cn/share/share.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&amp;text=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-weibo"></i></a></li>
+<li><a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f"><i aria-hidden="true" class="fa fa-facebook"></i></a></li>
+<li><a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&amp;text=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-twitter"></i></a></li>
+<li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&amp;title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-linkedin"></i></a></li>
+<li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&amp;is_video=false&amp;description=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-pinterest"></i></a></li>
+<li><a class="icon" href="mailto:?subject=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95&amp;body=Check out this article: https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f"><i aria-hidden="true" class="fa fa-envelope"></i></a></li>
+<li><a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&amp;title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-get-pocket"></i></a></li>
+<li><a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&amp;title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-reddit"></i></a></li>
+<li><a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&amp;title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-stumbleupon"></i></a></li>
+<li><a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fziyan1215.github.io%2farchive%2f1546591306%2f&amp;title=Oracle%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bf%ae%e6%94%b9%e5%ad%97%e7%ac%a6%e9%9b%86%e6%96%b9%e6%b3%95"><i aria-hidden="true" class="fa fa-digg"></i></a></li>
+</ul>
+</div>
+<div id="toc">
+<nav id="TableOfContents">
 <ul>
 <li><a href="#修改方法-dba身份执行">修改方法（dba身份执行）</a></li>
 <li><a href="#如何设置oracle客户端的字符集编码">如何设置Oracle客户端的字符集编码</a>
@@ -299,72 +264,47 @@
 </ul></li>
 </ul>
 </nav>
-          </div>
-        </span>
-      </div>
-      
-    <div class="content index width mx-auto px3 my3">
-        <section id="wrapper" class="home">
-                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-                    <header>
-                    <h1 class="posttitle" itemprop="name headline">
+</div>
+</span>
+</div>
+<div class="content index width mx-auto px3 my3">
+<section class="home" id="wrapper">
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+<header>
+<h1 class="posttitle" itemprop="name headline">
                             Oracle数据库修改字符集方法
                         </h1>
-                      <div class="meta">
-                        <div class="postdate">
-                                <time datetime='2019-01-04' itemprop="datePublished">2019-01-04</time>
-                            </div>
-                        <div class="article-tag">
-                            <i class="fa fa-eye"></i>
-                            <span id="busuanzi_container_page_pv">
-                                <span id="busuanzi_value_page_pv">0</span>
-                              </span>
-                            </span>
-                        </div>
-                        
-                        <div class="article-tag">
-                            <i class="fa fa-tag"></i>
-                            
-                            <a href="/tags/oracle">
-                               Oracle</a> 
-                             
-                        </div>
-                        
-                        
-                        
-                        <div class="article-tag-box">
-                               
-                        </div>
-
-                        
-                      </div>
-                    </header>
-                    
-
-                    <div class="content" itemprop="articleBody">
-                            
-                            
-
+<div class="meta">
+<div class="postdate">
+<time datetime="2019-01-04" itemprop="datePublished">2019-01-04</time>
+</div>
+<div class="article-tag">
+<i class="fa fa-eye"></i>
+<span id="busuanzi_container_page_pv">
+<span id="busuanzi_value_page_pv">0</span>
+</span>
+</div>
+<div class="article-tag">
+<i class="fa fa-tag"></i>
+<a href="/tags/oracle">
+                               Oracle</a>
+</div>
+<div class="article-tag-box">
+</div>
+</div>
+</header>
+<div class="content" itemprop="articleBody">
 <blockquote>
 <p><code>select * from nls_database_parameters</code></p>
-
 <p>修改数据库的字符集NLS_CHARACTERSET值</p>
-
 <p>客户端的字符集要求与服务器一致，才能正确显示数据库的非Ascii字符。字符集要求一致，但是语言设置却可以不同，语言设置建议用英文。如字符集是utf8，则nls_lang可以是American_America.utf8</p>
 </blockquote>
-
 <h1 id="修改方法-dba身份执行">修改方法（dba身份执行）</h1>
-
 <p>对于不同的实例，用以下方法改字符集：</p>
-
 <p><code>set oracle_sid=hzhr // cmd窗口设置数据库Oracle当前的默认sid为</code></p>
-
 <p><code>sqlplus / as sysdba //连接数据库，注意有空格</code></p>
-
 <p>之后按照下面的修改方法进行即可</p>
-
 <p>修改字符集，需要去数据库所在的服务器系统，使用sqlplus执行下面命令：</p>
-
 <pre><code class="language-sql">sql&gt; conn user/password as sysdba;
 sql&gt; shutdown immediate;  
  --每个用户在执行完当前的SQL后，立即关闭。平时用的比较多的是这个
@@ -392,54 +332,41 @@ sql&gt; alter database character set internal_use UTF8; --（注意有下斜杠_
 sql&gt; shutdown immediate;
 sql&gt; startup;
 </code></pre>
-
 <h1 id="如何设置oracle客户端的字符集编码">如何设置Oracle客户端的字符集编码</h1>
-
 <h2 id="window下">Window下：</h2>
-
 <p>在cmd中输入regedit.exe打开注册表
 按照如下步骤修改注册表，就可以把客户端从中文修改成英文（注意如果64位windows路径会有不同）。
 HKEY_LOCAL_MACHINE -&gt; SOFTWARE -&gt; Oracle -&gt; KEY_OraClient10g_home1 -&gt; NLS_LANG
-Modify &lsquo;SIMPLIFIED CHINESE_CHINA.ZHS16GBK&rsquo; to &lsquo;SIMPLIFIED CHINESE_CHINA.UTF8&rsquo;</p>
-
+Modify ‘SIMPLIFIED CHINESE_CHINA.ZHS16GBK’ to ‘SIMPLIFIED CHINESE_CHINA.UTF8’</p>
 <h2 id="linux下">Linux下：</h2>
-
 <p>设置Oracle用户的环境变量</p>
-
 <pre><code class="language-bash">/home/oracle/.bash_profile
 export NLS_LANG=SIMPLIFIED CHINESE_CHINA.UTF8
-#一般数据库安装的时候都会选择(UTF8/AL32UTF8)编码,所以建议客户端最好对应设置成&quot;AMERICAN_AMERICA.UTF8&quot;，这样可以保证导入导出都正常。
+#一般数据库安装的时候都会选择(UTF8/AL32UTF8)编码,所以建议客户端最好对应设置成"AMERICAN_AMERICA.UTF8"，这样可以保证导入导出都正常。
 export NLS_LANG=AMERICAN_AMERICA.AL32UTF8
 export NLS_LANG=AMERICAN_AMERICA.ZHS16GBK
 export NLS_LANG=”SIMPLIFIED CHINESE_CHINA.ZHS16GBK”
 </code></pre>
-
 <h1 id="正确的数据库转换编码格式的步骤">正确的数据库转换编码格式的步骤</h1>
-
 <ol>
 <li>将现有的编码的数据库以dmp格式导出所有表</li>
 <li>将数据库转换成目的编码，如utf8</li>
 <li>将dmp导入回去。</li>
 </ol>
-
 <h2 id="特别注意-oracle逻辑备份还原-exp-imp-的正确步骤">【特别注意】oracle逻辑备份还原(exp/imp)的正确步骤</h2>
-
-<p>服务端导出&ndash;dmp文件编码所在的客户端务必要和服务端一致，不能变动编码&ndash;导入回相同编码的服务端</p>
-
+<p>服务端导出–dmp文件编码所在的客户端务必要和服务端一致，不能变动编码–导入回相同编码的服务端</p>
 <h2 id="补充">补充</h2>
-
 <p><code>american_america.ZHS16GBK</code>
 <code>chinese_china.ZHS16GBK</code>
 这些，都是client端的NLS_LANG设置，而不是 数据库的字符集配置
 这样长的一个字符串，决定了客户端 的显示方式（其中包括 字符编码/货币/时间 等格式），而不是数据库端的配置
 比如两者 ，决定了字符编码都是中文，但是 货币/时间 格式可能就不一样了（大概这个意思）</p>
-
-                            <h2> 本文链接：</h2>
-                            <a href='https://ziyan1215.github.io/archive/1546591306/' target="_blank">https://ziyan1215.github.io/archive/1546591306/</a>
-                    </div>
-                  </article>
-                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<h2> 本文链接：</h2>
+<a href="https://ziyan1215.github.io/archive/1546591306/" target="_blank">https://ziyan1215.github.io/archive/1546591306/</a>
+</div>
+</article>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <div class="blog-post-comments"></div>
 <script>
     new Valine({
@@ -452,93 +379,59 @@ export NLS_LANG=”SIMPLIFIED CHINESE_CHINA.ZHS16GBK”
         verify:true
     });
 </script>
-                  <h1># 最新文章</h1>
-<ul id="more-post-list" class="archive readmore">
-
-    
-    
-    
-        <li>
-            <a href="/archive/1636449990/">21年11月09日的卷积云<aside class="dates">2021-11-09</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1636089550/">Hugo博客加入搜索功能<aside class="dates">2021-11-05</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1635995563/">2021年，重启记录之旅<aside class="dates">2021-11-04</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1573200125/">Typora&#43;PicGo图床编写md<aside class="dates">2019-11-08</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1564215157/">Java应用中访问ElasticSearch<aside class="dates">2019-07-27</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563940854/">ElasticSearch原理<aside class="dates">2019-07-24</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563796794/">ES的嵌套字段<aside class="dates">2019-07-22</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563681594/">ES的聚合&amp;复合查询<aside class="dates">2019-07-21</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563598794/">ES的filter查询<aside class="dates">2019-07-20</aside></a>
-        </li>
-    
-        <li>
-            <a href="/archive/1563522787/">ES基本查询<aside class="dates">2019-07-19</aside></a>
-        </li>
-    
+<h1># 最新文章</h1>
+<ul class="archive readmore" id="more-post-list">
+<li>
+<a href="/daily/1638860110/">Hugo文章加密<aside class="dates">2021-12-07</aside></a>
+</li>
+<li>
+<a href="/archive/1636449990/">21年11月09日的卷积云<aside class="dates">2021-11-09</aside></a>
+</li>
+<li>
+<a href="/archive/1636089550/">Hugo博客加入搜索功能<aside class="dates">2021-11-05</aside></a>
+</li>
+<li>
+<a href="/archive/1635995563/">2021年，重启记录之旅<aside class="dates">2021-11-04</aside></a>
+</li>
+<li>
+<a href="/archive/1573200125/">Typora+PicGo图床编写md<aside class="dates">2019-11-08</aside></a>
+</li>
+<li>
+<a href="/archive/1564215157/">Java应用中访问ElasticSearch<aside class="dates">2019-07-27</aside></a>
+</li>
+<li>
+<a href="/archive/1563940854/">ElasticSearch原理<aside class="dates">2019-07-24</aside></a>
+</li>
+<li>
+<a href="/archive/1563796794/">ES的嵌套字段<aside class="dates">2019-07-22</aside></a>
+</li>
+<li>
+<a href="/archive/1563681594/">ES的聚合&amp;复合查询<aside class="dates">2019-07-21</aside></a>
+</li>
+<li>
+<a href="/archive/1563598794/">ES的filter查询<aside class="dates">2019-07-20</aside></a>
+</li>
 </ul>
-
-
-
-                  
-                  
-        </section>
-
-    </div>
-      
-  <footer id="footer">
-    <div class="footer-left">
+</section>
+</div>
+<footer id="footer">
+<div class="footer-left">
         Copyright © 2021  XuziYan <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank"></a>
-      
-   </div>
-    <div class="footer-right">
-      <nav>
-        <ul>
-          <li> <a href="/">Home</a></li>
+</div>
+<div class="footer-right">
+<nav>
+<ul>
+<li> <a href="/">Home</a></li>
 <li> <a href=" /archive/">Archives</a></li>
 <li> <a href="/about/">About</a></li>
-
-
-        </ul>
-      </nav>
-    </div>
-  </footer>
-    
+</ul>
+</nav>
+</div>
+</footer>
 <script src="https://ziyan1215.github.io/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
 <script src="https://ziyan1215.github.io/lib/typed.js"></script>
 <script src="https://ziyan1215.github.io/js/main.js"></script>
-
-
-
-
-
-
-
-
-
-<script async src=""></script>
+<script async="" src=""></script>
 <script>
 (function(){
   if(location.host!=='xuziyan.ga')return;
@@ -554,8 +447,6 @@ export NLS_LANG=”SIMPLIFIED CHINESE_CHINA.ZHS16GBK”
   gtag('config', 'UA-129382678-1');
 })()
 </script>
-
-
 <script>
     (function(){
         var bp = document.createElement('script');
@@ -570,18 +461,7 @@ export NLS_LANG=”SIMPLIFIED CHINESE_CHINA.ZHS16GBK”
         s.parentNode.insertBefore(bp, s);
     })();
     </script>
-    
-
-
-  
-
-
-
-
-
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+<script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script>
   if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -596,7 +476,4 @@ export NLS_LANG=”SIMPLIFIED CHINESE_CHINA.ZHS16GBK”
       });
   }
   </script>
-</body>
-
-</html>
-
+</body></html>
